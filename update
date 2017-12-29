@@ -1,0 +1,6 @@
+#!/bin/bash
+cd `dirname $0`
+gulp dist
+git add --all
+git commit -m 'update'
+git push
