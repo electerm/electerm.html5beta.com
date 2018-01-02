@@ -7,9 +7,9 @@ include parts/head2
   .py-3
   .py-3.px-3
 
-    h1.text-xs-center
+    h1.mb2-b
       a(href='http://electerm.html5beta.com')
-        img.max-100(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png', alt='electerm')
+        img.max-100.d-inline-block(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png', alt='electerm')
 
     p.lead <code>electerm</code> is a terminal/ssh/sftp client(mac, win, linux) based on electron/node-pty/xterm and many other modules, I hope it works as a combination of <code>guake</code> and <code>xshell</code>.
     hr.m-y-2
@@ -27,7 +27,7 @@ include parts/head2
       span.badge-githubstar
         iframe(src='https://ghbtns.com/github-btn.html?user=electerm&repo=electerm&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='110', height='20')
     .py-2
-    h3.text-xs-center download
+    h3 download
     hr
     #accordion(role='tablist')
       - let arr = Object.keys(assets)
@@ -57,8 +57,8 @@ include parts/head2
               - }
       - }
 
-    .text-xs-center.pt-2
-      img.max-100(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif', alt='')
+    .pt-2
+      img.max-100.d-inline-block(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif', alt='')
 
     .py-2
 
