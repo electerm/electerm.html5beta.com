@@ -27,6 +27,15 @@ cssFolder = __dirname + '/res/css'
 
 }
 
+let assets = []
+
+try {
+  let data = require('./data/electerm-github-release.json')
+  assets = data.release.assets
+} catch(e) {
+  console.log('no ./data/electerm-github-release.json')
+}
+
 gulp.task('stylus', function() {
 
   gulp.src(cssFolder + '/*.styl')
@@ -66,7 +75,37 @@ gulp.task('ugly', function() {
 
 let config = require('./config.default')
 let pack = require('./package.json')
-
+config.assets = assets.reduce((prev, curr) => {
+  if (curr.name.includes('win')) {
+    prev.windows.items.push(curr)
+  } else if (curr.name.includes('mac')) {
+    prev.mac.items.push(curr)
+  } else {
+    if (curr.name.endsWith('.rpm')) {
+      curr.desc = 'for Red Hat, Fedora...'
+    } else if (curr.name.endsWith('.deb')) {
+      curr.desc = 'for Debian, Ubuntu...'
+    } else if (curr.name.endsWith('.gz')) {
+      curr.desc = 'for all linux x86, just extract'
+    }
+    prev.linux.items.push(curr)
+  }
+  return prev
+}, {
+  linux: {
+    name: 'linux x86 x64',
+    items: []
+  },
+  mac: {
+    name: 'mac os x64',
+    items: []
+  },
+  windows: {
+    name: 'windows 7/8/10 x86 x64',
+    items: []
+  }
+})
+console.log(config.assets)
 gulp.task('pug', function() {
 
   gulp.src(views + '/*.pug')

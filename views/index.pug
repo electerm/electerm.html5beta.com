@@ -15,30 +15,55 @@ include parts/head2
   .py-3
   .py-3.px-3
 
-    .text-xs-center
-      h1.text-xs-center
-        a(href='http://electerm.html5beta.com')
-          img(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png', alt='electerm')
+    h1.text-xs-center
+      a(href='http://electerm.html5beta.com')
+        img(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png', alt='electerm')
 
-      p.lead <code>electerm</code> is a terminal/ssh/sftp client(mac, win, linux) based on electron/node-pty/xterm and many other modules, I hope it works as a combination of <code>guake</code> and <code>xshell</code>.
-      hr.m-y-2
-      p.lead.badges
-        a(href='https://badge.fury.io/gh/electerm%2Felecterm', rel='nofollow')
-          img(src='https://camo.githubusercontent.com/b166eaf93c0faf3cdcf7b966d3d2d98d86aa307e/68747470733a2f2f62616467652e667572792e696f2f67682f656c65637465726d253246656c65637465726d2e737667', alt='GitHub version', data-canonical-src='https://badge.fury.io/gh/electerm%2Felecterm.svg')
-        a(href='https://travis-ci.org/electerm/electerm', rel='nofollow')
-          img(src='https://camo.githubusercontent.com/a15b5f230822a1e4f66ccfa1e193cb48dc1fa40d/68747470733a2f2f7472617669732d63692e6f72672f656c65637465726d2f656c65637465726d2e7376673f6272616e63683d72656c65617365', alt='Build Status', data-canonical-src='https://travis-ci.org/electerm/electerm.svg?branch=release')
-        a(href='https://ci.appveyor.com/project/zxdong262/electerm/branch/release', rel='nofollow')
-          img(src='https://camo.githubusercontent.com/48579a1b473249024fb2672e3f1a246672d83fed/68747470733a2f2f63692e6170707665796f722e636f6d2f6170692f70726f6a656374732f7374617475732f3333636b62716c6e30327574656b78642f6272616e63682f72656c656173653f7376673d74727565', alt='Build status', data-canonical-src='https://ci.appveyor.com/api/projects/status/33ckbqln02utekxd/branch/release?svg=true')
-        a(href='https://david-dm.org/electerm/electerm', title="View the status of this project's dependencies on DavidDM", rel='nofollow')
-          img(src='https://camo.githubusercontent.com/671f9ba606ca25851e92027940de499a32f8ddc8/68747470733a2f2f696d672e736869656c64732e696f2f64617669642f656c65637465726d2f656c65637465726d2e737667', alt='Dependency Status', data-canonical-src='https://img.shields.io/david/electerm/electerm.svg')
-        a(href='https://david-dm.org/electerm/electerm#info=devDependencies', title="View the status of this project's development dependencies on DavidDM", rel='nofollow')
-          img(src='https://camo.githubusercontent.com/7967a9b1964e7937d7eb067db692a1b69d160f4f/68747470733a2f2f696d672e736869656c64732e696f2f64617669642f6465762f656c65637465726d2f656c65637465726d2e737667', alt='Dev Dependency Status', data-canonical-src='https://img.shields.io/david/dev/electerm/electerm.svg')
-        span.badge-githubstar
-          iframe(src='https://ghbtns.com/github-btn.html?user=electerm&repo=electerm&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='110', height='20')
+    p.lead <code>electerm</code> is a terminal/ssh/sftp client(mac, win, linux) based on electron/node-pty/xterm and many other modules, I hope it works as a combination of <code>guake</code> and <code>xshell</code>.
+    hr.m-y-2
+    p.lead.badges
+      a(href='https://badge.fury.io/gh/electerm%2Felecterm', rel='nofollow')
+        img(src='https://camo.githubusercontent.com/b166eaf93c0faf3cdcf7b966d3d2d98d86aa307e/68747470733a2f2f62616467652e667572792e696f2f67682f656c65637465726d253246656c65637465726d2e737667', alt='GitHub version', data-canonical-src='https://badge.fury.io/gh/electerm%2Felecterm.svg')
+      a(href='https://travis-ci.org/electerm/electerm', rel='nofollow')
+        img(src='https://camo.githubusercontent.com/a15b5f230822a1e4f66ccfa1e193cb48dc1fa40d/68747470733a2f2f7472617669732d63692e6f72672f656c65637465726d2f656c65637465726d2e7376673f6272616e63683d72656c65617365', alt='Build Status', data-canonical-src='https://travis-ci.org/electerm/electerm.svg?branch=release')
+      a(href='https://ci.appveyor.com/project/zxdong262/electerm/branch/release', rel='nofollow')
+        img(src='https://camo.githubusercontent.com/48579a1b473249024fb2672e3f1a246672d83fed/68747470733a2f2f63692e6170707665796f722e636f6d2f6170692f70726f6a656374732f7374617475732f3333636b62716c6e30327574656b78642f6272616e63682f72656c656173653f7376673d74727565', alt='Build status', data-canonical-src='https://ci.appveyor.com/api/projects/status/33ckbqln02utekxd/branch/release?svg=true')
+      a(href='https://david-dm.org/electerm/electerm', title="View the status of this project's dependencies on DavidDM", rel='nofollow')
+        img(src='https://camo.githubusercontent.com/671f9ba606ca25851e92027940de499a32f8ddc8/68747470733a2f2f696d672e736869656c64732e696f2f64617669642f656c65637465726d2f656c65637465726d2e737667', alt='Dependency Status', data-canonical-src='https://img.shields.io/david/electerm/electerm.svg')
+      a(href='https://david-dm.org/electerm/electerm#info=devDependencies', title="View the status of this project's development dependencies on DavidDM", rel='nofollow')
+        img(src='https://camo.githubusercontent.com/7967a9b1964e7937d7eb067db692a1b69d160f4f/68747470733a2f2f696d672e736869656c64732e696f2f64617669642f6465762f656c65637465726d2f656c65637465726d2e737667', alt='Dev Dependency Status', data-canonical-src='https://img.shields.io/david/dev/electerm/electerm.svg')
+      span.badge-githubstar
+        iframe(src='https://ghbtns.com/github-btn.html?user=electerm&repo=electerm&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='110', height='20')
     .py-2
     h3.text-xs-center download
     hr
-
+    #accordion(role='tablist')
+      - let arr = Object.keys(assets)
+      - let len = arr.length
+      - let i = 0
+      - for (;i < len;i++) {
+        - let key = arr[i]
+        - let os = assets[key]
+        - let osName = os.name
+        - let id = 'heading' + i
+        - let cid = id + 'c'
+        - let items = os.items
+        .card
+          .card-header(role='tab', id=id)
+            h5.mb-0
+              a.d-block.text-dark(data-toggle='collapse', href=`#${cid}`, role='button', aria-expanded='true', aria-controls=`${cid}`, data-os=key) #{osName}
+          .collapse.hide(id=cid, role='tabpanel', aria-labelledby=id, data-parent='#accordion')
+            .card-body
+              - let ll = items.length
+              - let j = 0
+              - for(;j < ll;j ++) {
+                - let obj = items[j]
+                div
+                  a.pb-2.d-block(href=obj.browser_download_url)
+                    b #{obj.name}
+                    span.text-secondary.ml-1 #{obj.desc}
+              - }
+      - }
 
     .py-2
 
@@ -61,4 +86,18 @@ include parts/head2
     include parts/footer-html
 
 include parts/footer-js
+script.
+  let ua = navigator.userAgent.toLowerCase()
+  function is(key) {
+    return ua.indexOf(key) > -1;
+  }
+  $(function() {
+    let os = 'windows'
+    if (is('linux')) {
+      os = 'linux'
+    } else if (is('mac') || is('darwin')) {
+      os = 'mac'
+    }
+    $('[data-os="' + os + '"]').click()
+  })
 include parts/footer-end
