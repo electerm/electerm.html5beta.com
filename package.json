@@ -19,7 +19,9 @@
     "email": "zxdong@gmail.com",
     "url": "http://html5beta.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "shelljs": "^0.7.8"
+  },
   "devDependencies": {
     "cross-spawn": "3.0.1",
     "gulp": "3.8.11",
