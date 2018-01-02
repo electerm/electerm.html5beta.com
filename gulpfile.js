@@ -119,7 +119,21 @@ gulp.task('watch',  function () {
 })
 
 
+gulp.task('watch-prod',  function () {
 
+  watch(__dirname + '/data/*.json', function() {
+    runSequence('dist')
+  })
+
+  watch([
+      views + '/*.pug'
+      ,views + '/parts/*.pug'
+    ], function() {
+      runSequence('pug')
+    }
+  )
+
+})
 
 gulp.task('default', ['watch'])
 gulp.task('dist', function() {
