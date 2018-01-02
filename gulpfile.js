@@ -16,6 +16,8 @@ ugly = require('gulp-uglify')
 ,fs = require('fs')
 ,spawn = require('cross-spawn')
 
+let {exec} = require('shelljs')
+
 let
 cssFolder = __dirname + '/res/css'
 ,jsFolder = __dirname + '/res/js'
@@ -105,7 +107,7 @@ config.assets = assets.reduce((prev, curr) => {
     items: []
   }
 })
-console.log(config.assets)
+console.log('config.assets.length:', Object.keys(config.assets).length)
 gulp.task('pug', function() {
 
   gulp.src(views + '/*.pug')
@@ -161,16 +163,9 @@ gulp.task('watch',  function () {
 gulp.task('watch-prod',  function () {
 
   watch(__dirname + '/data/*.json', function() {
-    runSequence('dist')
+    console.log('dfdf')
+    exec('./update')
   })
-
-  watch([
-      views + '/*.pug'
-      ,views + '/parts/*.pug'
-    ], function() {
-      runSequence('pug')
-    }
-  )
 
 })
 
