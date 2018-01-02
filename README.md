@@ -5,7 +5,7 @@
     </a>
 </h1>
 
-# jade-press.org
+# electerm.html5beta.com
 code of [electerm.html5beta.com](http://electerm.html5beta.com)
 
 ## dev
@@ -14,7 +14,7 @@ git clone git@github.com:jade-press/electerm.html5beta.com.git
 cd electerm.html5beta.com
 npm install
 npm start
-#then visit http://localhost:7501
+#then visit http://localhost:7502
 ```
 
 ## license
