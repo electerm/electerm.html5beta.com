@@ -179,9 +179,9 @@ gulp.task('watch-prod',  function () {
 gulp.task('default', ['watch'])
 gulp.task('dist', function() {
   config.host = '//electerm.html5beta.com'
-  runSequence('stylus', 'ugly', 'pug')
+  runSequence('stylus', 'ugly', 'pug', 'version')
 })
 gulp.task('build', function() {
   config.host = '//localhost:' + config.port
-  runSequence('stylus', 'ugly', 'pug', 'version')
+  runSequence('stylus', 'ugly', 'pug')
 })
