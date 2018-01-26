@@ -30,13 +30,15 @@ cssFolder = __dirname + '/res/css'
 }
 
 let assets = []
-
+let version = ''
 try {
   let data = require('./data/electerm-github-release.json')
   assets = data.release.assets
+  version = data.release.tag_name
 } catch(e) {
   console.log('no ./data/electerm-github-release.json')
 }
+console.log('version:', version)
 
 gulp.task('stylus', function() {
 
@@ -119,7 +121,12 @@ gulp.task('pug', function() {
 
 })
 
- 
+gulp.task('version', function() {
+
+  fs.writeFileSync('./version', version)
+
+})
+
 gulp.task('server', function (cb) {
   var runner = spawn(
     'node'
@@ -176,5 +183,5 @@ gulp.task('dist', function() {
 })
 gulp.task('build', function() {
   config.host = '//localhost:' + config.port
-  runSequence('stylus', 'ugly', 'pug')
+  runSequence('stylus', 'ugly', 'pug', 'version')
 })
