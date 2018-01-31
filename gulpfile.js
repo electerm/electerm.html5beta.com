@@ -13,10 +13,46 @@ ugly = require('gulp-uglify')
 ,runSequence = require('run-sequence')
 ,_ = require('lodash')
 ,path = require('path')
-,fs = require('fs')
 ,spawn = require('cross-spawn')
 
 let {exec} = require('shelljs')
+
+/**
+ * multi language support
+ */
+
+const fs = require('fs')
+const {resolve} = require('path')
+let localeFolder = resolve(__dirname, 'node_modules/electerm-locales/locales')
+
+//languages
+const langs = fs.readdirSync(localeFolder)
+  .reduce((prev, fileName) => {
+    let filePath = resolve(localeFolder, fileName)
+    let lang = require(filePath)
+    let id = fileName.replace('.js', '')
+    prev[id] = {
+      id,
+      siteDesc: lang.lang.app.desc,
+      siteKeywords: 'electron,ternimal,electerm,ssh,sftp',
+      siteName: 'electerm',
+      download: lang.lang.control.download,
+      userTipsName: lang.lang.control.userTips,
+      userTips: lang.lang.userTips,
+      featuresName: lang.lang.featuresName,
+      features: lang.lang.features,
+      langName: lang.name
+    }
+    prev.langsArray.push({
+      path: id === 'en_us' ? '/' : '/index-' + id + '.html',
+      id,
+      name: lang.name
+    })
+    return prev
+  }, {
+    langsArray: []
+  })
+
 
 let
 cssFolder = __dirname + '/res/css'
@@ -109,6 +145,7 @@ config.assets = assets.reduce((prev, curr) => {
     items: []
   }
 })
+Object.assign(config, langs)
 console.log('config.assets.length:', Object.keys(config.assets).length)
 gulp.task('pug', function() {
 

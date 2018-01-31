@@ -1,0 +1,114 @@
+mixin index(data)
+  - var {siteDesc, siteKeywords, siteName, download, userTipsName, userTips, featuresName, features, id: activeId} = data
+
+  include parts/head1
+  meta(name='description', content=siteDesc)
+  meta(name='keywords', content=siteKeywords)
+  title #{siteName}
+  include parts/head2
+  #wrapper.container
+    .py-3.text-right
+      - let arrLangs = langsArray.filter(f => f.id !== activeId)
+      - for(let lang of arrLangs) {
+        - let {name, path, id} = lang
+        a(href=path) #{name}
+      - }
+
+    .py-3.px-3
+
+      h1.mb2-b
+        a(href='http://electerm.html5beta.com')
+          img.max-100.d-inline-block(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png', alt='electerm')
+
+      p.lead #{siteDesc}.
+      hr.m-y-2
+      p.lead.badges
+        a(href='https://github.com/electerm/electerm/releases', rel='nofollow')
+          img(src='https://img.shields.io/github/release/electerm/electerm/all.svg', alt='GitHub version')
+        a(href='https://travis-ci.org/electerm/electerm', rel='nofollow')
+          img(src='https://travis-ci.org/electerm/electerm.svg?branch=release', alt='Build Status')
+        a(href='https://ci.appveyor.com/project/zxdong262/electerm/branch/release', rel='nofollow')
+          img(src='https://ci.appveyor.com/api/projects/status/33ckbqln02utekxd/branch/release?svg=true', alt='Build status')
+        a(href='https://david-dm.org/electerm/electerm', title="View the status of this project's dependencies on DavidDM", rel='nofollow')
+          img(src='https://img.shields.io/david/electerm/electerm.svg', alt='Dependency Status')
+        a(href='https://david-dm.org/electerm/electerm#info=devDependencies', title="View the status of this project's development dependencies on DavidDM", rel='nofollow')
+          img(src='https://img.shields.io/david/dev/electerm/electerm.svg', alt='Dev Dependency Status')
+        span.badge-githubstar
+          iframe(src='https://ghbtns.com/github-btn.html?user=electerm&repo=electerm&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='110', height='20')
+      .py-2
+      h3 #{download}
+      hr
+      #accordion(role='tablist')
+        - let arr = Object.keys(assets)
+        - let len = arr.length
+        - let i = 0
+        - for (;i < len;i++) {
+          - let key = arr[i]
+          - let os = assets[key]
+          - let osName = os.name
+          - let id = 'heading' + i
+          - let cid = id + 'c'
+          - let items = os.items
+          .card
+            .card-header(role='tab', id=id)
+              h5.mb-0
+                a.d-block.text-dark(data-toggle='collapse', href=`#${cid}`, role='button', aria-expanded='true', aria-controls=`${cid}`, data-os=key) #{osName}
+            .collapse.hide(id=cid, role='tabpanel', aria-labelledby=id, data-parent='#accordion')
+              .card-body
+                - let ll = items.length
+                - let j = 0
+                - for(;j < ll;j ++) {
+                  - let obj = items[j]
+                  div
+                    a.pb-2.d-block(href=obj.browser_download_url)
+                      b #{obj.name}
+                      span.text-secondary.ml-1 #{obj.desc}
+                - }
+        - }
+
+      .pt-2
+        img.max-100.d-inline-block(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif', alt='')
+
+      .py-2
+
+      h2 #{featuresName}
+      hr
+      ul
+        - for(let f of features) {
+          li.pb-1 !{f}
+        - }
+
+      .py-2
+      h2 #{userTipsName}
+      hr
+      ul
+        - for(let ut of userTips) {
+          li.pb-1 !{ut}
+        - }
+      .py-2
+
+      h2 license
+      hr
+      p MIT
+
+
+      .py-3
+
+      include parts/footer-html
+
+  include parts/footer-js
+  script.
+    var ua = navigator.userAgent.toLowerCase()
+    function is(key) {
+      return ua.indexOf(key) > -1;
+    }
+    $(function() {
+      var os = 'windows'
+      if (is('linux')) {
+        os = 'linux'
+      } else if (is('mac') || is('darwin')) {
+        os = 'mac'
+      }
+      $('[data-os="' + os + '"]').click()
+    })
+  include parts/footer-end
