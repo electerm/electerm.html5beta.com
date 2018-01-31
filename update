@@ -2,6 +2,7 @@
 cd `dirname $0`
 echo 'do update'
 git pull
+npm i
 gulp dist
 git add --all
 git commit -m 'update'
