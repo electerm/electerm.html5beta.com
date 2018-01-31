@@ -7,7 +7,7 @@
 .idea/
 /temp/
 /config.js
-/index.html
+/*.html
 /res/css/style.css
 /data/
 
