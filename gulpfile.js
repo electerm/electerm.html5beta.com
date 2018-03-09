@@ -160,7 +160,7 @@ gulp.task('pug', function() {
 
 gulp.task('version', function() {
 
-  fs.writeFileSync('./version', version)
+  fs.writeFileSync('./version.html', version)
 
 })
 
