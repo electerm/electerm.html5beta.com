@@ -4,6 +4,6 @@ echo 'do update'
 git pull
 npm i
 gulp dist
-git add --all
-git commit -m 'update'
-git push
+#git add --all
+#git commit -m 'update'
+#git push
