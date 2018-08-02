@@ -66,11 +66,13 @@ cssFolder = __dirname + '/res/css'
 }
 
 let assets = []
+let releaseNote = ''
 let version = ''
 try {
   let data = require('./data/electerm-github-release.json')
   assets = data.release.assets
   version = data.release.tag_name
+  releaseNote = data.release.body
 } catch(e) {
   console.log('no ./data/electerm-github-release.json')
 }
@@ -145,6 +147,7 @@ config.assets = assets.reduce((prev, curr) => {
     items: []
   }
 })
+config.releaseNote = releaseNote
 Object.assign(config, langs)
 console.log('config.assets.length:', Object.keys(config.assets).length)
 gulp.task('pug', function() {

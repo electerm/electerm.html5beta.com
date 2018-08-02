@@ -64,12 +64,20 @@ mixin index(data)
                       b #{obj.name}
                       span.text-secondary.ml-1 #{obj.desc}
                 - }
+                ul.pt-1
+                  - let rns = releaseNote.split('\r\n')
+                  - for (let rn of rns) {
+                    li #{rn.replace(/^- /, '')}
+                  - }
         - }
+
+
 
       .pt-2
         img.max-100.d-inline-block(src='https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif', alt='')
 
       .py-2
+
 
       h2 #{featuresName}
       hr
@@ -87,10 +95,15 @@ mixin index(data)
         - }
       .py-2
 
-      h2 license
+      h2 Changelog
+      hr
+      p
+        a(href='https://github.com/electerm/electerm/releases') https://github.com/electerm/electerm/releases
+
+
+      h2 License
       hr
       p MIT
-
 
       .py-3
 
