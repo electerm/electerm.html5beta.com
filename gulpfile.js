@@ -127,8 +127,10 @@ config.assets = assets.reduce((prev, curr) => {
       curr.desc = 'for Red Hat, Fedora...'
     } else if (curr.name.endsWith('.deb')) {
       curr.desc = 'for Debian, Ubuntu...'
+    } else if (curr.name.endsWith('.snap')) {
+      curr.desc = 'for all linux that support snap'
     } else if (curr.name.endsWith('.gz')) {
-      curr.desc = 'for all linux x86, just extract'
+      curr.desc = 'for all linux x64, just extract'
     }
     prev.linux.items.push(curr)
   }
