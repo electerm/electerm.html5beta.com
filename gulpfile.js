@@ -23,36 +23,6 @@ let {exec} = require('shelljs')
 
 const fs = require('fs')
 const {resolve} = require('path')
-let localeFolder = resolve(__dirname, 'node_modules/electerm-locales/locales')
-
-//languages
-const langs = fs.readdirSync(localeFolder)
-  .reduce((prev, fileName) => {
-    let filePath = resolve(localeFolder, fileName)
-    let lang = require(filePath)
-    let id = fileName.replace('.js', '')
-    prev[id] = {
-      id,
-      siteDesc: lang.lang.app.desc,
-      siteKeywords: 'electron,ternimal,electerm,ssh,sftp',
-      siteName: 'electerm',
-      download: lang.lang.control.download,
-      userTipsName: lang.lang.control.userTips,
-      userTips: lang.lang.userTips,
-      featuresName: lang.lang.featuresName,
-      features: lang.lang.features,
-      langName: lang.name
-    }
-    prev.langsArray.push({
-      path: id === 'en_us' ? '/' : '/index-' + id + '.html',
-      id,
-      name: lang.name
-    })
-    return prev
-  }, {
-    langsArray: []
-  })
-
 
 let
 cssFolder = __dirname + '/res/css'
@@ -65,14 +35,10 @@ cssFolder = __dirname + '/res/css'
 
 }
 
-let assets = []
-let releaseNote = ''
 let version = ''
 try {
   let data = require('./data/electerm-github-release.json')
-  assets = data.release.assets
   version = data.release.tag_name
-  releaseNote = data.release.body
 } catch(e) {
   console.log('no ./data/electerm-github-release.json')
 }
@@ -81,79 +47,13 @@ console.log('version:', version)
 gulp.task('stylus', function() {
 
   gulp.src(cssFolder + '/*.styl')
-    /*
-    .pipe(newer({
-      dest: cssFolder
-      ,map: function(path) {
-        return path.replace(/\.styl$/, '.css')
-      }
-    }))
-    */
     .pipe(plumber())
     .pipe(stylus(stylusOptions))
     .pipe(gulp.dest(cssFolder))
 
 })
 
-
-gulp.task('ugly', function() {
-
-  gulp.src(jsFolder + '/*.js')
-    .pipe(newer({
-      dest: jsFolder
-      ,map: function(path) {
-        return path.replace(/\.dev.js$/, '.min.js')
-      }
-    }))
-    .pipe(plumber())
-    .pipe(rename(function (path) {
-      path.basename = path.basename.replace('.dev', '.min')
-    }))
-    .pipe(gulp.dest(jsFolder))
-    .pipe(ugly(uglyOptions))
-    .pipe(gulp.dest(jsFolder))
-
-})
-
-let config = require('./config.default')
-let pack = require('./package.json')
-config.assets = assets.reduce((prev, curr) => {
-  if (curr.name.includes('win')) {
-    prev.windows.items.push(curr)
-  } else if (curr.name.includes('mac')) {
-    prev.mac.items.push(curr)
-  } else {
-    if (curr.name.endsWith('.rpm')) {
-      curr.desc = 'for Red Hat, Fedora...'
-    } else if (curr.name.endsWith('.deb')) {
-      curr.desc = 'for Debian, Ubuntu...'
-    } else if (curr.name.endsWith('.snap')) {
-      curr.desc = 'for all linux that support snap'
-    } else if (curr.name.endsWith('.gz')) {
-      curr.desc = 'for all linux x64, just extract'
-    }
-    prev.linux.items.push(curr)
-  }
-  return prev
-}, {
-  linux: {
-    name: 'linux x86 x64',
-    items: []
-  },
-  mac: {
-    name: 'mac os x64',
-    items: []
-  },
-  windows: {
-    name: 'windows 7/8/10 x86 x64',
-    items: []
-  }
-})
-config.releaseNote = releaseNote
-Object.assign(config, langs)
-console.log('config.assets.length:', Object.keys(config.assets).length)
 gulp.task('pug', function() {
-
   gulp.src(views + '/*.pug')
     .pipe(plumber())
     .pipe(pug({
@@ -164,9 +64,7 @@ gulp.task('pug', function() {
 })
 
 gulp.task('version', function() {
-
   fs.writeFileSync('./version.html', version)
-
 })
 
 gulp.task('server', function (cb) {
@@ -187,41 +85,15 @@ gulp.task('server', function (cb) {
   })
 })
 
-gulp.task('watch',  function () {
-
-  runSequence('server')
-  watch([cssFolder + '/*.styl', cssFolder + '/parts/*.styl'], function() {
-    runSequence('stylus')
-  })
-
-  watch(jsFolder, function() {
-    runSequence('ugly')
-  })
-
-  watch([
-      views + '/*.pug'
-      ,views + '/parts/*.pug'
-    ], function() {
-      runSequence('pug')
-    }
-  )
-
-})
-
-
 gulp.task('watch-prod',  function () {
-
   watch(__dirname + '/data/*.json', function() {
-    console.log('dfdf')
     exec('./update')
   })
-
 })
 
 gulp.task('default', ['watch'])
 gulp.task('dist', function() {
-  config.host = '//electerm.html5beta.com'
-  runSequence('stylus', 'ugly', 'pug', 'version')
+  runSequence('stylus', 'version')
 })
 gulp.task('build', function() {
   config.host = '//localhost:' + config.port

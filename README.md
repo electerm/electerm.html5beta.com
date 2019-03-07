@@ -6,9 +6,11 @@
 </h1>
 
 # electerm.html5beta.com
-code of [electerm.html5beta.com](http://electerm.html5beta.com)
+
+Code of [http://electerm.html5beta.com](http://electerm.html5beta.com)
 
 ## dev
+
 ```bash
 git clone git@github.com:jade-press/electerm.html5beta.com.git
 cd electerm.html5beta.com
@@ -18,6 +20,7 @@ npm start
 ```
 
 ## license
+
 MIT
 
 
