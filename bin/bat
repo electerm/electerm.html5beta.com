@@ -1,7 +1,0 @@
-#!/bin/bash
-cd `dirname $0`
-cd ..
-git checkout gh-pages
-git pull
-git pull origin master
-git push
