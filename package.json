@@ -4,7 +4,7 @@
   "description": "homepage for electerm",
   "main": "index.js",
   "scripts": {
-    "start": "gulp build && gulp"
+    "start": "gulp dist && node bin/build && gulp"
   },
   "repository": {
     "type": "git",
