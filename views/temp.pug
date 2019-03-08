@@ -4,6 +4,16 @@
 include parts/head1
 meta(name='description', content=desc)
 meta(name='keywords', content=siteKeywords)
+style.
+  .langs a {
+    padding: 0px 1px 0px 4px;
+    display: inline-block;
+  }
+  .langs .active, .langs a:hover {
+    background: #08c;
+    border-radius: 3px;
+    text-decoration: none
+  }
 title #{siteName}
 include parts/head2
 #wrapper.container
@@ -111,7 +121,7 @@ script.
     $('.langs').html(
       shuffle($('.langs a').toArray())
         .reduce(function(prev, curr) {
-          return prev + $(curr).html()
+          return prev + $(curr).wrapAll('<div>').parent().html()
         }, '')
     )
   }
