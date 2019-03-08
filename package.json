@@ -20,7 +20,7 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "0.5.4",
+    "@electerm/electerm-locales": "0.5.5",
     "cross-spawn": "3.0.1",
     "gulp": "3.8.11",
     "gulp-plumber": "1.0.1",
@@ -30,6 +30,7 @@
     "koa": "2.4.1",
     "koa-static": "4.0.2",
     "mocha": "2.4.5",
+    "pug": "2.0.3",
     "run-sequence": "1.1.5",
     "shelljs": "^0.7.8"
   },
