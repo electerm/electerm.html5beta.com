@@ -10,7 +10,7 @@ style.
     display: inline-block;
   }
   .langs .active, .langs a:hover {
-    background: #08c;
+    background: #aaa;
     border-radius: 3px;
     text-decoration: none
   }
@@ -128,6 +128,7 @@ script.
   $(function() {
     var os = 'windows'
     shuffleLangs()
+    $('.langs a[href="' + location.pathname + '"]').addClass('active')
     if (is('linux')) {
       os = 'linux'
     } else if (is('mac') || is('darwin')) {
