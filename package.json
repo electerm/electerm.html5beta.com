@@ -20,17 +20,11 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "0.5.3",
+    "@electerm/electerm-locales": "0.5.4",
     "cross-spawn": "3.0.1",
     "gulp": "3.8.11",
-    "gulp-concat": "2.5.2",
-    "gulp-newer": "0.5.0",
     "gulp-plumber": "1.0.1",
-    "gulp-pug": "3.3.0",
-    "gulp-rename": "1.2.2",
     "gulp-stylus": "^2.7.0",
-    "gulp-uglify": "1.2.0",
-    "gulp-util": "3.0.5",
     "gulp-watch": "4.2.4",
     "json-deep-copy": "1.0.2",
     "koa": "2.4.1",

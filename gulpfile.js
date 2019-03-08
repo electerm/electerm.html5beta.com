@@ -1,18 +1,12 @@
 
 
 let
-ugly = require('gulp-uglify')
-,gulp = require('gulp')
+gulp = require('gulp')
 ,watch = require('gulp-watch')
 ,plumber = require('gulp-plumber')
-,newer = require('gulp-newer')
 ,stylus = require('gulp-stylus')
-,pug = require('gulp-pug')
-,concat = require('gulp-concat')
-,rename = require('gulp-rename')
 ,runSequence = require('run-sequence')
 ,_ = require('lodash')
-,path = require('path')
 ,spawn = require('cross-spawn')
 
 let {exec} = require('shelljs')
@@ -53,16 +47,6 @@ gulp.task('stylus', function() {
 
 })
 
-gulp.task('pug', function() {
-  gulp.src(views + '/*.pug')
-    .pipe(plumber())
-    .pipe(pug({
-      locals: config
-    }))
-    .pipe(gulp.dest(__dirname))
-
-})
-
 gulp.task('version', function() {
   fs.writeFileSync('./version.html', version)
 })
@@ -97,5 +81,5 @@ gulp.task('dist', function() {
 })
 gulp.task('build', function() {
   config.host = '//localhost:' + config.port
-  runSequence('stylus', 'ugly', 'pug')
+  runSequence('stylus', 'ugly')
 })
