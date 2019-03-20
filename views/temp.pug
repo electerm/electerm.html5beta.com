@@ -1,5 +1,5 @@
 
-- var {id, lang, langs, siteKeywords, siteName,assets, version, releaseNote} = data
+- var {id, lang, langs, siteKeywords, siteName,assets, version, releaseNote, releaseDate} = data
 - var {desc} = lang.lang.app
 include parts/head1
 meta(name='description', content=desc)
@@ -13,6 +13,9 @@ style.
     background: #aaa;
     border-radius: 3px;
     text-decoration: none
+  }
+  .font14 {
+    font-size: 14px;
   }
 title #{siteName}
 include parts/head2
@@ -47,6 +50,7 @@ include parts/head2
     .py-2
     h3 #{lang.lang.control.download}
     hr
+    p#release-date.pb-1
     #accordion(role='tablist')
       - let arr = Object.keys(assets)
       - let len = arr.length
@@ -61,7 +65,9 @@ include parts/head2
         .card
           .card-header(role='tab', id=id)
             h5.mb-0
-              a.d-block.text-dark(data-toggle='collapse', href=`#${cid}`, role='button', aria-expanded='true', aria-controls=`${cid}`, data-os=key) #{osName}
+              a.d-block.text-dark(data-toggle='collapse', href=`#${cid}`, role='button', aria-expanded='true', aria-controls=`${cid}`, data-os=key)
+                span #{osName}
+                small.font14.text-secondary.ml-1.release-date
           .collapse.hide(id=cid, role='tabpanel', aria-labelledby=id, data-parent='#accordion')
             .card-body
               - let ll = items.length
@@ -126,6 +132,14 @@ script.
   }
   $(function() {
     var os = 'windows'
+    var d = new Date("#{releaseDate}")
+    var y = d.getFullYear()
+    var m = d.getMonth()
+    var dd = d.getDate()
+    m = m > 9 ? m + 1 : '0' + (m + 1)
+    dd = dd > 9 ? dd : '0' + dd
+    var dt = y + '-' + m + '-' + dd
+    $('.release-date').html(dt)
     shuffleLangs()
     $('.langs a[href="' + location.pathname + '"]').addClass('active')
     if (is('linux')) {

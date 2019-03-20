@@ -19,6 +19,7 @@ function createData() {
     assets = data.release.assets
     version = data.release.tag_name
     releaseNote = data.release.body
+    releaseDate = data.release.published_at
   } catch(e) {
     console.log('no ../data/electerm-github-release.json')
   }
@@ -75,6 +76,7 @@ function createData() {
           assets,
           version,
           releaseNote,
+          releaseDate,
           siteKeywords: 'electron,ternimal,electerm,ssh,sftp',
           siteName: 'electerm',
           path
