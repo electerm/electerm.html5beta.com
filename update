@@ -3,8 +3,7 @@ cd `dirname $0`
 echo 'do update'
 git pull
 npm i
-gulp dist
-node bin/build
+bin/build
 #git add --all
 #git commit -m 'update'
 #git push
