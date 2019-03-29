@@ -1,3 +1,29 @@
 script(src='//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js')
 script(src='//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js')
 script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js')
+script(src='//unpkg.com/three/build/three.min.js')
+script(src='//unpkg.com/universe-bg/dist/universe.min.js')
+script.
+  // instantiate a loader
+  var loader = new THREE.TextureLoader()
+  var Universe = window.Universe.default
+  // load a resource
+  loader.load(
+    // resource URL
+    '//unpkg.com/universe-bg/dist/star.png',
+    // Function when resource is loaded
+    function ( texture ) {
+
+      let uni = new Universe({
+        size: 5 //star size
+        ,id: null //id
+        ,starNumber: 10000
+        ,color: 0xffffff
+        ,width: null
+        ,height: null
+        ,container: document.getElementById('ubg')
+        ,map: texture
+      })
+
+    }
+  )
