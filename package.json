@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/electerm/electerm.html5beta.com/issues"
   },
-  "homepage": "https://github.com/electerm/electerm.html5beta.com"
+  "homepage": "https://github.com/electerm/electerm.html5beta.com",
+  "dependencies": {
+    "universe-bg": "0.3.0"
+  }
 }
