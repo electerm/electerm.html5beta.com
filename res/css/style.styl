@@ -63,3 +63,24 @@ hr
 .big-logo img
   filter invert(80%)
   opacity .89
+
+.langs a
+  padding 0px 0px 0px 4px
+  margin-left 2px
+  display inline-block
+  position relative
+  z-index 2
+
+.langs .active:before, .langs a:hover:after
+  position absolute
+  content ''
+  left 3px
+  top calc(100% + 2px)
+  right 3px
+  bottom -3px
+  text-decoration none
+  background #08c
+  z-index 1
+
+.font14
+  font-size 14px
