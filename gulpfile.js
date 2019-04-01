@@ -70,7 +70,7 @@ gulp.task('server', function (cb) {
 })
 
 gulp.task('watch-prod',  function () {
-  watch(__dirname + '/data/*.json', function() {
+  watch(__dirname + '/data/electerm-github-release.json', function() {
     console.log('build triggered')
     exec(resolve(__dirname, 'bin/build'))
   })
