@@ -71,7 +71,8 @@ gulp.task('server', function (cb) {
 
 gulp.task('watch-prod',  function () {
   watch(__dirname + '/data/*.json', function() {
-    exec(resolve(__dirname, 'update'))
+    console.log('build triggered')
+    exec(resolve(__dirname, 'bin/build'))
   })
 })
 
