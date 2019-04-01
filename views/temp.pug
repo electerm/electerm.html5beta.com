@@ -69,7 +69,7 @@ include parts/head2
                       span.text-secondary.ml-1 #{obj.desc}
                 - }
                 ul.pt-1
-                  - let rns = releaseNote.split('\r\n')
+                  - let rns = releaseNote.split('\r\n').filter(d => d.trim())
                   - for (let rn of rns) {
                     li #{rn.replace(/^- /, '')}
                   - }
