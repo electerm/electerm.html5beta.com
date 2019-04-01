@@ -71,7 +71,7 @@ gulp.task('server', function (cb) {
 
 gulp.task('watch-prod',  function () {
   watch(__dirname + '/data/*.json', function() {
-    exec('./update')
+    exec(resolve(__dirname, 'update'))
   })
 })
 
