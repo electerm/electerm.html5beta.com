@@ -6,6 +6,7 @@ const pug = require('pug')
 const fs = require('fs')
 const {resolve} = require('path')
 const copy = require('json-deep-copy')
+const stylus = require('stylus')
 
 function createData() {
 
@@ -86,7 +87,22 @@ function createData() {
     }, [])
 }
 
-function build() {
+function css() {
+  let cssPath = resolve(__dirname, '../res/css/style.styl')
+  let style = fs.readFileSync(cssPath).toString()
+  return new Promise((resolve, reject) => {
+    stylus.render(style, {compress: true}, function(err, css){
+      if (err) {
+        reject(err)
+      } else {
+        resolve(css)
+      }
+    })
+  })
+}
+
+async function build() {
+  let cssStr = await css()
   let arr = createData()
   fs.writeFileSync(
     resolve(__dirname, '../data/data.json')
@@ -104,8 +120,22 @@ function build() {
         langs: copy(arr)
       }
     })
+    html = html.replace(
+      '</head>',
+      `<style>${cssStr}</style></head>`
+    )
     fs.writeFileSync(item.path, html)
   }
+
+  // version
+  let version = ''
+  try {
+    let data = require(resolve(__dirname, '../data/electerm-github-release.json'))
+    version = data.release.tag_name
+  } catch(e) {
+    console.log('no ../data/electerm-github-release.json')
+  }
+  fs.writeFileSync(resolve(__dirname, '../version.html'), version)
 }
 
 build()

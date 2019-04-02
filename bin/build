@@ -1,5 +1,4 @@
 #!/bin/bash
 cd `dirname $0`
 cd ../
-node_modules/.bin/gulp dist
 node bin/build.js

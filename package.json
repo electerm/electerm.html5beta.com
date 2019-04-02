@@ -4,7 +4,7 @@
   "description": "homepage for electerm",
   "main": "index.js",
   "scripts": {
-    "start": "gulp dist && bin/build",
+    "start": "npm run build",
     "build": "node bin/build.js"
   },
   "repository": {
@@ -22,18 +22,15 @@
   },
   "devDependencies": {
     "@electerm/electerm-locales": "0.5.7",
-    "cross-spawn": "3.0.1",
     "gulp": "3.8.11",
-    "gulp-plumber": "1.0.1",
-    "gulp-stylus": "^2.7.0",
     "gulp-watch": "4.2.4",
     "json-deep-copy": "1.0.2",
     "koa": "2.4.1",
     "koa-static": "4.0.2",
     "mocha": "2.4.5",
     "pug": "2.0.3",
-    "run-sequence": "1.1.5",
-    "shelljs": "^0.7.8"
+    "shelljs": "^0.7.8",
+    "stylus": "0.54.5"
   },
   "engines": {
     "node": "^5.8.0"
