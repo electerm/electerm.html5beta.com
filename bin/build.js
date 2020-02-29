@@ -7,6 +7,7 @@ const fs = require('fs')
 const {resolve} = require('path')
 const copy = require('json-deep-copy')
 const stylus = require('stylus')
+const { exec } = require('shelljs')
 
 function createData() {
 
@@ -135,7 +136,10 @@ async function build() {
   } catch(e) {
     console.log('no ../data/electerm-github-release.json')
   }
-  fs.writeFileSync(resolve(__dirname, '../version.html'), version)
+  await fs.writeFileSync(resolve(__dirname, '../version.html'), version)
+
+  const fo = resolve(__dirname, '../../electerm')
+  await exec(`cd ${fo} && git co gh-pages && cp ../electerm.html5beta.com/*.html ./ && git add --all && git commit -m 'update' && git push`)
 }
 
 build()
