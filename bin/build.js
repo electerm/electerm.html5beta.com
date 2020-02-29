@@ -65,9 +65,9 @@ function createData() {
       let filePath = resolve(localeFolder, fileName)
       let lang = require(filePath)
       let id = fileName.replace('.js', '')
-      let pathHtml = id === 'en_us' ? '/' : '/index-' + id + '.html'
+      let pathHtml = id === 'en_us' ? '/electerm' : '/electerm/index-' + id + '.html'
       let path = resolve(
-        __dirname, '..' + (pathHtml == '/' ? '/index.html' : pathHtml)
+        __dirname, '..' + (pathHtml == '/electerm' ? '/index.html' : pathHtml.replace('electerm/', ''))
       )
       prev = [
         ...prev,
