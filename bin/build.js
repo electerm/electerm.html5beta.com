@@ -139,7 +139,7 @@ async function build() {
   await fs.writeFileSync(resolve(__dirname, '../version.html'), version)
 
   const fo = resolve(__dirname, '../../electerm')
-  await exec(`cd ${fo} && git co gh-pages && cp ../electerm.html5beta.com/*.html ./ && git add --all && git commit -m 'update' && git push`)
+  await exec(`cd ${fo} && git co gh-pages && cp -rf ../electerm.html5beta.com/data ./ && cp ../electerm.html5beta.com/*.html ./ && git add --all && git commit -m 'update' && git push`)
 }
 
 build()
