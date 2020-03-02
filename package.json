@@ -1,6 +1,6 @@
 {
   "name": "electerm.html5beta.com",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "homepage for electerm",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "0.5.7",
+    "@electerm/electerm-locales": "0.6.3",
     "gulp": "3.8.11",
     "gulp-watch": "4.2.4",
     "json-deep-copy": "1.0.2",
