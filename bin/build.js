@@ -11,7 +11,7 @@ const { exec } = require('shelljs')
 
 function createData() {
 
-  let localeFolder = resolve(__dirname, '../node_modules/@electerm/electerm-locales/locales')
+  let localeFolder = resolve(__dirname, '../node_modules/@electerm/electerm-locales/dist')
 
   let assets = []
   let releaseNote = ''
