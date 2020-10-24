@@ -8,6 +8,7 @@ const {resolve} = require('path')
 const copy = require('json-deep-copy')
 const stylus = require('stylus')
 const { exec } = require('shelljs')
+const giteeBuild = require('./rebuild-gitee')
 
 function createData() {
 
@@ -141,6 +142,7 @@ async function build() {
   const fo = resolve(__dirname, '../../electerm')
   await exec(`cd ${fo} && git co gh-pages && cp -rf ../electerm.html5beta.com/data ./ && cp ../electerm.html5beta.com/*.html ./ && git add --all && git commit -m 'update' && git push && git push gt gh-pages`)
   await exec(`cd ${fo} && git fetch origin master:master && git push gt master:master`)
+  giteeBuild()
 }
 
 build()
