@@ -10,7 +10,6 @@
 /*.html
 /res/css/style.css
 /data/
-/package-lock.json
 
 # Runtime data
 #pids
