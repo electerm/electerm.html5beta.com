@@ -64,7 +64,7 @@ function createData() {
     .reduce((prev, fileName) => {
       let filePath = resolve(localeFolder, fileName)
       let lang = require(filePath)
-      let id = fileName.replace('.js', '')
+      let id = fileName.replace('.json', '')
       let pathHtml = id === 'en_us' ? '/electerm' : '/electerm/index-' + id + '.html'
       let path = resolve(
         __dirname, '..' + (pathHtml == '/electerm' ? '/index.html' : pathHtml.replace('electerm/', ''))
