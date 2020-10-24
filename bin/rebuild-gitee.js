@@ -3,13 +3,17 @@
  */
 require('dotenv').config()
 
-const Gitee = require('gitee-client')
+const Gitee = require('gitee-client').default
 
-module.exports = () => {
+function run () {
   const gc = new Gitee(
     process.env.GITEE_TOKEN
   )
-  gc.post('https://gitee.com/api/v5/repos/{github-zxdong262/electerm/pages/builds')
+  gc.post('https://gitee.com/api/v5/repos/github-zxdong262/electerm/pages/builds')
     .catch(console.log)
     .then(console.log)
 }
+
+module.exports = run
+
+run()
