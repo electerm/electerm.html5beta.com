@@ -7,7 +7,7 @@
 
 # electerm.html5beta.com
 
-Code of [http://electerm.html5beta.com](http://electerm.html5beta.com)
+Code of [https://electerm.github.io/electerm](https://electerm.github.io/electerm)
 
 ## dev
 
