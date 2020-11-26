@@ -5,8 +5,11 @@
 const config = require('./config.default')
 const Koa = require('koa')
 const serve = require('koa-static')
+const morgan = require('koa-morgan')
 const oneYear = 1000 * 60 * 60 * 24 * 365
 const app = new Koa()
+
+app.use(morgan('tiny'))
 
 app.use(serve(__dirname, {
   maxAge: oneYear
