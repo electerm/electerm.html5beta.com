@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "node bin/build.js"
+    "build": "node bin/build.js",
+    "lint": "standard",
+    "fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,7 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "0.9.4",
+    "@electerm/electerm-locales": "0.10.1",
     "dotenv": "^8.2.0",
     "gitee-client": "^0.1.1",
     "gulp": "3.8.11",
@@ -33,10 +35,15 @@
     "mocha": "2.4.5",
     "pug": "2.0.3",
     "shelljs": "^0.7.8",
+    "standard": "^16.0.3",
     "stylus": "0.54.5"
   },
-  "engines": {
-    "node": "^5.8.0"
+  "standard": {
+    "ignore": [
+      "*.html",
+      "/res/",
+      "/temp"
+    ]
   },
   "license": "MIT",
   "bugs": {

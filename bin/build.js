@@ -4,26 +4,26 @@
 
 const pug = require('pug')
 const fs = require('fs')
-const {resolve} = require('path')
+const { resolve } = require('path')
 const copy = require('json-deep-copy')
 const stylus = require('stylus')
 const { exec } = require('shelljs')
 const giteeBuild = require('./rebuild-gitee')
 
-function createData() {
-
-  let localeFolder = resolve(__dirname, '../node_modules/@electerm/electerm-locales/dist')
+function createData () {
+  const localeFolder = resolve(__dirname, '../node_modules/@electerm/electerm-locales/dist')
 
   let assets = []
   let releaseNote = ''
   let version = ''
+  let releaseDate = ''
   try {
-    let data = require('../data/electerm-github-release.json')
+    const data = require('../data/electerm-github-release.json')
     assets = data.release.assets
     version = data.release.tag_name
     releaseNote = data.release.body
     releaseDate = data.release.published_at
-  } catch(e) {
+  } catch (e) {
     console.log('no ../data/electerm-github-release.json')
   }
   console.log('version:', version)
@@ -60,15 +60,15 @@ function createData() {
     }
   })
 
-  //languages
+  // languages
   return fs.readdirSync(localeFolder)
     .reduce((prev, fileName) => {
-      let filePath = resolve(localeFolder, fileName)
-      let lang = require(filePath)
-      let id = fileName.replace('.json', '')
-      let pathHtml = id === 'en_us' ? '/electerm' : '/electerm/index-' + id + '.html'
-      let path = resolve(
-        __dirname, '..' + (pathHtml == '/electerm' ? '/index.html' : pathHtml.replace('electerm/', ''))
+      const filePath = resolve(localeFolder, fileName)
+      const lang = require(filePath)
+      const id = fileName.replace('.json', '')
+      const pathHtml = id === 'en_us' ? '/electerm' : '/electerm/index-' + id + '.html'
+      const path = resolve(
+        __dirname, '..' + (pathHtml === '/electerm' ? '/index.html' : pathHtml.replace('electerm/', ''))
       )
       prev = [
         ...prev,
@@ -89,11 +89,11 @@ function createData() {
     }, [])
 }
 
-function css() {
-  let cssPath = resolve(__dirname, '../res/css/style.styl')
-  let style = fs.readFileSync(cssPath).toString()
+function css () {
+  const cssPath = resolve(__dirname, '../res/css/style.styl')
+  const style = fs.readFileSync(cssPath).toString()
   return new Promise((resolve, reject) => {
-    stylus.render(style, {compress: true}, function(err, css){
+    stylus.render(style, { compress: true }, function (err, css) {
       if (err) {
         reject(err)
       } else {
@@ -103,19 +103,19 @@ function css() {
   })
 }
 
-async function build() {
-  let cssStr = await css()
-  let arr = createData()
+async function build () {
+  const cssStr = await css()
+  const arr = createData()
   fs.writeFileSync(
     resolve(__dirname, '../data/data.json')
-    ,JSON.stringify(arr, null, 2)
+    , JSON.stringify(arr, null, 2)
   )
-  let tempPath = resolve(__dirname, '../views/temp.pug')
-  let temp = fs.readFileSync(tempPath).toString()
-  let fn = pug.compile(temp, {
+  const tempPath = resolve(__dirname, '../views/temp.pug')
+  const temp = fs.readFileSync(tempPath).toString()
+  const fn = pug.compile(temp, {
     filename: tempPath
   })
-  for (let item of arr) {
+  for (const item of arr) {
     let html = fn({
       data: {
         ...item,
@@ -132,9 +132,9 @@ async function build() {
   // version
   let version = ''
   try {
-    let data = require(resolve(__dirname, '../data/electerm-github-release.json'))
+    const data = require(resolve(__dirname, '../data/electerm-github-release.json'))
     version = data.release.tag_name
-  } catch(e) {
+  } catch (e) {
     console.log('no ../data/electerm-github-release.json')
   }
   await fs.writeFileSync(resolve(__dirname, '../version.html'), version)

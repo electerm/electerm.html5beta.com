@@ -15,9 +15,7 @@ app.use(serve(__dirname, {
   maxAge: oneYear
 }))
 
-//start
-app.listen(config.port, function() {
+// start
+app.listen(config.port, function () {
   console.log(new Date() + ' ' + config.siteName + ' runs on port ' + config.port)
 })
-
-
