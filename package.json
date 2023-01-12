@@ -32,7 +32,7 @@
     "koa": "2.4.1",
     "koa-morgan": "^1.0.1",
     "koa-static": "4.0.2",
-    "mocha": "2.4.5",
+    "mocha": "10.2.0",
     "pug": "2.0.3",
     "replace-in-file": "^6.3.5",
     "shelljs": "^0.7.8",
