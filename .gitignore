@@ -32,3 +32,4 @@ coverage
 # Dependency directory
 /node_modules/
 /.env
+/releases/
