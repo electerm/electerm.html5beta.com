@@ -11,7 +11,7 @@ const { exec, cd } = require('shelljs')
 const giteeBuild = require('./rebuild-gitee')
 const urlFix = require('../bin/url-fix')
 
-exports.default = function download () {
+function download () {
   const downloadFolder = resolve(__dirname, '../releases')
 
   let assets = []
