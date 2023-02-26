@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "node bin/build.js",
+    "down": "node bin/download-releases.js",
     "lint": "standard",
     "fix": "standard --fix"
   },

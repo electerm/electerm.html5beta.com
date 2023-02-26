@@ -9,6 +9,7 @@ const copy = require('json-deep-copy')
 const stylus = require('stylus')
 const { exec } = require('shelljs')
 const giteeBuild = require('./rebuild-gitee')
+const download = require('./download-releases')
 const urlFix = require('../bin/url-fix')
 
 function createData () {
@@ -145,6 +146,7 @@ async function build () {
   await exec(`cd ${fo} && git fetch origin master:master && git push gt master:master`)
   urlFix()
   giteeBuild()
+  exec('npm run down')
 }
 
 build()
