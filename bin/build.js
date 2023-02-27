@@ -12,6 +12,7 @@ const giteeBuild = require('./rebuild-gitee')
 const urlFix = require('../bin/url-fix')
 
 function getSourceforgeUrl (url) {
+  const arr = url.split('/')
   return `https://master.dl.sourceforge.net/project/electerm.mirror/${arr[len - 2]}/${arr[len - 1]}?viasf=1`
 }
 
