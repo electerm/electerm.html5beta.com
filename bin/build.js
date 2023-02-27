@@ -12,6 +12,10 @@ const giteeBuild = require('./rebuild-gitee')
 const download = require('./download-releases')
 const urlFix = require('../bin/url-fix')
 
+function getSourceforgeUrl (url) {
+  return `https://master.dl.sourceforge.net/project/electerm.mirror/${arr[len - 2]}/${arr[len - 1]}?viasf=1`
+}
+
 function createData () {
   const localeFolder = resolve(__dirname, '../node_modules/@electerm/electerm-locales/dist')
 
@@ -30,6 +34,10 @@ function createData () {
   }
   console.log('version:', version)
   assets = assets.reduce((prev, curr) => {
+    const nr = {
+      ...curr,
+      sourceforgeUrl: getSourceforgeUrl(curr.browser_download_url)
+    }
     if (curr.name.includes('win')) {
       prev.windows.items.push(curr)
     } else if (curr.name.includes('mac')) {

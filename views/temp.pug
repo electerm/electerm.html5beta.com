@@ -61,9 +61,10 @@ include parts/head2
                 - let j = 0
                 - for(;j < ll;j ++) {
                   - let obj = items[j]
-                  div
-                    a.pb-2.d-block(href=obj.browser_download_url)
+                  div.pb-2.d-block
                       b #{obj.name}
+                      a.ml-1(href=obj.browser_download_url) github
+                      a.ml-1(href=obj.sourceforgeUrl) sourceforge
                       span.text-secondary.ml-1 #{obj.desc}
                 - }
                 ul.pt-1
