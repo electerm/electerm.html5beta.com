@@ -40,9 +40,9 @@ function createData () {
       sourceforgeUrl: getSourceforgeUrl(curr.browser_download_url)
     }
     if (curr.name.includes('win')) {
-      prev.windows.items.push(curr)
+      prev.windows.items.push(nr)
     } else if (curr.name.includes('mac')) {
-      prev.mac.items.push(curr)
+      prev.mac.items.push(nr)
     } else {
       if (curr.name.endsWith('.rpm')) {
         curr.desc = 'for Red Hat, Fedora...'
@@ -53,7 +53,7 @@ function createData () {
       } else if (curr.name.endsWith('.gz')) {
         curr.desc = 'for all linux x64, just extract'
       }
-      prev.linux.items.push(curr)
+      prev.linux.items.push(nr)
     }
     return prev
   }, {
