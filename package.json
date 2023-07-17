@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "npm run b && npm run down",
+    "build": "npm run b",
     "b": "node bin/build.js",
     "down": "node bin/download-releases.js",
     "lint": "standard",
