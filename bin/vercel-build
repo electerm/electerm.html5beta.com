@@ -9,4 +9,3 @@ if [ ! -d "$directory" ]; then
 fi
 
 cp *.html public/
-vercel deploy --production
