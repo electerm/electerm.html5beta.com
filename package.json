@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run b",
     "build": "npm run v",
-    "v": "node bin/build-vercel",
+    "v": "node bin/vercel-build",
     "b": "node bin/build.js",
     "down": "node bin/download-releases.js",
     "lint": "standard",
