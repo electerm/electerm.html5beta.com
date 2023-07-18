@@ -4,8 +4,9 @@
   "description": "homepage for electerm",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build",
-    "build": "npm run b",
+    "start": "npm run b",
+    "build": "npm run v",
+    "v": "node bin/build-vercel",
     "b": "node bin/build.js",
     "down": "node bin/download-releases.js",
     "lint": "standard",
@@ -25,7 +26,7 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "0.16.0",
+    "@electerm/electerm-locales": "0.17.12",
     "dotenv": "^8.2.0",
     "gitee-client": "^0.1.1",
     "gulp": "3.8.11",

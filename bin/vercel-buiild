@@ -1,0 +1,12 @@
+#!/bin/bash
+cd `dirname $0`
+cd ../
+
+directory="public"
+
+if [ ! -d "$directory" ]; then
+  mkdir "$directory"
+fi
+
+cp *.html public/
+vercel deploy --production
