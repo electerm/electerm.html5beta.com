@@ -7,4 +7,4 @@ node bin/build.js
 directory="public"
 
 ./bin/vercel-build
-vercel --production
+vercel --prod
