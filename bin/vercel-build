@@ -7,5 +7,5 @@ directory="public"
 if [ ! -d "$directory" ]; then
   mkdir "$directory"
 fi
-
+cp -r data public/
 cp *.html public/
