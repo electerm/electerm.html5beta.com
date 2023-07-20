@@ -9,3 +9,4 @@ if [ ! -d "$directory" ]; then
 fi
 cp -r data public/
 cp *.html public/
+cp favicon.ico public/
