@@ -3,8 +3,5 @@ cd `dirname $0`
 cd ../
 rm *.html
 node bin/build.js
-
-directory="public"
-
 ./bin/vercel-build
 vercel --prod
