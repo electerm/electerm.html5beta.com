@@ -7,7 +7,7 @@ import { resolve } from 'path'
  */
 
 gulp.task('watch-prod', function () {
-  watch(require('path').resolve(cwd, 'data/electerm-github-release.json'), function () {
+  watch(resolve(cwd, 'data/electerm-github-release.json'), function () {
     console.log('build triggered')
     exe(resolve(cwd, 'bin/build'))
   })
