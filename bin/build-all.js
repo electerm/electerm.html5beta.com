@@ -11,11 +11,16 @@ async function main () {
     const { id, langCode, lang } = item
     const n = id === 'en_us' ? 'index.html' : 'index-' + id + '.html'
     const to = resolve(cwd, 'public/' + n)
+    const h = process.env.HOST
+    const view = 'index'
     await buildPug(from, to, {
       ...data,
       langCode,
       lang,
-      desc: lang.lang.app.desc
+      desc: lang.lang.app.desc,
+      url: h,
+      cssUrl: h + '/' + view + '.bundle.css',
+      jsUrl: h + '/' + view + '.bundle.js'
     })
   }
   await fs.writeFile(resolve(cwd, 'public/version.html'), data.version)
