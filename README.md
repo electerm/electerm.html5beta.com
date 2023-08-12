@@ -12,8 +12,9 @@ Code of [https://electerm.github.io/electerm](https://electerm.github.io/electer
 ## dev
 
 ```bash
-git clone git@github.com:jade-press/electerm.html5beta.com.git
+git clone git@github.com:electerm/electerm.html5beta.com.git
 cd electerm.html5beta.com
+cp sample.env .env
 npm install
 npm start
 #then visit http://localhost:7502

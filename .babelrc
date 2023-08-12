@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    ["@babel/env", {
+      "targets": {
+        "chrome": 100,
+        "ios": 10,
+        "node": "current"
+      }
+    }]
+  ]
+}

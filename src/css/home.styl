@@ -1,0 +1,39 @@
+@require './common.styl'
+.container
+  display flex
+  flex-wrap wrap
+
+.column
+  flex 1
+  padding 20px 10px
+
+h1
+  color #333
+  font-size 46px
+  text-align center
+  padding 40px 0
+h2
+  padding-left 10px
+ul
+  padding-left 10px
+#content
+  margin 0 auto
+  max-width 1000px
+  background rgba(255,255,255,.95)
+  border-left 1px solid #eee
+  position relative
+
+@media (max-width: 800px)
+  .column
+    flex-basis 100%
+
+.badges
+  a, span
+    height 20px
+    display inline-block
+    vertical-align middle
+    margin 0 4px 4px 0
+
+.langs
+  a
+    text-decoration none

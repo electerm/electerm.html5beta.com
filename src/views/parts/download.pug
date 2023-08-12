@@ -1,0 +1,42 @@
+h2 #{lang.lang.control.download}
+hr
+.pd1y
+  .pd1y
+    b #{version}
+    small.mg2l #{assets.windows.releaseDate}
+  .pd1y
+    - let rns = assets.windows.releaseNote.split('\r\n').filter(d => d.trim())
+    - for (let rn of rns) {
+      - if (!rn.startsWith('#')) {
+        .pd1b ♥ #{rn.replace(/^- /, '')}
+      - } else {
+        .pd2y.bold #{rn.replace(/^- /, '')}
+      - }
+    - }
+.container
+  - let arr = Object.keys(assets)
+  - let len = arr.length
+  - let i = 0
+  - for (;i < len;i++) {
+    - let key = arr[i]
+    - let os = assets[key]
+    - let osName = os.name
+    - let items = os.items
+    .column
+      .title.pd1y
+        b #{osName}
+      .pd1y
+        - let ll = items.length
+        - let j = 0
+        ul
+          - for(;j < ll;j ++) {
+            - let obj = items[j]
+            li.pd2b
+              .pd1b
+                span #{obj.name}
+                small.mg1l #{obj.desc}
+              .pd1b
+                a(href=obj.browser_download_url) github
+                a.mg1l(href=obj.sourceforgeUrl) sourceforge
+          - }
+  - }

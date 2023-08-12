@@ -1,7 +1,13 @@
 #!/bin/bash
 cd `dirname $0`
 cd ../
-rm *.html
-node bin/build.js
-./bin/vercel-build
+rm -rf public
+mkdir public
+npm run cp
+HOST=https://electerm.github.io/electerm npm run b1
+npm run b2
+npm run sitemap
+npm run after
+npm run gitee
+HOST=https://electerm.html5beta.com npm run b1
 vercel --prod
