@@ -1,6 +1,6 @@
 import gulp from 'gulp'
 import watch from 'gulp-watch'
-import { exe, cwd } from './bin/common'
+import { exe, cwd } from './bin/common.js'
 import { resolve } from 'path'
 /**
  * multi language support
