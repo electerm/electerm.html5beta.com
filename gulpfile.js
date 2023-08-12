@@ -1,20 +1,15 @@
-
-const
-  gulp = require('gulp')
-const watch = require('gulp-watch')
-
-const { exec } = require('shelljs')
-
+import gulp from 'gulp'
+import watch from 'gulp-watch'
+import { exe, cwd } from './bin/common'
+import { resolve } from 'path'
 /**
  * multi language support
  */
 
-const { resolve } = require('path')
-
 gulp.task('watch-prod', function () {
   watch(require('path').resolve(__dirname, 'data/electerm-github-release.json'), function () {
     console.log('build triggered')
-    exec(resolve(__dirname, 'bin/build'))
+    exe(resolve(cwd, 'bin/build'))
   })
 })
 
