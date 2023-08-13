@@ -1,4 +1,3 @@
-
 import Animate from './animate'
 
 function renderLink (link) {

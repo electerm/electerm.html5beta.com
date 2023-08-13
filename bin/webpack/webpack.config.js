@@ -21,7 +21,7 @@ let config = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    'canvas-shapes-bg': 'CanvasShapesBg'
+    three: 'THREE'
   },
   target: 'web',
   resolve: {

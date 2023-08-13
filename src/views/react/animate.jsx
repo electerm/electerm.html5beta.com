@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import CanvasShapesBg from 'canvas-shapes-bg'
+import UniverseBg from 'universe-bg'
 
 export default function Animate () {
   const [on, setOn] = useState(true)
@@ -15,6 +16,18 @@ export default function Animate () {
     setOn(!on)
   }
   function init () {
+    const x = new UniverseBg({
+      // shootingStarCount: 150,
+      // starCount: 1000,
+      // starSize: 30,
+      shootingStarSize: 0.4,
+      shootingStarColor: 0x666666,
+      starColor: 0x666666,
+      bgColor: 0xffffff
+      // starDistance: 80,
+      // shootingStarDistance: 40
+    })
+    x.renderer.domElement.classList.add('animate')
     const options = {
       shapeCount: 20, // how many shapes to draw, optional
       timer: 100, // render animation frame for every {timer} ms, optional
