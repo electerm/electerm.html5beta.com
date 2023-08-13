@@ -3,7 +3,7 @@
  */
 import { createRoot } from 'react-dom/client'
 import React from 'react'
-import App from './index.jsx'
+import App from './react/animate.jsx'
 import '../css/basic.styl'
 import '../css/home.styl'
 
