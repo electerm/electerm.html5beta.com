@@ -1,8 +1,0 @@
-apps:
-    name: electerm.html5beta.com
-    script: ./run-watch.sh
-    error_file: ./logs/electerm.html5beta.com_err.log
-    out_file: ./logs/electerm.html5beta.com_out.log
-    pid_file: ./pids/electerm.html5beta.com.pid
-    # env:
-    #     NODE_ENV: production
