@@ -38,6 +38,7 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           'canvas-shapes-bg': 'CanvasShapesBg',
+          'universe-bg': 'UniverseBg',
           three: 'THREE'
         }
       }

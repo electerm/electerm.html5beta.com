@@ -7,6 +7,7 @@
   "scripts": {
     "start": "npm run c",
     "b": "./bin/build",
+    "tb": "./bin/build-only",
     "b1": "node bin/build-all.js",
     "b2": "node bin/build-js.js",
     "gitee": "node bin/rebuild-gitee.js",
@@ -19,6 +20,7 @@
     "cp": "cp -r src/static/* public/ && cp -r data public/",
     "rm": "rm -rf public/ && mkdir public",
     "c": "node bin/vite/dev-server.js",
+    "s": "node bin/server.mjs",
     "bb": "NODE_ENV=production vite build --config bin/vite/conf.js"
   },
   "repository": {
