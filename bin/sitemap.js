@@ -14,7 +14,7 @@ async function buildPages () {
   const list = await fs.readdir(from)
   const arr = []
   for (const f of list) {
-    if (f.startsWith('index')) {
+    if (f.startsWith('index-')) {
       const ff = resolve(from, f)
       const s = await fs.stat(ff)
       arr.push({

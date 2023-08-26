@@ -1,0 +1,13 @@
+#!/bin/bash
+cd `dirname $0`
+cd ../
+rm -rf public
+mkdir public
+echo "copy files"
+npm run cp
+echo "build js"
+npm run b2
+echo "build html"
+HOST=https://electerm.html5beta.com npm run b1
+echo "build sitemap"
+npm run sitemap

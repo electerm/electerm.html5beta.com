@@ -1,7 +1,17 @@
 script(crossorigin, src='//unpkg.zhimg.com/react@18/umd/react.production.min.js')
 script(crossorigin, src='//unpkg.zhimg.com/react-dom@18/umd/react-dom.production.min.js')
 script(crossorigin, src='https://www.unpkg.com/three@0.155.0/build/three.min.js')
-script(src=jsUrl)
+- if (dev)
+  script(type='module').
+    import RefreshRuntime from '/@react-refresh'
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  script(src='/@vite/client', type='module')
+  script(src=jsUrl, type='module')
+- else
+  script(src=jsUrl)
 script(async=true, src='https://www.googletagmanager.com/gtag/js?id=G-NT5W8GL31W')
 script.
   window.dataLayer = window.dataLayer || [];

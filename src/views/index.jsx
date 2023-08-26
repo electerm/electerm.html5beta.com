@@ -1,28 +1,11 @@
-import Footer from './react/footer'
+/**
+ * entry file for install page
+ */
+import { createRoot } from 'react-dom/client'
+import React from 'react'
+import App from './react/animate.jsx'
+import '../css/basic.styl'
+import '../css/home.styl'
 
-function App () {
-  const links = [
-    {
-      href: 'http://github.com/zxdong262',
-      target: '_blank',
-      rel: 'noreferrer',
-      className: 'mg3r',
-      text: 'GitHub'
-    },
-    {
-      href: 'https://html5beta.com/page/timeline.html',
-      target: '_blank',
-      rel: 'noreferrer',
-      text: 'Resume'
-    }
-  ]
-  return (
-    <div className='pd2'>
-      <Footer
-        links={links}
-      />
-    </div>
-  )
-}
-
-export default App
+const root = createRoot(document.getElementById('container'))
+root.render(<App />)
