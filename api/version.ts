@@ -7,7 +7,7 @@ import model from '../src/api/model.js'
 
 const cwd = process.cwd()
 
-const ver = readFileSync(resolve(cwd, 'public/version.html'), 'utf-8')
+const ver = readFileSync(resolve(cwd, 'public/version.txt'), 'utf-8')
 
 function convert (q: Object) {
   return Object.keys(q).reduce((p, k) => {
@@ -33,5 +33,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.log('query.n', data)
     await log(id, data)
   }
+  res.setHeader('x1', 'x1')
   res.send(ver)
 }

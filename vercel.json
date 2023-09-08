@@ -1,10 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/version.html",
-      "destination": "/api/version"
-    }
+    { "source": "/version.html", "destination": "/api/version" }
   ],
-  "outputDirectory": ".",
-  "publicDirectory": "./public"
+  "outputDirectory": "./public"
 }

@@ -24,7 +24,7 @@ async function main () {
     })
   }
   const { version } = data
-  await fs.writeFile(resolve(cwd, 'public/version.html'), version)
+  await fs.writeFile(resolve(cwd, 'public/version.txt'), version)
 }
 
 main()
