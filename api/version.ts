@@ -30,9 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (query && query.n) {
     const id = nanoid()
     const data = convert(query)
-    console.log('query.n', data)
     await log(id, data)
   }
-  res.setHeader('x1', 'x1')
   res.send(ver)
 }
