@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/version.html",
+      "destination": "/api/version"
+    }
+  ],
+  "outputDirectory": "."
+}

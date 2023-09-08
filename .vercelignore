@@ -1,6 +1,5 @@
-/temp/
+/temp
 /*.html
-/*.json
 /*.js
 /favicon.ico
 /.sample.env
@@ -13,6 +12,8 @@
 /releases
 /data
 /views
-/src
+/src/css
+/src/static
+/src/views
 /res
 /.env

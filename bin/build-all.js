@@ -23,7 +23,8 @@ async function main () {
       jsUrl: h + '/' + view + '.bundle.js'
     })
   }
-  await fs.writeFile(resolve(cwd, 'public/version.html'), data.version)
+  const { version } = data
+  await fs.writeFile(resolve(cwd, 'public/version.html'), version)
 }
 
 main()
