@@ -126,10 +126,6 @@ export default {
       title: 'GitHub'
     },
     {
-      url: 'https://opencollective.com/electerm',
-      title: 'Open Collective'
-    },
-    {
       url: 'https://github.com/electerm/electerm-locales',
       title: 'electerm-locales'
     },
@@ -152,6 +148,10 @@ export default {
     {
       url: 'https://github.com/electerm/electerm/discussions',
       title: 'Discussion'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Sponsor-electerm',
+      title: 'Sponsor Electerm'
     },
     {
       url: 'https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/electerm',
