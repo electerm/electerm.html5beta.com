@@ -70,12 +70,9 @@
       "/data",
       "/public"
     ],
-    "parser": "@babel/eslint-parser",
     "parserOptions": {
-      "sourceType": "module",
-      "plugins": [
-        "importAssertions"
-      ]
+      "requireConfigFile": false,
+      "sourceType": "module"
     }
   },
   "license": "MIT",

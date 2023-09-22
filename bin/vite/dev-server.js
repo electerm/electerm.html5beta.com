@@ -12,13 +12,13 @@ global.viteInst = null
 
 function handleIndex (req, res) {
   const lang = data.langs[2]
-  const view = 'index'
+  const view = req.params?.page || 'index'
   res.render(view, {
     ...data,
     host: h,
     url: h,
     dev: true,
-    cssUrl: h + '/' + view + '.bundle.css',
+    cssUrl: h + '/index.bundle.css',
     jsUrl: '/src/views/index.jsx',
     langCode: lang.langCode,
     lang: lang.lang,
@@ -55,6 +55,7 @@ async function createServer () {
   // express router (express.Router()), you should use router.use
   app.use(vite.middlewares)
   app.get('/', handleIndex)
+  app.get('/:page', handleIndex)
 
   app.listen(devPort, host, () => {
     console.log(`server started at ${h}`)

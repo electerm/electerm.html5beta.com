@@ -1,0 +1,18 @@
+doctype html
+html(lang=langCode)
+  head
+    title #{siteName} - sponsor electerm
+    meta(name='description', content=desc)
+    meta(name='keywords', content=keywords)
+    include ./parts/react-header
+  body
+    #content
+      .pd2
+        include ./parts/title
+        //- include ./parts/badge
+        include ./parts/sponsor
+        include ./parts/download
+        include ./parts/container
+        include ./parts/react-common
+    #container
+    include ./parts/react-footer

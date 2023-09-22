@@ -118,6 +118,9 @@ export default {
   keywords: 'ssh,open-source,terminal,telnet,sftp,file-manager,linux-app,serialport,windows-app,macos-app,electerm',
   siteName: 'electerm',
   host: process.env.HOST,
+  pages: [
+    'sponsor-electerm'
+  ],
   langs: createLocaleData(),
   ...createReleaseData(),
   links: [
