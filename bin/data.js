@@ -153,7 +153,7 @@ export default {
       title: 'Discussion'
     },
     {
-      url: 'https://github.com/electerm/electerm/wiki/Sponsor-electerm',
+      url: 'https://electerm.html5beta.com/sponsor-electerm.html',
       title: 'Sponsor Electerm'
     },
     {
