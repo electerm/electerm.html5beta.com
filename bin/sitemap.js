@@ -40,6 +40,14 @@ async function buildSiteMap () {
     changefreq: 'weekly',
     priority: 1
   })
+  for (const page of data.pages) {
+    urls.push({
+      loc: data.host + '/' + page + '.html',
+      lastmod: dayjs(state.mtime).format(fmt),
+      changefreq: 'weekly',
+      priority: 1
+    })
+  }
   const arr = await buildPages()
   urls.push(...arr)
   createSitemap({
