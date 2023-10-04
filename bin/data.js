@@ -70,7 +70,11 @@ function createReleaseData () {
       ...curr,
       sourceforgeUrl: getSourceforgeUrl(curr.browser_download_url)
     }
-    if (curr.name.includes('win') && !curr.name.includes('.appx')) {
+    if (
+      curr.name.includes('win') &&
+      !curr.name.includes('.appx') &&
+      !curr.name.includes('loose')
+    ) {
       prev.windows.releaseNote = releaseNote
       prev.windows.releaseDate = dt
       prev.windows.items.push(nr)
