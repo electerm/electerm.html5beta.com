@@ -82,7 +82,7 @@ function createReleaseData () {
       prev.mac.releaseNote = releaseNote
       prev.mac.releaseDate = dt
       prev.mac.items.push(nr)
-    } else {
+    } else if (curr.name.includes('linux')) {
       if (curr.name.endsWith('.rpm')) {
         curr.desc = 'for Red Hat, Fedora...'
       } else if (curr.name.endsWith('.deb')) {
