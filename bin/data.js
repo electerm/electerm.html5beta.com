@@ -133,6 +133,10 @@ export default {
       title: 'GitHub'
     },
     {
+      url: 'https://github.com/electerm/electerm-web',
+      title: 'electerm-web'
+    },
+    {
       url: 'https://github.com/electerm/electerm-locales',
       title: 'electerm-locales'
     },
