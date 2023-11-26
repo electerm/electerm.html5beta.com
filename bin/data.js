@@ -137,6 +137,10 @@ export default {
       title: 'electerm-web'
     },
     {
+      url: 'https://github.com/electerm/electerm-web-docker',
+      title: 'electerm-web-docker'
+    },
+    {
       url: 'https://github.com/electerm/electerm-locales',
       title: 'electerm-locales'
     },
