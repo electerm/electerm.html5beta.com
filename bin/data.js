@@ -13,6 +13,10 @@ function getSourceforgeUrl (url) {
   return `https://master.dl.sourceforge.net/project/electerm.mirror/${arr[len - 2]}/${arr[len - 1]}?viasf=1`
 }
 
+function getCdnUrl (url) {
+  return url.replace('github.com', 'download-electerm.html5beta.com')
+}
+
 function convertToProperLangCode (code) {
   const langMappings = {
     ar_ar: 'ar',
@@ -68,7 +72,8 @@ function createReleaseData () {
   const arr = assets.reduce((prev, curr) => {
     const nr = {
       ...curr,
-      sourceforgeUrl: getSourceforgeUrl(curr.browser_download_url)
+      sourceforgeUrl: getSourceforgeUrl(curr.browser_download_url),
+      cdnUrl: getCdnUrl(curr.browser_download_url)
     }
     if (
       curr.name.includes('win') &&
@@ -78,7 +83,7 @@ function createReleaseData () {
       prev.windows.releaseNote = releaseNote
       prev.windows.releaseDate = dt
       prev.windows.items.push(nr)
-    } else if (curr.name.includes('mac')) {
+    } else if (curr.name.endsWith('.dmg')) {
       prev.mac.releaseNote = releaseNote
       prev.mac.releaseDate = dt
       prev.mac.items.push(nr)
@@ -91,6 +96,8 @@ function createReleaseData () {
         curr.desc = 'for all linux that support snap'
       } else if (curr.name.endsWith('.gz')) {
         curr.desc = 'for all linux x64, just extract'
+      } else if (curr.name.endsWith('.AppImage')) {
+        curr.desc = 'for all linux x64, just run it'
       }
       prev.linux.releaseDate = dt
       prev.linux.releaseNote = releaseNote
@@ -99,7 +106,7 @@ function createReleaseData () {
     return prev
   }, {
     linux: {
-      name: 'Linux x86 x64',
+      name: 'Linux x86 x64 arm armv7l',
       items: []
     },
     mac: {
@@ -107,7 +114,7 @@ function createReleaseData () {
       items: []
     },
     windows: {
-      name: 'Windows 7/8/10/11 x86 x64',
+      name: 'Windows 10/11 x64',
       items: []
     }
   })
