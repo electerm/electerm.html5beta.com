@@ -77,6 +77,7 @@ function createReleaseData () {
     }
     if (
       curr.name.includes('win') &&
+      !curr.name.endsWith('.blockmap') &&
       !curr.name.includes('.appx') &&
       !curr.name.includes('loose')
     ) {
