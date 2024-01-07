@@ -75,30 +75,40 @@ function createReleaseData () {
       sourceforgeUrl: getSourceforgeUrl(curr.browser_download_url),
       cdnUrl: getCdnUrl(curr.browser_download_url)
     }
+    const cname = curr.name
     if (
-      curr.name.includes('win') &&
-      !curr.name.endsWith('.blockmap') &&
-      !curr.name.includes('.appx') &&
-      !curr.name.includes('loose')
+      cname.includes('win') &&
+      !cname.endsWith('.blockmap') &&
+      !cname.includes('.appx') &&
+      !cname.includes('loose')
     ) {
       prev.windows.releaseNote = releaseNote
       prev.windows.releaseDate = dt
       prev.windows.items.push(nr)
-    } else if (curr.name.endsWith('.dmg')) {
+    } else if (cname.endsWith('.dmg')) {
       prev.mac.releaseNote = releaseNote
       prev.mac.releaseDate = dt
       prev.mac.items.push(nr)
-    } else if (curr.name.includes('linux')) {
-      if (curr.name.endsWith('.rpm')) {
-        curr.desc = 'for Red Hat, Fedora...'
-      } else if (curr.name.endsWith('.deb')) {
-        curr.desc = 'for Debian, Ubuntu...'
-      } else if (curr.name.endsWith('.snap')) {
-        curr.desc = 'for all linux that support snap'
-      } else if (curr.name.endsWith('.gz')) {
-        curr.desc = 'for all linux x64, just extract'
-      } else if (curr.name.endsWith('.AppImage')) {
-        curr.desc = 'for all linux x64, just run it'
+    } else if (cname.includes('linux')) {
+      if (cname.endsWith('.rpm')) {
+        nr.desc = 'for Red Hat, Fedora...'
+      } else if (cname.endsWith('.deb')) {
+        nr.desc = 'for Debian, Ubuntu...'
+      } else if (cname.endsWith('.snap')) {
+        nr.desc = 'for all linux that support snap'
+      } else if (cname.endsWith('.gz')) {
+        nr.desc = 'for all linux, just extract'
+      } else if (cname.endsWith('.AppImage')) {
+        nr.desc = 'for all linux, just run it'
+      }
+      nr.tag = 'ARM64'
+      nr.index = 2
+      if (cname.includes('x64') || cname.includes('x86') || cname.includes('amd64')) {
+        nr.index = 1
+        nr.tag = 'x86/64'
+      } else if (cname.includes('armv7l')) {
+        nr.tag = 'ARM'
+        nr.index = 3
       }
       prev.linux.releaseDate = dt
       prev.linux.releaseNote = releaseNote
@@ -107,7 +117,7 @@ function createReleaseData () {
     return prev
   }, {
     linux: {
-      name: 'Linux x86 x64 arm armv7l',
+      name: 'Linux x86/x64/arm/arm64',
       items: []
     },
     mac: {
@@ -119,6 +129,7 @@ function createReleaseData () {
       items: []
     }
   })
+  arr.linux.items.sort((a, b) => a.index - b.index)
   return {
     assets: arr,
     version
