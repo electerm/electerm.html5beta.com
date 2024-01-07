@@ -101,13 +101,13 @@ function createReleaseData () {
       } else if (cname.endsWith('.AppImage')) {
         nr.desc = 'for all linux, just run it'
       }
-      nr.tag = 'ARM64'
+      nr.tag = 'ARM64 Beta'
       nr.index = 2
       if (cname.includes('x64') || cname.includes('x86') || cname.includes('amd64')) {
         nr.index = 1
         nr.tag = 'x86/64'
       } else if (cname.includes('armv7l')) {
-        nr.tag = 'ARM'
+        nr.tag = 'ARM Beta'
         nr.index = 3
       }
       prev.linux.releaseDate = dt

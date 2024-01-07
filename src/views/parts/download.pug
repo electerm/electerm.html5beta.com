@@ -31,10 +31,12 @@ hr
         ul
           - for(;j < ll;j ++) {
             - let obj = items[j]
-            - let pre = obj.tag ? `[${obj.tag}] ` : ''
             li.pd2b
               .pd1b
-                span #{pre}#{obj.name}
+                - if (obj.tag) {
+                  b.mg1r [#{obj.tag}]
+                - }
+                span #{obj.name}
               - if (obj.desc) {
                 .pd1b
                   small.mg1l #{obj.desc}
