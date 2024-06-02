@@ -9,6 +9,8 @@ hr
     - for (let rn of rns) {
       - if (!rn.startsWith('#')) {
         .pd1b ♥ #{rn.replace(/^- /, '')}
+      - } else if (rn.startsWith('---')) {
+        .pd1y #{rn}
       - } else {
         .pd2y.bold #{rn.replace(/^- /, '')}
       - }
