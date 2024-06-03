@@ -7,10 +7,10 @@ hr
   .pd1y
     - let rns = assets.windows.releaseNote.split('\r\n').filter(d => d.trim())
     - for (let rn of rns) {
-      - if (!rn.startsWith('#')) {
-        .pd1b ♥ #{rn.replace(/^- /, '')}
-      - } else if (rn.startsWith('---')) {
+      - if (rn.startsWith('---')) {
         .pd1y #{rn}
+      - } else if (!rn.startsWith('#')) {
+        .pd1b ♥ #{rn.replace(/^- /, '')}
       - } else {
         .pd2y.bold #{rn.replace(/^- /, '')}
       - }
