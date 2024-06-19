@@ -38,7 +38,7 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "0.18.2",
+    "@electerm/electerm-locales": "1.2.25",
     "@tsconfig/recommended": "^1.0.2",
     "@types/node": "^20.3.1",
     "@vercel/node": "^2.15.8",
