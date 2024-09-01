@@ -190,6 +190,10 @@ export default {
     {
       url: 'https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/electerm',
       title: 'Themes'
+    },
+    {
+      url: 'https://portal.shadowsocks.au/aff.php?aff=64427',
+      title: '[AD]shadowsocks'
     }
   ]
 }
