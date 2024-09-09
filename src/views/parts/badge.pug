@@ -12,5 +12,11 @@
   span.badge-githubstar
     iframe(src='https://ghbtns.com/github-btn.html?user=electerm&repo=electerm&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='110', height='20')
 .pd3y
-  a(href='https://electerm-demo.html5beta.com', rel='noreferrer', title='Click to check online demo')
-    img.iblock(src='https://electerm.html5beta.com/electerm.gif', alt='')
+  //- a(href='https://electerm-demo.html5beta.com', rel='noreferrer', title='Click to check online demo')
+  //-   img.iblock(src='https://electerm.html5beta.com/electerm.gif', alt='')
+  p.fix
+    b.fleft.mg1r Online demo:
+    a(href='https://electerm-demo.html5beta.com', rel='noreferrer', title='Click to check online demo') https://electerm-demo.html5beta.com
+    span.fright
+      a.toggle-btn(href='javascript:void(0)', id='fullscreen-toggle') Fullscreen
+  iframe(id='demo', src='https://electerm-demo.html5beta.com', width='100%', height='600px', frameborder='0')

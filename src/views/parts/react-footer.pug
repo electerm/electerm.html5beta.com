@@ -38,6 +38,33 @@ script(type='module').
 //-   script(src=jsUrl, type='module')
 script(async=true, src='https://www.googletagmanager.com/gtag/js?id=G-NT5W8GL31W')
 script.
+  function toggleFullscreen(iframeId) {
+    const iframe = document.getElementById('demo');
+    if (!iframe) return;
+
+    if (document.fullscreenElement === iframe) {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { // Safari
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+    } else {
+      // Enter fullscreen
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) { // Safari
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      }
+    }
+  };
+  document.getElementById('fullscreen-toggle').addEventListener('click', function () {
+    toggleFullscreen('demo');
+  });
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
