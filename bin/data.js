@@ -192,6 +192,10 @@ export default {
       title: 'Themes'
     },
     {
+      url: 'https://electerm-cloud.html5beta.com/',
+      title: 'electerm cloud'
+    },
+    {
       url: 'https://portal.shadowsocks.au/aff.php?aff=64427',
       title: '[AD]shadowsocks'
     }

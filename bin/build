@@ -7,7 +7,7 @@ npm run b2
 npm run cp
 HOST=https://electerm.github.io/electerm npm run b1
 npm run sitemap
-npm run after
+# npm run after
 npm run gitee
 HOST=https://electerm.html5beta.com npm run b1
 vercel --prod
