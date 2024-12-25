@@ -198,6 +198,10 @@ export default {
     {
       url: 'https://portal.shadowsocks.au/aff.php?aff=64427',
       title: '[AD]shadowsocks'
+    },
+    {
+      url: 'https://gh-proxy.com',
+      title: 'https://gh-proxy.com'
     }
   ]
 }
