@@ -196,8 +196,8 @@ export default {
       title: 'electerm cloud'
     },
     {
-      url: 'https://portal.shadowsocks.au/aff.php?aff=64427',
-      title: '[AD]shadowsocks'
+      url: 'https://github.com/tylerlong/manate',
+      title: 'manate'
     },
     {
       url: 'https://gh-proxy.com',
