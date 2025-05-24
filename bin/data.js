@@ -47,7 +47,6 @@ function createLocaleData () {
       }
       const filePath = resolve(localeFolder, fileName)
       const lang = j5.parse(fs.readFileSync(filePath, 'utf-8').replace('module.exports=exports.default=', ''))
-      console.log('lang', lang)
       const id = fileName.replace('.js', '')
       const url = id === 'en_us' ? pre : pre + '/index-' + id + '.html'
       prev = [
