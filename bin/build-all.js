@@ -17,7 +17,7 @@ async function main () {
       ...data,
       langCode,
       lang,
-      desc: lang.lang.app.desc,
+      desc: lang.lang.desc,
       url: h,
       cssUrl: h + '/' + view + '.bundle.css',
       jsUrl: h + '/' + view + '.bundle.js'
@@ -68,7 +68,7 @@ async function main () {
       ...data,
       langCode,
       lang,
-      desc: lang.lang.app.desc,
+      desc: lang.lang.desc,
       url: h,
       cssUrl: h + '/index.bundle.css',
       jsUrl: h + '/index.bundle.js'

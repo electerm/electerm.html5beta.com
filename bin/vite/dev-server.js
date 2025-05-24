@@ -22,7 +22,7 @@ function handleIndex (req, res) {
     jsUrl: '/src/views/index.jsx',
     langCode: lang.langCode,
     lang: lang.lang,
-    desc: lang.lang.lang.app.desc
+    desc: lang.lang.lang.desc
   })
 }
 
