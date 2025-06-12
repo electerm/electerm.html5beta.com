@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: [electerm-release]
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   check-skip-ci:
