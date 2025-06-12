@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npm run build
+        run: npm run b
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
