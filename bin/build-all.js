@@ -19,46 +19,46 @@ async function main () {
       lang,
       desc: lang.lang.desc,
       url: h,
-      cssUrl: h + '/' + view + '.bundle.css',
-      jsUrl: h + '/' + view + '.bundle.js'
+      cssUrl: view + '.bundle.css',
+      jsUrl: view + '.bundle.js'
     })
   }
-  const installSrc = [
-    'linux-arm64.tar.gz',
-    'linux-arm64.deb',
-    'linux-aarch64.rpm',
-    'linux-arm64.AppImage',
-    'linux-armv7l.tar.gz',
-    'linux-armv7l.deb',
-    'linux-armv7l.rpm',
-    'linux-armv7l.AppImage',
-    'linux-x64.tar.gz',
-    'linux-x64.deb',
-    'linux-x86_64.AppImage',
-    'linux-x86_64.rpm',
-    'linux-amd64.snap',
-    'mac-arm64.dmg',
-    'mac-x64.dmg',
-    'win-x64.tar.gz',
-    'win-x64.appx',
-    'win-x64-installer.exe',
-    'win-x64-loose.tar.gz',
-    'win-x64-portable.tar.gz',
-    'win7.tar.gz'
-  ]
+  // const installSrc = [
+  //   'linux-arm64.tar.gz',
+  //   'linux-arm64.deb',
+  //   'linux-aarch64.rpm',
+  //   'linux-arm64.AppImage',
+  //   'linux-armv7l.tar.gz',
+  //   'linux-armv7l.deb',
+  //   'linux-armv7l.rpm',
+  //   'linux-armv7l.AppImage',
+  //   'linux-x64.tar.gz',
+  //   'linux-x64.deb',
+  //   'linux-x86_64.AppImage',
+  //   'linux-x86_64.rpm',
+  //   'linux-amd64.snap',
+  //   'mac-arm64.dmg',
+  //   'mac-x64.dmg',
+  //   'win-x64.tar.gz',
+  //   'win-x64.appx',
+  //   'win-x64-installer.exe',
+  //   'win-x64-loose.tar.gz',
+  //   'win-x64-portable.tar.gz',
+  //   'win7.tar.gz'
+  // ]
 
   // Add this after writing version.html:
   const { version } = data
   await fs.writeFile(resolve(cwd, 'public/version.html'), version)
 
   // Create version-specific files
-  for (const src of installSrc) {
-    const fileName = src.replace(/\./g, '-')
-    await fs.writeFile(
-      resolve(cwd, `public/version-${fileName}.html`),
-      version
-    )
-  }
+  // for (const src of installSrc) {
+  //   const fileName = src.replace(/\./g, '-')
+  //   await fs.writeFile(
+  //     resolve(cwd, `public/version-${fileName}.html`),
+  //     version
+  //   )
+  // }
   for (const item of pages) {
     const { langCode, lang } = langs[2]
     const f = resolve(cwd, 'src/views/' + item + '.pug')
@@ -70,8 +70,8 @@ async function main () {
       lang,
       desc: lang.lang.desc,
       url: h,
-      cssUrl: h + '/index.bundle.css',
-      jsUrl: h + '/index.bundle.js'
+      cssUrl: 'index.bundle.css',
+      jsUrl: 'index.bundle.js'
     })
   }
 }
