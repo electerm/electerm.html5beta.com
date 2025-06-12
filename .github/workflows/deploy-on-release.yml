@@ -3,13 +3,26 @@ name: Deploy Website on Release
 on:
   repository_dispatch:
     types: [electerm-release]
-
-  push:
-    branches: [ test-release ]
   workflow_dispatch:
 
 jobs:
+  check-skip-ci:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.check.outputs.should_skip }}
+    steps:
+      - id: check
+        name: Check if [skip ci] is in commit message
+        run: |
+          if echo "${{ github.event.client_payload.commit_message || '' }}" | grep -i '\[skip ci\]'; then
+            echo "should_skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_skip=false" >> $GITHUB_OUTPUT
+          fi
+
   build-and-deploy:
+    needs: check-skip-ci
+    if: needs.check-skip-ci.outputs.should_skip != 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,16 +34,14 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
-
-      - name: Build site
-        run: npm run b
+        
+      - name: Fetch release info
+        run: npm run down
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Build site
+        run: npm run b
         
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
