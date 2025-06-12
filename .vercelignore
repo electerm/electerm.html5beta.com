@@ -14,3 +14,5 @@
 /res
 /.env
 /logs
+/data
+/bin
