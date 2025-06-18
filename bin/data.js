@@ -202,6 +202,14 @@ export default {
     {
       url: 'https://gh-proxy.com',
       title: 'https://gh-proxy.com'
+    },
+    {
+      url: 'https://dartnode.com?aff=NuttyMonkey521',
+      title: 'DartNode'
+    },
+    {
+      url: 'https://www.digitalocean.com/?refcode=c10bcb28b846&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge',
+      title: 'DigitalOcean'
     }
   ]
 }
