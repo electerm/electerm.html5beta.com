@@ -29,4 +29,8 @@
   .pd1y
     each val, i in links
       p
-        a(href=val.url, rel='noreferrer', target='_blank') ✴ #{val.title}
+        a(href=val.url, rel='noreferrer', target='_blank', title=val.title)
+          if val.image
+            img(src=val.image, alt=val.title)
+          else
+            span ✴ #{val.title}

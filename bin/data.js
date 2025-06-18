@@ -209,7 +209,8 @@ export default {
     },
     {
       url: 'https://www.digitalocean.com/?refcode=c10bcb28b846&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge',
-      title: 'DigitalOcean'
+      title: 'DigitalOcean',
+      image: 'https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%202.svg'
     }
   ]
 }
