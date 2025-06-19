@@ -17,8 +17,9 @@ async function buildPages () {
     if (f.startsWith('index-')) {
       const ff = resolve(from, f)
       const s = await fs.stat(ff)
+      const host = data.host || 'https://electerm.html5beta.com'
       arr.push({
-        loc: data.host + '/' + f,
+        loc: host + '/' + f,
         lastmod: dayjs(s.mtime).format(fmt),
         changefreq: 'weekly',
         priority: 0.8
@@ -35,7 +36,7 @@ async function buildSiteMap () {
   )
   const state = await fs.stat(index)
   urls.push({
-    loc: data.host,
+    loc: data.host || 'https://electerm.html5beta.com',
     lastmod: dayjs(state.mtime).format(fmt),
     changefreq: 'weekly',
     priority: 1
