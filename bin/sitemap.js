@@ -35,15 +35,16 @@ async function buildSiteMap () {
     cwd, 'public/index.html'
   )
   const state = await fs.stat(index)
+  const host = data.host || 'https://electerm.html5beta.com'
   urls.push({
-    loc: data.host || 'https://electerm.html5beta.com',
+    loc: host,
     lastmod: dayjs(state.mtime).format(fmt),
     changefreq: 'weekly',
     priority: 1
   })
   for (const page of data.pages) {
     urls.push({
-      loc: data.host + '/' + page + '.html',
+      loc: host + '/' + page + '.html',
       lastmod: dayjs(state.mtime).format(fmt),
       changefreq: 'weekly',
       priority: 1
