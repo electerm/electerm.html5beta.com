@@ -213,9 +213,9 @@ export default {
       image: 'https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%202.svg'
     },
     {
-      url: 'https://vercel.com?utm_source=electerm&utm_campaign=oss',
-      title: 'Vercel',
-      image: 'https://images.ctfassets.net/e5382hct74si/78Olo8EZRdUlcDUFQvnzG7/fa4cdb6dc04c40fceac194134788a0e2/1618983297-powered-by-vercel.svg'
+      url: 'https://vercel.com/oss',
+      title: 'Vercel OSS Program',
+      image: 'https://vercel.com/oss/program-badge.svg'
     }
   ]
 }
