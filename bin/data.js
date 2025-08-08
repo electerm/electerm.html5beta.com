@@ -104,7 +104,7 @@ function createReleaseData () {
     } else if (cname.endsWith('.dmg')) {
       // Add descriptions for macOS files
       if (cname.includes('arm64') || cname.includes('apple-silicon')) {
-        nr.desc = 'for Apple Silicon Macs (M1/M2/M3)'
+        nr.desc = 'for Apple Silicon Macs (M1, M2, etc.)'
       } else if (cname.includes('x64') || cname.includes('intel')) {
         nr.desc = 'for Intel Macs'
       } else {
