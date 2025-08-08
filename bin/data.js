@@ -230,16 +230,6 @@ export default {
     {
       url: 'https://dartnode.com?aff=NuttyMonkey521',
       title: 'DartNode'
-    },
-    {
-      url: 'https://www.digitalocean.com/?refcode=c10bcb28b846&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge',
-      title: 'DigitalOcean',
-      image: 'https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%202.svg'
-    },
-    {
-      url: 'https://vercel.com/oss',
-      title: 'Vercel OSS Program',
-      image: 'https://vercel.com/oss/program-badge.svg'
     }
   ]
 }
