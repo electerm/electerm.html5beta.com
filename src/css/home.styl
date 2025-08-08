@@ -37,3 +37,291 @@ ul
     text-decoration none
 .toggle-btn
   text-decoration none
+
+// New download section styles
+.download-main
+  margin-bottom 40px
+  
+.download-hero
+  text-align center
+  padding 30px 20px
+  background #f8f9fa
+  border 1px solid #e9ecef
+  border-radius 8px
+  margin-bottom 30px
+  
+  .version-info
+    margin-bottom 25px
+    
+    .version-number
+      font-size 2em
+      font-weight bold
+      margin-bottom 8px
+      color #333
+      
+    .release-date
+      font-size 1em
+      color #666
+
+.primary-download
+  .download-button-container
+    margin-bottom 15px
+    
+  .download-btn
+    display inline-block
+    background #fff
+    color #333
+    text-decoration none
+    padding 15px 30px
+    border 2px solid #333
+    border-radius 4px
+    font-size 1.1em
+    font-weight normal
+    transition all 0.2s ease
+    
+    &:hover
+      background #333
+      color #fff
+      
+    .btn-content
+      display block
+      text-align center
+      
+      .btn-text
+        .btn-title
+          font-size 1em
+          margin-bottom 4px
+          
+        .btn-subtitle
+          font-size 0.85em
+          opacity 0.7
+
+  .download-note
+    font-size 0.9em
+    color #666
+
+.download-options
+  .download-tabs
+    .tab-buttons
+      display flex
+      justify-content center
+      margin-bottom 20px
+      border-bottom 2px solid #e9ecef
+      
+      .tab-btn
+        background none
+        border none
+        padding 12px 24px
+        font-size 1em
+        cursor pointer
+        border-bottom 2px solid transparent
+        transition all 0.2s ease
+        color #666
+        
+        &:hover
+          background rgba(0,0,0,0.05)
+          color #333
+          
+        &.active
+          border-bottom-color #333
+          color #333
+          font-weight bold
+
+    .tab-content
+      .tab-panel
+        display none
+        
+        &.active
+          display block
+
+.os-downloads
+  h3
+    margin-bottom 20px
+    font-size 1.3em
+    color #333
+
+.download-grid
+  display grid
+  gap 15px
+  
+.download-item
+  display flex
+  justify-content space-between
+  align-items center
+  padding 15px
+  border 1px solid #e9ecef
+  border-radius 8px
+  background white
+  transition all 0.3s ease
+  
+  &:hover
+    box-shadow 0 2px 10px rgba(0,0,0,0.1)
+    
+  .download-info
+    flex 1
+    
+    .download-name
+      font-weight bold
+      margin-bottom 5px
+      
+      .tag
+        background #6c757d
+        color white
+        padding 2px 6px
+        border-radius 3px
+        font-size 0.8em
+        margin-right 8px
+        
+      .name
+        font-size 1em
+        
+    .download-desc
+      color #666
+      font-size 0.9em
+      
+  .download-links
+    display flex
+    gap 10px
+    
+    .download-link
+      padding 6px 12px
+      text-decoration none
+      border-radius 3px
+      font-size 0.85em
+      transition all 0.2s ease
+      border 1px solid #dee2e6
+      
+      &.primary
+        background #333
+        color white
+        border-color #333
+        
+        &:hover
+          background #555
+          
+      &:not(.primary)
+        color #666
+        
+        &:hover
+          background #f8f9fa
+          border-color #999
+
+.more-options
+  text-align center
+  
+  h3
+    margin-bottom 15px
+    
+  p
+    margin-bottom 20px
+    color #666
+    
+  .external-links
+    display flex
+    flex-direction column
+    gap 10px
+    align-items center
+    
+    .external-link
+      display flex
+      align-items center
+      gap 10px
+      padding 12px 20px
+      text-decoration none
+      color #495057
+      border 1px solid #dee2e6
+      border-radius 6px
+      transition all 0.3s ease
+      min-width 250px
+      
+      &:hover
+        background #f8f9fa
+        border-color #adb5bd
+        
+      .icon
+        font-size 1.2em
+
+.changelog-section
+  margin-top 60px
+  padding-top 40px
+  border-top 2px solid #e9ecef
+  
+  h2
+    margin-bottom 20px
+    
+  .changelog-content
+    background #f8f9fa
+    padding 20px
+    border-radius 8px
+    
+    .changelog-version
+      margin-bottom 20px
+      
+      b
+        font-size 1.2em
+        margin-right 15px
+        
+      .release-date
+        color #666
+        
+    .changelog-notes
+      .changelog-separator
+        padding 10px 0
+        color #666
+        border-top 1px solid #dee2e6
+        margin 10px 0
+        
+      .changelog-item
+        padding 5px 0
+        line-height 1.5
+        
+      .changelog-header
+        padding 15px 0 5px 0
+        font-weight bold
+        font-size 1.1em
+
+.community-section
+  margin-top 40px
+  text-align center
+  
+  h2
+    margin-bottom 20px
+    
+  .community-content
+    .wechat-qr
+      max-width 200px
+      border-radius 8px
+      box-shadow 0 4px 15px rgba(0,0,0,0.1)
+      margin-bottom 15px
+      
+    p
+      color #666
+      font-size 0.95em
+
+// Responsive design
+@media (max-width: 768px)
+  .download-hero
+    padding 25px 15px
+    
+    .version-number
+      font-size 1.8em
+      
+  .download-btn
+    padding 12px 25px
+    font-size 1em
+    
+  .tab-buttons
+    flex-wrap wrap
+    
+    .tab-btn
+      flex 1
+      min-width 80px
+      
+  .download-item
+    flex-direction column
+    align-items flex-start
+    gap 15px
+    
+    .download-links
+      width 100%
+      justify-content space-between

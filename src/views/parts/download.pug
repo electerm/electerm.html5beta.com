@@ -1,56 +1,247 @@
 h2 #{lang.lang.download}
 hr
-.pd1y
-  .pd1y
-    b #{version}
-    small.mg2l #{assets.windows.releaseDate}
-  .pd1y
-    - let rns = assets.windows.releaseNote.split('\r\n').filter(d => d.trim())
-    - for (let rn of rns) {
-      - if (rn.startsWith('---')) {
-        .pd1y #{rn}
-      - } else if (!rn.startsWith('#')) {
-        .pd1b ♥ #{rn.replace(/^- /, '')}
-      - } else {
-        .pd2y.bold #{rn.replace(/^- /, '')}
+
+// Main download section with OS detection
+.download-main
+  .download-hero
+    .version-info
+      .version-number #{version}
+      .release-date #{assets.windows.releaseDate}
+    
+    // Auto-detect OS and show primary download button
+    .primary-download
+      .download-detector
+        script.
+          function detectOS() {
+            const platform = navigator.platform.toLowerCase();
+            const userAgent = navigator.userAgent.toLowerCase();
+            
+            if (platform.includes('mac') || userAgent.includes('mac')) {
+              return 'mac';
+            } else if (platform.includes('win') || userAgent.includes('windows')) {
+              return 'windows';
+            } else if (platform.includes('linux') || userAgent.includes('linux')) {
+              return 'linux';
+            }
+            return 'windows'; // default
+          }
+          
+          function detectMacArchitecture() {
+            // Check if it's Apple Silicon (M1/M2/M3)
+            if (navigator.userAgent.includes('Macintosh')) {
+              // Try to detect ARM-based Macs
+              if (navigator.userAgent.includes('AppleWebKit') && !navigator.userAgent.includes('Intel')) {
+                return 'arm64';
+              }
+              // For Intel Macs or when uncertain, default to x64
+              return 'x64';
+            }
+            return 'x64';
+          }
+          
+          function getRecommendedDownload(os) {
+            const downloads = {
+              windows: {
+                name: 'Windows 10/11 x64',
+                items: !{JSON.stringify(assets.windows.items)}
+              },
+              mac: {
+                name: 'Mac OS',
+                items: !{JSON.stringify(assets.mac.items)}
+              },
+              linux: {
+                name: 'Linux x86/x64/arm/arm64',
+                items: !{JSON.stringify(assets.linux.items)}
+              }
+            };
+            
+            const osData = downloads[os];
+            if (osData && osData.items.length > 0) {
+              let recommended;
+              
+              if (os === 'mac') {
+                const arch = detectMacArchitecture();
+                // Try to find the appropriate Mac version
+                recommended = osData.items.find(item => {
+                  if (arch === 'arm64') {
+                    return item.name.includes('arm64') || item.name.includes('apple-silicon');
+                  } else {
+                    return item.name.includes('x64') || item.name.includes('intel') || 
+                           (!item.name.includes('arm64') && item.name.includes('.dmg'));
+                  }
+                });
+              } else {
+                // For Windows and Linux, get the most appropriate download
+                recommended = osData.items.find(item => 
+                  item.name.includes('Setup') || 
+                  item.name.includes('.exe') || 
+                  item.name.includes('.dmg') ||
+                  item.name.includes('.deb')
+                );
+              }
+              
+              // Fallback to first item if no specific match
+              recommended = recommended || osData.items[0];
+              
+              return {
+                osName: osData.name + (os === 'mac' ? ` (${detectMacArchitecture()})` : ''),
+                download: recommended
+              };
+            }
+            return null;
+          }
+          
+          function updateDownloadButton() {
+            const detectedOS = detectOS();
+            const recommended = getRecommendedDownload(detectedOS);
+            
+            if (recommended) {
+              const button = document.getElementById('primary-download-btn');
+              const osLabel = document.getElementById('detected-os');
+              const fileName = document.getElementById('download-filename');
+              
+              if (button && recommended.download) {
+                button.href = recommended.download.browser_download_url;
+                osLabel.textContent = recommended.osName;
+                fileName.textContent = recommended.download.name;
+                button.style.display = 'block';
+              }
+            }
+          }
+          
+          // Update when page loads
+          document.addEventListener('DOMContentLoaded', updateDownloadButton);
+        
+        .download-button-container
+          a#primary-download-btn.download-btn.primary(href="#" style="display:none")
+            .btn-content
+              .btn-text
+                .btn-title Download for 
+                  span#detected-os Your System
+                .btn-subtitle#download-filename Detecting...
+          
+          .download-note.pd1t
+            | Free & Open Source • Latest Version: #{version}
+
+// Download options tabs
+.download-options
+  .download-tabs
+    .tab-buttons
+      button.tab-btn.active(data-tab="windows") Windows
+      button.tab-btn(data-tab="mac") macOS  
+      button.tab-btn(data-tab="linux") Linux
+      button.tab-btn(data-tab="more") More Options
+    
+    .tab-content
+      .tab-panel.active(data-tab="windows")
+        .os-downloads
+          h3 #{assets.windows.name}
+          .download-grid
+            - for (let obj of assets.windows.items)
+              .download-item
+                .download-info
+                  .download-name
+                    - if (obj.tag)
+                      span.tag [#{obj.tag}]
+                    span.name #{obj.name}
+                  - if (obj.desc)
+                    .download-desc #{obj.desc}
+                .download-links
+                  a.download-link.primary(href=obj.browser_download_url) GitHub
+                  a.download-link(href=obj.sourceforgeUrl) SourceForge
+                  a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) Mirror
+      
+      .tab-panel(data-tab="mac")
+        .os-downloads
+          h3 #{assets.mac.name}
+          .download-grid
+            - for (let obj of assets.mac.items)
+              .download-item
+                .download-info
+                  .download-name
+                    - if (obj.tag)
+                      span.tag [#{obj.tag}]
+                    span.name #{obj.name}
+                  - if (obj.desc)
+                    .download-desc #{obj.desc}
+                .download-links
+                  a.download-link.primary(href=obj.browser_download_url) GitHub
+                  a.download-link(href=obj.sourceforgeUrl) SourceForge
+                  a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) Mirror
+      
+      .tab-panel(data-tab="linux")
+        .os-downloads
+          h3 #{assets.linux.name}
+          .download-grid
+            - for (let obj of assets.linux.items)
+              .download-item
+                .download-info
+                  .download-name
+                    - if (obj.tag)
+                      span.tag [#{obj.tag}]
+                    span.name #{obj.name}
+                  - if (obj.desc)
+                    .download-desc #{obj.desc}
+                .download-links
+                  a.download-link.primary(href=obj.browser_download_url) GitHub
+                  a.download-link(href=obj.sourceforgeUrl) SourceForge
+                  a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) Mirror
+      
+      .tab-panel(data-tab="more")
+        .more-options
+          h3 Alternative Downloads
+          p All releases are also available on:
+          .external-links
+            a.external-link(href="https://github.com/electerm/electerm/releases") 
+              span.icon 🔗
+              span View all releases on GitHub
+            a.external-link(href="https://sourceforge.net/projects/electerm/files/")
+              span.icon 🔗  
+              span Browse files on SourceForge
+
+// Tab switching functionality
+script.
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and panels
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanels.forEach(panel => panel.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding panel
+        this.classList.add('active');
+        document.querySelector(`.tab-panel[data-tab="${targetTab}"]`).classList.add('active');
+      });
+    });
+  });
+
+// Changelog section (moved to bottom)
+.changelog-section
+  h2 Release Notes
+  .changelog-content
+    .changelog-version
+      b #{version}
+      small.release-date #{assets.windows.releaseDate}
+    .changelog-notes
+      - let rns = assets.windows.releaseNote.split('\r\n').filter(d => d.trim())
+      - for (let rn of rns) {
+        - if (rn.startsWith('---')) {
+          .changelog-separator #{rn}
+        - } else if (!rn.startsWith('#')) {
+          .changelog-item ♥ #{rn.replace(/^- /, '')}
+        - } else {
+          .changelog-header #{rn.replace(/^- /, '')}
+        - }
       - }
-    - }
-.container
-  - let arr = Object.keys(assets)
-  - let len = arr.length
-  - let i = 0
-  - for (;i < len;i++) {
-    - let key = arr[i]
-    - let os = assets[key]
-    - let osName = os.name
-    - let items = os.items
-    .column
-      .title.pd1y
-        b #{osName}
-      .pd1y
-        - let ll = items.length
-        - let j = 0
-        ul
-          - for(;j < ll;j ++) {
-            - let obj = items[j]
-            li.pd2b
-              .pd1b
-                - if (obj.tag) {
-                  b.mg1r [#{obj.tag}]
-                - }
-                span #{obj.name}
-              - if (obj.desc) {
-                .pd1b
-                  small.mg1l #{obj.desc}
-              - }
-              .pd1b
-                // a(href=obj.cdnUrl) cdn
-                a.mg1l(href=obj.browser_download_url) github
-                a.mg1l(href=obj.sourceforgeUrl) sourceforge
-                a.mg1l(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
-          - }
-  - }
 
-h2 微信群
-
-img(src='https://electerm.html5beta.com/electerm-wechat-group-qr.jpg')
+// WeChat community section
+.community-section
+  h2 微信群
+  .community-content
+    img.wechat-qr(src='https://electerm.html5beta.com/electerm-wechat-group-qr.jpg' alt='WeChat Group QR Code')
+    p Join our WeChat community for support and updates

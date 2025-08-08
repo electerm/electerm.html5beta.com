@@ -82,10 +82,34 @@ function createReleaseData () {
       !cname.includes('.appx') &&
       !cname.includes('loose')
     ) {
+      // Add descriptions for Windows files
+      if (cname.includes('installer') && cname.endsWith('.exe')) {
+        nr.desc = 'Windows installer (recommended)'
+      } else if (cname.endsWith('.exe') && !cname.includes('installer')) {
+        nr.desc = 'Portable executable'
+      } else if (cname.endsWith('.zip')) {
+        nr.desc = 'Portable zip archive'
+      } else if (cname.endsWith('.msi')) {
+        nr.desc = 'Windows installer package'
+      } else if (cname.includes('portable') && cname.endsWith('.tar.gz')) {
+        nr.desc = 'Portable archive'
+      } else if (cname.includes('win7')) {
+        nr.desc = 'Legacy Windows 7 compatible'
+      } else if (cname.endsWith('.tar.gz')) {
+        nr.desc = 'Just extract and run'
+      }
       prev.windows.releaseNote = releaseNote
       prev.windows.releaseDate = dt
       prev.windows.items.push(nr)
     } else if (cname.endsWith('.dmg')) {
+      // Add descriptions for macOS files
+      if (cname.includes('arm64') || cname.includes('apple-silicon')) {
+        nr.desc = 'for Apple Silicon Macs (M1/M2/M3)'
+      } else if (cname.includes('x64') || cname.includes('intel')) {
+        nr.desc = 'for Intel Macs'
+      } else {
+        nr.desc = 'macOS disk image'
+      }
       prev.mac.releaseNote = releaseNote
       prev.mac.releaseDate = dt
       prev.mac.items.push(nr)
