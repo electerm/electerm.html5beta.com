@@ -226,10 +226,6 @@ export default {
     {
       url: 'https://gh-proxy.com',
       title: 'https://gh-proxy.com'
-    },
-    {
-      url: 'https://dartnode.com?aff=NuttyMonkey521',
-      title: 'DartNode'
     }
   ]
 }
