@@ -196,6 +196,10 @@ export default {
       title: 'Snap Store'
     },
     {
+      url: 'https://electerm-repos.html5beta.com/deb',
+      title: 'Debian Repository'
+    },
+    {
       url: 'https://github.com/electerm/electerm/wiki/Know-issues',
       title: 'Know issues'
     },
