@@ -1,0 +1,95 @@
+//- Debian Repository Page Content
+
+.pd2y.aligncenter
+  h2 Official Debian Repository
+  p Secure APT repository for Electerm
+
+//- Repository Status
+.status-section
+  .status-card
+    h3
+      span.status-indicator.status-online
+      | Repository Status
+    p Online and Updated
+  .status-card
+    h3
+      span.status-indicator.status-online
+      | GPG Signing
+    p Cryptographically Verified
+  .status-card
+    h3
+      span.status-indicator.status-online
+      | Architecture
+    p amd64 (x86_64) 
+      span.architecture-badge SUPPORTED
+
+//- Installation Instructions
+.install-card
+  h3
+    span.step-number 1
+    | Add Repository
+  p Add the Electerm Debian repository to your system:
+  
+  .code-block
+    button.copy-button(onclick="copyToClipboard(this)") Copy
+    pre.
+      # Add the GPG key
+      curl -fsSL https://electerm-repos.html5beta.com/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/electerm.gpg
+
+      # Add the repository
+      echo "deb [signed-by=/usr/share/keyrings/electerm.gpg] https://electerm-repos.html5beta.com/deb stable main" | sudo tee /etc/apt/sources.list.d/electerm.list
+
+.install-card
+  h3
+    span.step-number 2
+    | Update & Install
+  p Update your package list and install Electerm:
+  
+  .code-block
+    button.copy-button(onclick="copyToClipboard(this)") Copy
+    pre.
+      # Update package list
+      sudo apt update
+
+      # Install Electerm
+      sudo apt install electerm
+  
+  .success
+    strong ✅ That's it!
+    |  Electerm will be installed and automatically updated through your system's package manager.
+
+//- Repository Information
+.install-card
+  h3 📋 Repository Information
+  
+  .info
+    strong Repository URL:
+    |  https://electerm-repos.html5beta.com/deb
+    br
+    strong Distribution:
+    |  stable
+    br
+    strong Component:
+    |  main
+    br
+    strong Architecture:
+    |  amd64
+    br
+    strong GPG Key:
+    |  
+    a(href="public.key") Download Public Key
+  
+  h4 🔐 Security Features
+  ul
+    li
+      strong GPG Signed:
+      |  All packages are cryptographically signed
+    li
+      strong HTTPS:
+      |  Secure transport for all downloads
+    li
+      strong Automated:
+      |  Repository updated automatically with new releases
+    li
+      strong Verified:
+      |  Packages verified against official GitHub releases

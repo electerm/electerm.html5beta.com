@@ -166,7 +166,8 @@ export default {
   siteName: 'electerm',
   host: process.env.HOST,
   pages: [
-    'sponsor-electerm'
+    'sponsor-electerm',
+    'deb'
   ],
   langs: createLocaleData(),
   ...createReleaseData(),

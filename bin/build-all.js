@@ -62,7 +62,9 @@ async function main () {
   for (const item of pages) {
     const { langCode, lang } = langs[2]
     const f = resolve(cwd, 'src/views/' + item + '.pug')
-    const to = resolve(cwd, 'public/' + item + '.html')
+    const to = item === 'deb'
+      ? resolve(cwd, 'public/deb/index.html')
+      : resolve(cwd, 'public/' + item + '.html')
     const h = process.env.HOST
     await buildPug(f, to, {
       ...data,
