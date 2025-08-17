@@ -66,14 +66,20 @@ async function main () {
       ? resolve(cwd, 'public/deb/index.html')
       : resolve(cwd, 'public/' + item + '.html')
     const h = process.env.HOST
+    const cssUrl = item === 'deb'
+      ? '/index.bundle.css'
+      : 'index.bundle.css'
+    const jsUrl = item === 'deb'
+      ? '/index.bundle.js'
+      : 'index.bundle.js'
     await buildPug(f, to, {
       ...data,
       langCode,
       lang,
       desc: lang.lang.desc,
       url: h,
-      cssUrl: 'index.bundle.css',
-      jsUrl: 'index.bundle.js'
+      cssUrl,
+      jsUrl
     })
   }
 }
