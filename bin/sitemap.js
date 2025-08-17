@@ -43,12 +43,14 @@ async function buildSiteMap () {
     priority: 1
   })
   for (const page of data.pages) {
-    urls.push({
-      loc: host + '/' + page + '.html',
-      lastmod: dayjs(state.mtime).format(fmt),
-      changefreq: 'weekly',
-      priority: 1
-    })
+    if (page !== 'deb') {
+      urls.push({
+        loc: host + '/' + page + '.html',
+        lastmod: dayjs(state.mtime).format(fmt),
+        changefreq: 'weekly',
+        priority: 1
+      })
+    }
   }
   const arr = await buildPages()
   urls.push(...arr)
