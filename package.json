@@ -12,6 +12,7 @@
     "b1": "node bin/build-all.js",
     "b2": "node bin/build-js.js",
     "down": "node bin/fetch-release-info.js",
+    "deb": "node bin/build-deb.js",
     "sitemap": "node bin/sitemap.js",
     "build": "echo \"ok\"",
     "fix": "standard --fix",
