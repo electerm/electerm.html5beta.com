@@ -12,32 +12,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 PUBLIC_DIR="$PROJECT_ROOT/public"
 DEB_DIR="$PUBLIC_DIR/deb"
-SRC_DEB_BUILD="$PROJECT_ROOT/src/static/deb-build"
 
 echo "Script directory: $SCRIPT_DIR"
 echo "Project root: $PROJECT_ROOT"
 echo "Public directory: $PUBLIC_DIR"
 echo "Deb directory: $DEB_DIR"
-echo "Source directory: $SRC_DEB_BUILD"
-
-# Check if source directory exists
-if [ ! -d "$SRC_DEB_BUILD" ]; then
-    echo "Error: Source directory $SRC_DEB_BUILD does not exist"
-    exit 1
-fi
 
 # Create proper Debian repository structure
 mkdir -p "$DEB_DIR/dists/stable/main/binary-amd64"
 mkdir -p "$DEB_DIR/pool/main/e/electerm"
-
-# Copy static files to the deb root
-echo "Copying static files from $SRC_DEB_BUILD to $DEB_DIR..."
-if [ -f "$SRC_DEB_BUILD/index.html" ]; then
-    cp "$SRC_DEB_BUILD/index.html" "$DEB_DIR/"
-fi
-if [ -f "$SRC_DEB_BUILD/public.key" ]; then
-    cp "$SRC_DEB_BUILD/public.key" "$DEB_DIR/"
-fi
 
 echo "Repository structure created successfully"
 
