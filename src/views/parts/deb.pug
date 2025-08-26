@@ -37,7 +37,7 @@
       curl -fsSL https://electerm-repos.html5beta.com/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/electerm.gpg
 
       # Add the repository
-      echo "deb [signed-by=/usr/share/keyrings/electerm.gpg] https://electerm-repos.html5beta.com/deb stable main" | sudo tee /etc/apt/sources.list.d/electerm.list
+      echo "deb [arch=amd64 signed-by=/usr/share/keyrings/electerm.gpg] https://electerm-repos.html5beta.com/deb stable main" | sudo tee /etc/apt/sources.list.d/electerm.list
 
 .install-card
   h3
