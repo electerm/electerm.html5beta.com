@@ -80,6 +80,6 @@
   "homepage": "https://electerm.html5beta.com",
   "dependencies": {
     "mongoose": "^7.5.0",
-    "nanoid": "^4.0.2"
+    "nanoid": "^5.0.9"
   }
 }
