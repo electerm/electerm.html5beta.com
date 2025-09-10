@@ -38,27 +38,27 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "2.1.44",
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/node": "^20.3.1",
-    "@vercel/node": "^2.15.8",
-    "@vitejs/plugin-react": "^4.0.4",
-    "axios": "^1.4.0",
-    "dayjs": "^1.11.13",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
+    "@electerm/electerm-locales": "2.1.46",
+    "@tsconfig/recommended": "^1.0.3",
+    "@types/node": "^20.10.6",
+    "@vercel/node": "^3.2.7",
+    "@vitejs/plugin-react": "^4.2.0",
+    "axios": "^1.6.8",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.1",
+    "express": "^4.19.2",
     "json5": "^2.2.3",
-    "morgan": "^1.10.0",
-    "pug": "^3.0.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "shelljs": "^0.8.5",
-    "sitemaps": "^2.0.4",
-    "standard": "^17.1.0",
-    "typescript": "^5.2.2",
+    "morgan": "^1.10.1",
+    "pug": "^3.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "shelljs": "^0.9.0",
+    "sitemaps": "^2.0.6",
+    "standard": "^17.1.2",
+    "typescript": "^5.4.5",
     "universe-bg": "^1.0.0",
-    "vite": "^4.4.9",
-    "vite-plugin-purgecss": "^0.2.12"
+    "vite": "^4.5.0",
+    "vite-plugin-purgecss": "^0.2.13"
   },
   "standard": {
     "ignore": [
@@ -77,9 +77,5 @@
   "bugs": {
     "url": "https://github.com/electerm/electerm.html5beta.com/issues"
   },
-  "homepage": "https://electerm.html5beta.com",
-  "dependencies": {
-    "mongoose": "^7.5.0",
-    "nanoid": "^4.0.2"
-  }
+  "homepage": "https://electerm.html5beta.com"
 }
