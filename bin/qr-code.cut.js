@@ -37,7 +37,7 @@ async function cropImage () {
 
     // Calculate new dimensions
     const cropTop = 340
-    const cropBottom = 230
+    const cropBottom = 100
     const cropLeft = 120
     const cropRight = 120
     const newWidth = originalWidth - cropLeft - cropRight
