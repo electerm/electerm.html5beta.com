@@ -47,8 +47,8 @@
                 items: !{JSON.stringify(assets.mac.items)}
               },
               linux: {
-                name: 'Linux x86/x64/arm/arm64',
-                items: !{JSON.stringify(assets.linux.items)}
+                name: 'Linux x86_64',
+                items: !{JSON.stringify(assets.linux.x86_64.items)}
               }
             };
             
@@ -167,22 +167,123 @@
                   a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
       
       .tab-panel(data-tab="linux")
-        .os-downloads
-          h3 #{assets.linux.name}
-          .download-grid
-            - for (let obj of assets.linux.items)
-              .download-item
-                .download-info
-                  .download-name
-                    - if (obj.tag)
-                      span.tag [#{obj.tag}]
-                    span.name #{obj.name}
-                  - if (obj.desc)
-                    .download-desc #{obj.desc}
-                .download-links
-                  a.download-link.primary(href=obj.browser_download_url) GitHub
-                  a.download-link(href=obj.sourceforgeUrl) SourceForge
-                  a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+        .linux-arch-tabs
+          .arch-tab-buttons
+            button.arch-tab-btn.active(data-arch="x86_64") x86_64
+            button.arch-tab-btn(data-arch="x86_64_legacy") x86_64 Legacy
+            button.arch-tab-btn(data-arch="arm64") ARM64
+            button.arch-tab-btn(data-arch="arm64_legacy") ARM64 Legacy
+            button.arch-tab-btn(data-arch="armv7") ARMv7
+            button.arch-tab-btn(data-arch="armv7_legacy") ARMv7 Legacy
+
+          .arch-tab-content
+            .arch-tab-panel.active(data-arch="x86_64")
+              .os-downloads
+                h3 #{assets.linux.x86_64.name}
+                .download-grid
+                  - for (let obj of assets.linux.x86_64.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            .arch-tab-panel(data-arch="x86_64_legacy")
+              .os-downloads
+                h3 #{assets.linux.x86_64_legacy.name}
+                .download-grid
+                  - for (let obj of assets.linux.x86_64_legacy.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            .arch-tab-panel(data-arch="arm64")
+              .os-downloads
+                h3 #{assets.linux.arm64.name}
+                .download-grid
+                  - for (let obj of assets.linux.arm64.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            .arch-tab-panel(data-arch="arm64_legacy")
+              .os-downloads
+                h3 #{assets.linux.arm64_legacy.name}
+                .download-grid
+                  - for (let obj of assets.linux.arm64_legacy.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            .arch-tab-panel(data-arch="armv7")
+              .os-downloads
+                h3 #{assets.linux.armv7.name}
+                .download-grid
+                  - for (let obj of assets.linux.armv7.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            .arch-tab-panel(data-arch="armv7_legacy")
+              .os-downloads
+                h3 #{assets.linux.armv7_legacy.name}
+                .download-grid
+                  - for (let obj of assets.linux.armv7_legacy.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
       
       .tab-panel(data-tab="more")
         .more-options
@@ -225,6 +326,28 @@ script.
       button.addEventListener('click', function() {
         const targetTab = this.getAttribute('data-tab');
         activateTab(targetTab);
+      });
+    });
+
+    // Linux architecture sub-tabs functionality
+    const archTabButtons = document.querySelectorAll('.arch-tab-btn');
+    const archTabPanels = document.querySelectorAll('.arch-tab-panel');
+
+    function activateArchTab(archName) {
+      archTabButtons.forEach(btn => {
+        const isTarget = btn.getAttribute('data-arch') === archName;
+        btn.classList.toggle('active', isTarget);
+      });
+      archTabPanels.forEach(panel => {
+        const isTarget = panel.getAttribute('data-arch') === archName;
+        panel.classList.toggle('active', isTarget);
+      });
+    }
+
+    archTabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const targetArch = this.getAttribute('data-arch');
+        activateArchTab(targetArch);
       });
     });
   });

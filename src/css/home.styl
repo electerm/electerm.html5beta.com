@@ -164,6 +164,46 @@ ul
         &.active
           display block
 
+// Linux architecture sub-tabs styles
+.linux-arch-tabs
+  .arch-tab-buttons
+    display flex
+    justify-content center
+    margin-bottom 20px
+    padding 10px 0
+    border-bottom 1px solid #e9ecef
+    flex-wrap wrap
+    gap 5px
+    
+    .arch-tab-btn
+      background none
+      border 1px solid #dee2e6
+      padding 8px 16px
+      font-size 0.9em
+      cursor pointer
+      border-radius 4px
+      transition all 0.2s ease
+      color #666
+      margin 2px
+      
+      &:hover
+        background #f8f9fa
+        border-color #adb5bd
+        color #333
+        
+      &.active
+        background #333
+        border-color #333
+        color white
+        font-weight bold
+
+  .arch-tab-content
+    .arch-tab-panel
+      display none
+      
+      &.active
+        display block
+
 .os-downloads
   h3
     margin-bottom 20px

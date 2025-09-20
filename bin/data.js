@@ -114,35 +114,71 @@ function createReleaseData () {
       prev.mac.releaseDate = dt
       prev.mac.items.push(nr)
     } else if (cname.includes('linux')) {
+      const isLegacy = cname.includes('-legacy')
+
       if (cname.endsWith('.rpm')) {
-        nr.desc = 'for Red Hat, Fedora...'
+        nr.desc = isLegacy ? 'for Red Hat, Fedora... (glibc < 2.34)' : 'for Red Hat, Fedora...'
       } else if (cname.endsWith('.deb')) {
-        nr.desc = 'for Debian, Ubuntu...'
+        nr.desc = isLegacy ? 'for Debian, Ubuntu... (glibc < 2.34, like UOS/Ubuntu 18)' : 'for Debian, Ubuntu...'
       } else if (cname.endsWith('.snap')) {
         nr.desc = 'for all linux that support snap'
       } else if (cname.endsWith('.gz')) {
-        nr.desc = 'for all linux, just extract'
+        nr.desc = isLegacy ? 'for all linux, just extract (glibc < 2.34)' : 'for all linux, just extract'
       } else if (cname.endsWith('.AppImage')) {
-        nr.desc = 'for all linux, just run it'
+        nr.desc = isLegacy ? 'for all linux, just run it (glibc < 2.34)' : 'for all linux, just run it'
       }
-      nr.tag = 'ARM64 Beta'
-      nr.index = 2
+
+      // Determine architecture and legacy status
+      let archType = ''
+
       if (cname.includes('x64') || cname.includes('x86') || cname.includes('amd64')) {
-        nr.index = 1
-        nr.tag = 'x86/64'
+        archType = 'x86_64'
+      } else if (cname.includes('arm64') || cname.includes('aarch64')) {
+        archType = 'arm64'
       } else if (cname.includes('armv7l')) {
-        nr.tag = 'ARM Beta'
-        nr.index = 3
+        archType = 'armv7'
       }
-      prev.linux.releaseDate = dt
-      prev.linux.releaseNote = releaseNote
-      prev.linux.items.push(nr)
+
+      // Add to appropriate architecture group
+      const category = isLegacy ? `${archType}_legacy` : archType
+      if (!prev.linux[category]) {
+        prev.linux[category] = {
+          name: '',
+          items: []
+        }
+      }
+
+      prev.linux[category].releaseDate = dt
+      prev.linux[category].releaseNote = releaseNote
+      prev.linux[category].items.push(nr)
     }
     return prev
   }, {
     linux: {
-      name: 'Linux x86/x64/arm/arm64',
-      items: []
+      x86_64: {
+        name: 'Linux x86_64',
+        items: []
+      },
+      x86_64_legacy: {
+        name: 'Linux x86_64 Legacy',
+        items: []
+      },
+      arm64: {
+        name: 'Linux ARM64',
+        items: []
+      },
+      arm64_legacy: {
+        name: 'Linux ARM64 Legacy',
+        items: []
+      },
+      armv7: {
+        name: 'Linux ARMv7',
+        items: []
+      },
+      armv7_legacy: {
+        name: 'Linux ARMv7 Legacy',
+        items: []
+      }
     },
     mac: {
       name: 'Mac OS x64',
@@ -153,7 +189,6 @@ function createReleaseData () {
       items: []
     }
   })
-  arr.linux.items.sort((a, b) => a.index - b.index)
   return {
     assets: arr,
     version
