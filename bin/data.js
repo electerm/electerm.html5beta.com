@@ -98,9 +98,31 @@ function createReleaseData () {
       } else if (cname.endsWith('.tar.gz')) {
         nr.desc = 'Just extract and run'
       }
-      prev.windows.releaseNote = releaseNote
-      prev.windows.releaseDate = dt
-      prev.windows.items.push(nr)
+
+      // Determine Windows architecture
+      let archType = ''
+      if (cname.includes('arm64')) {
+        archType = 'arm64'
+      } else if (cname.includes('x64') || cname.includes('x86_64')) {
+        archType = 'x64'
+      } else if (cname.includes('win7')) {
+        archType = 'win7'
+      } else {
+        // Default to x64 for unspecified Windows releases
+        archType = 'x64'
+      }
+
+      // Add to appropriate architecture group
+      if (!prev.windows[archType]) {
+        prev.windows[archType] = {
+          name: '',
+          items: []
+        }
+      }
+
+      prev.windows[archType].releaseDate = dt
+      prev.windows[archType].releaseNote = releaseNote
+      prev.windows[archType].items.push(nr)
     } else if (cname.endsWith('.dmg')) {
       // Add descriptions for macOS files
       if (cname.includes('arm64') || cname.includes('apple-silicon')) {
@@ -185,8 +207,18 @@ function createReleaseData () {
       items: []
     },
     windows: {
-      name: 'Windows 10/11 x64',
-      items: []
+      x64: {
+        name: 'Windows x64',
+        items: []
+      },
+      arm64: {
+        name: 'Windows ARM64',
+        items: []
+      },
+      win7: {
+        name: 'Windows 7 Legacy',
+        items: []
+      }
     }
   })
   return {

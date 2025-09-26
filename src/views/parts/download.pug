@@ -3,7 +3,7 @@
   .download-hero
     .version-info
       .version-number #{version}
-      .release-date #{assets.windows.releaseDate}
+      .release-date #{assets.windows.x64.releaseDate || assets.windows.arm64.releaseDate}
     
     // Auto-detect OS and show primary download button
     .primary-download
@@ -36,11 +36,25 @@
             return 'x64';
           }
           
+          function detectWindowsArchitecture() {
+            // Check for ARM64 support in Windows
+            if (navigator.userAgent.includes('ARM64') || navigator.userAgent.includes('WOW64; ARM64')) {
+              return 'arm64';
+            }
+            return 'x64'; // Default to x64
+          }
+
           function getRecommendedDownload(os) {
             const downloads = {
               windows: {
-                name: 'Windows 10/11 x64',
-                items: !{JSON.stringify(assets.windows.items)}
+                x64: {
+                  name: 'Windows x64',
+                  items: !{JSON.stringify(assets.windows.x64.items)}
+                },
+                arm64: {
+                  name: 'Windows ARM64',
+                  items: !{JSON.stringify(assets.windows.arm64.items)}
+                }
               },
               mac: {
                 name: 'Mac OS',
@@ -52,38 +66,68 @@
               }
             };
             
-            const osData = downloads[os];
-            if (osData && osData.items.length > 0) {
-              let recommended;
-              
-              if (os === 'mac') {
-                const arch = detectMacArchitecture();
-                // Try to find the appropriate Mac version
-                recommended = osData.items.find(item => {
-                  if (arch === 'arm64') {
-                    return item.name.includes('arm64') || item.name.includes('apple-silicon');
-                  } else {
-                    return item.name.includes('x64') || item.name.includes('intel') || 
-                           (!item.name.includes('arm64') && item.name.includes('.dmg'));
-                  }
-                });
-              } else {
-                // For Windows and Linux, get the most appropriate download
-                recommended = osData.items.find(item => 
-                  item.name.includes('Setup') || 
-                  item.name.includes('.exe') || 
-                  item.name.includes('.dmg') ||
-                  item.name.includes('.deb')
-                );
+            if (os === 'windows') {
+              const arch = detectWindowsArchitecture();
+              const osData = downloads.windows[arch];
+              if (osData && osData.items.length > 0) {
+                // For Windows, prioritize installer .exe files
+                let recommended = osData.items.find(item => 
+                  item.name.includes('installer') && item.name.endsWith('.exe')
+                ) || osData.items.find(item => 
+                  item.name.endsWith('.exe')
+                ) || osData.items[0];
+                
+                return {
+                  osName: `${osData.name}`,
+                  download: recommended
+                };
               }
-              
-              // Fallback to first item if no specific match
-              recommended = recommended || osData.items[0];
-              
-              return {
-                osName: osData.name + (os === 'mac' ? ` (${detectMacArchitecture()})` : ''),
-                download: recommended
-              };
+              // Fallback to x64 if ARM64 not available
+              if (arch === 'arm64' && downloads.windows.x64.items.length > 0) {
+                const osData = downloads.windows.x64;
+                let recommended = osData.items.find(item => 
+                  item.name.includes('installer') && item.name.endsWith('.exe')
+                ) || osData.items.find(item => 
+                  item.name.endsWith('.exe')
+                ) || osData.items[0];
+                
+                return {
+                  osName: `${osData.name} (ARM64 version not available)`,
+                  download: recommended
+                };
+              }
+            } else {
+              const osData = downloads[os];
+              if (osData && osData.items.length > 0) {
+                let recommended;
+                
+                if (os === 'mac') {
+                  const arch = detectMacArchitecture();
+                  // Try to find the appropriate Mac version
+                  recommended = osData.items.find(item => {
+                    if (arch === 'arm64') {
+                      return item.name.includes('arm64') || item.name.includes('apple-silicon');
+                    } else {
+                      return item.name.includes('x64') || item.name.includes('intel') || 
+                             (!item.name.includes('arm64') && item.name.includes('.dmg'));
+                    }
+                  });
+                } else {
+                  // For Linux, get the most appropriate download
+                  recommended = osData.items.find(item => 
+                    item.name.includes('.deb') || 
+                    item.name.includes('.AppImage')
+                  );
+                }
+                
+                // Fallback to first item if no specific match
+                recommended = recommended || osData.items[0];
+                
+                return {
+                  osName: osData.name + (os === 'mac' ? ` (${detectMacArchitecture()})` : ''),
+                  download: recommended
+                };
+              }
             }
             return null;
           }
@@ -131,22 +175,68 @@
     
     .tab-content
       .tab-panel.active(data-tab="windows")
-        .os-downloads
-          h3 #{assets.windows.name}
-          .download-grid
-            - for (let obj of assets.windows.items)
-              .download-item
-                .download-info
-                  .download-name
-                    - if (obj.tag)
-                      span.tag [#{obj.tag}]
-                    span.name #{obj.name}
-                  - if (obj.desc)
-                    .download-desc #{obj.desc}
-                .download-links
-                  a.download-link.primary(href=obj.browser_download_url) GitHub
-                  a.download-link(href=obj.sourceforgeUrl) SourceForge
-                  a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+        .arch-tabs
+          .arch-tab-buttons
+            button.arch-tab-btn.active(data-arch="x64") x64
+            button.arch-tab-btn(data-arch="arm64") ARM64
+            - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
+              button.arch-tab-btn(data-arch="win7") Windows 7
+
+          .arch-tab-content
+            .arch-tab-panel.active(data-arch="x64")
+              .os-downloads
+                h3 #{assets.windows.x64.name}
+                .download-grid
+                  - for (let obj of assets.windows.x64.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            .arch-tab-panel(data-arch="arm64")
+              .os-downloads
+                h3 #{assets.windows.arm64.name}
+                .download-grid
+                  - for (let obj of assets.windows.arm64.items)
+                    .download-item
+                      .download-info
+                        .download-name
+                          - if (obj.tag)
+                            span.tag [#{obj.tag}]
+                          span.name #{obj.name}
+                        - if (obj.desc)
+                          .download-desc #{obj.desc}
+                      .download-links
+                        a.download-link.primary(href=obj.browser_download_url) GitHub
+                        a.download-link(href=obj.sourceforgeUrl) SourceForge
+                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+            
+            - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
+              .arch-tab-panel(data-arch="win7")
+                .os-downloads
+                  h3 #{assets.windows.win7.name}
+                  .download-grid
+                    - for (let obj of assets.windows.win7.items)
+                      .download-item
+                        .download-info
+                          .download-name
+                            - if (obj.tag)
+                              span.tag [#{obj.tag}]
+                            span.name #{obj.name}
+                          - if (obj.desc)
+                            .download-desc #{obj.desc}
+                        .download-links
+                          a.download-link.primary(href=obj.browser_download_url) GitHub
+                          a.download-link(href=obj.sourceforgeUrl) SourceForge
+                          a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
       
       .tab-panel(data-tab="mac")
         .os-downloads
@@ -167,7 +257,7 @@
                   a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
       
       .tab-panel(data-tab="linux")
-        .linux-arch-tabs
+        .arch-tabs
           .arch-tab-buttons
             button.arch-tab-btn.active(data-arch="x86_64") x86_64
             button.arch-tab-btn(data-arch="x86_64_legacy") x86_64 Legacy
@@ -329,26 +419,48 @@ script.
       });
     });
 
-    // Linux architecture sub-tabs functionality
-    const archTabButtons = document.querySelectorAll('.arch-tab-btn');
-    const archTabPanels = document.querySelectorAll('.arch-tab-panel');
+    // Architecture sub-tabs functionality (unified for both Linux and Windows)
+    function initArchitectureTabs(tabContainer) {
+      const archTabButtons = tabContainer.querySelectorAll('.arch-tab-btn');
+      const archTabPanels = tabContainer.querySelectorAll('.arch-tab-panel');
 
-    function activateArchTab(archName) {
-      archTabButtons.forEach(btn => {
-        const isTarget = btn.getAttribute('data-arch') === archName;
-        btn.classList.toggle('active', isTarget);
-      });
-      archTabPanels.forEach(panel => {
-        const isTarget = panel.getAttribute('data-arch') === archName;
-        panel.classList.toggle('active', isTarget);
+      function activateArchTab(archName) {
+        archTabButtons.forEach(btn => {
+          const isTarget = btn.getAttribute('data-arch') === archName;
+          btn.classList.toggle('active', isTarget);
+        });
+        archTabPanels.forEach(panel => {
+          const isTarget = panel.getAttribute('data-arch') === archName;
+          panel.classList.toggle('active', isTarget);
+        });
+      }
+
+      // Set default architecture
+      if (tabContainer.closest('[data-tab="windows"]')) {
+        // For Windows, detect architecture
+        try {
+          const windowsArch = typeof detectWindowsArchitecture === 'function' ? detectWindowsArchitecture() : 'x64';
+          activateArchTab(windowsArch);
+        } catch (e) {
+          activateArchTab('x64');
+        }
+      } else if (tabContainer.closest('[data-tab="linux"]')) {
+        // For Linux, default to x86_64
+        activateArchTab('x86_64');
+      }
+
+      archTabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetArch = this.getAttribute('data-arch');
+          activateArchTab(targetArch);
+        });
       });
     }
 
-    archTabButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const targetArch = this.getAttribute('data-arch');
-        activateArchTab(targetArch);
-      });
+    // Initialize architecture tabs for both Windows and Linux
+    const archTabContainers = document.querySelectorAll('.arch-tabs');
+    archTabContainers.forEach(container => {
+      initArchitectureTabs(container);
     });
   });
 
@@ -358,9 +470,10 @@ script.
   .changelog-content
     .changelog-version
       b #{version}
-      small.release-date #{assets.windows.releaseDate}
+      small.release-date #{assets.windows.x64.releaseDate || assets.windows.arm64.releaseDate}
     .changelog-notes
-      - let rns = assets.windows.releaseNote.split('\r\n').filter(d => d.trim())
+      - let releaseNote = assets.windows.x64.releaseNote || assets.windows.arm64.releaseNote || ''
+      - let rns = releaseNote.split('\r\n').filter(d => d.trim())
       - for (let rn of rns) {
         - if (rn.startsWith('---')) {
           .changelog-separator #{rn}

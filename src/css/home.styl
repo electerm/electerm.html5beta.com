@@ -164,8 +164,8 @@ ul
         &.active
           display block
 
-// Linux architecture sub-tabs styles
-.linux-arch-tabs
+// Architecture sub-tabs styles (unified for Linux and Windows)
+.arch-tabs
   .arch-tab-buttons
     display flex
     justify-content center
@@ -385,6 +385,12 @@ ul
       flex 1
       min-width 80px
       
+  .arch-tabs
+    .arch-tab-buttons
+      .arch-tab-btn
+        font-size 0.8em
+        padding 6px 12px
+        
   .download-item
     flex-direction column
     align-items flex-start
