@@ -296,6 +296,10 @@ export default {
       title: 'manate'
     },
     {
+      title: 'Simple games for kids',
+      url: 'https://g.html5beta.com'
+    },
+    {
       url: 'https://gh-proxy.com',
       title: 'https://gh-proxy.com'
     }
