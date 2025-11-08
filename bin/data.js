@@ -300,10 +300,6 @@ export default {
       url: 'https://g.html5beta.com'
     },
     {
-      title: 'News',
-      url: 'https://news.html5beta.com'
-    },
-    {
       url: 'https://gh-proxy.com',
       title: 'https://gh-proxy.com'
     }
