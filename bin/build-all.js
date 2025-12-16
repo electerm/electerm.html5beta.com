@@ -4,6 +4,51 @@ import { resolve } from 'path'
 import { cwd } from './common.js'
 import fs from 'fs/promises'
 
+async function buildVideoPages () {
+  const { videos } = data
+  const h = process.env.HOST
+
+  // Build videos index page
+  const videosIndexFrom = resolve(cwd, 'src/views/videos.pug')
+  const videosIndexTo = resolve(cwd, 'public/videos/index.html')
+  await fs.mkdir(resolve(cwd, 'public/videos'), { recursive: true })
+
+  await buildPug(videosIndexFrom, videosIndexTo, {
+    ...data,
+    langCode: data.langs[0].langCode,
+    lang: data.langs[0].lang,
+    desc: data.langs[0].lang.lang.desc,
+    url: h,
+    cssUrl: '/index.bundle.css',
+    jsUrl: '/index.bundle.js',
+    videos
+  })
+
+  console.log('✅ Built videos index page')
+
+  // Build individual video pages
+  for (const video of videos) {
+    const videoDir = resolve(cwd, `public/videos/${video.videoSlug}`)
+    await fs.mkdir(videoDir, { recursive: true })
+
+    const videoFrom = resolve(cwd, 'src/views/video.pug')
+    const videoTo = resolve(videoDir, 'index.html')
+
+    await buildPug(videoFrom, videoTo, {
+      ...data,
+      langCode: data.langs[0].langCode,
+      lang: data.langs[0].lang,
+      desc: video.titleEn || video.title,
+      url: `${h}/videos/${video.videoSlug}/`,
+      cssUrl: '/index.bundle.css',
+      jsUrl: '/index.bundle.js',
+      video
+    })
+  }
+
+  console.log(`✅ Built ${videos.length} individual video pages`)
+}
+
 async function main () {
   const { langs, pages } = data
   const from = resolve(cwd, 'src/views/index.pug')
@@ -82,6 +127,9 @@ async function main () {
       jsUrl
     })
   }
+
+  // Build video pages
+  await buildVideoPages()
 }
 
 main()

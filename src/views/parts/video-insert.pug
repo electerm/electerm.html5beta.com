@@ -1,0 +1,17 @@
+include ./video-lang
+
+h1.video-title(data-title-en=video.titleEn data-title-zh=video.title)= video.titleEn
+p.video-description= video.description
+.video-section
+  .video-player-wrapper
+    iframe.video-player(
+      src=`//player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1&danmaku=0&autoplay=0`
+      scrolling='no'
+      border='0'
+      frameborder='no'
+      framespacing='0'
+      allowfullscreen='true'
+    )
+
+  .video-actions.pd1y
+    a.btn-watch(href=video.link target='_blank' rel='noopener noreferrer') Watch on Bilibili

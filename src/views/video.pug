@@ -1,0 +1,69 @@
+doctype html
+html(lang=langCode)
+  head
+    title #{siteName} - sponsor electerm
+    meta(name='description', content=desc)
+    meta(name='keywords', content=keywords)
+    include ./parts/react-header
+    include ./parts/video-style
+  body
+    #content
+      .pd2
+        //- include ./parts/lang-video
+        //- include ./parts/title
+        include ./parts/video-insert
+        include ./parts/badge
+        include ./parts/download
+        include ./parts/container
+        include ./parts/react-common
+    #container
+    include ./parts/video-script
+    include ./parts/react-footer
+
+    script.
+      (function() {
+        // Get browser language
+        function getBrowserLang() {
+          const lang = navigator.language || navigator.userLanguage;
+          return lang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+        }
+        
+        // Get saved or default language
+        function getCurrentLang() {
+          const saved = localStorage.getItem('video-lang');
+          return saved || getBrowserLang();
+        }
+        
+        // Update UI based on language
+        function updateLanguage(lang) {
+          document.documentElement.setAttribute('data-video-lang', lang);
+          localStorage.setItem('video-lang', lang);
+
+          // Update button states
+          document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+          });
+          
+          // Update video titles
+          document.querySelectorAll('[data-title-en]').forEach(el => {
+            const titleEn = el.dataset.titleEn;
+            const titleZh = el.dataset.titleZh;
+            el.textContent = lang === 'zh' ? titleZh : titleEn;
+          });
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+          const currentLang = getCurrentLang();
+          updateLanguage(currentLang);
+          
+          // Add click handlers
+          document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const lang = this.dataset.lang;
+              updateLanguage(lang);
+            });
+          });
+        });
+      })();
+

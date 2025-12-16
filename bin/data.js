@@ -7,6 +7,8 @@ import j5 from 'json5'
 
 config()
 
+const videos = JSON.parse(fs.readFileSync(resolve(cwd, 'bin/videos.json'), 'utf-8'))
+
 function getSourceforgeUrl (url) {
   const arr = url.split('/')
   const len = arr.length
@@ -232,6 +234,7 @@ export default {
   keywords: 'ssh,open-source,terminal,telnet,sftp,file-manager,linux-app,serialport,windows-app,macos-app,electerm',
   siteName: 'electerm',
   host: process.env.HOST,
+  videos: videos.videos,
   pages: [
     'sponsor-electerm',
     'deb'
@@ -239,6 +242,10 @@ export default {
   langs: createLocaleData(),
   ...createReleaseData(),
   links: [
+    {
+      url: 'https://electerm.html5beta.com/videos',
+      title: 'Electerm Videos guide'
+    },
     {
       url: 'https://github.com/electerm/electerm',
       title: 'GitHub'

@@ -26,6 +26,28 @@ function handleIndex (req, res) {
   })
 }
 
+function handleVideo (req, res) {
+  const lang = data.langs[2]
+  const videoSlug = req.params.videoSlug
+  const video = data.videos.find(v => v.videoSlug === videoSlug)
+  if (!video) {
+    res.status(404).send('Video not found')
+    return
+  }
+  res.render('video', {
+    ...data,
+    host: h,
+    url: h,
+    dev: true,
+    cssUrl: h + '/index.bundle.css',
+    jsUrl: '/src/views/index.jsx',
+    langCode: lang.langCode,
+    lang: lang.lang,
+    desc: video.description,
+    video
+  })
+}
+
 async function createServer () {
   const app = express()
 
@@ -55,6 +77,7 @@ async function createServer () {
   // express router (express.Router()), you should use router.use
   app.use(vite.middlewares)
   app.get('/', handleIndex)
+  app.get('/videos/:videoSlug', handleVideo)
   app.get('/:page', handleIndex)
 
   app.listen(devPort, host, () => {

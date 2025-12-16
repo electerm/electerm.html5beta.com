@@ -54,6 +54,28 @@ async function buildSiteMap () {
   }
   const arr = await buildPages()
   urls.push(...arr)
+
+  // Add videos index page
+  urls.push({
+    loc: host + '/videos',
+    lastmod: dayjs().format(fmt),
+    changefreq: 'weekly',
+    priority: 0.9
+  })
+
+  // Add individual video pages
+  if (data.videos && data.videos) {
+    for (const video of data.videos) {
+      urls.push({
+        loc: `${host}/videos/${video.videoSlug}/`,
+        lastmod: dayjs().format(fmt),
+        changefreq: 'monthly',
+        priority: 0.7
+      })
+    }
+    console.log(`✅ Added ${data.videos.length} video pages to sitemap`)
+  }
+
   createSitemap({
     filePath: resolve(cwd, 'public/sitemap.xml'),
     urls
