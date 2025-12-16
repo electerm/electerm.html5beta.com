@@ -7,7 +7,7 @@ h1 Electerm Videos
       - var videoSlug = video.videoSlug
       a.video-card(href=`/videos/${videoSlug}/`)
         .video-card-thumbnail
-          img(src=video.cover alt=video.titleEn loading='lazy')
+          img(src=`/videos/${videoSlug}.jpg` alt=video.titleEn loading='lazy')
           .video-duration-badge #{Math.floor(video.duration / 60)}:#{String(video.duration % 60).padStart(2, '0')}
 
         .video-card-content
