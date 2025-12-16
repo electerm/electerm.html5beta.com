@@ -1,7 +1,9 @@
 include ./video-lang
 
+.back-to-videos-wrapper.pd1y
+  a.back-to-videos(href='/videos/') ← Back to Videos List
+
 h1.video-title(data-title-en=video.titleEn data-title-zh=video.title)= video.titleEn
-p.video-description= video.description
 .video-section
   .video-player-wrapper
     iframe.video-player(

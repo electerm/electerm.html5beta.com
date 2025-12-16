@@ -244,7 +244,7 @@ export default {
   links: [
     {
       url: 'https://electerm.html5beta.com/videos',
-      title: 'Electerm Videos guide'
+      title: 'Electerm Video guide'
     },
     {
       url: 'https://github.com/electerm/electerm',
