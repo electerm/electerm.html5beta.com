@@ -18,6 +18,18 @@ script.
       document.documentElement.setAttribute('data-video-lang', lang);
       localStorage.setItem('video-lang', lang);
 
+      // Update page title
+      const h1Title = document.querySelector('h1.video-title');
+      if (h1Title) {
+        // Single video page
+        const titleEn = h1Title.dataset.titleEn;
+        const titleZh = h1Title.dataset.titleZh;
+        document.title = lang === 'zh' ? titleZh : titleEn;
+      } else {
+        // Videos listing page
+        document.title = lang === 'zh' ? 'Electerm 视频教程' : 'Electerm Videos';
+      }
+
       // Update button states
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
