@@ -311,6 +311,110 @@ export default {
     {
       url: 'https://gh-proxy.com',
       title: 'https://gh-proxy.com'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki',
+      title: 'Home'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/AI-model-config-guide',
+      title: 'AI model config guide'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Autorun-electerm-when-login-to-os',
+      title: 'Autorun electerm when login to os'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/batch-operation',
+      title: 'batch operation'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Command-line-usage',
+      title: 'Command line usage'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Connection-Hopping-Behavior-Change-in-electerm-since-v1.50.65',
+      title: 'Connection Hopping Behavior Change in electerm since v1.50.65'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Contributors',
+      title: 'Contributors'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Create-personal-access-token',
+      title: 'Create personal access token'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Create-secret-gist',
+      title: 'Create secret gist'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Custom-CSS-examples',
+      title: 'Custom CSS examples'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Custom-sync-server',
+      title: 'Custom sync server'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Deep-link-support',
+      title: 'Deep link support'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Default-Profile',
+      title: 'Default Profile'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Develop-in-windows',
+      title: 'Develop in windows'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/How-Electerm-Gets-the-Current-Working-Directory-(pwd)-in-Terminal-When-"SFTP-Follow-Terminal-Path"-Is-Enabled',
+      title: 'How Electerm Gets the Current Working Directory (pwd) in Terminal When "SFTP Follow Terminal Path" Is Enabled'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/How-to-use-ssh-tunnel',
+      title: 'How to use ssh tunnel'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/In-windows-can-not-access-port-30975-issue',
+      title: 'In windows can not access port 30975 issue'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/RDP-limitation',
+      title: 'RDP limitation'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/RDP-session-known-issues',
+      title: 'RDP session known issues'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Sponsor-electerm',
+      title: 'Sponsor electerm'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Terminal-keywords-highlight-regular-expression-exmaples',
+      title: 'Terminal keywords highlight regular expression exmaples'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/VNC‐session‐known‐issues',
+      title: 'VNC session known issues'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/Warning-about-sftp-follow-ssh-path-function',
+      title: 'Warning about sftp follow ssh path function'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/privacy-notice',
+      title: 'privacy notice'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/proxy-format',
+      title: 'proxy format'
+    },
+    {
+      url: 'https://github.com/electerm/electerm/wiki/quick-command-templates',
+      title: 'quick command templates'
     }
   ]
 }
