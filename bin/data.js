@@ -127,7 +127,9 @@ function createReleaseData () {
       prev.windows[archType].items.push(nr)
     } else if (cname.endsWith('.dmg')) {
       // Add descriptions for macOS files
-      if (cname.includes('arm64') || cname.includes('apple-silicon')) {
+      if (cname.includes('mac10')) {
+        nr.desc = 'for macOS 10.x'
+      } else if (cname.includes('arm64') || cname.includes('apple-silicon')) {
         nr.desc = 'for Apple Silicon Macs (M1, M2, etc.)'
       } else if (cname.includes('x64') || cname.includes('intel')) {
         nr.desc = 'for Intel Macs'
