@@ -19,7 +19,7 @@ if (!fs.existsSync(destDir)) {
 }
 
 // Function to download image
-async function downloadImage(url, slug) {
+async function downloadImage (url, slug) {
   try {
     // Get file extension from URL
     const urlObj = new URL(url)
@@ -36,7 +36,7 @@ async function downloadImage(url, slug) {
     // Download image
     const response = await axios({
       method: 'get',
-      url: url,
+      url,
       responseType: 'arraybuffer'
     })
 
@@ -49,7 +49,7 @@ async function downloadImage(url, slug) {
 }
 
 // Main function
-async function main() {
+async function main () {
   const videos = videosData.videos || []
   console.log(`Found ${videos.length} videos to process`)
   console.log(`Destination: ${destDir}\n`)
