@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Translation mapping from Chinese to English
 const titleTranslations = {
+  'electerm: 工作区': 'Electerm Workspace',
   electerm终端背景设置: 'Electerm Terminal Background Settings',
   electerm连接跳跃: 'Electerm Connection Jump',
   electerm使用演示: 'Electerm Usage Demo',

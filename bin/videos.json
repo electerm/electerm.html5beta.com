@@ -4,8 +4,8 @@
     "mid": "14001525",
     "seasonName": "合集·electerm",
     "seasonDescription": "electerm使用介绍",
-    "total": 39,
-    "fetchedAt": "2025-12-16T05:01:26.279Z"
+    "total": 40,
+    "fetchedAt": "2025-12-28T05:30:00.000Z"
   },
   "videos": [
     {
@@ -943,6 +943,30 @@
       },
       "videoSlug": "electerm-sftp-transfer-files-and-folders",
       "titleEn": "Electerm SFTP Transfer Files and Folders"
+    },
+    {
+      "aid": 115794516115544,
+      "bvid": "BV1KTv6BCENk",
+      "title": "electerm: 工作区",
+      "description": "electerm工作区: 保存和加载布局和连接信息，可以实现一键加载全部需要的连接，程序启动加载需要的连接",
+      "link": "https://www.bilibili.com/video/BV1KTv6BCENk",
+      "cover": "http://i1.hdslb.com/bfs/archive/15a7cda28d54d453019866e2d1174d79c7b307b4.jpg",
+      "author": "zxdong262",
+      "authorMid": 14001525,
+      "duration": 90,
+      "pubdate": 1766884220,
+      "publishDate": "2025-12-28T01:10:20.000Z",
+      "stats": {
+        "view": 27,
+        "danmaku": 0,
+        "reply": 0,
+        "favorite": 0,
+        "coin": 0,
+        "share": 1,
+        "like": 0
+      },
+      "videoSlug": "electerm-workspace",
+      "titleEn": "Electerm Workspace"
     }
   ]
 }
