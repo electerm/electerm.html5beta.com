@@ -136,7 +136,7 @@
             const detectedOS = detectOS();
             const recommended = getRecommendedDownload(detectedOS);
             
-            if (recommended) {
+            if (recommended && detectedOS !== 'mac') {
               const button = document.getElementById('primary-download-btn');
               const osLabel = document.getElementById('detected-os');
               const fileName = document.getElementById('download-filename');
