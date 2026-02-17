@@ -31,11 +31,17 @@
   .pd1y
     each val, i in links
       p
+        // Show main link
         a(href=val.url, rel='noreferrer', target='_blank', title=val.title)
           if val.image
             img(src=val.image, alt=val.title)
           else
             span ✴ #{val.title}
+        // Show special CN link if present, with clear separation
+        if val.urlCn && val.titleCn
+          span
+            a.mg1l(href=val.urlCn, rel='noreferrer', target='_blank', title=val.titleCn)
+              span / #{val.titleCn}
 
 .pd2y
   h2 Star History
