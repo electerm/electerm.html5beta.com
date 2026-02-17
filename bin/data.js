@@ -254,6 +254,10 @@ export default {
       title: 'GitHub'
     },
     {
+      url: 'https://z.ai/subscribe?ic=GJWCMU2DD9',
+      title: 'GLM Coding Plan'
+    },
+    {
       url: 'https://github.com/electerm/electerm-web',
       title: 'electerm-web'
     },
@@ -309,9 +313,6 @@ export default {
       title: 'Simple games for kids',
       url: 'https://g.html5beta.com'
     },
-    {
-      url: 'https://gh-proxy.com',
-      title: 'https://gh-proxy.com'
-    }
+
   ].concat(wikiLinks)
 }
