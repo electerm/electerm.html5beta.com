@@ -116,23 +116,25 @@ class TerminalBg {
   }
 
   initLines () {
-    const lineCount = Math.max(20, Math.floor(this.width / 80))
+    const lineCount = Math.max(15, Math.floor(this.width / 120))
+    const rowCount = Math.max(8, Math.floor(this.height / 100))
     const texts = this.texts
     this.lines = []
     const angle = Math.PI / 6
-    for (let i = 0; i < lineCount; i++) {
-      const progress = i / lineCount
-      const startX = -this.width * 0.5 + progress * (this.width * 1.5)
-      const startY = -this.height * 0.3 + progress * (this.height * 1.3) - Math.random() * 150
-      this.lines.push({
-        x: startX,
-        y: startY,
-        angle,
-        speed: (0.3 + Math.random() * 0.4) * this.speed,
-        text: texts[Math.floor(Math.random() * texts.length)],
-        opacity: 0.08 + Math.random() * 0.1,
-        fontSize: this.fontSize + Math.floor(Math.random() * 6)
-      })
+    for (let row = 0; row < rowCount; row++) {
+      for (let col = 0; col < lineCount; col++) {
+        const startX = -this.width * 0.3 + col * (this.width * 1.6 / lineCount) + Math.random() * 30
+        const startY = -this.height * 0.3 + row * (this.height * 1.6 / rowCount) + Math.random() * 30
+        this.lines.push({
+          x: startX,
+          y: startY,
+          angle,
+          speed: (0.3 + Math.random() * 0.4) * this.speed,
+          text: texts[Math.floor(Math.random() * texts.length)],
+          opacity: 0.08 + Math.random() * 0.1,
+          fontSize: this.fontSize + Math.floor(Math.random() * 6)
+        })
+      }
     }
   }
 
