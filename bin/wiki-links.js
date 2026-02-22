@@ -4,12 +4,20 @@ export const wikiLinks = [
     title: 'AI Configuration Guide'
   },
   {
+    url: 'https://github.com/electerm/electerm/wiki/Autorun-electerm-when-login-to-os',
+    title: 'Autorun Electerm When Login to OS'
+  },
+  {
     url: 'https://github.com/electerm/electerm/wiki/batch-operation',
-    title: 'batch operation'
+    title: 'Batch Operation'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Command-line-usage',
-    title: 'Command line usage'
+    title: 'Command line usage / 命令行使用'
+  },
+  {
+    url: 'https://github.com/electerm/electerm/wiki/Connecting-to-Servers-with-Special-Character-Encoding',
+    title: 'Connecting to Servers with Special Character Encoding (GBK Example)'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Connection-Hopping-Behavior-Change-in-electerm-since-v1.50.65',
@@ -20,12 +28,16 @@ export const wikiLinks = [
     title: 'Contributors'
   },
   {
+    url: 'https://github.com/electerm/electerm/wiki/Create-bookmark-by-AI',
+    title: 'Create bookmark by AI'
+  },
+  {
     url: 'https://github.com/electerm/electerm/wiki/Create-personal-access-token',
-    title: 'Create personal access token'
+    title: 'Create Personal Access Token'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Create-secret-gist',
-    title: 'Create secret gist'
+    title: 'Create Secret Gist'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Custom-CSS-examples',
@@ -33,7 +45,7 @@ export const wikiLinks = [
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Custom-sync-server',
-    title: 'Custom sync server'
+    title: 'Custom Sync Server'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Deep-link-support',
@@ -48,28 +60,24 @@ export const wikiLinks = [
     title: 'Develop in windows'
   },
   {
-    url: 'https://github.com/electerm/electerm/wiki/Home',
-    title: 'Home'
+    url: 'https://github.com/electerm/electerm/wiki/gitee-data-sync-warning',
+    title: 'Gitee Data Sync Warning'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/How-Electerm-Gets-the-Current-Working-Directory-(pwd)-in-Terminal-When-"SFTP-Follow-Terminal-Path"-Is-Enabled',
-    title: 'How Electerm Gets the Current Working Directory (pwd) in Terminal When "SFTP Follow Terminal Path" Is Enabled'
+    title: 'How Electerm Gets the Current Working Directory (pwd) in Terminal When "SFTP Follow Terminal Path" Is Enabled / Electerm 如何在启用 "SFTP 跟随终端路径" 时获取终端中的当前工作目录 (pwd)'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/How-to-use-ssh-tunnel',
-    title: 'How to use ssh tunnel'
+    title: 'How to Use SSH Tunnel'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/In-windows-can-not-access-port-30975-issue',
-    title: 'In windows can not access port 30975 issue'
+    title: 'In Windows Can Not Access Port 30975 Issue'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Know-issues',
-    title: 'Know issues'
-  },
-  {
-    url: 'https://github.com/electerm/electerm/wiki/Autorun-electerm-when-login-to-os',
-    title: 'make it exe'
+    title: 'Known Issues'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/MCP-Widget-Usage-Guide',
@@ -77,7 +85,7 @@ export const wikiLinks = [
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/privacy-notice',
-    title: 'privacy notice'
+    title: 'Privacy Notice'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/proxy-format',
@@ -85,15 +93,7 @@ export const wikiLinks = [
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/quick-command-templates',
-    title: 'quick command templates'
-  },
-  {
-    url: 'https://github.com/electerm/electerm/wiki/RDP-session-known-issues',
-    title: 'RDP Connection Issues in Electerm'
-  },
-  {
-    url: 'https://github.com/electerm/electerm/wiki/RDP-limitation',
-    title: 'RDP limitation'
+    title: 'Quick Command Templates'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Sponsor-electerm',
@@ -101,23 +101,31 @@ export const wikiLinks = [
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/ssh-agent',
-    title: 'SSH Agent'
+    title: 'SSH Agent / SSH Agent (中文)'
+  },
+  {
+    url: 'https://github.com/electerm/electerm/wiki/SSH-Certificate-Authentication-Guide-for-electerm',
+    title: 'SSH Certificate Authentication Guide for electerm'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Terminal-keywords-highlight-regular-expression-exmaples',
-    title: 'Terminal keywords highlight regular expression exmaples'
+    title: 'Terminal Keywords Highlight Regular Expression Examples'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Troubleshoot',
     title: 'Troubleshoot'
   },
   {
+    url: 'https://github.com/electerm/electerm/wiki/Upgrading-from-1.x-to-2.x:-Data-Loss-Issue-and-Recovery',
+    title: 'Upgrading from 1.x to 2.x: Data Loss Issue and Recovery'
+  },
+  {
     url: 'https://github.com/electerm/electerm/wiki/VNC‐session‐known‐issues',
-    title: 'VNC Connection Feature (Beta)'
+    title: 'VNC Connection Feature (Beta) / VNC 连接功能 (Beta)'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Warning-about-sftp-follow-ssh-path-function',
-    title: 'Warning about sftp follow ssh path function'
+    title: 'Warning About SFTP Follow SSH Path Function'
   },
   {
     url: 'https://github.com/electerm/electerm/wiki/Workspace-Feature',
