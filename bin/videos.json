@@ -4,7 +4,7 @@
     "mid": "14001525",
     "seasonName": "合集·electerm",
     "seasonDescription": "electerm使用介绍",
-    "total": 40,
+    "total": 42,
     "fetchedAt": "2025-12-28T05:30:00.000Z"
   },
   "videos": [
@@ -967,6 +967,54 @@
       },
       "videoSlug": "electerm-workspace",
       "titleEn": "Electerm Workspace"
+    },
+    {
+      "aid": 116113484613887,
+      "bvid": "BV1w7fwBdEKF",
+      "title": "electerm:使用AI创建书签",
+      "description": "使用自然语言，应用AI创建书签或者也可以导入其他终端的数据",
+      "link": "https://www.bilibili.com/video/BV1w7fwBdEKF",
+      "cover": "http://i0.hdslb.com/bfs/archive/10bb66c53aa944f0ba8f6b72486be95dec405729.jpg",
+      "author": "zxdong262",
+      "authorMid": 14001525,
+      "duration": 105,
+      "pubdate": 1771751478,
+      "publishDate": "2026-02-22T02:51:18.000Z",
+      "stats": {
+        "view": 0,
+        "danmaku": 0,
+        "reply": 0,
+        "favorite": 0,
+        "coin": 0,
+        "share": 0,
+        "like": 0
+      },
+      "videoSlug": "electerm-use-ai-to-create-bookmarks",
+      "titleEn": "Electerm Use AI to Create Bookmarks"
+    },
+    {
+      "aid": 116113467769505,
+      "bvid": "BV1rJfwBWErw",
+      "title": "electerm: spice protocol session",
+      "description": "使用electerm连接Spice主机",
+      "link": "https://www.bilibili.com/video/BV1rJfwBWErw",
+      "cover": "http://i1.hdslb.com/bfs/archive/7c3b3d8798ac41abf379ef307a0e6204c62ef0bb.jpg",
+      "author": "zxdong262",
+      "authorMid": 14001525,
+      "duration": 26,
+      "pubdate": 1771751102,
+      "publishDate": "2026-02-22T02:45:02.000Z",
+      "stats": {
+        "view": 0,
+        "danmaku": 0,
+        "reply": 0,
+        "favorite": 0,
+        "coin": 0,
+        "share": 0,
+        "like": 0
+      },
+      "videoSlug": "electerm-spice-protocol-session",
+      "titleEn": "Electerm Spice Protocol Session"
     }
   ]
 }

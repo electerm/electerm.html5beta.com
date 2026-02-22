@@ -13,7 +13,7 @@ const videosPath = path.join(__dirname, 'videos.json')
 const videosData = JSON.parse(fs.readFileSync(videosPath, 'utf-8'))
 
 // Create destination directory if it doesn't exist
-const destDir = path.join(__dirname, '../src/static/videos')
+const destDir = path.join(__dirname, '../src/static/video-thumb')
 if (!fs.existsSync(destDir)) {
   fs.mkdirSync(destDir, { recursive: true })
 }
