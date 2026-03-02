@@ -42,7 +42,7 @@
     "@electerm/electerm-locales": "2.1.46",
     "@tsconfig/recommended": "^1.0.3",
     "@types/node": "^20.10.6",
-    "@vercel/node": "^3.2.7",
+    "@vercel/node": "^5.5.28",
     "@vitejs/plugin-react": "^4.2.0",
     "axios": "^1.6.8",
     "canvas": "^3.2.0",
