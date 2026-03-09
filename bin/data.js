@@ -5,7 +5,6 @@ import fs from 'fs'
 import dayjs from 'dayjs'
 import j5 from 'json5'
 import { wikiLinks } from './wiki-links.js'
-import { title } from 'process'
 
 config()
 
@@ -253,12 +252,6 @@ export default {
     {
       url: 'https://github.com/electerm/electerm',
       title: 'GitHub'
-    },
-    {
-      url: 'https://z.ai/subscribe?ic=GJWCMU2DD9',
-      urlCn: 'https://www.bigmodel.cn/invite?icode=YuNwJkc%2FJ3UMT3CjNHAY933uFJ1nZ0jLLgipQkYjpcA%3D',
-      title: 'GLM 5 Global',
-      titleCn: 'GLM 5 中国版'
     },
     {
       url: 'https://github.com/electerm/electerm-web',
