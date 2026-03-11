@@ -308,6 +308,10 @@ export default {
     {
       title: 'Simple games for kids',
       url: 'https://g.html5beta.com'
+    },
+    {
+      title: 'China vs Rest of the World',
+      url: 'https://china-vs-rest-of-the-world.html5beta.com'
     }
   ].concat(wikiLinks)
 }
