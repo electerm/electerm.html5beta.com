@@ -278,6 +278,10 @@ export default {
       title: 'Debian Repository'
     },
     {
+      url: 'electerm@atomgit',
+      title: 'https://atomgit.com/electerm/electerm'
+    },
+    {
       url: 'https://github.com/electerm/electerm/wiki/Know-issues',
       title: 'Know issues'
     },
