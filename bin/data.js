@@ -41,14 +41,18 @@ function convertToProperLangCode (code) {
 
 function createLocaleData () {
   // languages
-  const localeFolder = resolve(cwd, 'node_modules/@electerm/electerm-locales/dist')
+  const localeFolder = resolve(cwd, 'node_modules/@electerm/electerm-locales/dist/cjs')
   const pre = process.env.HOST
   return fs.readdirSync(localeFolder)
     .reduce((prev, fileName) => {
-      if (!fileName.endsWith('js')) {
+      if (!fileName.endsWith('js') || fileName === 'index.js' || fileName === 'package.json') {
         return prev
       }
       const filePath = resolve(localeFolder, fileName)
+      const stats = fs.statSync(filePath)
+      if (!stats.isFile()) {
+        return prev
+      }
       const lang = j5.parse(fs.readFileSync(filePath, 'utf-8').replace('module.exports=exports.default=', ''))
       const id = fileName.replace('.js', '')
       const url = id === 'en_us' ? pre : pre + '/index-' + id + '.html'
