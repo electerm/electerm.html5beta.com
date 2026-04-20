@@ -1,3 +1,18 @@
+//- Mixin for download items to avoid duplication
+mixin downloadItem(obj)
+  .download-item
+    .download-info
+      .download-name
+        - if (obj.tag)
+          span.tag [#{obj.tag}]
+        span.name #{obj.name}
+        - if (obj.desc)
+          .download-desc #{obj.desc}
+    .download-links
+      a.download-link.primary(href=obj.browser_download_url) GitHub
+      a.download-link(href=obj.sourceforgeUrl) SourceForge
+      a.download-link(href='https://gh-proxy.org/' + obj.browser_download_url) gh-proxy.org
+
 // Main download section with OS detection
 .download-main.mg3t
   .download-hero
@@ -188,36 +203,14 @@
                 h3 #{assets.windows.x64.name}
                 .download-grid
                   - for (let obj of assets.windows.x64.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             .arch-tab-panel(data-arch="arm64")
               .os-downloads
                 h3 #{assets.windows.arm64.name}
                 .download-grid
                   - for (let obj of assets.windows.arm64.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
               .arch-tab-panel(data-arch="win7")
@@ -225,36 +218,14 @@
                   h3 #{assets.windows.win7.name}
                   .download-grid
                     - for (let obj of assets.windows.win7.items)
-                      .download-item
-                        .download-info
-                          .download-name
-                            - if (obj.tag)
-                              span.tag [#{obj.tag}]
-                            span.name #{obj.name}
-                          - if (obj.desc)
-                            .download-desc #{obj.desc}
-                        .download-links
-                          a.download-link.primary(href=obj.browser_download_url) GitHub
-                          a.download-link(href=obj.sourceforgeUrl) SourceForge
-                          a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                      +downloadItem(obj)
       
       .tab-panel(data-tab="mac")
         .os-downloads
           h3 #{assets.mac.name}
           .download-grid
             - for (let obj of assets.mac.items)
-              .download-item
-                .download-info
-                  .download-name
-                    - if (obj.tag)
-                      span.tag [#{obj.tag}]
-                    span.name #{obj.name}
-                  - if (obj.desc)
-                    .download-desc #{obj.desc}
-                .download-links
-                  a.download-link.primary(href=obj.browser_download_url) GitHub
-                  a.download-link(href=obj.sourceforgeUrl) SourceForge
-                  a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+              +downloadItem(obj)
       
       .tab-panel(data-tab="linux")
         .arch-tabs
@@ -272,108 +243,42 @@
                 h3 #{assets.linux.x86_64.name}
                 .download-grid
                   - for (let obj of assets.linux.x86_64.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             .arch-tab-panel(data-arch="x86_64_legacy")
               .os-downloads
                 h3 #{assets.linux.x86_64_legacy.name}
                 .download-grid
                   - for (let obj of assets.linux.x86_64_legacy.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             .arch-tab-panel(data-arch="arm64")
               .os-downloads
                 h3 #{assets.linux.arm64.name}
                 .download-grid
                   - for (let obj of assets.linux.arm64.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             .arch-tab-panel(data-arch="arm64_legacy")
               .os-downloads
                 h3 #{assets.linux.arm64_legacy.name}
                 .download-grid
                   - for (let obj of assets.linux.arm64_legacy.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             .arch-tab-panel(data-arch="armv7")
               .os-downloads
                 h3 #{assets.linux.armv7.name}
                 .download-grid
                   - for (let obj of assets.linux.armv7.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
             
             .arch-tab-panel(data-arch="armv7_legacy")
               .os-downloads
                 h3 #{assets.linux.armv7_legacy.name}
                 .download-grid
                   - for (let obj of assets.linux.armv7_legacy.items)
-                    .download-item
-                      .download-info
-                        .download-name
-                          - if (obj.tag)
-                            span.tag [#{obj.tag}]
-                          span.name #{obj.name}
-                        - if (obj.desc)
-                          .download-desc #{obj.desc}
-                      .download-links
-                        a.download-link.primary(href=obj.browser_download_url) GitHub
-                        a.download-link(href=obj.sourceforgeUrl) SourceForge
-                        a.download-link(href='https://gh-proxy.com/' + obj.browser_download_url) gh-proxy.com
+                    +downloadItem(obj)
       
       .tab-panel(data-tab="more")
         .more-options

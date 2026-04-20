@@ -104,7 +104,7 @@ function updateVercelRewriteRules (releaseTag, debFileName) {
   // Add new rewrite rule for the current release
   const newRewrite = {
     source: `/deb/pool/main/e/electerm/${debFileName}`,
-    destination: `https://gh-proxy.com/https://github.com/electerm/electerm/releases/download/${releaseTag}/${debFileName}`
+    destination: `https://gh-proxy.org/https://github.com/electerm/electerm/releases/download/${releaseTag}/${debFileName}`
   }
 
   vercelConfig.rewrites.push(newRewrite)
