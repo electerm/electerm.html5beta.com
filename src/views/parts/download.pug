@@ -11,7 +11,8 @@ mixin downloadItem(obj)
     .download-links
       a.download-link.primary(href=obj.browser_download_url) GitHub
       a.download-link(href=obj.sourceforgeUrl) SourceForge
-      a.download-link(href='https://electerm-mirror.html5beta.com/' + obj.browser_download_url) mirror
+      a.download-link(href='https://electerm-mirror.html5beta.com/' + obj.browser_download_url) mirror1
+      a.download-link(href='https://electerm-store.html5beta.com/r/' + obj.browser_download_url.split('/').pop()) mirror2
 
 // Main download section with OS detection
 .download-main.mg3t
