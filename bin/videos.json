@@ -1015,6 +1015,30 @@
       },
       "videoSlug": "electerm-spice-protocol-session",
       "titleEn": "Electerm Spice Protocol Session"
+    },
+    {
+      "aid": 116463692220133,
+      "bvid": "BV185oDBNETG",
+      "title": "electerm: 不同sftp间拖拽文件传输",
+      "description": "electerm: 不同sftp间拖拽文件传输",
+      "link": "https://www.bilibili.com/video/BV185oDBNETG",
+      "cover": "http://i2.hdslb.com/bfs/archive/74542ea93ed087041c0e26106c499a37d86a1a25.jpg",
+      "author": "zxdong262",
+      "authorMid": 14001525,
+      "duration": 55,
+      "pubdate": 1777095180,
+      "publishDate": "2026-04-25T05:33:00.000Z",
+      "stats": {
+        "view": 80,
+        "danmaku": 0,
+        "reply": 1,
+        "favorite": 1,
+        "coin": 0,
+        "share": 1,
+        "like": 4
+      },
+      "videoSlug": "electerm-drag-and-drop-file-transfer-between-sftp",
+      "titleEn": "Electerm Drag and Drop File Transfer Between SFTP"
     }
   ]
 }
