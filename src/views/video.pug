@@ -4,6 +4,10 @@ html(lang=langCode)
     title #{siteName} - #{video.titleEn}
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
+    meta(property='og:title' content='electerm - ' + video.titleEn)
+    meta(property='og:description' content='Video tutorial: ' + video.titleEn)
+    meta(name='twitter:title' content='electerm - ' + video.titleEn)
+    meta(name='twitter:description' content='Video tutorial: ' + video.titleEn)
     include ./parts/react-header
     include ./parts/video-style
   body

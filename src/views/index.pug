@@ -4,7 +4,43 @@ html(lang=langCode)
     title #{siteName}
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
+    meta(property='og:title' content='electerm - Terminal/SSH/SFTP/Sftp/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(property='og:description' content=desc)
+    meta(name='twitter:title' content='electerm - Terminal/SSH/SFTP/Sftp/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(name='twitter:description' content=desc)
     include ./parts/react-header
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "electerm",
+        "description": "Terminal/ssh/telnet/serialport/sftp client in Linux, Mac, Win",
+        "url": "https://electerm.html5beta.com",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "ZHAO Xudong",
+          "url": "http://html5beta.com"
+        },
+        "softwareHelp": {
+          "@type": "CreativeWork",
+          "url": "https://github.com/electerm/electerm/wiki"
+        },
+        "featureList": [
+          "SSH client",
+          "Telnet client",
+          "Serial port connection",
+          "SFTP file transfer",
+          "Multi-tab terminal",
+          "Theme customization"
+        ]
+      }
   body
     #content
       .pd2

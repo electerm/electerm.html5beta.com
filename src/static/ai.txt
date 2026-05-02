@@ -1,0 +1,31 @@
+# ai.txt - AI Usage Policy for electerm
+# This file describes how AI systems may interact with this website's content.
+# See https://ai-txt.com for the specification.
+
+# Site Information
+Site: https://electerm.html5beta.com
+Name: electerm
+Description: Terminal/ssh/telnet/serialport/sftp client in Linux, Mac, Win
+
+# Content Usage Policy
+# AI systems may:
+# - Index and reference this site's content
+# - Use content for factual information about electerm
+# - Link to download pages and documentation
+
+# AI systems should:
+# - Attribute content to electerm when referencing
+# - Link back to the original source when possible
+# - Keep information current (check for latest versions)
+
+# AI Training Policy
+Training: allowed
+# Content on this site may be used for AI model training.
+
+# Crawling Policy
+Crawl: allowed
+# AI crawlers are welcome to index this site.
+
+# Contact
+Contact: https://github.com/electerm/electerm/issues
+Updated: 2026-05-02

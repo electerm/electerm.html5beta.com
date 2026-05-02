@@ -1,0 +1,53 @@
+# electerm
+
+> Terminal/ssh/telnet/serialport/sftp client in Linux, Mac, Win
+
+electerm is an open-source terminal emulator, SSH client, SFTP client, and serial port manager. It provides a modern interface for managing remote connections with support for multiple protocols.
+
+## Key Features
+
+- SSH, Telnet, and Serial Port connections
+- Built-in SFTP file transfer
+- Multi-tab terminal interface
+- Cross-platform: Windows, macOS, Linux
+- Theme customization and UI personalization
+- Sync settings across devices
+- AI-powered command assistance
+
+## Main Pages
+
+- [Home Page](https://electerm.html5beta.com/) - Main landing page with download links
+- [Video Guides](https://electerm.html5beta.com/videos) - Tutorial videos and demos
+- [Debian Repository](https://electerm.html5beta.com/deb) - APT repository setup for Debian/Ubuntu
+- [Sponsor](https://electerm.html5beta.com/sponsor-electerm.html) - Support electerm development
+
+## Download Links
+
+- [Windows Downloads](https://electerm.html5beta.com/#windows) - Installer and portable versions
+- [macOS Downloads](https://electerm.html5beta.com/#mac) - DMG for Intel and Apple Silicon
+- [Linux Downloads](https://electerm.html5beta.com/#linux) - DEB, RPM, AppImage, Snap packages
+
+## Documentation
+
+- [GitHub Repository](https://github.com/electerm/electerm) - Source code and issue tracker
+- [Wiki](https://github.com/electerm/electerm/wiki) - Documentation and guides
+- [Known Issues](https://github.com/electerm/electerm/wiki/Know-issues) - Current limitations
+- [Troubleshooting](https://github.com/electerm/electerm/wiki/Troubleshoot) - Common solutions
+- [Discussions](https://github.com/electerm/electerm/discussions) - Community forum
+
+## Related Projects
+
+- [electerm-web](https://github.com/electerm/electerm-web) - Web-based version
+- [electerm-web-docker](https://github.com/electerm/electerm-web-docker) - Docker deployment
+- [electerm-locales](https://github.com/electerm/electerm-locales) - Language packs
+
+## Store Links
+
+- [Windows Store](https://www.microsoft.com/store/apps/9NCN7272GTFF) - Microsoft Store listing
+- [Snap Store](https://snapcraft.io/electerm) - Snap package
+
+## Contact
+
+- [Report Issues](https://github.com/electerm/electerm/issues)
+- [Feature Requests](https://github.com/electerm/electerm/discussions)
+- [Email](mailto:zxdong@gmail.com)
