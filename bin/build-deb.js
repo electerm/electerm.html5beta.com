@@ -22,7 +22,7 @@ async function buildDeb () {
 
   // Find the .deb asset for amd64
   const debAsset = release.assets.find(asset =>
-    asset.name.includes('.deb') && asset.name.includes('amd64')
+    asset.name.includes('.deb') && asset.name.includes('amd64') && !asset.name.includes('-legacy')
   )
 
   if (!debAsset) {
