@@ -250,6 +250,10 @@ export default {
   ...createReleaseData(),
   links: [
     {
+      url: 'https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=electerm',
+      title: 'Atlas Cloud'
+    },
+    {
       url: 'https://electerm.html5beta.com/videos',
       title: 'Electerm Video guide'
     },
