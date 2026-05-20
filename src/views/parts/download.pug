@@ -237,6 +237,7 @@ mixin downloadItem(obj)
             button.arch-tab-btn(data-arch="arm64_legacy") ARM64 Legacy
             button.arch-tab-btn(data-arch="armv7") ARMv7
             button.arch-tab-btn(data-arch="armv7_legacy") ARMv7 Legacy
+            button.arch-tab-btn(data-arch="loong64") LoongArch64
 
           .arch-tab-content
             .arch-tab-panel.active(data-arch="x86_64")
@@ -279,6 +280,13 @@ mixin downloadItem(obj)
                 h3 #{assets.linux.armv7_legacy.name}
                 .download-grid
                   - for (let obj of assets.linux.armv7_legacy.items)
+                    +downloadItem(obj)
+            
+            .arch-tab-panel(data-arch="loong64")
+              .os-downloads
+                h3 #{assets.linux.loong64.name}
+                .download-grid
+                  - for (let obj of assets.linux.loong64.items)
                     +downloadItem(obj)
       
       .tab-panel(data-tab="more")

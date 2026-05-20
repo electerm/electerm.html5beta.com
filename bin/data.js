@@ -168,6 +168,8 @@ function createReleaseData () {
         archType = 'arm64'
       } else if (cname.includes('armv7l')) {
         archType = 'armv7'
+      } else if (cname.includes('loong64')) {
+        archType = 'loong64'
       }
 
       // Add to appropriate architecture group
@@ -208,6 +210,10 @@ function createReleaseData () {
       },
       armv7_legacy: {
         name: 'Linux ARMv7 Legacy',
+        items: []
+      },
+      loong64: {
+        name: 'Linux LoongArch64',
         items: []
       }
     },
