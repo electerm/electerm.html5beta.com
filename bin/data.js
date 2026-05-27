@@ -147,14 +147,27 @@ function createReleaseData () {
     } else if (cname.includes('linux')) {
       const isLegacy = cname.includes('-legacy')
 
+      const isLoong64 = cname.includes('loong64')
+      const isLoongarch64 = cname.includes('loongarch64')
+
       if (cname.endsWith('.rpm')) {
         nr.desc = isLegacy ? 'for Red Hat, Fedora... (glibc < 2.34)' : 'for Red Hat, Fedora...'
       } else if (cname.endsWith('.deb')) {
-        nr.desc = isLegacy ? 'for Debian, Ubuntu... (glibc < 2.34, like UOS/Kylin/Ubuntu 18)' : 'for Debian, Ubuntu...'
+        if (isLoong64) {
+          nr.desc = isLegacy ? 'for old UOS/Kylin... (glibc < 2.34)' : 'for UOS/Kylin...'
+        } else if (isLoongarch64) {
+          nr.desc = isLegacy ? 'for old Debian, Ubuntu... (glibc < 2.34, loongarch64)' : 'for Debian, Ubuntu... (loongarch64)'
+        } else {
+          nr.desc = isLegacy ? 'for Debian, Ubuntu... (glibc < 2.34, like UOS/Kylin/Ubuntu 18)' : 'for Debian, Ubuntu...'
+        }
       } else if (cname.endsWith('.snap')) {
         nr.desc = 'for all linux that support snap'
       } else if (cname.endsWith('.gz')) {
-        nr.desc = isLegacy ? 'for all linux, just extract (glibc < 2.34)' : 'for all linux, just extract'
+        if (isLoong64 || isLoongarch64) {
+          nr.desc = isLegacy ? 'for old loong linux, just extract (glibc < 2.34)' : 'for all loong linux, just extract'
+        } else {
+          nr.desc = isLegacy ? 'for all linux, just extract (glibc < 2.34)' : 'for all linux, just extract'
+        }
       } else if (cname.endsWith('.AppImage')) {
         nr.desc = isLegacy ? 'for all linux, just run it (glibc < 2.34)' : 'for all linux, just run it'
       }
@@ -168,7 +181,7 @@ function createReleaseData () {
         archType = 'arm64'
       } else if (cname.includes('armv7l')) {
         archType = 'armv7'
-      } else if (cname.includes('loong64')) {
+      } else if (cname.includes('loong64') || cname.includes('loongarch64')) {
         archType = 'loong64'
       }
 
@@ -214,6 +227,10 @@ function createReleaseData () {
       },
       loong64: {
         name: 'Linux LoongArch64',
+        items: []
+      },
+      loong64_legacy: {
+        name: 'Linux LoongArch64 Legacy',
         items: []
       }
     },
