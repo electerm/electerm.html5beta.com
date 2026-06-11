@@ -27,8 +27,10 @@ function convertToProperLangCode (code) {
     en_us: 'en-US',
     es_es: 'es-ES',
     fr_fr: 'fr',
+    id_id: 'id',
     ja_jp: 'ja',
     ko_kr: 'ko',
+    pl_pl: 'pl',
     pt_br: 'pt-BR',
     ru_ru: 'ru',
     tr_tr: 'tr',
@@ -37,6 +39,26 @@ function convertToProperLangCode (code) {
   }
 
   return langMappings[code] || code
+}
+
+function localeIdToSlug (id) {
+  const slugMap = {
+    ar_ar: 'ar',
+    de_de: 'de',
+    en_us: '',
+    es_es: 'es',
+    fr_fr: 'fr',
+    id_id: 'id',
+    ja_jp: 'ja',
+    ko_kr: 'ko',
+    pl_pl: 'pl',
+    pt_br: 'pt-br',
+    ru_ru: 'ru',
+    tr_tr: 'tr',
+    zh_cn: 'zh-cn',
+    zh_tw: 'zh-tw'
+  }
+  return slugMap[id]
 }
 
 function createLocaleData () {
@@ -55,11 +77,13 @@ function createLocaleData () {
       }
       const lang = j5.parse(fs.readFileSync(filePath, 'utf-8').replace('module.exports=exports.default=', ''))
       const id = fileName.replace('.js', '')
-      const url = id === 'en_us' ? pre : pre + '/index-' + id + '.html'
+      const slug = localeIdToSlug(id)
+      const url = slug === '' ? pre : pre + '/' + slug + '/'
       prev = [
         ...prev,
         {
           id,
+          slug,
           langCode: convertToProperLangCode(id),
           lang,
           url

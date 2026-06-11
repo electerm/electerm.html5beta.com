@@ -37,3 +37,4 @@ coverage
 /public
 /src/api/version.ts
 /dist
+/AGENTS.md

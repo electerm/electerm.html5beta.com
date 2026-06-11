@@ -1,414 +1,119 @@
-//- Mixin for download items to avoid duplication
-mixin downloadItem(obj)
-  .download-item
-    .download-info
-      .download-name
-        - if (obj.tag)
-          span.tag [#{obj.tag}]
-        span.name #{obj.name}
-        - if (obj.desc)
-          .download-desc #{obj.desc}
-    .download-links
-      a.download-link.primary(href=obj.browser_download_url) GitHub
-      a.download-link(href=obj.sourceforgeUrl) SourceForge
-      a.download-link(href='https://electerm-mirror.html5beta.com/' + obj.browser_download_url) gh-proxy
-      a.download-link(href='https://r2.electerm.org/r/' + obj.browser_download_url.split('/').pop()) R2
+section.downloads#downloads
+  .container
+    .section-header
+      h2 Download
+      p Free and open source — choose your platform
 
-// Main download section with OS detection
-.download-main.mg3t
-  .download-hero
-    .version-info
-      .version-number #{version}
-      .release-date #{assets.windows.x64.releaseDate || assets.windows.arm64.releaseDate}
-    
-    // Auto-detect OS and show primary download button
-    .primary-download
-      .download-detector
-        script.
-          function detectOS() {
-            const platform = navigator.platform.toLowerCase();
-            const userAgent = navigator.userAgent.toLowerCase();
-            
-            if (platform.includes('mac') || userAgent.includes('mac')) {
-              return 'mac';
-            } else if (platform.includes('win') || userAgent.includes('windows')) {
-              return 'windows';
-            } else if (platform.includes('linux') || userAgent.includes('linux')) {
-              return 'linux';
-            }
-            return 'windows'; // default
-          }
-          
-          function detectMacArchitecture() {
-            // Check if it's Apple Silicon (M1/M2/M3)
-            if (navigator.userAgent.includes('Macintosh')) {
-              // Try to detect ARM-based Macs
-              if (navigator.userAgent.includes('AppleWebKit') && !navigator.userAgent.includes('Intel')) {
-                return 'arm64';
-              }
-              // For Intel Macs or when uncertain, default to x64
-              return 'x64';
-            }
-            return 'x64';
-          }
-          
-          function detectWindowsArchitecture() {
-            // Check for ARM64 support in Windows
-            if (navigator.userAgent.includes('ARM64') || navigator.userAgent.includes('WOW64; ARM64')) {
-              return 'arm64';
-            }
-            return 'x64'; // Default to x64
-          }
+    //- Auto-detect OS script
+    script.
+      function detectOS() {
+        var p = navigator.platform.toLowerCase();
+        var u = navigator.userAgent.toLowerCase();
+        if (p.includes('mac') || u.includes('mac')) return 'mac';
+        if (p.includes('win') || u.includes('windows')) return 'windows';
+        if (p.includes('linux') || u.includes('linux')) return 'linux';
+        return 'windows';
+      }
+      function switchTab(os) {
+        document.querySelectorAll('.download-tab-btn').forEach(function(b){
+          b.classList.toggle('active', b.getAttribute('data-tab')===os);
+        });
+        document.querySelectorAll('.download-panel').forEach(function(p){
+          p.classList.toggle('active', p.getAttribute('data-tab')===os);
+        });
+      }
+      function switchArch(btn, arch) {
+        var container = btn.closest('.arch-bar').parentElement;
+        container.querySelectorAll('.arch-btn').forEach(function(b){
+          b.classList.toggle('active', b.getAttribute('data-arch')===arch);
+        });
+        container.querySelectorAll('.arch-panel').forEach(function(p){
+          p.classList.toggle('active', p.getAttribute('data-arch')===arch);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        switchTab(detectOS());
+        document.querySelectorAll('.download-tab-btn').forEach(function(b){
+          b.addEventListener('click', function(){ switchTab(this.getAttribute('data-tab')); });
+        });
+        document.querySelectorAll('.arch-bar').forEach(function(bar){
+          bar.querySelectorAll('.arch-btn').forEach(function(b){
+            b.addEventListener('click', function(){ switchArch(this, this.getAttribute('data-arch')); });
+          });
+        });
+      });
 
-          function getRecommendedDownload(os) {
-            const downloads = {
-              windows: {
-                x64: {
-                  name: 'Windows x64',
-                  items: !{JSON.stringify(assets.windows.x64.items)}
-                },
-                arm64: {
-                  name: 'Windows ARM64',
-                  items: !{JSON.stringify(assets.windows.arm64.items)}
-                }
-              },
-              mac: {
-                name: 'Mac OS',
-                items: !{JSON.stringify(assets.mac.items)}
-              },
-              linux: {
-                name: 'Linux x86_64',
-                items: !{JSON.stringify(assets.linux.x86_64.items)}
-              }
-            };
-            
-            if (os === 'windows') {
-              const arch = detectWindowsArchitecture();
-              const osData = downloads.windows[arch];
-              if (osData && osData.items.length > 0) {
-                // For Windows, prioritize installer .exe files
-                let recommended = osData.items.find(item => 
-                  item.name.includes('installer') && item.name.endsWith('.exe')
-                ) || osData.items.find(item => 
-                  item.name.endsWith('.exe')
-                ) || osData.items[0];
-                
-                return {
-                  osName: `${osData.name}`,
-                  download: recommended
-                };
-              }
-              // Fallback to x64 if ARM64 not available
-              if (arch === 'arm64' && downloads.windows.x64.items.length > 0) {
-                const osData = downloads.windows.x64;
-                let recommended = osData.items.find(item => 
-                  item.name.includes('installer') && item.name.endsWith('.exe')
-                ) || osData.items.find(item => 
-                  item.name.endsWith('.exe')
-                ) || osData.items[0];
-                
-                return {
-                  osName: `${osData.name} (ARM64 version not available)`,
-                  download: recommended
-                };
-              }
-            } else {
-              const osData = downloads[os];
-              if (osData && osData.items.length > 0) {
-                let recommended;
-                
-                if (os === 'mac') {
-                  const arch = detectMacArchitecture();
-                  // Try to find the appropriate Mac version
-                  recommended = osData.items.find(item => {
-                    if (arch === 'arm64') {
-                      return item.name.includes('arm64') || item.name.includes('apple-silicon');
-                    } else {
-                      return item.name.includes('x64') || item.name.includes('intel') || 
-                             (!item.name.includes('arm64') && item.name.includes('.dmg'));
-                    }
-                  });
-                } else {
-                  // For Linux, get the most appropriate download
-                  recommended = osData.items.find(item => 
-                    item.name.includes('.deb') || 
-                    item.name.includes('.AppImage')
-                  );
-                }
-                
-                // Fallback to first item if no specific match
-                recommended = recommended || osData.items[0];
-                
-                return {
-                  osName: osData.name + (os === 'mac' ? ` (${detectMacArchitecture()})` : ''),
-                  download: recommended
-                };
-              }
-            }
-            return null;
-          }
-          
-          function updateDownloadButton() {
-            const detectedOS = detectOS();
-            const recommended = getRecommendedDownload(detectedOS);
-            
-            if (recommended && detectedOS !== 'mac') {
-              const button = document.getElementById('primary-download-btn');
-              const osLabel = document.getElementById('detected-os');
-              const fileName = document.getElementById('download-filename');
-              
-              if (button && recommended.download) {
-                button.href = recommended.download.browser_download_url;
-                osLabel.textContent = recommended.osName;
-                fileName.textContent = recommended.download.name;
-                button.style.display = 'block';
-              }
-            }
-          }
-          
-          // Update when page loads
-          document.addEventListener('DOMContentLoaded', updateDownloadButton);
+    mixin dlLinks(obj)
+      .download-card-links
+        a.download-card-link.primary(href=obj.browser_download_url) GitHub
+        a.download-card-link(href=obj.sourceforgeUrl) SourceForge
+        a.download-card-link(href='https://electerm-mirror.html5beta.com/' + obj.browser_download_url) gh-proxy
+        a.download-card-link(href='https://r2.electerm.org/r/' + obj.browser_download_url.split('/').pop()) R2
 
-        .download-button-container
-          a#primary-download-btn.download-btn.primary(href="#" style="display:none")
-            .btn-content
-              .btn-text
-                .btn-title Download for 
-                  span#detected-os Your System
-                .btn-subtitle#download-filename Detecting...
-          
-          .download-note.pd1t
-            | Free & Open Source • Latest Version: #{version}
+    mixin dlCard(obj)
+      .download-card
+        .download-card-info
+          .download-card-name #{obj.name}
+          - if (obj.desc)
+            .download-card-desc #{obj.desc}
+        +dlLinks(obj)
 
-// Download options tabs
-.download-options
-  .download-tabs
-    .tab-buttons
-      button.tab-btn.active(data-tab="windows") Windows
-      button.tab-btn(data-tab="mac") macOS  
-      button.tab-btn(data-tab="linux") Linux
-      button.tab-btn(data-tab="more") More Options
-    
-    .tab-content
-      .tab-panel.active(data-tab="windows")
-        .arch-tabs
-          .arch-tab-buttons
-            button.arch-tab-btn.active(data-arch="x64") x64
-            button.arch-tab-btn(data-arch="arm64") ARM64
-            - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
-              button.arch-tab-btn(data-arch="win7") Windows 7
+    .download-tabs-bar
+      button.download-tab-btn.active(data-tab='windows') Windows
+      button.download-tab-btn(data-tab='mac') macOS
+      button.download-tab-btn(data-tab='linux') Linux
 
-          .arch-tab-content
-            .arch-tab-panel.active(data-arch="x64")
-              .os-downloads
-                h3 #{assets.windows.x64.name}
-                .download-grid
-                  - for (let obj of assets.windows.x64.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="arm64")
-              .os-downloads
-                h3 #{assets.windows.arm64.name}
-                .download-grid
-                  - for (let obj of assets.windows.arm64.items)
-                    +downloadItem(obj)
-            
-            - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
-              .arch-tab-panel(data-arch="win7")
-                .os-downloads
-                  h3 #{assets.windows.win7.name}
-                  .download-grid
-                    - for (let obj of assets.windows.win7.items)
-                      +downloadItem(obj)
-      
-      .tab-panel(data-tab="mac")
-        .os-downloads
-          h3 #{assets.mac.name}
+    //- Windows
+    .download-panel.active(data-tab='windows')
+      .arch-bar
+        button.arch-btn.active(data-arch='x64') x64
+        button.arch-btn(data-arch='arm64') ARM64
+        - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
+          button.arch-btn(data-arch='win7') Windows 7
+      .arch-panel.active(data-arch='x64')
+        .download-grid
+          each obj in assets.windows.x64.items
+            +dlCard(obj)
+      .arch-panel(data-arch='arm64')
+        .download-grid
+          each obj in assets.windows.arm64.items
+            +dlCard(obj)
+      - if (assets.windows.win7 && assets.windows.win7.items.length > 0)
+        .arch-panel(data-arch='win7')
           .download-grid
-            - for (let obj of assets.mac.items)
-              +downloadItem(obj)
-      
-      .tab-panel(data-tab="linux")
-        .arch-tabs
-          .arch-tab-buttons
-            button.arch-tab-btn.active(data-arch="x86_64") x86_64
-            button.arch-tab-btn(data-arch="x86_64_legacy") x86_64 Legacy
-            button.arch-tab-btn(data-arch="arm64") ARM64
-            button.arch-tab-btn(data-arch="arm64_legacy") ARM64 Legacy
-            button.arch-tab-btn(data-arch="armv7") ARMv7
-            button.arch-tab-btn(data-arch="armv7_legacy") ARMv7 Legacy
-            button.arch-tab-btn(data-arch="loong64") LoongArch64
-            button.arch-tab-btn(data-arch="loong64_legacy") LoongArch64 Legacy
+            each obj in assets.windows.win7.items
+              +dlCard(obj)
 
-          .arch-tab-content
-            .arch-tab-panel.active(data-arch="x86_64")
-              .os-downloads
-                h3 #{assets.linux.x86_64.name}
-                .download-grid
-                  - for (let obj of assets.linux.x86_64.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="x86_64_legacy")
-              .os-downloads
-                h3 #{assets.linux.x86_64_legacy.name}
-                .download-grid
-                  - for (let obj of assets.linux.x86_64_legacy.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="arm64")
-              .os-downloads
-                h3 #{assets.linux.arm64.name}
-                .download-grid
-                  - for (let obj of assets.linux.arm64.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="arm64_legacy")
-              .os-downloads
-                h3 #{assets.linux.arm64_legacy.name}
-                .download-grid
-                  - for (let obj of assets.linux.arm64_legacy.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="armv7")
-              .os-downloads
-                h3 #{assets.linux.armv7.name}
-                .download-grid
-                  - for (let obj of assets.linux.armv7.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="armv7_legacy")
-              .os-downloads
-                h3 #{assets.linux.armv7_legacy.name}
-                .download-grid
-                  - for (let obj of assets.linux.armv7_legacy.items)
-                    +downloadItem(obj)
-            
-            .arch-tab-panel(data-arch="loong64")
-              .os-downloads
-                h3 #{assets.linux.loong64.name}
-                .download-grid
-                  - for (let obj of assets.linux.loong64.items)
-                    +downloadItem(obj)
+    //- macOS
+    .download-panel(data-tab='mac')
+      .download-grid
+        each obj in assets.mac.items
+          +dlCard(obj)
 
-            .arch-tab-panel(data-arch="loong64_legacy")
-              .os-downloads
-                h3 #{assets.linux.loong64_legacy.name}
-                .download-grid
-                  - for (let obj of assets.linux.loong64_legacy.items)
-                    +downloadItem(obj)
-      
-      .tab-panel(data-tab="more")
-        .more-options
-          h3 Alternative Downloads
-          p All releases are also available on:
-          .external-links
-            a.external-link(href="https://github.com/electerm/electerm/releases") 
-              span.icon 🔗
-              span View all releases on GitHub
-            a.external-link(href="https://sourceforge.net/projects/electerm/files/")
-              span.icon 🔗  
-              span Browse files on SourceForge
+    //- Linux
+    .download-panel(data-tab='linux')
+      .arch-bar
+        button.arch-btn.active(data-arch='x86_64') x86_64
+        button.arch-btn(data-arch='arm64') ARM64
+        button.arch-btn(data-arch='armv7') ARMv7
+        button.arch-btn(data-arch='loong64') LoongArch64
+      .arch-panel.active(data-arch='x86_64')
+        .download-grid
+          each obj in assets.linux.x86_64.items
+            +dlCard(obj)
+      .arch-panel(data-arch='arm64')
+        .download-grid
+          each obj in assets.linux.arm64.items
+            +dlCard(obj)
+      .arch-panel(data-arch='armv7')
+        .download-grid
+          each obj in assets.linux.armv7.items
+            +dlCard(obj)
+      .arch-panel(data-arch='loong64')
+        .download-grid
+          each obj in assets.linux.loong64.items
+            +dlCard(obj)
 
-// Tab switching functionality
-script.
-  document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-
-    function activateTab(tabName) {
-      tabButtons.forEach(btn => {
-        const isTarget = btn.getAttribute('data-tab') === tabName;
-        btn.classList.toggle('active', isTarget);
-      });
-      tabPanels.forEach(panel => {
-        const isTarget = panel.getAttribute('data-tab') === tabName;
-        panel.classList.toggle('active', isTarget);
-      });
-    }
-
-    // Set default tab based on detected OS
-    try {
-      const os = typeof detectOS === 'function' ? detectOS() : 'windows';
-      activateTab(os);
-    } catch (e) {
-      activateTab('windows');
-    }
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const targetTab = this.getAttribute('data-tab');
-        activateTab(targetTab);
-      });
-    });
-
-    // Architecture sub-tabs functionality (unified for both Linux and Windows)
-    function initArchitectureTabs(tabContainer) {
-      const archTabButtons = tabContainer.querySelectorAll('.arch-tab-btn');
-      const archTabPanels = tabContainer.querySelectorAll('.arch-tab-panel');
-
-      function activateArchTab(archName) {
-        archTabButtons.forEach(btn => {
-          const isTarget = btn.getAttribute('data-arch') === archName;
-          btn.classList.toggle('active', isTarget);
-        });
-        archTabPanels.forEach(panel => {
-          const isTarget = panel.getAttribute('data-arch') === archName;
-          panel.classList.toggle('active', isTarget);
-        });
-      }
-
-      // Set default architecture
-      if (tabContainer.closest('[data-tab="windows"]')) {
-        // For Windows, detect architecture
-        try {
-          const windowsArch = typeof detectWindowsArchitecture === 'function' ? detectWindowsArchitecture() : 'x64';
-          activateArchTab(windowsArch);
-        } catch (e) {
-          activateArchTab('x64');
-        }
-      } else if (tabContainer.closest('[data-tab="linux"]')) {
-        // For Linux, default to x86_64
-        activateArchTab('x86_64');
-      }
-
-      archTabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const targetArch = this.getAttribute('data-arch');
-          activateArchTab(targetArch);
-        });
-      });
-    }
-
-    // Initialize architecture tabs for both Windows and Linux
-    const archTabContainers = document.querySelectorAll('.arch-tabs');
-    archTabContainers.forEach(container => {
-      initArchitectureTabs(container);
-    });
-  });
-
-// Changelog section (moved to bottom)
-.changelog-section
-  h2 Release Notes
-  .changelog-content
-    .changelog-version
-      b #{version}
-      small.release-date #{assets.windows.x64.releaseDate || assets.windows.arm64.releaseDate}
-    .changelog-notes
-      - let releaseNote = assets.windows.x64.releaseNote || assets.windows.arm64.releaseNote || ''
-      - let rns = releaseNote.split('\r\n').filter(d => d.trim())
-      - for (let rn of rns) {
-        - if (rn.startsWith('---')) {
-          .changelog-separator #{rn}
-        - } else if (!rn.startsWith('#')) {
-          .changelog-item ♥ #{rn.replace(/^- /, '')}
-        - } else {
-          .changelog-header #{rn.replace(/^- /, '')}
-        - }
-      - }
-
-// WeChat community section
-.community-section
-  h2 微信群
-  .community-content
-    img.wechat-qr(src='https://electerm.html5beta.com/electerm-wechat-group-qr.jpg' alt='WeChat Group QR Code')
-    p Join our WeChat community for support and updates
+    .download-more
+      a(href='https://github.com/electerm/electerm/releases', target='_blank', rel='noreferrer')
+        | View all releases on GitHub →

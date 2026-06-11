@@ -1,0 +1,21 @@
+section.changelog
+  .container
+    .section-header
+      h2 Release Notes
+      p What's new in the latest version
+    .changelog-card
+      .changelog-header
+        span.changelog-version-badge #{version}
+        span.changelog-date #{assets.windows.x64.releaseDate || assets.windows.arm64.releaseDate}
+      .changelog-body
+        - let releaseNote = assets.windows.x64.releaseNote || assets.windows.arm64.releaseNote || ''
+        - let rns = releaseNote.split('\r\n').filter(d => d.trim())
+        - for (let rn of rns) {
+          - if (rn.startsWith('---')) {
+            .separator
+          - } else if (!rn.startsWith('#')) {
+            p ♥ #{rn.replace(/^- /, '')}
+          - } else {
+            p(style='font-weight:600;margin-top:12px') #{rn.replace(/^#+ /, '')}
+          - }
+        - }

@@ -10,24 +10,65 @@ const host = env.SERVER_HOST || '127.0.0.1'
 const h = `http://${host}:${devPort}`
 global.viteInst = null
 
+// Override locale and page URLs to use dev host
+data.langs = data.langs.map(l => ({
+  ...l,
+  url: l.slug === '' ? h : h + '/' + l.slug + '/'
+}))
+
+function handleLocale (req, res) {
+  const slug = req.params.param || req.params.lang
+  const langData = data.langs.find(l => l.slug === slug)
+  if (!langData) {
+    res.status(404).send('Language not found')
+    return
+  }
+  res.render('index', {
+    ...data,
+    host: h,
+    url: h + '/' + slug + '/',
+    dev: true,
+    cssUrl: h + '/index.bundle.css',
+    jsUrl: '/src/views/index.jsx',
+    langCode: langData.langCode,
+    lang: langData.lang,
+    desc: langData.lang.lang.desc
+  })
+}
+
+function handlePage (req, res) {
+  const page = req.params.param || req.params.page
+  const { langCode, lang } = data.langs[2]
+  res.render(page, {
+    ...data,
+    host: h,
+    url: h + '/' + page + '/',
+    dev: true,
+    cssUrl: h + '/index.bundle.css',
+    jsUrl: '/src/views/index.jsx',
+    langCode,
+    lang,
+    desc: lang.lang.desc
+  })
+}
+
 function handleIndex (req, res) {
-  const lang = data.langs[2]
-  const view = req.params?.page || 'index'
-  res.render(view, {
+  const { langCode, lang } = data.langs[2]
+  res.render('index', {
     ...data,
     host: h,
     url: h,
     dev: true,
     cssUrl: h + '/index.bundle.css',
     jsUrl: '/src/views/index.jsx',
-    langCode: lang.langCode,
-    lang: lang.lang,
-    desc: lang.lang.lang.desc
+    langCode,
+    lang,
+    desc: lang.lang.desc
   })
 }
 
 function handleVideo (req, res) {
-  const lang = data.langs[2]
+  const { langCode, lang } = data.langs[2]
   const videoSlug = req.params.videoSlug
   const video = data.videos.find(v => v.videoSlug === videoSlug)
   if (!video) {
@@ -41,8 +82,8 @@ function handleVideo (req, res) {
     dev: true,
     cssUrl: h + '/index.bundle.css',
     jsUrl: '/src/views/index.jsx',
-    langCode: lang.langCode,
-    lang: lang.lang,
+    langCode,
+    lang,
     desc: video.description,
     video
   })
@@ -51,9 +92,6 @@ function handleVideo (req, res) {
 async function createServer () {
   const app = express()
 
-  // Create Vite server in middleware mode and configure the app type as
-  // 'custom', disabling Vite's own HTML serving logic so parent server
-  // can take control
   const vite = await createViteServer({
     ...conf,
     server: {
@@ -73,12 +111,24 @@ async function createServer () {
   app.set('views', viewPath)
   app.set('view engine', 'pug')
 
-  // Use vite's connect instance as middleware. If you use your own
-  // express router (express.Router()), you should use router.use
   app.use(vite.middlewares)
+
   app.get('/', handleIndex)
   app.get('/videos/:videoSlug', handleVideo)
-  app.get('/:page', handleIndex)
+
+  // Catch-all for /:something/ routes
+  app.get('/:param/', (req, res, next) => {
+    const param = req.params.param
+    const langData = data.langs.find(l => l.slug === param)
+    if (langData) {
+      return handleLocale(req, res)
+    }
+    // Check if it's a known page
+    if (data.pages.includes(param) || param === 'deb') {
+      return handlePage(req, res)
+    }
+    res.status(404).send('Not found')
+  })
 
   app.listen(devPort, host, () => {
     console.log(`server started at ${h}`)
