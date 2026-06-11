@@ -89,6 +89,22 @@ function handleVideo (req, res) {
   })
 }
 
+function handleVideosIndex (req, res) {
+  const { langCode, lang } = data.langs[2]
+  res.render('videos', {
+    ...data,
+    host: h,
+    url: h + '/videos',
+    dev: true,
+    cssUrl: h + '/index.bundle.css',
+    jsUrl: '/src/views/index.jsx',
+    langCode,
+    lang,
+    desc: lang.lang.desc,
+    videos: data.videos
+  })
+}
+
 async function createServer () {
   const app = express()
 
@@ -114,6 +130,7 @@ async function createServer () {
   app.use(vite.middlewares)
 
   app.get('/', handleIndex)
+  app.get('/videos', handleVideosIndex)
   app.get('/videos/:videoSlug', handleVideo)
 
   // Catch-all for /:something/ routes

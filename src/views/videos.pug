@@ -1,7 +1,7 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - Video guide
+    title #{siteName} - Video Guides
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - Video Guides and Tutorials')
@@ -9,16 +9,139 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - Video Guides and Tutorials')
     meta(name='twitter:description' content='Watch tutorial videos and demos for electerm terminal client')
     include ./parts/react-header
-    include ./parts/video-style
+    style.
+      .videos-hero {
+        background: var(--color-bg-alt);
+        padding: 48px 0;
+        text-align: center;
+      }
+      .videos-hero h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .videos-hero p {
+        color: var(--color-text-secondary);
+        font-size: 1.05rem;
+      }
+      .videos-section {
+        padding: 48px 0 80px;
+        background: var(--color-bg);
+      }
+      .lang-switcher {
+        display: inline-flex;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-bottom: 32px;
+      }
+      .lang-btn {
+        padding: 8px 20px;
+        border: none;
+        background: var(--color-bg);
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .lang-btn + .lang-btn {
+        border-left: 1px solid var(--color-border);
+      }
+      .lang-btn:hover {
+        background: var(--color-bg-alt);
+        color: var(--color-text);
+      }
+      .lang-btn.active {
+        background: var(--color-primary);
+        color: white;
+      }
+      .videos-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 480px) {
+        .videos-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (min-width: 768px) {
+        .videos-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      }
+      .video-card {
+        display: block;
+        background: var(--color-bg);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid var(--color-border);
+        transition: all 0.25s;
+      }
+      .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--color-primary);
+      }
+      .video-card-thumbnail {
+        position: relative;
+        padding-bottom: 56.25%;
+        background: #1e293b;
+        overflow: hidden;
+      }
+      .video-card-thumbnail img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+      .video-card:hover .video-card-thumbnail img {
+        transform: scale(1.05);
+      }
+      .video-duration-badge {
+        position: absolute;
+        bottom: 8px; right: 8px;
+        background: rgba(0,0,0,0.85);
+        color: white;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.78rem;
+        font-weight: 600;
+      }
+      .video-card-content {
+        padding: 16px;
+      }
+      .video-card-title {
+        font-size: 0.95rem;
+        margin: 0;
+        color: var(--color-text);
+        font-weight: 600;
+        line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        min-height: 2.8em;
+      }
   body
-    #content
-      .pd2
-        //- include ./parts/lang-video
-        include ./parts/videos-insert
-        include ./parts/badge
-        include ./parts/download
-        include ./parts/container
-        include ./parts/react-common
-    #container
+    include ./parts/header
+    section.videos-hero
+      .container
+        h1 Video Guides
+        p Watch tutorials and demos for electerm
+    section.videos-section
+      .container(align='center')
+        include ./parts/video-lang
+        .videos-grid
+          each video in videos
+            - var videoSlug = video.videoSlug
+            a.video-card(href=`/videos/${videoSlug}/`)
+              .video-card-thumbnail
+                img(src=`/video-thumb/${videoSlug}.jpg` alt=video.titleEn loading='lazy')
+                .video-duration-badge #{Math.floor(video.duration / 60)}:#{String(video.duration % 60).padStart(2, '0')}
+              .video-card-content
+                h3.video-card-title(data-title-en=video.titleEn data-title-zh=video.title)= video.titleEn
+    include ./parts/footer
     include ./parts/video-script
     include ./parts/react-footer

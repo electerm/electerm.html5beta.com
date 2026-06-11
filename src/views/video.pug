@@ -9,65 +9,137 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - ' + video.titleEn)
     meta(name='twitter:description' content='Video tutorial: ' + video.titleEn)
     include ./parts/react-header
-    include ./parts/video-style
+    style.
+      .video-hero {
+        background: var(--color-bg-alt);
+        padding: 32px 0;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: var(--color-primary);
+      }
+      .video-hero h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .video-section {
+        padding: 40px 0 80px;
+        background: var(--color-bg);
+      }
+      .video-player-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        border-radius: var(--radius-lg);
+        margin-bottom: 24px;
+        max-width: 900px;
+        margin-left auto;
+        margin-right auto;
+      }
+      .video-player {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        border: 0;
+      }
+      .lang-switcher {
+        display: inline-flex;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-bottom: 24px;
+      }
+      .lang-btn {
+        padding: 8px 20px;
+        border: none;
+        background: var(--color-bg);
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .lang-btn + .lang-btn {
+        border-left: 1px solid var(--color-border);
+      }
+      .lang-btn:hover {
+        background: var(--color-bg-alt);
+        color: var(--color-text);
+      }
+      .lang-btn.active {
+        background: var(--color-primary);
+        color: white;
+      }
   body
-    #content
-      .pd2
-        //- include ./parts/lang-video
-        //- include ./parts/title
-        include ./parts/video-insert
-        include ./parts/badge
-        include ./parts/download
-        include ./parts/container
-        include ./parts/react-common
-    #container
+    include ./parts/header
+    section.video-hero
+      .container
+        a.back-link(href='/videos/') ← Back to Videos
+        include ./parts/video-lang
+        h1.video-title(data-title-en=video.titleEn data-title-zh=video.title)= video.titleEn
+    section.video-section
+      .container
+        .video-player-wrapper
+          iframe.video-player(
+            src=`//player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1&danmaku=0&autoplay=0`
+            scrolling='no'
+            border='0'
+            frameborder='no'
+            framespacing='0'
+            allowfullscreen='true'
+          )
+    include ./parts/footer
     include ./parts/video-script
     include ./parts/react-footer
 
     script.
       (function() {
-        // Get browser language
         function getBrowserLang() {
           const lang = navigator.language || navigator.userLanguage;
           return lang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
         }
-        
-        // Get saved or default language
         function getCurrentLang() {
           const saved = localStorage.getItem('video-lang');
           return saved || getBrowserLang();
         }
-        
-        // Update UI based on language
         function updateLanguage(lang) {
           document.documentElement.setAttribute('data-video-lang', lang);
           localStorage.setItem('video-lang', lang);
-
-          // Update button states
+          const h1Title = document.querySelector('h1.video-title');
+          if (h1Title) {
+            const titleEn = h1Title.dataset.titleEn;
+            const titleZh = h1Title.dataset.titleZh;
+            document.title = lang === 'zh' ? titleZh : titleEn;
+          }
           document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
           });
-          
-          // Update video titles
           document.querySelectorAll('[data-title-en]').forEach(el => {
             const titleEn = el.dataset.titleEn;
             const titleZh = el.dataset.titleZh;
             el.textContent = lang === 'zh' ? titleZh : titleEn;
           });
         }
-        
-        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
           const currentLang = getCurrentLang();
           updateLanguage(currentLang);
-          
-          // Add click handlers
           document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-              const lang = this.dataset.lang;
-              updateLanguage(lang);
+              updateLanguage(this.dataset.lang);
             });
           });
         });
       })();
-

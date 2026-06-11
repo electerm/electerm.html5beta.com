@@ -1,7 +1,7 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - sponsor electerm
+    title #{siteName} - Sponsor Electerm
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - Support Open Source Development')
@@ -9,14 +9,122 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - Support Open Source Development')
     meta(name='twitter:description' content='Sponsor electerm terminal client development')
     include ./parts/react-header
+    style.
+      .sponsor-hero {
+        background: var(--color-bg-alt);
+        padding: 48px 0;
+        text-align: center;
+      }
+      .sponsor-hero h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .sponsor-hero p {
+        color: var(--color-text-secondary);
+        font-size: 1.05rem;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .sponsor-section {
+        padding: 60px 0 80px;
+        background: var(--color-bg);
+      }
+      .sponsor-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      @media (min-width: 480px) {
+        .sponsor-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      .sponsor-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 24px;
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.25s;
+        text-align: center;
+      }
+      .sponsor-card:hover {
+        border-color: var(--color-primary);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .sponsor-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-md);
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+      }
+      .sponsor-card h3 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--color-text);
+      }
+      .sponsor-card p {
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+      }
+      .sponsor-wechat {
+        text-align: center;
+        margin-top: 48px;
+        padding-top: 40px;
+        border-top: 1px solid var(--color-border);
+      }
+      .sponsor-wechat h2 {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+      }
+      .sponsor-wechat img {
+        max-width: 220px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 8px;
+      }
+      .sponsor-wechat p {
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+      }
   body
-    #content
-      .pd2
-        include ./parts/title
-        //- include ./parts/badge
-        include ./parts/sponsor
-        include ./parts/download
-        include ./parts/container
-        include ./parts/react-common
-    #container
+    include ./parts/header
+    section.sponsor-hero
+      .container
+        h1 Sponsor Electerm
+        p Help support continued development of this open source project
+    section.sponsor-section
+      .container
+        .sponsor-grid
+          a.sponsor-card(href='https://github.com/sponsors/electerm', target='_blank', rel='noreferrer')
+            .sponsor-icon ❤️
+            h3 GitHub Sponsors
+            p Monthly or one-time sponsorship
+          a.sponsor-card(href='https://ko-fi.com/zhaoxudong', target='_blank', rel='noreferrer')
+            .sponsor-icon ☕
+            h3 Ko-fi
+            p Buy the author a coffee
+          a.sponsor-card(href='https://opencollective.com/electerm', target='_blank', rel='noreferrer')
+            .sponsor-icon 🌍
+            h3 Open Collective
+            p Transparent funding
+        .sponsor-wechat
+          h2 WeChat Donate
+          img(src='https://electerm.html5beta.com/electerm-wechat-donate.png' alt='WeChat Donate QR Code')
+          p Scan to donate via WeChat
+    include ./parts/sponsors
+    include ./parts/footer
     include ./parts/react-footer
