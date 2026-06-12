@@ -5,6 +5,7 @@ section.hero
     .hero-version
       span.dot
       span Version #{version}
+      span(style='opacity:0.6;margin-left:4px') #{assets.windows.x64.releaseDate || assets.windows.arm64.releaseDate}
     .hero-cta
       a.hero-btn.hero-btn-primary(href='#downloads')
         | Download #{version}
