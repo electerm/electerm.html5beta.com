@@ -94,25 +94,53 @@ section.downloads#downloads
     .download-panel(data-tab='linux')
       .arch-bar
         button.arch-btn.active(data-arch='x86_64') x86_64
+        - if (assets.linux.x86_64_legacy && assets.linux.x86_64_legacy.items.length > 0)
+          button.arch-btn(data-arch='x86_64_legacy') x86_64 Legacy
         button.arch-btn(data-arch='arm64') ARM64
+        - if (assets.linux.arm64_legacy && assets.linux.arm64_legacy.items.length > 0)
+          button.arch-btn(data-arch='arm64_legacy') ARM64 Legacy
         button.arch-btn(data-arch='armv7') ARMv7
+        - if (assets.linux.armv7_legacy && assets.linux.armv7_legacy.items.length > 0)
+          button.arch-btn(data-arch='armv7_legacy') ARMv7 Legacy
         button.arch-btn(data-arch='loong64') LoongArch64
+        - if (assets.linux.loong64_legacy && assets.linux.loong64_legacy.items.length > 0)
+          button.arch-btn(data-arch='loong64_legacy') LoongArch64 Legacy
       .arch-panel.active(data-arch='x86_64')
         .download-grid
           each obj in assets.linux.x86_64.items
             +dlCard(obj)
+      - if (assets.linux.x86_64_legacy && assets.linux.x86_64_legacy.items.length > 0)
+        .arch-panel(data-arch='x86_64_legacy')
+          .download-grid
+            each obj in assets.linux.x86_64_legacy.items
+              +dlCard(obj)
       .arch-panel(data-arch='arm64')
         .download-grid
           each obj in assets.linux.arm64.items
             +dlCard(obj)
+      - if (assets.linux.arm64_legacy && assets.linux.arm64_legacy.items.length > 0)
+        .arch-panel(data-arch='arm64_legacy')
+          .download-grid
+            each obj in assets.linux.arm64_legacy.items
+              +dlCard(obj)
       .arch-panel(data-arch='armv7')
         .download-grid
           each obj in assets.linux.armv7.items
             +dlCard(obj)
+      - if (assets.linux.armv7_legacy && assets.linux.armv7_legacy.items.length > 0)
+        .arch-panel(data-arch='armv7_legacy')
+          .download-grid
+            each obj in assets.linux.armv7_legacy.items
+              +dlCard(obj)
       .arch-panel(data-arch='loong64')
         .download-grid
           each obj in assets.linux.loong64.items
             +dlCard(obj)
+      - if (assets.linux.loong64_legacy && assets.linux.loong64_legacy.items.length > 0)
+        .arch-panel(data-arch='loong64_legacy')
+          .download-grid
+            each obj in assets.linux.loong64_legacy.items
+              +dlCard(obj)
 
     .download-more
       a(href='https://github.com/electerm/electerm/releases', target='_blank', rel='noreferrer')
