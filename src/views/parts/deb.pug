@@ -1,95 +1,112 @@
-//- Debian Repository Page Content
+section.deb-hero
+  .container
+    img.deb-hero-logo(src=host + '/electerm.png', alt='electerm')
+    h1 Debian Repository
+    p.deb-hero-tagline Official APT repository for easy installation and automatic updates on Debian/Ubuntu systems
 
-.pd2y.aligncenter
-  h2 Official Debian Repository
-  p Secure APT repository for Electerm
+section.deb-features
+  .container
+    .section-header
+      h2 Why Use the Repository?
+    .features-grid
+      .feature-card
+        .feature-icon 🔒
+        h3 Secure & Verified
+        p All packages are GPG signed and cryptographically verified against official releases
+      .feature-card
+        .feature-icon ⚡
+        h3 Auto Updates
+        p Stay up-to-date with your system's package manager — no manual downloads needed
+      .feature-card
+        .feature-icon 🏗️
+        h3 x86_64 Support
+        p Optimized builds for amd64 architecture
 
-//- Repository Status
-.status-section
-  .status-card
-    h3
-      span.status-indicator.status-online
-      | Repository Status
-    p Online and Updated
-  .status-card
-    h3
-      span.status-indicator.status-online
-      | GPG Signing
-    p Cryptographically Verified
-  .status-card
-    h3
-      span.status-indicator.status-online
-      | Architecture
-    p amd64 (x86_64) 
-      span.architecture-badge SUPPORTED
+section.deb-steps
+  .container
+    .section-header
+      h2 Installation
+      p Two simple steps to get started
 
-//- Installation Instructions
-.install-card
-  h3
-    span.step-number 1
-    | Add Repository
-  p Add the Electerm Debian repository to your system:
-  
-  .code-block
-    button.copy-button(onclick="copyToClipboard(this)") Copy
-    pre.
-      # Add the GPG key
-      curl -fsSL https://electerm-repos.html5beta.com/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/electerm.gpg
+    .steps-grid
+      .step-card
+        .step-number 1
+        .step-content
+          h3 Add Repository
+          p Add the GPG key and repository source to your system:
 
-      # Add the repository
-      echo "deb [arch=amd64 signed-by=/usr/share/keyrings/electerm.gpg] https://electerm-repos.html5beta.com/deb stable main" | sudo tee /etc/apt/sources.list.d/electerm.list
+          .code-block
+            button.copy-button(onclick="copyToClipboard(this)") Copy
+            pre.
+              # Add the GPG key
+              curl -fsSL https://electerm-repos.html5beta.com/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/electerm.gpg
 
-.install-card
-  h3
-    span.step-number 2
-    | Update & Install
-  p Update your package list and install Electerm:
-  
-  .code-block
-    button.copy-button(onclick="copyToClipboard(this)") Copy
-    pre.
-      # Update package list
-      sudo apt update
+              # Add the repository
+              echo "deb [arch=amd64 signed-by=/usr/share/keyrings/electerm.gpg] https://electerm-repos.html5beta.com/deb stable main" | sudo tee /etc/apt/sources.list.d/electerm.list
 
-      # Install Electerm
-      sudo apt install electerm
-  
-  .success
-    strong ✅ That's it!
-    |  Electerm will be installed and automatically updated through your system's package manager.
+      .step-card
+        .step-number 2
+        .step-content
+          h3 Update & Install
+          p Update your package list and install Electerm:
 
-//- Repository Information
-.install-card
-  h3 📋 Repository Information
-  
-  .info
-    strong Repository URL:
-    |  https://electerm-repos.html5beta.com/deb
-    br
-    strong Distribution:
-    |  stable
-    br
-    strong Component:
-    |  main
-    br
-    strong Architecture:
-    |  amd64
-    br
-    strong GPG Key:
-    |  
-    a(href="public.key") Download Public Key
-  
-  h4 🔐 Security Features
-  ul
-    li
-      strong GPG Signed:
-      |  All packages are cryptographically signed
-    li
-      strong HTTPS:
-      |  Secure transport for all downloads
-    li
-      strong Automated:
-      |  Repository updated automatically with new releases
-    li
-      strong Verified:
-      |  Packages verified against official GitHub releases
+          .code-block
+            button.copy-button(onclick="copyToClipboard(this)") Copy
+            pre.
+              # Update package list
+              sudo apt update
+
+              # Install Electerm
+              sudo apt install electerm
+
+    .deb-success
+      .deb-success-icon ✅
+      .deb-success-text
+        h4 That's it!
+        p Electerm will be installed and automatically updated through your system's package manager.
+
+section.deb-info
+  .container
+    .section-header
+      h2 Repository Details
+
+    .info-grid
+      .info-card
+        .info-card-label Repository URL
+        .info-card-value https://electerm-repos.html5beta.com/deb
+      .info-card
+        .info-card-label Distribution
+        .info-card-value stable
+      .info-card
+        .info-card-label Component
+        .info-card-value main
+      .info-card
+        .info-card-label Architecture
+        .info-card-value amd64
+      .info-card
+        .info-card-label GPG Key
+        .info-card-value
+          a(href="public.key") Download Public Key
+
+section.deb-security
+  .container
+    .section-header
+      h2 Security Features
+
+    .security-grid
+      .security-card
+        .security-icon 🔐
+        h4 GPG Signed
+        p All packages are cryptographically signed
+      .security-card
+        .security-icon 🌐
+        h4 HTTPS Transport
+        p Secure transport for all downloads
+      .security-card
+        .security-icon 🤖
+        h4 Automated Updates
+        p Repository updated automatically with new releases
+      .security-card
+        .security-icon ✓
+        h4 Verified Packages
+        p Packages verified against official GitHub releases
