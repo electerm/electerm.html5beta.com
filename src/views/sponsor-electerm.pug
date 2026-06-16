@@ -58,6 +58,64 @@ html(lang=langCode)
         box-shadow: var(--shadow-md);
         transform: translateY(-2px);
       }
+      .sponsor-card.featured {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        gap: 32px;
+        padding: 36px 32px;
+        background: linear-gradient(135deg, var(--color-bg-alt), var(--color-bg));
+        border-color: var(--color-primary);
+        border-width: 2px;
+      }
+      @media (max-width: 479px) {
+        .sponsor-card.featured {
+          flex-direction: column;
+          gap: 20px;
+          padding: 32px 24px;
+        }
+      }
+      .sponsor-card.featured .sponsor-qr {
+        flex-shrink: 0;
+        width: 160px;
+        height: 160px;
+        border-radius: var(--radius-md);
+        overflow-hidden;
+        box-shadow: var(--shadow-md);
+      }
+      .sponsor-card.featured .sponsor-qr img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .sponsor-card.featured .sponsor-info {
+        text-align: left;
+      }
+      @media (max-width: 479px) {
+        .sponsor-card.featured .sponsor-info {
+          text-align: center;
+        }
+      }
+      .sponsor-card.featured .sponsor-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: var(--color-primary);
+        color: #fff;
+        margin-bottom: 12px;
+      }
+      .sponsor-card.featured h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+      .sponsor-card.featured p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
       .sponsor-icon {
         width: 48px;
         height: 48px;
@@ -80,26 +138,6 @@ html(lang=langCode)
         font-size: 0.85rem;
         color: var(--color-text-secondary);
       }
-      .sponsor-wechat {
-        text-align: center;
-        margin-top: 48px;
-        padding-top: 40px;
-        border-top: 1px solid var(--color-border);
-      }
-      .sponsor-wechat h2 {
-        font-size: 1.3rem;
-        margin-bottom: 16px;
-      }
-      .sponsor-wechat img {
-        max-width: 220px;
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-md);
-        margin-bottom: 8px;
-      }
-      .sponsor-wechat p {
-        color: var(--color-text-secondary);
-        font-size: 0.9rem;
-      }
   body
     include ./parts/header
     section.sponsor-hero
@@ -109,6 +147,12 @@ html(lang=langCode)
     section.sponsor-section
       .container
         .sponsor-grid
+          .sponsor-card.featured
+            .sponsor-qr
+              img(src='https://electerm.html5beta.com/electerm-wechat-donate.png' alt='WeChat Donate QR Code')
+            .sponsor-info
+              h3 微信赞赏
+              p Scan the QR code with WeChat to donate directly
           a.sponsor-card(href='https://github.com/sponsors/electerm', target='_blank', rel='noreferrer')
             .sponsor-icon ❤️
             h3 GitHub Sponsors
@@ -121,10 +165,6 @@ html(lang=langCode)
             .sponsor-icon 🌍
             h3 Open Collective
             p Transparent funding
-        .sponsor-wechat
-          h2 WeChat Donate
-          img(src='https://electerm.html5beta.com/electerm-wechat-donate.png' alt='WeChat Donate QR Code')
-          p Scan to donate via WeChat
     include ./parts/sponsors
     include ./parts/footer
     include ./parts/react-footer
