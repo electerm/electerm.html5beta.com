@@ -1,195 +1,224 @@
-class TerminalBg {
-  constructor (options = {}) {
-    this.className = options.className || 'animate'
-    this.color = options.color || '#666666'
-    this.bgColor = options.bgColor || '#ffffff'
-    this.fontSize = options.fontSize || 18
-    this.speed = options.speed || 0.8
-    this.lines = []
-    this.canvas = null
-    this.ctx = null
-    this.animationId = null
-    this.lastTime = 0
-    this.frameInterval = 40
+/**
+ * Canvas animation for hero background
+ * Tech-style: grid + particle network + feature phrase rain + hex nodes
+ */
+export default class HeroAnimate {
+  constructor (el) {
+    this.el = el
+    this.canvas = document.createElement('canvas')
+    this.canvas.style.cssText = 'display:block;width:100%;height:100%'
+    this.el.appendChild(this.canvas)
+    this.ctx = this.canvas.getContext('2d')
+    this.animId = null
+    this.w = 0
+    this.h = 0
+
+    this.PARTICLE_COUNT = 60
+    this.CONNECT_DIST = 150
+    this.DROP_COUNT = 30
+    this.particles = []
+    this.drops = []
+    this.hexNodes = []
+    this.scanY = 0
+
+    this.featurePhrases = [
+      'Terminal', 'SSH', 'SFTP', 'Telnet', 'Serialport',
+      'RDP', 'VNC', 'Spice', 'FTP',
+      'Multi-platform', 'Multi-language', 'AI assistant',
+      'MCP', 'Deep link', 'Zmodem', 'Trzsz',
+      'SSH tunnel', 'Quick commands', 'Themes',
+      'Sync bookmarks', 'Proxy', 'Transparent window',
+      '终端', '文件管理', '多平台', '多语言',
+      '快捷键', '远程编辑', '密码登录', '密匙登录',
+      '隧道', '代理服务器', '快捷命令', '主题',
+      '同步数据', '快速输入', 'AI助手', '深度链接',
+      '透明窗口', '背景图片', '文件传输'
+    ]
+
+    this._resize = this.resize.bind(this)
     this.init()
   }
 
-  getTexts () {
-    return [
-      '终端/SSH/SFTP/Telnet/串口/RDP/VNC客户端',
-      '全局热键切换窗口可见性',
-      '多平台支持 Linux/Mac/Windows',
-      '多语言支持',
-      '双击直接编辑远程文件',
-      '公钥+密码认证',
-      '支持 Zmodem (rz/sz)',
-      '支持 SSH 隧道',
-      '支持 Trzsz (trz/tsz)',
-      '透明窗口',
-      '终端背景图片',
-      '全局/会话代理',
-      '快捷命令',
-      'UI/终端主题',
-      '同步书签到 GitHub/Gitee',
-      'AI 助手集成',
-      '支持 DeepSeek/OpenAI',
-      '深度链接支持',
-      '命令行使用',
-      'SSH/SFTP 文件传输',
-      '批量操作',
-      '多终端同步输入',
-      'VNC 远程桌面',
-      'RDP 远程桌面',
-      '串口终端',
-      'Telnet 连接',
-      'FTP 客户端',
-      'Terminal/SSH/SFTP/Telnet/Serial/RDP/VNC client',
-      'Global hotkey to toggle window',
-      'Multi platform: Linux/Mac/Windows',
-      'Multi-language support',
-      'Double click to edit remote files',
-      'Auth with publicKey + password',
-      'Support Zmodem (rz/sz)',
-      'Support SSH tunnel',
-      'Support Trzsz (trz/tsz)',
-      'Transparent window',
-      'Terminal background image',
-      'Global/session proxy',
-      'Quick commands',
-      'UI/terminal themes',
-      'Sync to GitHub/Gitee gist',
-      'AI assistant integration',
-      'Support DeepSeek/OpenAI',
-      'Deep link support',
-      'Command line usage',
-      'SSH/SFTP file transfer',
-      'Batch operations',
-      'Multi-terminal sync input',
-      'VNC remote desktop',
-      'RDP remote desktop',
-      'Serial port terminal',
-      'Telnet connection',
-      'FTP client'
-    ]
-  }
-
   init () {
-    let container = document.querySelector(`.${this.className}`)
-    if (!container) {
-      container = document.createElement('div')
-      container.className = this.className
-      document.body.insertBefore(container, document.body.firstChild)
-    }
-    container.style.cssText = 'position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;overflow:hidden;'
-    this.container = container
-    this.canvas = document.createElement('canvas')
-    this.canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;'
-    container.appendChild(this.canvas)
-    this.ctx = this.canvas.getContext('2d')
-    this.texts = this.getTexts()
     this.resize()
-    window.addEventListener('resize', this.handleResize.bind(this))
     this.animate()
-  }
-
-  handleResize () {
-    if (this.resizeTimeout) {
-      clearTimeout(this.resizeTimeout)
-    }
-    this.resizeTimeout = setTimeout(() => {
-      this.resize()
-    }, 100)
+    window.addEventListener('resize', this._resize)
   }
 
   resize () {
-    const container = this.canvas.parentElement
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
-    const rect = container.getBoundingClientRect()
-    this.canvas.width = rect.width * dpr
-    this.canvas.height = rect.height * dpr
-    this.canvas.style.width = rect.width + 'px'
-    this.canvas.style.height = rect.height + 'px'
-    this.ctx.scale(dpr, dpr)
-    this.width = rect.width
-    this.height = rect.height
-    this.initLines()
+    const dpr = window.devicePixelRatio || 1
+    this.w = this.el.offsetWidth
+    this.h = this.el.offsetHeight
+    this.canvas.width = this.w * dpr
+    this.canvas.height = this.h * dpr
+    this.canvas.style.width = this.w + 'px'
+    this.canvas.style.height = this.h + 'px'
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+    this.initParticles()
+    this.initDrops()
+    this.initHexNodes()
   }
 
-  initLines () {
-    const lineCount = Math.max(15, Math.floor(this.width / 120))
-    const rowCount = Math.max(8, Math.floor(this.height / 100))
-    const texts = this.texts
-    this.lines = []
-    const angle = Math.PI / 6
-    for (let row = 0; row < rowCount; row++) {
-      for (let col = 0; col < lineCount; col++) {
-        const startX = -this.width * 0.3 + col * (this.width * 1.6 / lineCount) + Math.random() * 30
-        const startY = -this.height * 0.3 + row * (this.height * 1.6 / rowCount) + Math.random() * 30
-        this.lines.push({
-          x: startX,
-          y: startY,
-          angle,
-          speed: (0.3 + Math.random() * 0.4) * this.speed,
-          text: texts[Math.floor(Math.random() * texts.length)],
-          opacity: 0.08 + Math.random() * 0.1,
-          fontSize: this.fontSize + Math.floor(Math.random() * 6)
-        })
+  initParticles () {
+    this.particles = []
+    for (let i = 0; i < this.PARTICLE_COUNT; i++) {
+      this.particles.push({
+        x: Math.random() * this.w,
+        y: Math.random() * this.h,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        r: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.5 + 0.2
+      })
+    }
+  }
+
+  initDrops () {
+    this.drops = []
+    for (let i = 0; i < this.DROP_COUNT; i++) {
+      this.drops.push({
+        x: Math.random() * this.w,
+        y: Math.random() * this.h * -1 - Math.random() * 300,
+        speed: Math.random() * 0.8 + 0.3,
+        phrase: this.featurePhrases[Math.floor(Math.random() * this.featurePhrases.length)],
+        opacity: Math.random() * 0.1 + 0.04,
+        fontSize: Math.random() * 4 + 11
+      })
+    }
+  }
+
+  initHexNodes () {
+    this.hexNodes = []
+    for (let i = 0; i < 8; i++) {
+      this.hexNodes.push({
+        x: Math.random() * this.w,
+        y: Math.random() * this.h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 12 + 8,
+        rotation: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.01,
+        opacity: Math.random() * 0.08 + 0.03
+      })
+    }
+  }
+
+  drawGrid () {
+    const ctx = this.ctx
+    const gridSize = 60
+    ctx.strokeStyle = 'rgba(37, 99, 235, 0.04)'
+    ctx.lineWidth = 0.5
+    for (let x = 0; x < this.w; x += gridSize) {
+      ctx.beginPath()
+      ctx.moveTo(x, 0)
+      ctx.lineTo(x, this.h)
+      ctx.stroke()
+    }
+    for (let y = 0; y < this.h; y += gridSize) {
+      ctx.beginPath()
+      ctx.moveTo(0, y)
+      ctx.lineTo(this.w, y)
+      ctx.stroke()
+    }
+  }
+
+  drawParticles () {
+    const ctx = this.ctx
+    for (const p of this.particles) {
+      p.x += p.vx
+      p.y += p.vy
+      if (p.x < 0 || p.x > this.w) p.vx *= -1
+      if (p.y < 0 || p.y > this.h) p.vy *= -1
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+      ctx.fillStyle = 'rgba(37, 99, 235, ' + p.opacity + ')'
+      ctx.fill()
+    }
+    for (let i = 0; i < this.particles.length; i++) {
+      for (let j = i + 1; j < this.particles.length; j++) {
+        const dx = this.particles[i].x - this.particles[j].x
+        const dy = this.particles[i].y - this.particles[j].y
+        const dist = Math.sqrt(dx * dx + dy * dy)
+        if (dist < this.CONNECT_DIST) {
+          const alpha = (1 - dist / this.CONNECT_DIST) * 0.15
+          ctx.beginPath()
+          ctx.moveTo(this.particles[i].x, this.particles[i].y)
+          ctx.lineTo(this.particles[j].x, this.particles[j].y)
+          ctx.strokeStyle = 'rgba(37, 99, 235, ' + alpha + ')'
+          ctx.lineWidth = 0.8
+          ctx.stroke()
+        }
       }
     }
   }
 
-  animate (timestamp = 0) {
-    this.animationId = requestAnimationFrame(this.animate.bind(this))
-    const delta = timestamp - this.lastTime
-    if (delta < this.frameInterval) return
-    this.lastTime = timestamp - (delta % this.frameInterval)
-    this.ctx.fillStyle = this.bgColor
-    this.ctx.fillRect(0, 0, this.width, this.height)
-    for (const line of this.lines) {
-      const moveX = Math.cos(line.angle) * line.speed * 2
-      const moveY = Math.sin(line.angle) * line.speed * 2
-      line.x += moveX
-      line.y += moveY
-      if (line.y > this.height + 50 || line.x > this.width + 50) {
-        line.x = -this.width * 0.5 + Math.random() * this.width * 0.3
-        line.y = -100 - Math.random() * 100
-        line.text = this.texts[Math.floor(Math.random() * this.texts.length)]
-        line.opacity = 0.08 + Math.random() * 0.1
+  drawMatrixRain () {
+    const ctx = this.ctx
+    ctx.textBaseline = 'top'
+    for (const drop of this.drops) {
+      ctx.font = '500 ' + drop.fontSize + 'px "SF Mono", "Fira Code", monospace'
+      ctx.fillStyle = 'rgba(37, 99, 235, ' + drop.opacity + ')'
+      ctx.fillText(drop.phrase, drop.x, drop.y)
+      drop.y += drop.speed
+      if (drop.y > this.h + 20) {
+        drop.y = Math.random() * -300 - 50
+        drop.x = Math.random() * this.w
+        drop.phrase = this.featurePhrases[Math.floor(Math.random() * this.featurePhrases.length)]
       }
-      this.ctx.save()
-      this.ctx.translate(line.x, line.y)
-      this.ctx.rotate(line.angle)
-      this.ctx.font = `${line.fontSize}px monospace`
-      this.ctx.fillStyle = this.hexToRgba(this.color, line.opacity)
-      this.ctx.fillText(line.text, 0, 0)
-      this.ctx.restore()
     }
   }
 
-  hexToRgba (hex, alpha) {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-    if (result) {
-      return `rgba(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}, ${alpha})`
+  drawHex (x, y, size, rotation, opacity) {
+    const ctx = this.ctx
+    ctx.beginPath()
+    for (let i = 0; i < 6; i++) {
+      const angle = rotation + (Math.PI / 3) * i
+      const px = x + size * Math.cos(angle)
+      const py = y + size * Math.sin(angle)
+      if (i === 0) ctx.moveTo(px, py)
+      else ctx.lineTo(px, py)
     }
-    const rgbMatch = hex.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
-    if (rgbMatch) {
-      return `rgba(${rgbMatch[1]}, ${rgbMatch[2]}, ${rgbMatch[3]}, ${alpha})`
+    ctx.closePath()
+    ctx.strokeStyle = 'rgba(37, 99, 235, ' + opacity + ')'
+    ctx.lineWidth = 1
+    ctx.stroke()
+  }
+
+  drawHexNodes () {
+    for (const node of this.hexNodes) {
+      node.x += node.vx
+      node.y += node.vy
+      node.rotation += node.rotSpeed
+      if (node.x < -50 || node.x > this.w + 50) node.vx *= -1
+      if (node.y < -50 || node.y > this.h + 50) node.vy *= -1
+      this.drawHex(node.x, node.y, node.size, node.rotation, node.opacity)
     }
-    return `rgba(102, 102, 102, ${alpha})`
+  }
+
+  drawScanLine () {
+    this.scanY += 0.5
+    if (this.scanY > this.h) this.scanY = 0
+    const grad = this.ctx.createLinearGradient(0, this.scanY - 30, 0, this.scanY + 30)
+    grad.addColorStop(0, 'rgba(37, 99, 235, 0)')
+    grad.addColorStop(0.5, 'rgba(37, 99, 235, 0.03)')
+    grad.addColorStop(1, 'rgba(37, 99, 235, 0)')
+    this.ctx.fillStyle = grad
+    this.ctx.fillRect(0, this.scanY - 30, this.w, 60)
+  }
+
+  animate () {
+    this.ctx.clearRect(0, 0, this.w, this.h)
+    this.drawGrid()
+    this.drawScanLine()
+    this.drawMatrixRain()
+    this.drawHexNodes()
+    this.drawParticles()
+    this.animId = requestAnimationFrame(() => this.animate())
   }
 
   destroy () {
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId)
-    }
-    window.removeEventListener('resize', this.handleResize.bind(this))
-    if (this.canvas && this.canvas.parentElement) {
-      this.canvas.parentElement.removeChild(this.canvas)
-    }
-    if (this.container && this.container.parentElement) {
-      this.container.parentElement.removeChild(this.container)
-    }
+    cancelAnimationFrame(this.animId)
+    window.removeEventListener('resize', this._resize)
+    this.canvas.remove()
   }
 }
-
-export default TerminalBg
