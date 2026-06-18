@@ -178,9 +178,9 @@ function createReleaseData () {
         nr.desc = isLegacy ? 'for Red Hat, Fedora... (glibc < 2.34)' : 'for Red Hat, Fedora...'
       } else if (cname.endsWith('.deb')) {
         if (isLoong64) {
-          nr.desc = isLegacy ? 'for old UOS/Kylin... (glibc < 2.34)' : 'for UOS/Kylin...'
+          nr.desc = isLegacy ? 'for old world UOS/Kylin...' : 'for new world UOS/Kylin...'
         } else if (isLoongarch64) {
-          nr.desc = isLegacy ? 'for old Debian, Ubuntu... (glibc < 2.34, loongarch64)' : 'for Debian, Ubuntu... (loongarch64)'
+          nr.desc = isLegacy ? 'for old world Debian, Ubuntu... (loongarch64)' : 'for new world Debian, Ubuntu... (loongarch64)'
         } else {
           nr.desc = isLegacy ? 'for Debian, Ubuntu... (glibc < 2.34, like UOS/Kylin/Ubuntu 18)' : 'for Debian, Ubuntu...'
         }
@@ -188,7 +188,7 @@ function createReleaseData () {
         nr.desc = 'for all linux that support snap'
       } else if (cname.endsWith('.gz')) {
         if (isLoong64 || isLoongarch64) {
-          nr.desc = isLegacy ? 'for old loong linux, just extract (glibc < 2.34)' : 'for all loong linux, just extract'
+          nr.desc = isLegacy ? 'for old world loongarch, just extract' : 'for new world loongarch, just extract'
         } else {
           nr.desc = isLegacy ? 'for all linux, just extract (glibc < 2.34)' : 'for all linux, just extract'
         }
@@ -250,11 +250,11 @@ function createReleaseData () {
         items: []
       },
       loong64: {
-        name: 'Linux LoongArch64',
+        name: 'Linux LoongArch64 (New World)',
         items: []
       },
       loong64_legacy: {
-        name: 'Linux LoongArch64 Legacy',
+        name: 'Linux LoongArch64 (Old World)',
         items: []
       }
     },
