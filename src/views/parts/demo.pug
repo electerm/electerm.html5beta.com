@@ -1,0 +1,17 @@
+section.demo-section#demo
+  .container
+    .section-header
+      h2 Live Demo
+      p Try electerm directly in your browser — no installation needed
+    .demo-wrapper
+      .demo-toolbar
+        .demo-dots
+          span.dot-red
+          span.dot-yellow
+          span.dot-green
+        .demo-address
+          span 🔒
+          span demo.electerm.org
+        a.demo-fullscreen(href='https://demo.electerm.org', target='_blank', rel='noreferrer')
+          | Open full screen ↗
+      iframe.demo-iframe(src='https://demo.electerm.org', title='electerm live demo', loading='lazy', allow='clipboard-read; clipboard-write', sandbox='allow-scripts allow-same-origin allow-popups allow-forms')
