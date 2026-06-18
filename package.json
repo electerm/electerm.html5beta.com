@@ -1,5 +1,5 @@
 {
-  "name": "electerm.html5beta.com",
+  "name": "electerm.org",
   "version": "0.3.1",
   "description": "homepage for electerm",
   "main": "index.js",
@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/electerm/electerm.html5beta.com.git"
+    "url": "https://github.com/electerm/electerm.org.git"
   },
   "keywords": [
-    "electerm.html5beta.com",
+    "electerm.org",
     "electerm"
   ],
   "author": {
@@ -78,7 +78,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electerm/electerm.html5beta.com/issues"
+    "url": "https://github.com/electerm/electerm.org/issues"
   },
-  "homepage": "https://electerm.html5beta.com"
+  "homepage": "https://electerm.org"
 }

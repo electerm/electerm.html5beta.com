@@ -3,7 +3,7 @@
 # See https://ai-txt.com for the specification.
 
 # Site Information
-Site: https://electerm.html5beta.com
+Site: https://electerm.org
 Name: electerm
 Description: Terminal/ssh/telnet/serialport/sftp client in Linux, Mac, Win
 

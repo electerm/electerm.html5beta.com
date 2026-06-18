@@ -29,16 +29,16 @@
 
 ## Main Pages
 
-- [Home Page](https://electerm.html5beta.com/) - Main landing page with download links
-- [Video Guides](https://electerm.html5beta.com/videos) - Tutorial videos and demos
-- [Debian Repository](https://electerm.html5beta.com/deb) - APT repository setup for Debian/Ubuntu
-- [Sponsor](https://electerm.html5beta.com/sponsor-electerm.html) - Support electerm development
+- [Home Page](https://electerm.org/) - Main landing page with download links
+- [Video Guides](https://electerm.org/videos) - Tutorial videos and demos
+- [Debian Repository](https://electerm.org/deb) - APT repository setup for Debian/Ubuntu
+- [Sponsor](https://electerm.org/sponsor-electerm.html) - Support electerm development
 
 ## Download Links
 
-- [Windows Downloads](https://electerm.html5beta.com/#windows) - Installer and portable versions
-- [macOS Downloads](https://electerm.html5beta.com/#mac) - DMG for Intel and Apple Silicon
-- [Linux Downloads](https://electerm.html5beta.com/#linux) - DEB, RPM, AppImage, Snap packages
+- [Windows Downloads](https://electerm.org/#windows) - Installer and portable versions
+- [macOS Downloads](https://electerm.org/#mac) - DMG for Intel and Apple Silicon
+- [Linux Downloads](https://electerm.org/#linux) - DEB, RPM, AppImage, Snap packages
 
 ## Documentation
 

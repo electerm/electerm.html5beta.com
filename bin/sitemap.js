@@ -9,7 +9,7 @@ const fmt = 'YYYY-MM-DD'
 
 async function buildSiteMap () {
   const urls = []
-  const host = data.host || 'https://electerm.html5beta.com'
+  const host = data.host || 'https://electerm.org'
 
   // English index
   const index = resolve(cwd, 'public/index.html')

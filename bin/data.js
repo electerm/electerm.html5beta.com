@@ -17,7 +17,7 @@ function getSourceforgeUrl (url) {
 }
 
 function getCdnUrl (url) {
-  return url.replace('github.com', 'download-electerm.html5beta.com')
+  return url.replace('github.com', 'r2.electerm.org')
 }
 
 function convertToProperLangCode (code) {
@@ -302,7 +302,7 @@ export default {
       title: 'Atlas Cloud'
     },
     {
-      url: 'https://electerm.html5beta.com/videos',
+      url: 'https://electerm.org/videos',
       title: 'Electerm Video guide'
     },
     {
@@ -350,7 +350,7 @@ export default {
       title: 'Discussion'
     },
     {
-      url: 'https://electerm.html5beta.com/sponsor-electerm.html',
+      url: 'https://electerm.org/sponsor-electerm.html',
       title: 'Sponsor Electerm'
     },
     {
