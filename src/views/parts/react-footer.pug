@@ -22,22 +22,34 @@ script(type='module').
 
 script.
   (function(){
+    var REGULATED = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','CH','GB'];
     var consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      document.getElementById('cookie-consent').style.display = 'block';
-    } else if (consent === 'accepted') {
+    if (consent === 'accepted') {
       loadGoogleScripts();
+      return;
     }
+    if (consent === 'rejected') {
+      return;
+    }
+    fetch('/api/country').then(function(r){ return r.json(); }).then(function(d){
+      var cc = (d.country || '').toUpperCase();
+      if (cc && REGULATED.indexOf(cc) === -1) {
+        localStorage.setItem('cookie-consent', 'accepted');
+        loadGoogleScripts();
+      } else {
+        document.getElementById('cookie-consent').style.display = 'block';
+      }
+    }).catch(function(){
+      document.getElementById('cookie-consent').style.display = 'block';
+    });
     document.getElementById('cookie-accept').addEventListener('click', function() {
       localStorage.setItem('cookie-consent', 'accepted');
       document.getElementById('cookie-consent').style.display = 'none';
-      document.body.style.paddingBottom = '';
       loadGoogleScripts();
     });
     document.getElementById('cookie-reject').addEventListener('click', function() {
       localStorage.setItem('cookie-consent', 'rejected');
       document.getElementById('cookie-consent').style.display = 'none';
-      document.body.style.paddingBottom = '';
     });
     function loadGoogleScripts() {
       var s1 = document.createElement('script');

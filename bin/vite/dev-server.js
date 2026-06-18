@@ -129,6 +129,11 @@ async function createServer () {
 
   app.use(vite.middlewares)
 
+  app.get('/api/country', (req, res) => {
+    const country = (req.headers['cf-ipcountry'] || 'BG').toUpperCase()
+    res.json({ country })
+  })
+
   app.get('/', handleIndex)
   app.get('/videos', handleVideosIndex)
   app.get('/videos/:videoSlug', handleVideo)
