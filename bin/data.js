@@ -291,7 +291,8 @@ export default {
   videos: videos.videos,
   pages: [
     'sponsor-electerm',
-    'deb'
+    'deb',
+    'privacy-policy'
   ],
   langs: createLocaleData(),
   ...createReleaseData(),
