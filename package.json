@@ -8,6 +8,7 @@
     "start": "npm run dev",
     "dev": "node bin/dev-server.js",
     "b": "./bin/build",
+    "build": "echo 1",
     "build-only": "./bin/build-only",
     "build-html": "node bin/build-all.js",
     "build-css": "node bin/build-css.js",
