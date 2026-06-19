@@ -5,7 +5,7 @@ from PIL import Image
 import os
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SOURCE = os.path.join(BASE, "temp/electerm-round-128x128.png")
+SOURCE = os.path.join(BASE, "temp/electerm-logo-2048-1.png")
 OUT_DIR = os.path.join(BASE, "src/static")
 
 ICONS = [
