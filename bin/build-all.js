@@ -21,7 +21,6 @@ async function buildVideoPages () {
     desc: data.langs[0].lang.lang.desc,
     url: h,
     cssUrl: '/index.bundle.css',
-    jsUrl: '/index.bundle.js',
     videos
   })
 
@@ -41,7 +40,6 @@ async function buildVideoPages () {
       desc: video.titleEn || video.title,
       url: `${h}/videos/${video.videoSlug}/`,
       cssUrl: '/index.bundle.css',
-      jsUrl: '/index.bundle.js',
       video
     })
   }
@@ -56,7 +54,6 @@ async function main () {
 
   for (const item of langs) {
     const { id, slug, langCode, lang } = item
-    const view = 'index'
 
     if (id === 'en_us') {
       // English → public/index.html
@@ -67,8 +64,7 @@ async function main () {
         lang,
         desc: lang.lang.desc,
         url: h,
-        cssUrl: view + '.bundle.css',
-        jsUrl: view + '.bundle.js'
+        cssUrl: '/index.bundle.css'
       })
     } else {
       // Other locales → public/{slug}/index.html + public/index-{id}.html redirect
@@ -82,8 +78,7 @@ async function main () {
         lang,
         desc: lang.lang.desc,
         url: h + '/' + slug + '/',
-        cssUrl: '/' + view + '.bundle.css',
-        jsUrl: '/' + view + '.bundle.js'
+        cssUrl: '/index.bundle.css'
       })
 
       // Build redirect page at old path
@@ -111,8 +106,7 @@ async function main () {
         lang,
         desc: lang.lang.desc,
         url: h,
-        cssUrl: '/index.bundle.css',
-        jsUrl: '/index.bundle.js'
+        cssUrl: '/index.bundle.css'
       })
     } else {
       // Build at /{item}/index.html
@@ -124,8 +118,7 @@ async function main () {
         lang,
         desc: lang.lang.desc,
         url: h + '/' + item + '/',
-        cssUrl: '/index.bundle.css',
-        jsUrl: '/index.bundle.js'
+        cssUrl: '/index.bundle.css'
       })
 
       // Redirect from old /{item}.html

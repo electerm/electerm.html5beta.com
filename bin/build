@@ -6,8 +6,8 @@ rm -rf data
 mkdir data
 mkdir public
 npm run down
-npm run b2
+npm run build-css
 npm run cp
-HOST=https://electerm.org npm run b1
+HOST=https://electerm.org npm run build-html
 npm run deb
 npm run sitemap

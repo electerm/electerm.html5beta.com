@@ -5,9 +5,9 @@ rm -rf public
 mkdir public
 echo "copy files"
 npm run cp
-echo "build js"
-npm run b2
+echo "build css"
+npm run build-css
 echo "build html"
-HOST=https://electerm.org npm run b1
+HOST=https://electerm.org npm run build-html
 echo "build sitemap"
 npm run sitemap

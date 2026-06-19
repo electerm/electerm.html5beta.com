@@ -1,20 +1,39 @@
 import logger from 'morgan'
-import { viewPath, env, staticPath } from '../common.js'
-import data from '../data.js'
+import { viewPath, env, staticPath, cwd } from './common.js'
+import data from './data.js'
 import express from 'express'
-import { createServer as createViteServer } from 'vite'
-import conf from './conf.js'
+import stylus from 'stylus'
+import { readFileSync } from 'fs'
+import { resolve } from 'path'
 
 const devPort = env.SERVER_DEV_PORT || 6068
 const host = env.SERVER_HOST || '127.0.0.1'
 const h = `http://${host}:${devPort}`
-global.viteInst = null
 
 // Override locale and page URLs to use dev host
 data.langs = data.langs.map(l => ({
   ...l,
   url: l.slug === '' ? h : h + '/' + l.slug + '/'
 }))
+
+// Compile stylus to CSS
+function compileStylus () {
+  const files = [
+    'src/css/basic.styl',
+    'src/css/home.styl'
+  ]
+  let css = ''
+  for (const file of files) {
+    const filePath = resolve(cwd, file)
+    const content = readFileSync(filePath, 'utf-8')
+    const compiled = stylus(content)
+      .set('filename', filePath)
+      .set('compress', false)
+      .render()
+    css += compiled + '\n'
+  }
+  return css
+}
 
 function handleLocale (req, res) {
   const slug = req.params.param || req.params.lang
@@ -28,8 +47,7 @@ function handleLocale (req, res) {
     host: h,
     url: h + '/' + slug + '/',
     dev: true,
-    cssUrl: h + '/index.bundle.css',
-    jsUrl: '/src/views/index.jsx',
+    cssUrl: '/index.bundle.css',
     langCode: langData.langCode,
     lang: langData.lang,
     desc: langData.lang.lang.desc
@@ -44,8 +62,7 @@ function handlePage (req, res) {
     host: h,
     url: h + '/' + page + '/',
     dev: true,
-    cssUrl: h + '/index.bundle.css',
-    jsUrl: '/src/views/index.jsx',
+    cssUrl: '/index.bundle.css',
     langCode,
     lang,
     desc: lang.lang.desc
@@ -59,8 +76,7 @@ function handleIndex (req, res) {
     host: h,
     url: h,
     dev: true,
-    cssUrl: h + '/index.bundle.css',
-    jsUrl: '/src/views/index.jsx',
+    cssUrl: '/index.bundle.css',
     langCode,
     lang,
     desc: lang.lang.desc
@@ -80,8 +96,7 @@ function handleVideo (req, res) {
     host: h,
     url: h,
     dev: true,
-    cssUrl: h + '/index.bundle.css',
-    jsUrl: '/src/views/index.jsx',
+    cssUrl: '/index.bundle.css',
     langCode,
     lang,
     desc: video.description,
@@ -96,8 +111,7 @@ function handleVideosIndex (req, res) {
     host: h,
     url: h + '/videos',
     dev: true,
-    cssUrl: h + '/index.bundle.css',
-    jsUrl: '/src/views/index.jsx',
+    cssUrl: '/index.bundle.css',
     langCode,
     lang,
     desc: lang.lang.desc,
@@ -105,20 +119,10 @@ function handleVideosIndex (req, res) {
   })
 }
 
-async function createServer () {
+function createServer () {
   const app = express()
 
-  const vite = await createViteServer({
-    ...conf,
-    server: {
-      middlewareMode: true
-    },
-    appType: 'custom'
-  })
-  global.viteInst = vite
-  app.use(
-    logger('tiny')
-  )
+  app.use(logger('tiny'))
   app.use(express.json())
   app.use(express.urlencoded({
     extended: true
@@ -127,13 +131,25 @@ async function createServer () {
   app.set('views', viewPath)
   app.set('view engine', 'pug')
 
-  app.use(vite.middlewares)
+  // Serve compiled CSS
+  app.get('/index.bundle.css', (req, res) => {
+    try {
+      const css = compileStylus()
+      res.setHeader('Content-Type', 'text/css')
+      res.send(css)
+    } catch (err) {
+      console.error('Stylus compilation error:', err)
+      res.status(500).send('CSS compilation error')
+    }
+  })
 
+  // API routes
   app.get('/api/country', (req, res) => {
     const country = (req.headers['cf-ipcountry'] || 'BG').toUpperCase()
     res.json({ country })
   })
 
+  // Page routes
   app.get('/', handleIndex)
   app.get('/videos', handleVideosIndex)
   app.get('/videos/:videoSlug', handleVideo)
