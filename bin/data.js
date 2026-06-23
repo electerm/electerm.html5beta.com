@@ -3,7 +3,6 @@ import { resolve } from 'path'
 import { cwd, releaseData } from './common.js'
 import fs from 'fs'
 import dayjs from 'dayjs'
-import j5 from 'json5'
 import { wikiLinks } from './wiki-links.js'
 
 config()
@@ -62,35 +61,45 @@ function localeIdToSlug (id) {
 }
 
 function createLocaleData () {
-  // languages
-  const localeFolder = resolve(cwd, 'node_modules/@electerm/electerm-locales/dist/cjs')
+  // languages from local src/data/*.json files
+  const dataFolder = resolve(cwd, 'src/data')
   const pre = process.env.HOST
-  return fs.readdirSync(localeFolder)
-    .reduce((prev, fileName) => {
-      if (!fileName.endsWith('js') || fileName === 'index.js' || fileName === 'package.json') {
-        return prev
-      }
-      const filePath = resolve(localeFolder, fileName)
-      const stats = fs.statSync(filePath)
-      if (!stats.isFile()) {
-        return prev
-      }
-      const lang = j5.parse(fs.readFileSync(filePath, 'utf-8').replace('module.exports=exports.default=', ''))
-      const id = fileName.replace('.js', '')
-      const slug = localeIdToSlug(id)
-      const url = slug === '' ? pre : pre + '/' + slug + '/'
-      prev = [
-        ...prev,
-        {
-          id,
-          slug,
-          langCode: convertToProperLangCode(id),
-          lang,
-          url
-        }
-      ]
+  const idToFileMap = {
+    ar_ar: 'ar',
+    de_de: 'de',
+    en_us: 'en',
+    es_es: 'es',
+    fr_fr: 'fr',
+    id_id: 'id',
+    ja_jp: 'ja',
+    ko_kr: 'ko',
+    pl_pl: 'pl',
+    pt_br: 'pt-br',
+    ru_ru: 'ru',
+    tr_tr: 'tr',
+    zh_cn: 'zh-cn',
+    zh_tw: 'zh-tw'
+  }
+  return Object.entries(idToFileMap).reduce((prev, [id, fileName]) => {
+    const filePath = resolve(dataFolder, fileName + '.json')
+    if (!fs.existsSync(filePath)) {
       return prev
-    }, [])
+    }
+    const lang = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+    const slug = localeIdToSlug(id)
+    const url = slug === '' ? pre : pre + '/' + slug + '/'
+    prev = [
+      ...prev,
+      {
+        id,
+        slug,
+        langCode: convertToProperLangCode(id),
+        lang,
+        url
+      }
+    ]
+    return prev
+  }, [])
 }
 
 function createReleaseData () {

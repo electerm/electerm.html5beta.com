@@ -1,42 +1,42 @@
 section.deb-hero
   .container
     img.deb-hero-logo(src=host + '/electerm.png', alt='electerm')
-    h1 Debian Repository
-    p.deb-hero-tagline Official APT repository for easy installation and automatic updates on Debian/Ubuntu systems
+    h1 #{lang.lang.debTitle}
+    p.deb-hero-tagline #{lang.lang.debSubtitle}
 
 section.deb-features
   .container
     .section-header
-      h2 Why Use the Repository?
+      h2 #{lang.lang.debWhyUse}
     .features-grid
       .feature-card
         .feature-icon 🔒
-        h3 Secure & Verified
-        p All packages are GPG signed and cryptographically verified against official releases
+        h3 #{lang.lang.debSecureVerifiedTitle}
+        p #{lang.lang.debSecureVerifiedDesc}
       .feature-card
         .feature-icon ⚡
-        h3 Auto Updates
-        p Stay up-to-date with your system's package manager — no manual downloads needed
+        h3 #{lang.lang.debAutoUpdatesTitle}
+        p #{lang.lang.debAutoUpdatesDesc}
       .feature-card
         .feature-icon 🏗️
-        h3 x86_64 Support
-        p Optimized builds for amd64 architecture
+        h3 #{lang.lang.debX86SupportTitle}
+        p #{lang.lang.debX86SupportDesc}
 
 section.deb-steps
   .container
     .section-header
-      h2 Installation
-      p Two simple steps to get started
+      h2 #{lang.lang.debInstallation}
+      p #{lang.lang.debInstallationSubtitle}
 
     .steps-grid
       .step-card
         .step-number 1
         .step-content
-          h3 Add Repository
-          p Add the GPG key and repository source to your system:
+          h3 #{lang.lang.debAddRepository}
+          p #{lang.lang.debAddRepositoryDesc}
 
           .code-block
-            button.copy-button(onclick="copyToClipboard(this)") Copy
+            button.copy-button(onclick="copyToClipboard(this)") #{lang.lang.debCopy}
             pre.
               # Add the GPG key
               curl -fsSL https://electerm-repos.html5beta.com/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/electerm.gpg
@@ -47,11 +47,11 @@ section.deb-steps
       .step-card
         .step-number 2
         .step-content
-          h3 Update & Install
-          p Update your package list and install Electerm:
+          h3 #{lang.lang.debUpdateInstall}
+          p #{lang.lang.debUpdateInstallDesc}
 
           .code-block
-            button.copy-button(onclick="copyToClipboard(this)") Copy
+            button.copy-button(onclick="copyToClipboard(this)") #{lang.lang.debCopy}
             pre.
               # Update package list
               sudo apt update
@@ -62,51 +62,51 @@ section.deb-steps
     .deb-success
       .deb-success-icon ✅
       .deb-success-text
-        h4 That's it!
-        p Electerm will be installed and automatically updated through your system's package manager.
+        h4 #{lang.lang.debThatsIt}
+        p #{lang.lang.debThatsItDesc}
 
 section.deb-info
   .container
     .section-header
-      h2 Repository Details
+      h2 #{lang.lang.debRepositoryDetails}
 
     .info-grid
       .info-card
-        .info-card-label Repository URL
+        .info-card-label #{lang.lang.debRepositoryUrl}
         .info-card-value https://electerm-repos.html5beta.com/deb
       .info-card
-        .info-card-label Distribution
+        .info-card-label #{lang.lang.debDistribution}
         .info-card-value stable
       .info-card
-        .info-card-label Component
+        .info-card-label #{lang.lang.debComponent}
         .info-card-value main
       .info-card
-        .info-card-label Architecture
+        .info-card-label #{lang.lang.debArchitecture}
         .info-card-value amd64
       .info-card
-        .info-card-label GPG Key
+        .info-card-label #{lang.lang.debGpgKey}
         .info-card-value
-          a(href="public.key") Download Public Key
+          a(href="public.key") #{lang.lang.debDownloadPublicKey}
 
 section.deb-security
   .container
     .section-header
-      h2 Security Features
+      h2 #{lang.lang.debSecurityFeatures}
 
     .security-grid
       .security-card
         .security-icon 🔐
-        h4 GPG Signed
-        p All packages are cryptographically signed
+        h4 #{lang.lang.debGpgSignedTitle}
+        p #{lang.lang.debGpgSignedDesc}
       .security-card
         .security-icon 🌐
-        h4 HTTPS Transport
-        p Secure transport for all downloads
+        h4 #{lang.lang.debHttpsTransportTitle}
+        p #{lang.lang.debHttpsTransportDesc}
       .security-card
         .security-icon 🤖
-        h4 Automated Updates
-        p Repository updated automatically with new releases
+        h4 #{lang.lang.debAutomatedUpdatesTitle}
+        p #{lang.lang.debAutomatedUpdatesDesc}
       .security-card
         .security-icon ✓
-        h4 Verified Packages
-        p Packages verified against official GitHub releases
+        h4 #{lang.lang.debVerifiedPackagesTitle}
+        p #{lang.lang.debVerifiedPackagesDesc}

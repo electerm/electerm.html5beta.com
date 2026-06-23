@@ -1,8 +1,8 @@
 section.demo-section#demo
   .container
     .section-header
-      h2 Live Demo
-      p Try electerm directly in your browser — no installation needed
+      h2 #{lang.lang.demoTitle}
+      p #{lang.lang.demoSubtitle}
     .demo-wrapper
       .demo-toolbar
         .demo-dots
@@ -13,5 +13,5 @@ section.demo-section#demo
           span 🔒
           span demo.electerm.org
         a.demo-fullscreen(href='https://demo.electerm.org', target='_blank', rel='noreferrer')
-          | Open full screen ↗
+          | #{lang.lang.demoOpenFull}
       iframe.demo-iframe(src='https://demo.electerm.org', title='electerm live demo', loading='lazy', allow='clipboard-read; clipboard-write', sandbox='allow-scripts allow-same-origin allow-popups allow-forms')

@@ -87,7 +87,7 @@ html(lang=langCode)
     include ./parts/header
     section.video-hero
       .container
-        a.back-link(href='/videos/') ← Back to Videos
+        a.back-link(href='/videos/') ← #{lang.lang.videosTitle}
         include ./parts/video-lang
         h1.video-title(data-title-en=video.titleEn data-title-zh=video.title)= video.titleEn
     section.video-section

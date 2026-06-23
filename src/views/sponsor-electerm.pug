@@ -1,7 +1,7 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - Sponsor Electerm
+    title #{siteName} - #{lang.lang.sponsorTitle}
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - Support Open Source Development')
@@ -79,7 +79,7 @@ html(lang=langCode)
         width: 160px;
         height: 160px;
         border-radius: var(--radius-md);
-        overflow-hidden;
+        overflow: hidden;
         box-shadow: var(--shadow-md);
       }
       .sponsor-card.featured .sponsor-qr img {
@@ -142,8 +142,8 @@ html(lang=langCode)
     include ./parts/header
     section.sponsor-hero
       .container
-        h1 Sponsor Electerm
-        p Help support continued development of this open source project
+        h1 #{lang.lang.sponsorTitle}
+        p #{lang.lang.sponsorSubtitle}
     section.sponsor-section
       .container
         .sponsor-grid
@@ -151,20 +151,20 @@ html(lang=langCode)
             .sponsor-qr
               img(src='https://electerm.org/electerm-wechat-donate.png' alt='WeChat Donate QR Code')
             .sponsor-info
-              h3 微信赞赏
-              p Scan the QR code with WeChat to donate directly
+              h3 #{lang.lang.sponsorWechatDonate}
+              p #{lang.lang.sponsorWechatDonateDesc}
           a.sponsor-card(href='https://github.com/sponsors/electerm', target='_blank', rel='noreferrer')
             .sponsor-icon ❤️
-            h3 GitHub Sponsors
-            p Monthly or one-time sponsorship
+            h3 #{lang.lang.sponsorGithubSponsors}
+            p #{lang.lang.sponsorGithubSponsorsDesc}
           a.sponsor-card(href='https://ko-fi.com/zhaoxudong', target='_blank', rel='noreferrer')
             .sponsor-icon ☕
-            h3 Ko-fi
-            p Buy the author a coffee
+            h3 #{lang.lang.sponsorKoFi}
+            p #{lang.lang.sponsorKoFiDesc}
           a.sponsor-card(href='https://opencollective.com/electerm', target='_blank', rel='noreferrer')
             .sponsor-icon 🌍
-            h3 Open Collective
-            p Transparent funding
+            h3 #{lang.lang.sponsorOpenCollective}
+            p #{lang.lang.sponsorOpenCollectiveDesc}
     include ./parts/sponsors
     include ./parts/footer
     include ./parts/react-footer

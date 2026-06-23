@@ -37,13 +37,11 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "@electerm/electerm-locales": "^2.2.16",
     "axios": "^1.18.0",
     "canvas": "^3.2.3",
     "dayjs": "^1.11.21",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "json5": "^2.2.3",
     "morgan": "^1.11.0",
     "pug": "^3.0.4",
     "sitemaps": "^2.0.6",

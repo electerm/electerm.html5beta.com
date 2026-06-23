@@ -1,13 +1,13 @@
 doctype html
 html(lang=langCode)
   head
-    title Electerm Debian Repository
-    meta(name='description', content='Official Debian repository for Electerm terminal application')
+    title #{siteName} - #{lang.lang.debTitle}
+    meta(name='description', content=lang.lang.debSubtitle)
     meta(name='keywords', content='electerm,debian,repository,apt,setup,install,linux,terminal,ssh')
     meta(property='og:title' content='electerm - Debian Repository Setup')
-    meta(property='og:description' content='Official Debian repository for Electerm terminal application')
+    meta(property='og:description' content=lang.lang.debSubtitle)
     meta(name='twitter:title' content='electerm - Debian Repository Setup')
-    meta(name='twitter:description' content='Official Debian repository for Electerm terminal application')
+    meta(name='twitter:description' content=lang.lang.debSubtitle)
     include ./parts/react-header
   body
     include ./parts/header

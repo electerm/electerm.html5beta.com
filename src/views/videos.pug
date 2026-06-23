@@ -1,7 +1,7 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - Video Guides
+    title #{siteName} - #{lang.lang.videosTitle}
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - Video Guides and Tutorials')
@@ -128,8 +128,8 @@ html(lang=langCode)
     include ./parts/header
     section.videos-hero
       .container
-        h1 Video Guides
-        p Watch tutorials and demos for electerm
+        h1 #{lang.lang.videosTitle}
+        p #{lang.lang.videosSubtitle}
     section.videos-section
       .container(align='center')
         include ./parts/video-lang

@@ -9,6 +9,8 @@ const REDIRECT_TEMPLATE = (target) => `<!DOCTYPE html><html><head><meta charset=
 async function buildVideoPages () {
   const { videos } = data
   const h = process.env.HOST
+  const enLang = data.langs.find(l => l.id === 'en_us')
+  const { langCode, lang } = enLang
 
   const videosIndexFrom = resolve(cwd, 'src/views/videos.pug')
   const videosIndexTo = resolve(cwd, 'public/videos/index.html')
@@ -16,18 +18,17 @@ async function buildVideoPages () {
 
   await buildPug(videosIndexFrom, videosIndexTo, {
     ...data,
-    langCode: data.langs[0].langCode,
-    lang: data.langs[0].lang,
-    desc: data.langs[0].lang.lang.desc,
-    url: h,
+    langCode,
+    lang,
+    desc: lang.lang.videosTitle,
+    url: `${h}/videos`,
     cssUrl: '/index.bundle.css',
     videos
   })
 
-  console.log('✅ Built videos index page')
-
   for (const video of videos) {
-    const videoDir = resolve(cwd, `public/videos/${video.videoSlug}`)
+    const videoSlug = video.videoSlug
+    const videoDir = resolve(cwd, `public/videos/${videoSlug}`)
     await fs.mkdir(videoDir, { recursive: true })
 
     const videoFrom = resolve(cwd, 'src/views/video.pug')
@@ -35,16 +36,16 @@ async function buildVideoPages () {
 
     await buildPug(videoFrom, videoTo, {
       ...data,
-      langCode: data.langs[0].langCode,
-      lang: data.langs[0].lang,
+      langCode,
+      lang,
       desc: video.titleEn || video.title,
-      url: `${h}/videos/${video.videoSlug}/`,
+      url: `${h}/videos/${videoSlug}/`,
       cssUrl: '/index.bundle.css',
       video
     })
   }
 
-  console.log(`✅ Built ${videos.length} individual video pages`)
+  console.log(`✅ Built ${videos.length} video pages`)
 }
 
 async function main () {
@@ -52,6 +53,7 @@ async function main () {
   const from = resolve(cwd, 'src/views/index.pug')
   const h = process.env.HOST
 
+  // Build index page for each language
   for (const item of langs) {
     const { id, slug, langCode, lang } = item
 
@@ -88,13 +90,15 @@ async function main () {
     }
   }
 
+  console.log(`✅ Built index pages for ${langs.length} languages`)
+
   const { version } = data
   await fs.writeFile(resolve(cwd, 'public/version.html'), version)
 
-  // Build static pages: sponsor-electerm at /sponsor-electerm/index.html
-  // with redirect at /sponsor-electerm.html
+  // Build static pages (English only)
+  const enLang = langs.find(l => l.id === 'en_us')
+  const { langCode, lang } = enLang
   for (const item of pages) {
-    const { langCode, lang } = langs[2]
     const f = resolve(cwd, 'src/views/' + item + '.pug')
 
     if (item === 'deb') {
@@ -104,29 +108,33 @@ async function main () {
         ...data,
         langCode,
         lang,
-        desc: lang.lang.desc,
-        url: h,
+        desc: lang.lang.debSubtitle,
+        url: `${h}/deb/`,
         cssUrl: '/index.bundle.css'
       })
     } else {
       // Build at /{item}/index.html
-      const dir = resolve(cwd, 'public/' + item)
+      const dir = resolve(cwd, `public/${item}`)
       await fs.mkdir(dir, { recursive: true })
+
+      const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : 'privacyPolicy'
       await buildPug(f, resolve(dir, 'index.html'), {
         ...data,
         langCode,
         lang,
-        desc: lang.lang.desc,
-        url: h + '/' + item + '/',
+        desc: lang.lang[descKey] || lang.lang.desc,
+        url: `${h}/${item}/`,
         cssUrl: '/index.bundle.css'
       })
 
       // Redirect from old /{item}.html
-      const redirectFrom = resolve(cwd, 'public/' + item + '.html')
-      const target = h + '/' + item + '/'
+      const redirectFrom = resolve(cwd, `public/${item}.html`)
+      const target = `${h}/${item}/`
       await fs.writeFile(redirectFrom, REDIRECT_TEMPLATE(target))
     }
   }
+
+  console.log('✅ Built static pages (English)')
 
   await buildVideoPages()
 }
