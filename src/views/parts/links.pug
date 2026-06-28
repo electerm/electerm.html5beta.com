@@ -4,32 +4,12 @@ section.links-section
       h2 #{lang.lang.resourcesTitle}
       p #{lang.lang.resourcesSubtitle}
     .links-grid
-      .link-category
-        h3 #{lang.lang.resourcesOfficial}
-        ul.link-list
-          li: a(href='https://github.com/electerm/electerm', target='_blank', rel='noreferrer') GitHub Repository
-          li: a(href='https://github.com/electerm/electerm/wiki', target='_blank', rel='noreferrer') Wiki & Documentation
-          li: a(href='https://github.com/electerm/electerm/wiki/Command-line-usage', target='_blank', rel='noreferrer') Command Line Usage
-          li: a(href='https://github.com/electerm/electerm/wiki/Deep-link-support', target='_blank', rel='noreferrer') Deep Link Support
-          li: a(href='https://github.com/electerm/electerm/wiki/Know-issues', target='_blank', rel='noreferrer') Known Issues
-          li: a(href='https://github.com/electerm/electerm/wiki/Troubleshoot', target='_blank', rel='noreferrer') Troubleshooting
-          li: a(href='https://github.com/electerm/electerm/discussions', target='_blank', rel='noreferrer') Discussions
-      .link-category
-        h3 #{lang.lang.resourcesEcosystem}
-        ul.link-list
-          li: a(href='https://cloud.electerm.org', target='_blank', rel='noreferrer') Electerm Online
-          li: a(href='https://github.com/electerm/electerm-web', target='_blank', rel='noreferrer') electerm-web
-          li: a(href='https://github.com/electerm/electerm-web-docker', target='_blank', rel='noreferrer') electerm-web-docker
-          li: a(href='https://github.com/electerm/electerm-locales', target='_blank', rel='noreferrer') electerm-locales
-          li: a(href='https://electerm-cloud.html5beta.com/', target='_blank', rel='noreferrer') electerm cloud
-          li: a(href='https://electerm-repos.html5beta.com/deb', target='_blank', rel='noreferrer') Debian Repository
-      .link-category
-        h3 #{lang.lang.resourcesCommunity}
-        ul.link-list
-          li: a(href='/sponsor-electerm/') Sponsor Electerm
-          li: a(href='https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=electerm', target='_blank', rel='noreferrer') Atlas Cloud
-          li: a(href='https://github.com/sponsors/electerm', target='_blank', rel='noreferrer') GitHub Sponsors
-          li: a(href='/videos') Video Guides
-          li: a(href='https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/electerm', target='_blank', rel='noreferrer') Terminal Themes
-          li: a(href='https://www.microsoft.com/store/apps/9NCN7272GTFF', target='_blank', rel='noreferrer') Windows Store
-          li: a(href='https://snapcraft.io/electerm', target='_blank', rel='noreferrer') Snap Store
+      each category in linkCategories
+        .link-category
+          h3 #{lang.lang['resources' + category.key]}
+          ul.link-list
+            each link in category.links
+              if link.external
+                li: a(href=link.url, target='_blank', rel='noreferrer')= link.title
+              else
+                li: a(href=link.url)= link.title

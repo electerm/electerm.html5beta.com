@@ -106,7 +106,7 @@ function createReleaseData () {
   const data = releaseData
   const assets = data.release.assets
   const version = data.release.tag_name
-  const releaseNote = data.release.body
+  const releaseNote = data.release.body.replace(/\r?\n-{3,}\r?\n\r?\nDownload下载:.*$/, '')
   console.log('version:', version)
   const dt = dayjs(assets[0].created_at).format('YYYY-MM-DD')
   const arr = assets.reduce((prev, curr) => {
@@ -367,7 +367,7 @@ export default {
       title: 'Themes'
     },
     {
-      url: 'https://electerm-cloud.html5beta.com/',
+      url: 'https://sync.electerm.org/',
       title: 'electerm cloud'
     },
     {
@@ -382,5 +382,40 @@ export default {
       title: 'China vs Rest of the World',
       url: 'https://china-vs-rest-of-the-world.html5beta.com'
     }
-  ].concat(wikiLinks)
+  ].concat(wikiLinks),
+  linkCategories: [
+    {
+      key: 'Official',
+      links: [
+        { title: 'GitHub Repository', url: 'https://github.com/electerm/electerm', external: true },
+        { title: 'Wiki & Documentation', url: 'https://github.com/electerm/electerm/wiki', external: true },
+        { title: 'Command Line Usage', url: 'https://github.com/electerm/electerm/wiki/Command-line-usage', external: true },
+        { title: 'Deep Link Support', url: 'https://github.com/electerm/electerm/wiki/Deep-link-support', external: true },
+        { title: 'Known Issues', url: 'https://github.com/electerm/electerm/wiki/Know-issues', external: true },
+        { title: 'Troubleshooting', url: 'https://github.com/electerm/electerm/wiki/Troubleshoot', external: true },
+        { title: 'Discussions', url: 'https://github.com/electerm/electerm/discussions', external: true }
+      ]
+    },
+    {
+      key: 'Ecosystem',
+      links: [
+        { title: 'Electerm Online', url: 'https://cloud.electerm.org', external: true },
+        { title: 'electerm-web', url: 'https://github.com/electerm/electerm-web', external: true },
+        { title: 'electerm-web-docker', url: 'https://github.com/electerm/electerm-web-docker', external: true },
+        { title: 'electerm-locales', url: 'https://github.com/electerm/electerm-locales', external: true },
+        { title: 'electerm cloud', url: 'https://sync.electerm.org/', external: true },
+        { title: 'Debian Repository', url: 'https://electerm-repos.html5beta.com/deb', external: true }
+      ]
+    },
+    {
+      key: 'Community',
+      links: [
+        { title: 'Sponsor Electerm', url: '/sponsor-electerm/' },
+        { title: 'Atlas Cloud', url: 'https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=electerm', external: true },
+        { title: 'Video Guides', url: '/videos' },
+        { title: 'Windows Store', url: 'https://www.microsoft.com/store/apps/9NCN7272GTFF', external: true },
+        { title: 'Snap Store', url: 'https://snapcraft.io/electerm', external: true }
+      ]
+    }
+  ]
 }
