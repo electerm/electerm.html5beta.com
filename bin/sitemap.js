@@ -37,9 +37,28 @@ async function buildSiteMap () {
     }
   }
 
-  // Static pages (sponsor-electerm, etc)
+  // FAQ pages for all locales
+  for (const item of data.langs) {
+    if (item.slug) {
+      urls.push({
+        loc: host + '/faq/' + item.slug + '/',
+        lastmod: dayjs(state.mtime).format(fmt),
+        changefreq: 'weekly',
+        priority: 0.8
+      })
+    } else {
+      urls.push({
+        loc: host + '/faq/',
+        lastmod: dayjs(state.mtime).format(fmt),
+        changefreq: 'weekly',
+        priority: 0.8
+      })
+    }
+  }
+
+  // Other static pages (sponsor-electerm, privacy-policy, etc)
   for (const page of data.pages) {
-    if (page !== 'deb') {
+    if (page !== 'deb' && page !== 'faq') {
       urls.push({
         loc: host + '/' + page + '/',
         lastmod: dayjs(state.mtime).format(fmt),

@@ -7,6 +7,7 @@
     "desc": "Klient terminala/SSH/SFTP/FTP/Telnet/portu szeregowego/RDP/VNC/Spice (Linux, Mac, Windows)",
 
     "headerHome": "Strona główna",
+    "headerFaq": "FAQ",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm online",
     "headerVideos": "Filmy",
@@ -134,6 +135,88 @@
     "sponsorsInterested": "Zainteresowany sponsoringiem Electerm? Twoje wsparcie pomaga utrzymać projekt aktywnym i rozwijającym się.",
     "sponsorsContact": "Skontaktuj się z nami, aby zostać sponsorem",
 
-    "starHistoryTitle": "Historia Star"
+    "starHistoryTitle": "Historia Star",
+
+    "footerFaq": "FAQ",
+
+    "faqTitle": "Często zadawane pytania",
+    "faqSubtitle": "Częste pytania i odpowiedzi dotyczące klienta terminalowego electerm",
+    "faqDisclaimer": "Te odpowiedzi są oparte na",
+    "faqWikiLink": "Czytaj więcej na Wiki electerm",
+
+    "faqQ1": "Czy mogę ukryć lokalny menedżer plików w panelu SFTP?",
+    "faqQ1A1": "Tak, dodaj następujący CSS w Ustawienia → Wygląd → Niestandardowy CSS:",
+    "faqQ1A2": "Po zapisaniu sekcja lokalna zostanie ukryta, a sekcja zdalna rozszerzy się na pełną szerokość.",
+    "faqQ1A3": "Więcej przykładów CSS →",
+
+    "faqQ2": "Czy mogę zamienić miejscami sekcje lokalną i zdalną w panelu SFTP?",
+    "faqQ2A": "Tak, użyj następującego niestandardowego CSS, aby umieścić sekcję zdalną po lewej, a lokalną po prawej:",
+
+    "faqQ3": "Jak zapobiec przekroczeniu limitu czasu sesji SSH?",
+    "faqQ3A1": "Istnieją dwie metody zapobiegania zrywaniu nieaktywnych połączeń SSH:",
+    "faqQ3A2": "Metoda 1 — Skonfiguruj interwał Keep Alive w Ustawieniach:",
+    "faqQ3A2Li1": "Otwórz Ustawienia (ikona koła zębatego w prawym górnym rogu)",
+    "faqQ3A2Li2": "Znajdź interwał Keep Alive SSH",
+    "faqQ3A2Li3": "Wprowadź wartość w sekundach (np. 60)",
+    "faqQ3A2Li4": "Zapisz",
+    "faqQ3A3": "Metoda 2 — Kliknij ikonę keep-alive na pasku narzędzi terminala podczas aktywnej sesji. To wysyła klawisz Enter co 3 sekundy (bardziej agresywne, może zakłócać interaktywne polecenia, takie jak vim).",
+
+    "faqQ4": "Jak używać tuneli SSH w electerm?",
+    "faqQ4A1": "Tunele SSH są konfigurowane podczas tworzenia lub edycji zakładki SSH. Możesz skonfigurować:",
+    "faqQ4A2": "Lokalny → Zdalny (ssh -L): ",
+    "faqQ4A2Desc": "Przekierowywanie żądań z portu lokalnego na port serwera zdalnego.",
+    "faqQ4A3": "Zdalny → Lokalny (ssh -R): ",
+    "faqQ4A3Desc": "Przekierowywanie żądań z portu zdalnego na port serwera lokalnego.",
+
+    "faqQ5": "Czym jest funkcja Obszar roboczy i jak jej używać?",
+    "faqQ5A1": "Obszar roboczy pozwala zapisać bieżący układ i otwarte karty jako preset. Tylko karty otwarte z zakładek są zapisywane.",
+    "faqQ5A2": "Aby zapisać i wczytać obszary robocze:",
+    "faqQ5A2Li1": "Ustaw żądany układ za pomocą menu rozwijanego Układ na pasku kart",
+    "faqQ5A2Li2": "Otwórz połączenia z zakładek, które chcesz uwzględnić",
+    "faqQ5A2Li3": "Przejdź do Układ → karta Obszar roboczy → Zapisz obszar roboczy",
+    "faqQ5A2Li4": "Nazwij i potwierdź",
+
+    "faqQ6": "Jak połączyć się z serwerem bez zapisywania zakładki?",
+    "faqQ6A1": "Użyj Szybkiego łączenia z panelu bocznego. Wprowadź ciąg połączenia, np.:",
+    "faqQ6A2": "Szybkie łączenie obsługuje protokoły SSH, Telnet, VNC, RDP, Spice, Serial i FTP. W przypadku połączeń SSH można pominąć prefiks protokołu.",
+
+    "faqQ7": "Czym jest Operacja wsadowa i jak jej używać?",
+    "faqQ7A1": "Operacja wsadowa pozwala definiować i uruchamiać wieloetapowe przepływy pracy SSH/SFTP przy użyciu JSON. Dostęp przez przycisk Operacja wsadowa na lewym panelu bocznym.",
+    "faqQ7A2": "Dostępne typy akcji:",
+    "faqQ7A2Connect": "— Łączy się z zdalnym serwerem SSH",
+    "faqQ7A2Command": "— Wykonuje polecenie terminala",
+    "faqQ7A2Upload": "— Przesyła pliki/foldery na zdalny serwer",
+    "faqQ7A2Download": "— Pobiera pliki/foldery ze zdalnego serwera",
+
+    "faqQ8": "Czy mogę otwierać połączenia SSH z przeglądarki lub zewnętrznych linków?",
+    "faqQ8A1": "Tak. electerm obsługuje głębokie linki używające protokołów ssh://, telnet://, rdp://, vnc://, serial://, spice:// i niestandardowego protokołu electerm://. Najpierw zarejestruj procedury obsługi protokołów w ustawieniach electerm.",
+    "faqQ8A2": "Możesz także tworzyć skróty na pulpicie, linki HTML lub używać narzędzi wiersza poleceń (open, xdg-open, start) do uruchamiania połączeń.",
+
+    "faqQ9": "Jak sprawić, by electerm uruchamiał się automatycznie przy logowaniu?",
+    "faqQ9A1": "Użyj flagi --autohide, aby electerm uruchamiał się zminimalizowany do zasobnika systemowego:",
+    "faqQ9A2Ubuntu": "Ubuntu: ",
+    "faqQ9A2UbuntuDesc": "Otwórz Aplikacje startowe i dodaj electerm z poleceniem: electerm --autohide",
+    "faqQ9A3Win": "Windows: ",
+    "faqQ9A3WinDesc": "Utwórz skrót do electerm.exe i umieść go w %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+    "faqQ9A4Mac": "macOS: ",
+    "faqQ9A4MacDesc": "Utwórz skrypt z /Applications/electerm.app/Contents/MacOS/electerm --autohide, uczyń go wykonywalnym, a następnie dodaj w Ustawieniach systemowych → Elementy logowania",
+
+    "faqQ10": "Jak skonfigurować asystenta AI w electerm?",
+    "faqQ10A1": "Electerm działa z każdym API zgodnym z OpenAI. Aby skonfigurować:",
+    "faqQ10A2Li1": "Otwórz ustawienia AI w Electerm",
+    "faqQ10A2Li2": "Wprowadź URL API swojego dostawcy (np. https://api.openai.com/v1)",
+    "faqQ10A2Li3": "Wybierz lub wpisz nazwę modelu (np. gpt-4, deepseek-chat)",
+    "faqQ10A2Li4": "Wprowadź swój klucz API",
+    "faqQ10A2Li5": "Opcjonalnie: zdefiniuj prompt roli systemowej i zapisz",
+
+    "faqQ11": "Czy mogę używać dynamicznych wartości w szybkich poleceniach?",
+    "faqQ11A1": "Tak. Szablony szybkich poleceń obsługują dynamiczne zastępniki, które są rozwiązywane w czasie wykonywania:",
+    "faqQ11A2": "Obsługiwane zmienne szablonów:",
+    "faqQ11A2Time": "Czas — wstawia bieżący czas",
+    "faqQ11A2Date": "Data — wstawia bieżącą datę",
+    "faqQ11A2Clipboard": "Schowek — wstawia bieżącą zawartość schowka",
+
+    "faqQ12": "Czy mogę ustawić domyślny profil dla nowych zakładek?",
+    "faqQ12A": "Tak. Włącz pole wyboru 'Domyślny' dla profilu w ustawieniach electerm. Ten profil będzie automatycznie wybierany podczas tworzenia nowych zakładek."
   }
 }

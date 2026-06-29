@@ -7,6 +7,7 @@
     "desc": "Terminal/SSH/SFTP/FTP/Telnet/seri port/RDP/VNC/Spice istemcisi (Linux, Mac, Windows)",
 
     "headerHome": "Ana Sayfa",
+    "headerFaq": "SSS",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm çevrimiçi",
     "headerVideos": "Videolar",
@@ -134,6 +135,88 @@
     "sponsorsInterested": "Electerm'i sponsor etmekle ilgileniyor musunuz? Desteğiniz projenin aktif ve büyümesine yardımcı olur.",
     "sponsorsContact": "Sponsor olmak için bizimle iletişime geçin",
 
-    "starHistoryTitle": "Star geçmişi"
+    "starHistoryTitle": "Star geçmişi",
+
+    "footerFaq": "SSS",
+
+    "faqTitle": "Sıkça Sorulan Sorular",
+    "faqSubtitle": "Electerm terminal istemcisi hakkında sık sorulan sorular ve cevapları",
+    "faqDisclaimer": "Bu yanıtlar şuraya dayanmaktadır",
+    "faqWikiLink": "Electerm Wiki'de daha fazla bilgi edinin",
+
+    "faqQ1": "SFTP panelinde yerel dosya yöneticisini gizleyebilir miyim?",
+    "faqQ1A1": "Evet, Ayarlar → Görünüm → Özel CSS'e aşağıdaki CSS'i ekleyin:",
+    "faqQ1A2": "Kaydettikten sonra yerel bölüm gizlenecek ve uzak bölüm tam genişliğe genişleyecektir.",
+    "faqQ1A3": "Daha fazla CSS örneği →",
+
+    "faqQ2": "SFTP panelinde yerel ve uzak bölümlerin yerini değiştirebilir miyim?",
+    "faqQ2A": "Evet, uzak bölümü sola, yerel bölümü sağa koymak için aşağıdaki özel CSS'i kullanın:",
+
+    "faqQ3": "SSH oturumumun zaman aşımına uğramasını nasıl önlerim?",
+    "faqQ3A1": "Boşta SSH bağlantılarının kesilmesini önlemek için iki yöntem vardır:",
+    "faqQ3A2": "Yöntem 1 — Ayarlarda Keep Alive Aralığı'nı yapılandırma:",
+    "faqQ3A2Li1": "Ayarları aç (sağ üst köşedeki dişli simgesi)",
+    "faqQ3A2Li2": "SSH Keep Alive Aralığı'nı bulun",
+    "faqQ3A2Li3": "Saniye cinsinden bir değer girin (örn. 60)",
+    "faqQ3A2Li4": "Kaydet",
+    "faqQ3A3": "Yöntem 2 — Aktif oturum sırasında terminal araç çubuğundaki keep-alive simgesine tıklayın. Bu, her 3 saniyede bir Enter tuşu gönderir (daha agresif, vim gibi etkileşimli komutlara müdahale edebilir).",
+
+    "faqQ4": "SSH tünellerini electerm'de nasıl kullanırım?",
+    "faqQ4A1": "SSH tünelleri, bir SSH yer imi oluştururken veya düzenlerken yapılandırılır. Şunları ayarlayabilirsiniz:",
+    "faqQ4A2": "Yerel → Uzak (ssh -L): ",
+    "faqQ4A2Desc": "Yerel bir bağlantı noktasından gelen istekleri uzak bir sunucu bağlantı noktasına iletme.",
+    "faqQ4A3": "Uzak → Yerel (ssh -R): ",
+    "faqQ4A3Desc": "Uzak bir bağlantı noktasından gelen istekleri yerel bir sunucu bağlantı noktasına iletme.",
+
+    "faqQ5": "Çalışma Alanı özelliği nedir ve nasıl kullanırım?",
+    "faqQ5A1": "Çalışma alanı, mevcut düzeninizi ve açık sekmelerinizi bir ön ayar olarak kaydetmenizi sağlar. Yalnızca yer imlerinden açılan sekmeler kaydedilir.",
+    "faqQ5A2": "Çalışma alanlarını kaydetmek ve yüklemek için:",
+    "faqQ5A2Li1": "Sekme çubuğundaki Düzen açılır menüsünden istediğiniz düzeni ayarlayın",
+    "faqQ5A2Li2": "Dahil etmek istediğiniz yer imi bağlantılarını açın",
+    "faqQ5A2Li3": "Düzen → Çalışma Alanı sekmesi → Çalışma Alanını Kaydet'e gidin",
+    "faqQ5A2Li4": "Adlandırın ve onaylayın",
+
+    "faqQ6": "Yer imi kaydetmeden bir sunucuya nasıl bağlanırım?",
+    "faqQ6A1": "Kenar çubuğundan Hızlı Bağlantı'yı kullanın. Şu şekilde bir bağlantı dizesi girin:",
+    "faqQ6A2": "Hızlı Bağlantı, SSH, Telnet, VNC, RDP, Spice, Seri ve FTP protokollerini destekler. SSH bağlantıları için protokol önekini atlayabilirsiniz.",
+
+    "faqQ7": "Toplu İşlem nedir ve nasıl kullanırım?",
+    "faqQ7A1": "Toplu İşlem, JSON kullanarak çok adımlı SSH/SFTP iş akışları tanımlamanıza ve çalıştırmanıza olanak tanır. Sol kenar çubuğundaki Toplu İşlem düğmesiyle erişin.",
+    "faqQ7A2": "Mevcut işlem türleri:",
+    "faqQ7A2Connect": "— Uzak bir SSH sunucusuna bağlanır",
+    "faqQ7A2Command": "— Bir terminal komutu çalıştırır",
+    "faqQ7A2Upload": "— Dosyaları/klasörleri uzak sunucuya yükler",
+    "faqQ7A2Download": "— Dosyaları/klasörleri uzak sunucudan indirir",
+
+    "faqQ8": "Bir tarayıcıdan veya harici bağlantılardan SSH bağlantıları açabilir miyim?",
+    "faqQ8A1": "Evet. electerm, ssh://, telnet://, rdp://, vnc://, serial://, spice:// ve özel electerm:// protokollerini kullanan derin bağlantıları destekler. Önce electerm ayarlarında protokol işleyicilerini kaydedin.",
+    "faqQ8A2": "Ayrıca masaüstü kısayolları, HTML bağlantıları oluşturabilir veya bağlantıları başlatmak için komut satırı araçlarını (open, xdg-open, start) kullanabilirsiniz.",
+
+    "faqQ9": "Electerm'in oturum açtığımda otomatik olarak başlamasını nasıl sağlarım?",
+    "faqQ9A1": "Electerm'i sistem tepsisine küçültülmüş olarak başlatmak için --autohide bayrağını kullanın:",
+    "faqQ9A2Ubuntu": "Ubuntu: ",
+    "faqQ9A2UbuntuDesc": "Başlangıç Uygulamaları'nı açın ve electerm'i şu komutla ekleyin: electerm --autohide",
+    "faqQ9A3Win": "Windows: ",
+    "faqQ9A3WinDesc": "electerm.exe'ye bir kısayol oluşturun ve %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup konumuna yerleştirin",
+    "faqQ9A4Mac": "macOS: ",
+    "faqQ9A4MacDesc": "/Applications/electerm.app/Contents/MacOS/electerm --autohide içeren bir komut dosyası oluşturun, çalıştırılabilir yapın ve Sistem Ayarları → Oturum Açma Öğeleri'ne ekleyin",
+
+    "faqQ10": "Electerm'de AI asistanını nasıl yapılandırırım?",
+    "faqQ10A1": "Electerm, OpenAI uyumlu herhangi bir API ile çalışır. Yapılandırmak için:",
+    "faqQ10A2Li1": "Electerm'de AI ayarlarını açın",
+    "faqQ10A2Li2": "Sağlayıcınızın API URL'sini girin (örn. https://api.openai.com/v1)",
+    "faqQ10A2Li3": "Model adını seçin veya yazın (örn. gpt-4, deepseek-chat)",
+    "faqQ10A2Li4": "API anahtarınızı girin",
+    "faqQ10A2Li5": "İsteğe bağlı: bir sistem rolü istemi tanımlayın ve kaydedin",
+
+    "faqQ11": "Hızlı komutlarda dinamik değerler kullanabilir miyim?",
+    "faqQ11A1": "Evet. Hızlı komut şablonları, yürütme sırasında çözümlenen dinamik yer tutucuları destekler:",
+    "faqQ11A2": "Desteklenen şablon değişkenleri:",
+    "faqQ11A2Time": "Zaman — geçerli saati ekler",
+    "faqQ11A2Date": "Tarih — geçerli tarihi ekler",
+    "faqQ11A2Clipboard": "Pano — geçerli pano içeriğini ekler",
+
+    "faqQ12": "Yeni yer imleri için varsayılan bir profil belirleyebilir miyim?",
+    "faqQ12A": "Evet. Electerm ayarlarında bir profilde 'Varsayılan' onay kutusunu etkinleştirin. Yeni yer imleri oluştururken bu profil otomatik olarak seçilecektir."
   }
 }

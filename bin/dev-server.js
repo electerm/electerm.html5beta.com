@@ -119,6 +119,37 @@ function handleVideosIndex (req, res) {
   })
 }
 
+function handleFaq (req, res) {
+  const langSlug = req.params.lang || ''
+  let langData
+  if (!langSlug) {
+    // English FAQ at /faq/
+    langData = data.langs.find(l => l.id === 'en_us')
+  } else {
+    langData = data.langs.find(l => l.slug === langSlug)
+  }
+  if (!langData) {
+    res.status(404).send('Not found')
+    return
+  }
+  // Build FAQ-aware lang URLs
+  const faqLangs = data.langs.map(lm => ({
+    ...lm,
+    url: lm.slug === '' ? h + '/faq/' : h + '/faq/' + lm.slug + '/'
+  }))
+  res.render('faq', {
+    ...data,
+    langs: faqLangs,
+    host: h,
+    url: h + '/faq/' + (langSlug ? langSlug + '/' : ''),
+    dev: true,
+    cssUrl: '/index.bundle.css',
+    langCode: langData.langCode,
+    lang: langData.lang,
+    desc: langData.lang.lang.faqTitle
+  })
+}
+
 function createServer () {
   const app = express()
 
@@ -127,6 +158,13 @@ function createServer () {
   app.use(express.urlencoded({
     extended: true
   }))
+
+  // FAQ routes must come before express.static to avoid
+  // serving pre-built FAQ HTML statically instead of rendering fresh
+  app.get('/faq', handleFaq)
+  app.get('/faq/', handleFaq)
+  app.get('/faq/:lang/', handleFaq)
+
   app.use(express.static(staticPath))
   app.set('views', viewPath)
   app.set('view engine', 'pug')
@@ -149,8 +187,10 @@ function createServer () {
     res.json({ country })
   })
 
-  // Page routes
+  // Home page
   app.get('/', handleIndex)
+
+  // Video routes
   app.get('/videos', handleVideosIndex)
   app.get('/videos/:videoSlug', handleVideo)
 

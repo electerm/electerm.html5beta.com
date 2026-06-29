@@ -7,6 +7,7 @@
     "desc": "터미널/SSH/SFTP/FTP/Telnet/시리얼 포트/RDP/VNC/Spice 클라이언트(Linux, Mac, Windows 지원)",
 
     "headerHome": "홈",
+    "headerFaq": "FAQ",
     "headerDemo": "데모",
     "headerElectermOnline": "Electerm 온라인",
     "headerVideos": "동영상",
@@ -134,6 +135,88 @@
     "sponsorsInterested": "Electerm 스폰서에 관심이 있으신가요? 여러분의 지원이 프로젝트를 활성화하고 성장시키는 데 도움이 됩니다.",
     "sponsorsContact": "스폰서가 되려면 문의하세요",
 
-    "starHistoryTitle": "Star 기록"
+    "starHistoryTitle": "Star 기록",
+
+    "footerFaq": "FAQ",
+
+    "faqTitle": "자주 묻는 질문",
+    "faqSubtitle": "electerm 터미널 클라이언트에 대한 일반적인 질문과 답변",
+    "faqDisclaimer": "이 답변들은 다음을 기반으로 합니다",
+    "faqWikiLink": "electerm Wiki에서 더 읽기",
+
+    "faqQ1": "SFTP 패널에서 로컬 파일 관리자를 숨길 수 있나요?",
+    "faqQ1A1": "네. 다음 CSS를 설정의 사용자 CSS에 추가하세요(설정 → 외관 → 사용자 CSS)：",
+    "faqQ1A2": "저장 후 로컬 섹션이 숨겨지고 원격 섹션이 전체 너비로 확장됩니다.",
+    "faqQ1A3": "더 많은 CSS 예제 →",
+
+    "faqQ2": "SFTP 패널에서 로컬과 원격 섹션의 위치를 바꿀 수 있나요?",
+    "faqQ2A": "네. 다음 사용자 CSS로 원격 섹션을 왼쪽에, 로컬 섹션을 오른쪽에 배치하세요：",
+
+    "faqQ3": "SSH 세션이 타임아웃되지 않도록 하려면 어떻게 하나요?",
+    "faqQ3A1": "유휴 SSH 연결이 끊어지는 것을 방지하는 두 가지 방법이 있습니다：",
+    "faqQ3A2": "방법1 — 설정에서 연결 유지 간격 구성：",
+    "faqQ3A2Li1": "설정 열기(오른쪽 위 톱니바퀴 아이콘)",
+    "faqQ3A2Li2": "SSH 연결 유지 간격 찾기",
+    "faqQ3A2Li3": "초 단위로 값 입력(예：60)",
+    "faqQ3A2Li4": "저장",
+    "faqQ3A3": "방법2 — 활성 세션 중 터미널 도구 모음의 연결 유지 아이콘을 클릭합니다. 3초마다 Enter 키를 전송합니다(vim과 같은 대화형 명령에 방해가 될 수 있음)。",
+
+    "faqQ4": "electerm에서 SSH 터널을 사용하려면 어떻게 하나요?",
+    "faqQ4A1": "SSH 북마크 생성 또는 편집 시 SSH 터널을 구성할 수 있습니다：",
+    "faqQ4A2": "로컬 → 원격 (ssh -L)：",
+    "faqQ4A2Desc": "로컬 포트의 요청을 원격 서버 포트로 전달합니다.",
+    "faqQ4A3": "원격 → 로컬 (ssh -R)：",
+    "faqQ4A3Desc": "원격 포트의 요청을 로컬 서버 포트로 전달합니다.",
+
+    "faqQ5": "작업공간 기능이란 무엇이며 어떻게 사용하나요?",
+    "faqQ5A1": "작업공간을 사용하면 현재 레이아웃과 열린 탭을 프리셋으로 저장할 수 있습니다. 북마크에서 연 탭만 저장됩니다.",
+    "faqQ5A2": "작업공간 저장 및 불러오기：",
+    "faqQ5A2Li1": "탭 바의 레이아웃 드롭다운으로 원하는 레이아웃 설정",
+    "faqQ5A2Li2": "포함할 북마크 연결 열기",
+    "faqQ5A2Li3": "레이아웃 → 작업공간 탭 → 작업공간 저장",
+    "faqQ5A2Li4": "이름을 지정하고 확인",
+
+    "faqQ6": "북마크를 저장하지 않고 서버에 연결하려면 어떻게 하나요?",
+    "faqQ6A1": "사이드바의 빠른 연결을 사용하세요. 다음과 같은 연결 문자열을 입력합니다：",
+    "faqQ6A2": "빠른 연결은 SSH, Telnet, VNC, RDP, Spice, 시리얼, FTP 프로토콜을 지원합니다. SSH 연결은 프로토콜 접두사를 생략할 수 있습니다.",
+
+    "faqQ7": "일괄 작업이란 무엇이며 어떻게 사용하나요?",
+    "faqQ7A1": "일괄 작업을 사용하면 JSON을 사용하여 다단계 SSH/SFTP 워크플로를 정의하고 실행할 수 있습니다. 왼쪽 사이드바의 일괄 작업 버튼으로 접근합니다.",
+    "faqQ7A2": "사용 가능한 작업 유형：",
+    "faqQ7A2Connect": "— 원격 SSH 서버에 연결",
+    "faqQ7A2Command": "— 터미널 명령 실행",
+    "faqQ7A2Upload": "— 파일/폴더를 원격 서버에 업로드",
+    "faqQ7A2Download": "— 원격 서버에서 파일/폴더 다운로드",
+
+    "faqQ8": "브라우저나 외부 링크에서 SSH 연결을 열 수 있나요?",
+    "faqQ8A1": "네. electerm은 ssh://, telnet://, rdp://, vnc://, serial://, spice:// 및 사용자 정의 electerm:// 프로토콜을 사용한 딥 링크를 지원합니다. 먼저 electerm 설정에서 프로토콜 핸들러를 등록하세요.",
+    "faqQ8A2": "데스크톱 바로가기, HTML 링크 또는 명령줄 도구(open, xdg-open, start)를 사용하여 연결을 시작할 수도 있습니다.",
+
+    "faqQ9": "로그인 시 electerm이 자동으로 시작되게 하려면 어떻게 하나요?",
+    "faqQ9A1": "--autohide 플래그를 사용하여 electerm을 시스템 트레이에 최소화하여 시작합니다：",
+    "faqQ9A2Ubuntu": "Ubuntu：",
+    "faqQ9A2UbuntuDesc": "시작 응용 프로그램을 열고 명령어 electerm --autohide로 추가",
+    "faqQ9A3Win": "Windows：",
+    "faqQ9A3WinDesc": "electerm.exe의 바로가기를 만들어 %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup에 배치",
+    "faqQ9A4Mac": "macOS：",
+    "faqQ9A4MacDesc": "/Applications/electerm.app/Contents/MacOS/electerm --autohide를 포함한 스크립트를 만들고 실행 가능하게 만든 후 시스템 설정 → 로그인 항목에 추가",
+
+    "faqQ10": "electerm에서 AI 어시스턴트를 어떻게 설정하나요?",
+    "faqQ10A1": "Electerm은 OpenAI 호환 API와 작동합니다. 설정 방법：",
+    "faqQ10A2Li1": "Electerm의 AI 설정 열기",
+    "faqQ10A2Li2": "제공업체의 API URL 입력(예：https://api.openai.com/v1)",
+    "faqQ10A2Li3": "모델 이름 선택 또는 입력(예：gpt-4, deepseek-chat)",
+    "faqQ10A2Li4": "API 키 입력",
+    "faqQ10A2Li5": "선택 사항：시스템 역할 프롬프트를 정의하고 저장",
+
+    "faqQ11": "빠른 명령에서 동적 값을 사용할 수 있나요?",
+    "faqQ11A1": "네. 빠른 명령 템플릿은 실행 시 해결되는 동적 플레이스홀더를 지원합니다：",
+    "faqQ11A2": "지원되는 템플릿 변수：",
+    "faqQ11A2Time": "시간 — 현재 시간 삽입",
+    "faqQ11A2Date": "날짜 — 현재 날짜 삽입",
+    "faqQ11A2Clipboard": "클립보드 — 현재 클립보드 내용 삽입",
+
+    "faqQ12": "새 북마크에 기본 프로필을 설정할 수 있나요?",
+    "faqQ12A": "네. electerm 설정에서 프로필의 '기본' 체크박스를 활성화하세요. 새 북마크 생성 시 해당 프로필이 자동으로 선택됩니다."
   }
 }

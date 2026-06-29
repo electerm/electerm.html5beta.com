@@ -7,6 +7,7 @@
     "desc": "終端/SSH/SFTP/FTP/Telnet/串列埠/RDP/VNC/Spice客戶端(支援Linux、Mac、Windows)",
 
     "headerHome": "首頁",
+    "headerFaq": "常見問題",
     "headerDemo": "演示",
     "headerElectermOnline": "Electerm 線上版",
     "headerVideos": "影片教學",
@@ -134,6 +135,88 @@
     "sponsorsInterested": "有興趣贊助 Electerm？您的支援有助於保持專案的活躍和發展。",
     "sponsorsContact": "聯繫我們成為贊助商",
 
-    "starHistoryTitle": "Star 歷史"
+    "starHistoryTitle": "Star 歷史",
+
+    "footerFaq": "常見問題",
+
+    "faqTitle": "常見問題",
+    "faqSubtitle": "關於 electerm 終端客戶端的常見問題和解答",
+    "faqDisclaimer": "以下答案基於",
+    "faqWikiLink": "在 electerm Wiki 上閱讀更多",
+
+    "faqQ1": "如何隱藏 SFTP 面板中的本地檔案管理器？",
+    "faqQ1A1": "可以，將以下 CSS 新增到設定頁的自訂 CSS 中（設定 → 外觀 → 自訂 CSS）：",
+    "faqQ1A2": "儲存後，本機區域將被隱藏，遠端區域將擴充到全寬。",
+    "faqQ1A3": "更多 CSS 範例 →",
+
+    "faqQ2": "如何交換 SFTP 面板中本機和遠端區域的位置？",
+    "faqQ2A": "可以，使用以下自訂 CSS 將遠端區域放在左側，本機區域放在右側：",
+
+    "faqQ3": "如何保持 SSH 會話不逾時？",
+    "faqQ3A1": "有兩種方法可以防止空閒 SSH 連線被斷開：",
+    "faqQ3A2": "方法一 — 在設定中配置保活間隔：",
+    "faqQ3A2Li1": "開啟設定（右上角齒輪圖示）",
+    "faqQ3A2Li2": "找到 SSH 保活間隔設定",
+    "faqQ3A2Li3": "輸入一個秒數值（例如 60）",
+    "faqQ3A2Li4": "儲存",
+    "faqQ3A3": "方法二 — 在活動會話期間點選終端工具列中的保活圖示。這會每 3 秒傳送一個 Enter 鍵（更激進，可能會干擾 vim 等互動式命令）。",
+
+    "faqQ4": "如何在 electerm 中使用 SSH 隧道？",
+    "faqQ4A1": "SSH 隧道在建立或編輯 SSH 書籤時配置。可以設定：",
+    "faqQ4A2": "本機 → 遠端 (ssh -L)：",
+    "faqQ4A2Desc": "將本機埠的請求轉送到遠端伺服器埠。",
+    "faqQ4A3": "遠端 → 本機 (ssh -R)：",
+    "faqQ4A3Desc": "將遠端埠的請求轉送到本機伺服器埠。",
+
+    "faqQ5": "什麼是工作區功能以及如何使用它？",
+    "faqQ5A1": "工作區允許您將目前配置和開啟的標籤頁儲存為預設。只有從書籤開啟的標籤頁才會被儲存。",
+    "faqQ5A2": "儲存和載入工作區的方法：",
+    "faqQ5A2Li1": "透過標籤欄中的配置下拉選單設定所需的配置",
+    "faqQ5A2Li2": "開啟要包含的書籤連線",
+    "faqQ5A2Li3": "轉到配置 → 工作區標籤 → 儲存工作區",
+    "faqQ5A2Li4": "命名並確認",
+
+    "faqQ6": "如何在不儲存書籤的情況下連線到伺服器？",
+    "faqQ6A1": "使用側邊欄的快速連線功能。輸入連線字串，例如：",
+    "faqQ6A2": "快速連線支援 SSH、Telnet、VNC、RDP、Spice、序列埠和 FTP 協定。SSH 連線可以省略協定首碼。",
+
+    "faqQ7": "什麼是批次處理操作以及如何使用？",
+    "faqQ7A1": "批次處理操作允許您使用 JSON 定義和執行多步驟 SSH/SFTP 工作流程。透過左側邊欄的批次處理操作按鈕存取。",
+    "faqQ7A2": "可用的操作類型：",
+    "faqQ7A2Connect": "— 連線到遠端 SSH 伺服器",
+    "faqQ7A2Command": "— 執行終端命令",
+    "faqQ7A2Upload": "— 上傳檔案/資料夾到遠端伺服器",
+    "faqQ7A2Download": "— 從遠端伺服器下載檔案/資料夾",
+
+    "faqQ8": "可以透過瀏覽器或外部連結開啟 SSH 連線嗎？",
+    "faqQ8A1": "可以，electerm 支援使用 ssh://、telnet://、rdp://、vnc://、serial://、spice:// 以及自訂 electerm:// 協定的深度連結。先在 electerm 設定中註冊協定處理程式。",
+    "faqQ8A2": "您還可以建立桌面捷徑、HTML 連結或使用命令列工具（open、xdg-open、start）啟動連線。",
+
+    "faqQ9": "如何讓 electerm 在登入時自動啟動？",
+    "faqQ9A1": "使用 --autohide 參數讓 electerm 啟動時最小化到系統匣：",
+    "faqQ9A2Ubuntu": "Ubuntu：",
+    "faqQ9A2UbuntuDesc": "開啟啟動應用程式，新增 electerm，命令為：electerm --autohide",
+    "faqQ9A3Win": "Windows：",
+    "faqQ9A3WinDesc": "建立 electerm.exe 的捷徑，放在 %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup 中",
+    "faqQ9A4Mac": "macOS：",
+    "faqQ9A4MacDesc": "建立包含 /Applications/electerm.app/Contents/MacOS/electerm --autohide 的指令碼，賦予執行許可權，然後在系統設定 → 登入項中新增",
+
+    "faqQ10": "如何在 electerm 中配置 AI 助手？",
+    "faqQ10A1": "Electerm 相容任何 OpenAI 相容的 API。配置方法：",
+    "faqQ10A2Li1": "開啟 Electerm 的 AI 設定",
+    "faqQ10A2Li2": "輸入您的 API 供應商 URL（例如 https://api.openai.com/v1）",
+    "faqQ10A2Li3": "選擇或輸入模型名稱（例如 gpt-4、deepseek-chat）",
+    "faqQ10A2Li4": "輸入您的 API 金鑰",
+    "faqQ10A2Li5": "可選：定義系統角色提示詞，然後儲存",
+
+    "faqQ11": "快捷命令中可以使用動態值嗎？",
+    "faqQ11A1": "可以，快捷命令範本支援在執行時解析的動態佔位符：",
+    "faqQ11A2": "支援的範本變數：",
+    "faqQ11A2Time": "時間 — 插入目前時間",
+    "faqQ11A2Date": "日期 — 插入目前日期",
+    "faqQ11A2Clipboard": "剪貼簿 — 插入目前剪貼簿內容",
+
+    "faqQ12": "可以為新書籤設定預設設定檔嗎？",
+    "faqQ12A": "可以。在 electerm 設定中，在一個設定檔上啟用「預設」核取方塊。該設定檔將在建立新書籤時自動選用。"
   }
 }

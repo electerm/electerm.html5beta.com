@@ -117,6 +117,52 @@ async function main () {
       const dir = resolve(cwd, `public/${item}`)
       await fs.mkdir(dir, { recursive: true })
 
+      if (item === 'faq') {
+        // Build FAQ for all languages
+        for (const langItem of langs) {
+          const { id: lid, slug: lslug, langCode: lc, lang: l } = langItem
+          const faqLangs = langs.map(lm => ({
+            ...lm,
+            url: lm.slug === '' ? `${h}/faq/` : `${h}/faq/${lm.slug}/`
+          }))
+          const descKey = 'faqTitle'
+
+          if (lid === 'en_us') {
+            // English → public/faq/index.html
+            const dir = resolve(cwd, 'public/faq')
+            await fs.mkdir(dir, { recursive: true })
+            await buildPug(f, resolve(dir, 'index.html'), {
+              ...data,
+              langs: faqLangs,
+              langCode: lc,
+              lang: l,
+              desc: l.lang[descKey] || l.lang.desc,
+              url: `${h}/faq/`,
+              cssUrl: '/index.bundle.css'
+            })
+            // Redirect from old /faq.html
+            const redirectFrom = resolve(cwd, 'public/faq.html')
+            const target = `${h}/faq/`
+            await fs.writeFile(redirectFrom, REDIRECT_TEMPLATE(target))
+          } else {
+            // Other locales → public/faq/{slug}/index.html
+            const dir = resolve(cwd, `public/faq/${lslug}`)
+            await fs.mkdir(dir, { recursive: true })
+            await buildPug(f, resolve(dir, 'index.html'), {
+              ...data,
+              langs: faqLangs,
+              langCode: lc,
+              lang: l,
+              desc: l.lang[descKey] || l.lang.desc,
+              url: `${h}/faq/${lslug}/`,
+              cssUrl: '/index.bundle.css'
+            })
+          }
+        }
+        console.log('✅ Built FAQ pages for ' + langs.length + ' languages')
+        continue
+      }
+
       const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : 'privacyPolicy'
       await buildPug(f, resolve(dir, 'index.html'), {
         ...data,

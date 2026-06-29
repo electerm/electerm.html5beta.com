@@ -7,6 +7,7 @@
     "desc": "Terminal/ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice client(linux, mac, win)",
 
     "headerHome": "Home",
+    "headerFaq": "FAQ",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm Online",
     "headerVideos": "Videos",
@@ -134,6 +135,88 @@
     "sponsorsInterested": "Interested in sponsoring electerm? Your support helps keep the project active and growing.",
     "sponsorsContact": "Contact us to become a sponsor",
 
-    "starHistoryTitle": "Star History"
+    "starHistoryTitle": "Star History",
+
+    "footerFaq": "FAQ",
+
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Common questions and answers about electem terminal client",
+    "faqDisclaimer": "These answers are based on the",
+    "faqWikiLink": "Read more on electerm Wiki",
+
+    "faqQ1": "Can I hide the local file manager in the SFTP panel?",
+    "faqQ1A1": "Yes, add the following CSS to Custom CSS in Settings (Settings → Appearance → Custom CSS):",
+    "faqQ1A2": "After saving, the local section will be hidden and the remote section will expand to full width.",
+    "faqQ1A3": "More CSS examples →",
+
+    "faqQ2": "Can I swap the local and remote sections in the SFTP panel?",
+    "faqQ2A": "Yes, use the following Custom CSS to place the remote section on the left and the local section on the right:",
+
+    "faqQ3": "How do I keep my SSH session from timing out?",
+    "faqQ3A1": "There are two methods to prevent idle SSH connections from being dropped:",
+    "faqQ3A2": "Method 1 — Configure Keep Alive Interval in Settings:",
+    "faqQ3A2Li1": "Open Settings (gear icon, top right)",
+    "faqQ3A2Li2": "Locate SSH Keep Alive Interval",
+    "faqQ3A2Li3": "Enter a value in seconds (e.g. 60)",
+    "faqQ3A2Li4": "Save",
+    "faqQ3A3": "Method 2 — Click the keep-alive icon in the terminal toolbar during an active session. This sends an Enter key every 3 seconds (more aggressive, may interfere with interactive commands like vim).",
+
+    "faqQ4": "How do I use SSH tunnels in electerm?",
+    "faqQ4A1": "SSH tunnels are configured when creating or editing an SSH bookmark. You can set up:",
+    "faqQ4A2": "Local → Remote (ssh -L): ",
+    "faqQ4A2Desc": "Forward requests from a local port to a remote server port.",
+    "faqQ4A3": "Remote → Local (ssh -R): ",
+    "faqQ4A3Desc": "Forward requests from a remote port to a local server port.",
+
+    "faqQ5": "What is the Workspace feature and how do I use it?",
+    "faqQ5A1": "Workspace lets you save your current layout and open tabs as a preset. Only tabs opened from bookmarks are saved.",
+    "faqQ5A2": "To save and load workspaces:",
+    "faqQ5A2Li1": "Set your desired layout via the Layout dropdown in the tab bar",
+    "faqQ5A2Li2": "Open the bookmarked connections you want included",
+    "faqQ5A2Li3": "Go to Layout → Workspace tab → Save Workspace",
+    "faqQ5A2Li4": "Name it and confirm",
+
+    "faqQ6": "How do I connect to a server without saving a bookmark?",
+    "faqQ6A1": "Use Quick Connect from the sidebar. Enter a connection string like:",
+    "faqQ6A2": "Quick Connect supports SSH, Telnet, VNC, RDP, Spice, Serial, and FTP protocols. You can skip the protocol prefix for SSH connections.",
+
+    "faqQ7": "What is Batch Operation and how do I use it?",
+    "faqQ7A1": "Batch Operation lets you define and run multi-step SSH/SFTP workflows using JSON. Access it via the Batch Operation button on the left sidebar.",
+    "faqQ7A2": "Available action types:",
+    "faqQ7A2Connect": "— Connects to a remote SSH server",
+    "faqQ7A2Command": "— Runs a terminal command",
+    "faqQ7A2Upload": "— Uploads files/folders to remote server",
+    "faqQ7A2Download": "— Downloads files/folders from remote server",
+
+    "faqQ8": "Can I open SSH connections from a browser or external links?",
+    "faqQ8A1": "Yes, electerm supports deep links using protocols like ssh://, telnet://, rdp://, vnc://, serial://, spice://, and the custom electerm:// protocol. Register protocol handlers in electerm settings first.",
+    "faqQ8A2": "You can also create desktop shortcuts, HTML links, or use command-line tools (open, xdg-open, start) to launch connections.",
+
+    "faqQ9": "How do I make electerm start automatically when I log in?",
+    "faqQ9A1": "Use the --autohide flag to start electerm minimized to the system tray:",
+    "faqQ9A2Ubuntu": "Ubuntu: ",
+    "faqQ9A2UbuntuDesc": "Open Startup Applications, add electerm with the command: electerm --autohide",
+    "faqQ9A3Win": "Windows: ",
+    "faqQ9A3WinDesc": "Create a shortcut to electerm.exe and place it in %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+    "faqQ9A4Mac": "macOS: ",
+    "faqQ9A4MacDesc": "Create a script with /Applications/electerm.app/Contents/MacOS/electerm --autohide, make it executable, then add it in System Settings → Login Items",
+
+    "faqQ10": "How do I configure AI assistant in electerm?",
+    "faqQ10A1": "Electerm works with any OpenAI-compatible API. To configure:",
+    "faqQ10A2Li1": "Open AI settings in Electerm",
+    "faqQ10A2Li2": "Enter the API URL for your provider (e.g. https://api.openai.com/v1)",
+    "faqQ10A2Li3": "Select or type the model name (e.g. gpt-4, deepseek-chat)",
+    "faqQ10A2Li4": "Input your API key",
+    "faqQ10A2Li5": "Optionally define a system role prompt and save",
+
+    "faqQ11": "Can I use dynamic values in quick commands?",
+    "faqQ11A1": "Yes, quick command templates support the following dynamic placeholders that resolve at execution time:",
+    "faqQ11A2": "Supported template variables:",
+    "faqQ11A2Time": "Time — inserts the current time",
+    "faqQ11A2Date": "Date — inserts the current date",
+    "faqQ11A2Clipboard": "Clipboard — inserts the current clipboard content",
+
+    "faqQ12": "Can I set a default profile for new bookmarks?",
+    "faqQ12A": "Yes. Enable the 'Default' checkbox on a profile in electerm settings. That profile will be automatically selected when creating new bookmarks."
   }
 }

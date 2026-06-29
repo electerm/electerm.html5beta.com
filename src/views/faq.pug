@@ -1,0 +1,372 @@
+doctype html
+html(lang=langCode)
+  head
+    title #{siteName} - #{lang.lang.faqTitle}
+    meta(name='description', content=lang.lang.faqSubtitle)
+    meta(name='keywords', content=keywords)
+    meta(property='og:title' content='electerm - ' + lang.lang.faqTitle)
+    meta(property='og:description' content=lang.lang.faqSubtitle)
+    meta(name='twitter:title' content='electerm - ' + lang.lang.faqTitle)
+    meta(name='twitter:description' content=lang.lang.faqSubtitle)
+    include ./parts/react-header
+    style.
+      .faq-page {
+        padding: 48px 0 80px;
+      }
+      .faq-page h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .faq-page .faq-subtitle {
+        color: var(--color-text-secondary);
+        font-size: 1.05rem;
+        margin-bottom: 32px;
+      }
+      .faq-page .faq-disclaimer {
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: 16px 20px;
+        margin-bottom: 32px;
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+      }
+      .faq-page .faq-disclaimer a {
+        color: var(--color-primary);
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .faq-item {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--color-bg);
+      }
+      .faq-question {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        background: var(--color-bg);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        color: var(--color-text);
+        transition: background 0.15s;
+      }
+      .faq-question:hover {
+        background: var(--color-bg-alt);
+      }
+      .faq-question .faq-toggle {
+        flex-shrink: 0;
+        font-size: 1.2rem;
+        color: var(--color-text-secondary);
+        transition: transform 0.2s;
+      }
+      .faq-item.open .faq-question .faq-toggle {
+        transform: rotate(180deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 20px;
+        border-top: 0 solid var(--color-border);
+      }
+      .faq-item.open .faq-answer {
+        max-height: 2000px;
+        padding: 16px 20px;
+        border-top-width: 1px;
+      }
+      .faq-answer p {
+        margin: 0 0 12px;
+        line-height: 1.6;
+        color: var(--color-text-secondary);
+      }
+      .faq-answer p:last-child {
+        margin-bottom: 0;
+      }
+      .faq-answer ul, .faq-answer ol {
+        margin: 8px 0;
+        padding-left: 20px;
+      }
+      .faq-answer li {
+        margin-bottom: 6px;
+        line-height: 1.5;
+        color: var(--color-text-secondary);
+      }
+      .faq-answer pre {
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        padding: 12px 16px;
+        overflow-x: auto;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin: 8px 0;
+      }
+      .faq-answer code {
+        font-family: var(--font-mono);
+        background: var(--color-bg-alt);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.85em;
+      }
+      .faq-answer a {
+        color: var(--color-primary);
+      }
+      @media (max-width: 768px) {
+        .faq-page { padding: 24px 0 60px; }
+        .faq-page h1 { font-size: 1.5rem; }
+        .faq-question { font-size: 0.9rem; padding: 14px 16px; }
+        .faq-answer { padding: 0 16px; }
+        .faq-item.open .faq-answer { padding: 14px 16px; }
+      }
+  body
+    include ./parts/header
+    main.faq-page
+      .container
+        h1 #{lang.lang.faqTitle}
+        p.faq-subtitle #{lang.lang.faqSubtitle}
+        p.faq-disclaimer
+          | #{lang.lang.faqDisclaimer}
+          | &nbsp;
+          a(href='https://github.com/electerm/electerm/wiki', target='_blank', rel='noreferrer') electerm Wiki
+
+        .faq-list(itemscope itemtype='https://schema.org/FAQPage')
+
+          // Q1: Hide local SFTP panel
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ1}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ1A1}
+                pre.
+                  /* Hide the local section */
+                  .sftp-local-section {
+                    display: none !important;
+                  }
+
+                  /* Expand the remote section to full width */
+                  .sftp-remote-section {
+                    width: 100% !important;
+                    left: 0 !important;
+                  }
+
+                  /* Ensure the parent container adjusts */
+                  .sftp-wrap {
+                    display: block;
+                  }
+                p
+                  | #{lang.lang.faqQ1A2}
+                  | &nbsp;
+                  a(href='https://github.com/electerm/electerm/wiki/Custom-CSS-examples', target='_blank', rel='noreferrer') #{lang.lang.faqQ1A3}
+
+          // Q2: Swap SFTP panels
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ2}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ2A}
+                pre.
+                  .term-sftp-box .sftp-wrap {
+                    display: flex !important;
+                    flex-direction: row;
+                  }
+
+                  .term-sftp-box .sftp-section {
+                    flex: 1;
+                    position: static;
+                  }
+
+                  .sftp-remote-section {
+                    order: 1 !important;
+                  }
+
+                  .sftp-local-section {
+                    order: 2;
+                  }
+
+          // Q3: Keep SSH alive
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ3}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ3A1}
+                p #{lang.lang.faqQ3A2}
+                ol
+                  li #{lang.lang.faqQ3A2Li1}
+                  li #{lang.lang.faqQ3A2Li2}
+                  li #{lang.lang.faqQ3A2Li3}
+                  li #{lang.lang.faqQ3A2Li4}
+                p #{lang.lang.faqQ3A3}
+                a(href='https://github.com/electerm/electerm/wiki/Keep-SSH-Session-Alive', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q4: SSH Tunnel
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ4}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ4A1}
+                p
+                  strong #{lang.lang.faqQ4A2}
+                  | #{lang.lang.faqQ4A2Desc}
+                p
+                  strong #{lang.lang.faqQ4A3}
+                  | #{lang.lang.faqQ4A3Desc}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/How-to-use-ssh-tunnel', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q5: Workspace
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ5}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ5A1}
+                p #{lang.lang.faqQ5A2}
+                ol
+                  li #{lang.lang.faqQ5A2Li1}
+                  li #{lang.lang.faqQ5A2Li2}
+                  li #{lang.lang.faqQ5A2Li3}
+                  li #{lang.lang.faqQ5A2Li4}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/Workspace-Feature', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q6: Quick Connect
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ6}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ6A1}
+                p
+                  code ssh://user@192.168.1.100:22
+                p
+                  code rdp://admin@192.168.1.100:3389
+                p
+                  code serial://COM1?baudRate=115200
+                p #{lang.lang.faqQ6A2}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/quick-connect', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q7: Batch Operations
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ7}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ7A1}
+                p #{lang.lang.faqQ7A2}
+                ul
+                  li
+                    strong connect
+                    | &nbsp;#{lang.lang.faqQ7A2Connect}
+                  li
+                    strong command
+                    | &nbsp;#{lang.lang.faqQ7A2Command}
+                  li
+                    strong sftp_upload
+                    | &nbsp;#{lang.lang.faqQ7A2Upload}
+                  li
+                    strong sftp_download
+                    | &nbsp;#{lang.lang.faqQ7A2Download}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/batch-operation', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q8: Deep Links
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ8}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ8A1}
+                p #{lang.lang.faqQ8A2}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/Deep-link-support', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q9: Auto run at login
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ9}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ9A1}
+                p
+                  strong #{lang.lang.faqQ9A2Ubuntu}
+                | #{lang.lang.faqQ9A2UbuntuDesc}
+                p
+                  strong #{lang.lang.faqQ9A3Win}
+                | #{lang.lang.faqQ9A3WinDesc}
+                p
+                  strong #{lang.lang.faqQ9A4Mac}
+                | #{lang.lang.faqQ9A4MacDesc}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/Autorun-electerm-when-login-to-os', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q10: AI Model Config
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ10}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ10A1}
+                ol
+                  li #{lang.lang.faqQ10A2Li1}
+                  li #{lang.lang.faqQ10A2Li2}
+                  li #{lang.lang.faqQ10A2Li3}
+                  li #{lang.lang.faqQ10A2Li4}
+                  li #{lang.lang.faqQ10A2Li5}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/AI-model-config-guide', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q11: Quick Command Templates
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ11}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ11A1}
+                p #{lang.lang.faqQ11A2}
+                ul
+                  li #{lang.lang.faqQ11A2Time}
+                  li #{lang.lang.faqQ11A2Date}
+                  li #{lang.lang.faqQ11A2Clipboard}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/quick-command-templates', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+
+          // Q12: Default Profile
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ12}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ12A}
+                p
+                  a(href='https://github.com/electerm/electerm/wiki/Default-Profile', target='_blank', rel='noreferrer') #{lang.lang.faqWikiLink}
+    include ./parts/footer
+    include ./parts/react-footer

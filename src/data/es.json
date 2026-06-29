@@ -7,6 +7,7 @@
     "desc": "Cliente de terminal/SSH/SFTP/FTP/Telnet/puerto serie/RDP/VNC/Spice (Linux, Mac, Windows)",
 
     "headerHome": "Inicio",
+    "headerFaq": "FAQ",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm en línea",
     "headerVideos": "Vídeos",
@@ -134,6 +135,88 @@
     "sponsorsInterested": "¿Interesado en patrocinar Electerm? Su ayuda mantiene el proyecto activo y en crecimiento.",
     "sponsorsContact": "Contáctenos para convertirse en patrocinador",
 
-    "starHistoryTitle": "Historial de Star"
+    "starHistoryTitle": "Historial de Star",
+
+    "footerFaq": "FAQ",
+
+    "faqTitle": "Preguntas frecuentes",
+    "faqSubtitle": "Preguntas y respuestas comunes sobre el cliente terminal electerm",
+    "faqDisclaimer": "Estas respuestas están basadas en el",
+    "faqWikiLink": "Leer más en el Wiki de electerm",
+
+    "faqQ1": "¿Puedo ocultar el administrador de archivos local en el panel SFTP?",
+    "faqQ1A1": "Sí, añada el siguiente CSS en Configuración → Apariencia → CSS personalizado:",
+    "faqQ1A2": "Después de guardar, la sección local se ocultará y la sección remota se expandirá a todo el ancho.",
+    "faqQ1A3": "Más ejemplos CSS →",
+
+    "faqQ2": "¿Puedo intercambiar las secciones local y remota en el panel SFTP?",
+    "faqQ2A": "Sí, use el siguiente CSS personalizado para colocar la sección remota a la izquierda y la local a la derecha:",
+
+    "faqQ3": "¿Cómo evito que mi sesión SSH se desconecte por inactividad?",
+    "faqQ3A1": "Hay dos métodos para evitar que las conexiones SSH inactivas se cierren:",
+    "faqQ3A2": "Método 1 — Configurar el intervalo de keep-alive en Ajustes:",
+    "faqQ3A2Li1": "Abrir Ajustes (icono de engranaje en la esquina superior derecha)",
+    "faqQ3A2Li2": "Localizar el intervalo de keep-alive SSH",
+    "faqQ3A2Li3": "Introducir un valor en segundos (ej. 60)",
+    "faqQ3A2Li4": "Guardar",
+    "faqQ3A3": "Método 2 — Haga clic en el icono de keep-alive en la barra de herramientas del terminal durante una sesión activa. Esto envía una tecla Enter cada 3 segundos (más agresivo, puede interferir con comandos interactivos como vim).",
+
+    "faqQ4": "¿Cómo uso los túneles SSH en electerm?",
+    "faqQ4A1": "Los túneles SSH se configuran al crear o editar un marcador SSH. Puede configurar:",
+    "faqQ4A2": "Local → Remoto (ssh -L): ",
+    "faqQ4A2Desc": "Reenviar solicitudes de un puerto local a un puerto del servidor remoto.",
+    "faqQ4A3": "Remoto → Local (ssh -R): ",
+    "faqQ4A3Desc": "Reenviar solicitudes de un puerto remoto a un puerto del servidor local.",
+
+    "faqQ5": "¿Qué es la función Espacio de trabajo y cómo la uso?",
+    "faqQ5A1": "El espacio de trabajo le permite guardar su diseño actual y pestañas abiertas como un preajuste. Solo se guardan las pestañas abiertas desde marcadores.",
+    "faqQ5A2": "Para guardar y cargar espacios de trabajo:",
+    "faqQ5A2Li1": "Configure el diseño deseado a través del menú desplegable Diseño en la barra de pestañas",
+    "faqQ5A2Li2": "Abra las conexiones de marcadores que desea incluir",
+    "faqQ5A2Li3": "Vaya a Diseño → pestaña Espacio de trabajo → Guardar espacio de trabajo",
+    "faqQ5A2Li4": "Póngale nombre y confirme",
+
+    "faqQ6": "¿Cómo me conecto a un servidor sin guardar un marcador?",
+    "faqQ6A1": "Use Conexión rápida desde la barra lateral. Introduzca una cadena de conexión como:",
+    "faqQ6A2": "Conexión rápida admite los protocolos SSH, Telnet, VNC, RDP, Spice, Serie y FTP. Puede omitir el prefijo de protocolo para conexiones SSH.",
+
+    "faqQ7": "¿Qué es la Operación por lotes y cómo la uso?",
+    "faqQ7A1": "La operación por lotes le permite definir y ejecutar flujos de trabajo SSH/SFTP de varios pasos usando JSON. Acceda a través del botón Operación por lotes en la barra lateral izquierda.",
+    "faqQ7A2": "Tipos de acción disponibles:",
+    "faqQ7A2Connect": "— Se conecta a un servidor SSH remoto",
+    "faqQ7A2Command": "— Ejecuta un comando de terminal",
+    "faqQ7A2Upload": "— Sube archivos/carpetas al servidor remoto",
+    "faqQ7A2Download": "— Descarga archivos/carpetas del servidor remoto",
+
+    "faqQ8": "¿Puedo abrir conexiones SSH desde un navegador o enlaces externos?",
+    "faqQ8A1": "Sí. electerm admite enlaces profundos usando protocolos como ssh://, telnet://, rdp://, vnc://, serial://, spice:// y el protocolo personalizado electerm://. Registre primero los controladores de protocolo en los ajustes de electerm.",
+    "faqQ8A2": "También puede crear accesos directos de escritorio, enlaces HTML o usar herramientas de línea de comandos (open, xdg-open, start) para iniciar conexiones.",
+
+    "faqQ9": "¿Cómo hago para que electerm se inicie automáticamente al iniciar sesión?",
+    "faqQ9A1": "Use el parámetro --autohide para iniciar electerm minimizado en la bandeja del sistema:",
+    "faqQ9A2Ubuntu": "Ubuntu: ",
+    "faqQ9A2UbuntuDesc": "Abra Aplicaciones de inicio y añada electerm con el comando: electerm --autohide",
+    "faqQ9A3Win": "Windows: ",
+    "faqQ9A3WinDesc": "Cree un acceso directo a electerm.exe y colóquelo en %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+    "faqQ9A4Mac": "macOS: ",
+    "faqQ9A4MacDesc": "Cree un script con /Applications/electerm.app/Contents/MacOS/electerm --autohide, hágalo ejecutable, luego agréguelo en Configuración del sistema → Elementos de inicio de sesión",
+
+    "faqQ10": "¿Cómo configuro el asistente de IA en electerm?",
+    "faqQ10A1": "Electerm funciona con cualquier API compatible con OpenAI. Para configurarlo:",
+    "faqQ10A2Li1": "Abra los ajustes de IA en Electerm",
+    "faqQ10A2Li2": "Introduzca la URL de la API de su proveedor (ej. https://api.openai.com/v1)",
+    "faqQ10A2Li3": "Seleccione o escriba el nombre del modelo (ej. gpt-4, deepseek-chat)",
+    "faqQ10A2Li4": "Introduzca su clave API",
+    "faqQ10A2Li5": "Opcional: defina un prompt de rol del sistema y guarde",
+
+    "faqQ11": "¿Puedo usar valores dinámicos en comandos rápidos?",
+    "faqQ11A1": "Sí. Las plantillas de comandos rápidos admiten marcadores de posición dinámicos que se resuelven en tiempo de ejecución:",
+    "faqQ11A2": "Variables de plantilla admitidas:",
+    "faqQ11A2Time": "Hora — inserta la hora actual",
+    "faqQ11A2Date": "Fecha — inserta la fecha actual",
+    "faqQ11A2Clipboard": "Portapapeles — inserta el contenido actual del portapapeles",
+
+    "faqQ12": "¿Puedo establecer un perfil predeterminado para nuevos marcadores?",
+    "faqQ12A": "Sí. Active la casilla 'Predeterminado' en un perfil en los ajustes de electerm. Ese perfil se seleccionará automáticamente al crear nuevos marcadores."
   }
 }

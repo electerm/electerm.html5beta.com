@@ -301,7 +301,8 @@ export default {
   pages: [
     'sponsor-electerm',
     'deb',
-    'privacy-policy'
+    'privacy-policy',
+    'faq'
   ],
   langs: createLocaleData(),
   ...createReleaseData(),
