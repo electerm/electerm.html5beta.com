@@ -108,6 +108,10 @@
     "faqDisclaimer": "Diese Antworten basieren auf dem",
     "faqWikiLink": "Mehr lesen im electerm Wiki",
 
+    "faqQ0": "Ist electerm kostenlos und Open-Source?",
+    "faqQ0A1": "Ja! electerm ist vollständig kostenlos und Open-Source. Sie können den Quellcode auf GitHub einsehen, modifizieren und dazu beitragen:",
+    "faqQ0A2": "Es ist unter der MIT-Lizenz veröffentlicht, was bedeutet, dass Sie die Software frei verwenden, kopieren, modifizieren, zusammenführen, veröffentlichen, verteilen, unterlizenzieren und/oder verkaufen können.",
+
     "faqQ1": "Kann ich den lokalen Dateimanager im SFTP-Bedienfeld ausblenden?",
     "faqQ1A1": "Ja, fügen Sie das folgende CSS unter Einstellungen → Darstellung → Benutzerdefiniertes CSS hinzu:",
     "faqQ1A2": "Nach dem Speichern wird der lokale Bereich ausgeblendet und der entfernte Bereich auf volle Breite erweitert.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "Zwischenablage — fügt den aktuellen Zwischenablage-Inhalt ein",
 
     "faqQ12": "Kann ich ein Standardprofil für neue Lesezeichen festlegen?",
-    "faqQ12A": "Ja. Aktivieren Sie das Kontrollkästchen 'Standard' für ein Profil in den electerm-Einstellungen. Dieses Profil wird beim Erstellen neuer Lesezeichen automatisch ausgewählt."
+    "faqQ12A": "Ja. Aktivieren Sie das Kontrollkästchen 'Standard' für ein Profil in den electerm-Einstellungen. Dieses Profil wird beim Erstellen neuer Lesezeichen automatisch ausgewählt.",
+
+    "homeFaqTitle": "Häufig gestellte Fragen",
+    "homeFaqSubtitle": "Schnelle Antworten auf häufige Fragen zu electerm",
+    "homeFaqViewAll": "Alle FAQs anzeigen →",
+    "homeFaq0Q": "Ist electerm kostenlos und Open-Source?",
+    "homeFaq0A": "Ja! electerm ist komplett kostenlos und Open-Source (MIT-Lizenz). Den Quellcode gibt es auf GitHub.",
+
+    "homeFaq1Q": "Wie verhindere ich, dass meine SSH-Sitzung zeitlich ausläuft?",
+    "homeFaq1A": "Stellen Sie das SSH-Keep-Alive-Intervall in den Einstellungen ein oder klicken Sie während einer aktiven Sitzung auf das Keep-Alive-Symbol in der Terminal-Symbolleiste.",
+    "homeFaq2Q": "Kann ich SSH-Tunnel in electerm verwenden?",
+    "homeFaq2A": "Ja, konfigurieren Sie die Portweiterleitung von lokal nach remote oder remote nach lokal beim Erstellen oder Bearbeiten eines SSH-Lesezeichens.",
+    "homeFaq3Q": "Wie konfiguriere ich den KI-Assistenten?",
+    "homeFaq3A": "Öffnen Sie die KI-Einstellungen und geben Sie Ihre API-URL, das Modell und den API-Schlüssel ein. Funktioniert mit jeder OpenAI-kompatiblen API.",
+
+    "homeAuthorTitle": "Über den Autor",
+    "homeAuthorDesc1": "electerm wurde von ZHAO Xudong entwickelt und wird von ihm gewartet.",
+    "homeAuthorGithub": "GitHub-Profil anzeigen →"
   }
 }

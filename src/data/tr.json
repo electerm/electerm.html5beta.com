@@ -108,6 +108,10 @@
     "faqDisclaimer": "Bu yanıtlar şuraya dayanmaktadır",
     "faqWikiLink": "Electerm Wiki'de daha fazla bilgi edinin",
 
+    "faqQ0": "Electerm ücretsiz ve açık kaynaklı mı?",
+    "faqQ0A1": "Evet! electerm tamamen ücretsiz ve açık kaynaklı bir yazılımdır. Kaynak kodunu GitHub'da görüntüleyebilir, değiştirebilir ve katkıda bulunabilirsiniz:",
+    "faqQ0A2": "MIT Lisansı altında yayınlanmıştır, yani yazılımı kullanma, kopyalama, değiştirme, birleştirme, yayınlama, dağıtma, alt lisanslama ve/veya satma konusunda özgürsünüz.",
+
     "faqQ1": "SFTP panelinde yerel dosya yöneticisini gizleyebilir miyim?",
     "faqQ1A1": "Evet, Ayarlar → Görünüm → Özel CSS'e aşağıdaki CSS'i ekleyin:",
     "faqQ1A2": "Kaydettikten sonra yerel bölüm gizlenecek ve uzak bölüm tam genişliğe genişleyecektir.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "Pano — geçerli pano içeriğini ekler",
 
     "faqQ12": "Yeni yer imleri için varsayılan bir profil belirleyebilir miyim?",
-    "faqQ12A": "Evet. Electerm ayarlarında bir profilde 'Varsayılan' onay kutusunu etkinleştirin. Yeni yer imleri oluştururken bu profil otomatik olarak seçilecektir."
+    "faqQ12A": "Evet. Electerm ayarlarında bir profilde 'Varsayılan' onay kutusunu etkinleştirin. Yeni yer imleri oluştururken bu profil otomatik olarak seçilecektir.",
+
+    "homeFaqTitle": "Sıkça Sorulan Sorular",
+    "homeFaqSubtitle": "Electerm hakkında sık sorulan sorulara hızlı yanıtlar",
+    "homeFaqViewAll": "Tüm SSS'leri Görüntüle →",
+    "homeFaq0Q": "Electerm ücretsiz ve açık kaynaklı mı?",
+    "homeFaq0A": "Evet! electerm tamamen ücretsiz ve açık kaynaklıdır (MIT lisansı). Kaynak kodunu GitHub'da görün.",
+
+    "homeFaq1Q": "SSH oturumumun zaman aşımına uğramasını nasıl önlerim?",
+    "homeFaq1A": "Ayarlardan Keep Alive aralığını ayarlayın veya aktif bir oturum sırasında terminal araç çubuğundaki keep-alive simgesine tıklayın.",
+    "homeFaq2Q": "Electerm'de SSH tünelleri kullanabilir miyim?",
+    "homeFaq2A": "Evet, bir SSH yer imi oluştururken veya düzenlerken yerelden uzaka veya uzaktan yerele bağlantı noktası yönlendirmesi yapılandırabilirsiniz.",
+    "homeFaq3Q": "Yapay zeka asistanını nasıl yapılandırabilirim?",
+    "homeFaq3A": "YZ ayarlarını açın, API URL'sini, model adını ve API anahtarını girin. OpenAI uyumlu herhangi bir API ile çalışır.",
+
+    "homeAuthorTitle": "Yazar Hakkında",
+    "homeAuthorDesc1": "electerm, ZHAO Xudong tarafından oluşturulmuş ve bakımı yapılmaktadır.",
+    "homeAuthorGithub": "GitHub Profilini Görüntüle →"
   }
 }

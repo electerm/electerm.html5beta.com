@@ -112,6 +112,10 @@
     "faqDisclaimer": "These answers are based on the",
     "faqWikiLink": "Read more on electerm Wiki",
 
+    "faqQ0": "Is electerm free and open-source?",
+    "faqQ0A1": "Yes! electerm is completely free and open-source software. You can view, modify, and contribute to the source code on GitHub:",
+    "faqQ0A2": "It is released under the MIT License, which means you are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software.",
+
     "faqQ1": "Can I hide the local file manager in the SFTP panel?",
     "faqQ1A1": "Yes, add the following CSS to Custom CSS in Settings (Settings → Appearance → Custom CSS):",
     "faqQ1A2": "After saving, the local section will be hidden and the remote section will expand to full width.",
@@ -190,6 +194,9 @@
     "homeFaqTitle": "Frequently Asked Questions",
     "homeFaqSubtitle": "Quick answers to common questions about electerm",
     "homeFaqViewAll": "View all FAQs →",
+    "homeFaq0Q": "Is electerm free and open-source?",
+    "homeFaq0A": "Yes! electerm is completely free and open-source (MIT license). View the source on GitHub.",
+
     "homeFaq1Q": "How do I keep my SSH session from timing out?",
     "homeFaq1A": "Set SSH Keep Alive Interval in Settings, or click the keep-alive icon in the terminal toolbar during an active session.",
     "homeFaq2Q": "Can I use SSH tunnels in electerm?",
@@ -198,8 +205,7 @@
     "homeFaq3A": "Open AI settings, enter your API URL, model name, and API key. Works with any OpenAI-compatible API.",
 
     "homeAuthorTitle": "About the Author",
-    "homeAuthorDesc1": "electerm is created and maintained by ZHAO Xudong, an independent developer passionate about building useful open-source tools for the developer community.",
-    "homeAuthorDesc2": "With years of experience in full-stack development, ZHAO built electerm to solve real-world problems faced by developers who need a reliable, cross-platform terminal client.",
+    "homeAuthorDesc1": "electerm is created and maintained by ZHAO Xudong.",
     "homeAuthorGithub": "View GitHub Profile →",
 
     "contactTitle": "Contact Us",

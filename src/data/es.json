@@ -108,6 +108,10 @@
     "faqDisclaimer": "Estas respuestas están basadas en el",
     "faqWikiLink": "Leer más en el Wiki de electerm",
 
+    "faqQ0": "¿Electerm es gratuito y de código abierto?",
+    "faqQ0A1": "¡Sí! electerm es completamente gratuito y de código abierto. Puedes ver, modificar y contribuir al código fuente en GitHub:",
+    "faqQ0A2": "Se publica bajo la licencia MIT, lo que significa que eres libre de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del software.",
+
     "faqQ1": "¿Puedo ocultar el administrador de archivos local en el panel SFTP?",
     "faqQ1A1": "Sí, añada el siguiente CSS en Configuración → Apariencia → CSS personalizado:",
     "faqQ1A2": "Después de guardar, la sección local se ocultará y la sección remota se expandirá a todo el ancho.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "Portapapeles — inserta el contenido actual del portapapeles",
 
     "faqQ12": "¿Puedo establecer un perfil predeterminado para nuevos marcadores?",
-    "faqQ12A": "Sí. Active la casilla 'Predeterminado' en un perfil en los ajustes de electerm. Ese perfil se seleccionará automáticamente al crear nuevos marcadores."
+    "faqQ12A": "Sí. Active la casilla 'Predeterminado' en un perfil en los ajustes de electerm. Ese perfil se seleccionará automáticamente al crear nuevos marcadores.",
+
+    "homeFaqTitle": "Preguntas frecuentes",
+    "homeFaqSubtitle": "Respuestas rápidas a preguntas comunes sobre electerm",
+    "homeFaqViewAll": "Ver todas las preguntas frecuentes →",
+    "homeFaq0Q": "¿Electerm es gratuito y de código abierto?",
+    "homeFaq0A": "¡Sí! electerm es completamente gratuito y de código abierto (licencia MIT). Ve el código en GitHub.",
+
+    "homeFaq1Q": "¿Cómo evito que mi sesión SSH se cierre por inactividad?",
+    "homeFaq1A": "Configure el intervalo de Keep Alive en Ajustes, o haga clic en el icono de keep-alive en la barra de herramientas del terminal durante una sesión activa.",
+    "homeFaq2Q": "¿Puedo usar túneles SSH en electerm?",
+    "homeFaq2A": "Sí, configure el reenvío de puertos local → remoto o remoto → local al crear o editar un marcador SSH.",
+    "homeFaq3Q": "¿Cómo configuro el asistente de IA?",
+    "homeFaq3A": "Abra los ajustes de IA, introduzca la URL de la API, el nombre del modelo y la clave de API. Funciona con cualquier API compatible con OpenAI.",
+
+    "homeAuthorTitle": "Sobre el autor",
+    "homeAuthorDesc1": "electerm fue creado y es mantenido por ZHAO Xudong.",
+    "homeAuthorGithub": "Ver perfil de GitHub →"
   }
 }

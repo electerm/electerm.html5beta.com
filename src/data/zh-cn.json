@@ -108,6 +108,10 @@
     "faqDisclaimer": "以下答案基于",
     "faqWikiLink": "在 electerm Wiki 上阅读更多",
 
+    "faqQ0": "electerm 是免费开源的吗？",
+    "faqQ0A1": "是的！electerm 是完全免费的开源软件。您可以在 GitHub 上查看、修改和贡献源代码：",
+    "faqQ0A2": "它基于 MIT 许可证发布，这意味着您可以自由使用、复制、修改、合并、发布、分发、再许可和/或销售该软件的副本。",
+
     "faqQ1": "如何隐藏 SFTP 面板中的本地文件管理器？",
     "faqQ1A1": "可以，将以下 CSS 添加到设置页的自定义 CSS 中（设置 → 外观 → 自定义 CSS）：",
     "faqQ1A2": "保存后，本地区域将被隐藏，远程区域将扩展到全宽。",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "剪贴板 — 插入当前剪贴板内容",
 
     "faqQ12": "可以为新书签设置默认配置吗？",
-    "faqQ12A": "可以。在 electerm 设置中，在某个配置上启用「默认」复选框。该配置将在创建新书签时自动选用。"
+    "faqQ12A": "可以。在 electerm 设置中，在某个配置上启用「默认」复选框。该配置将在创建新书签时自动选用。",
+
+    "homeFaqTitle": "常见问题",
+    "homeFaqSubtitle": "关于 electerm 的常见问题快速解答",
+    "homeFaqViewAll": "查看全部常见问题 →",
+    "homeFaq0Q": "electerm 是免费开源的吗？",
+    "homeFaq0A": "是的！electerm 是完全免费的开源软件（MIT 许可证）。在 GitHub 上查看源代码。",
+
+    "homeFaq1Q": "如何防止 SSH 会话超时？",
+    "homeFaq1A": "在设置中配置 Keep Alive 间隔，或在活动会话期间点击终端工具栏中的 keep-alive 图标。",
+    "homeFaq2Q": "可以在 electerm 中使用 SSH 隧道吗？",
+    "homeFaq2A": "可以。在创建或编辑 SSH 书签时，可以配置本地到远程或远程到本地的端口转发。",
+    "homeFaq3Q": "如何配置 AI 助手？",
+    "homeFaq3A": "打开 AI 设置，输入 API URL、模型名称和 API 密钥。兼容任何 OpenAI 兼容的 API。",
+
+    "homeAuthorTitle": "关于作者",
+    "homeAuthorDesc1": "electerm 由 ZHAO Xudong 创建并维护。",
+    "homeAuthorGithub": "查看 GitHub 个人主页 →"
   }
 }

@@ -108,6 +108,10 @@
     "faqDisclaimer": "Te odpowiedzi są oparte na",
     "faqWikiLink": "Czytaj więcej na Wiki electerm",
 
+    "faqQ0": "Czy electerm jest darmowy i open-source?",
+    "faqQ0A1": "Tak! electerm jest w pełni darmowym oprogramowaniem open-source. Możesz przeglądać, modyfikować i współtworzyć kod źródłowy na GitHub:",
+    "faqQ0A2": "Jest wydany na licencji MIT, co oznacza, że możesz swobodnie używać, kopiować, modyfikować, łączyć, publikować, dystrybuować, sublicencjonować i/lub sprzedawać kopie oprogramowania.",
+
     "faqQ1": "Czy mogę ukryć lokalny menedżer plików w panelu SFTP?",
     "faqQ1A1": "Tak, dodaj następujący CSS w Ustawienia → Wygląd → Niestandardowy CSS:",
     "faqQ1A2": "Po zapisaniu sekcja lokalna zostanie ukryta, a sekcja zdalna rozszerzy się na pełną szerokość.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "Schowek — wstawia bieżącą zawartość schowka",
 
     "faqQ12": "Czy mogę ustawić domyślny profil dla nowych zakładek?",
-    "faqQ12A": "Tak. Włącz pole wyboru 'Domyślny' dla profilu w ustawieniach electerm. Ten profil będzie automatycznie wybierany podczas tworzenia nowych zakładek."
+    "faqQ12A": "Tak. Włącz pole wyboru 'Domyślny' dla profilu w ustawieniach electerm. Ten profil będzie automatycznie wybierany podczas tworzenia nowych zakładek.",
+
+    "homeFaqTitle": "Często zadawane pytania",
+    "homeFaqSubtitle": "Szybkie odpowiedzi na najczęstsze pytania dotyczące electerm",
+    "homeFaqViewAll": "Zobacz wszystkie FAQ →",
+    "homeFaq0Q": "Czy electerm jest darmowy i open-source?",
+    "homeFaq0A": "Tak! electerm jest w pełni darmowy i open-source (licencja MIT). Zobacz kod źródłowy na GitHub.",
+
+    "homeFaq1Q": "Jak zapobiec wygaśnięciu sesji SSH?",
+    "homeFaq1A": "Ustaw interwał Keep Alive w ustawieniach lub kliknij ikonę keep-alive na pasku narzędzi terminala podczas aktywnej sesji.",
+    "homeFaq2Q": "Czy mogę używać tuneli SSH w electerm?",
+    "homeFaq2A": "Tak, skonfiguruj przekierowanie portów lokalny → zdalny lub zdalny → lokalny podczas tworzenia lub edycji zakładki SSH.",
+    "homeFaq3Q": "Jak skonfigurować asystenta AI?",
+    "homeFaq3A": "Otwórz ustawienia AI, wprowadź URL API, nazwę modelu i klucz API. Działa z każdym API kompatybilnym z OpenAI.",
+
+    "homeAuthorTitle": "O autorze",
+    "homeAuthorDesc1": "electerm został stworzony i jest utrzymywany przez ZHAO Xudong.",
+    "homeAuthorGithub": "Zobacz profil na GitHub →"
   }
 }

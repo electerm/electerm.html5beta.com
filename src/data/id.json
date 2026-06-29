@@ -108,6 +108,10 @@
     "faqDisclaimer": "Jawaban ini didasarkan pada",
     "faqWikiLink": "Baca selengkapnya di Wiki electerm",
 
+    "faqQ0": "Apakah electerm gratis dan sumber terbuka?",
+    "faqQ0A1": "Ya! electerm adalah perangkat lunak gratis dan sumber terbuka sepenuhnya. Anda dapat melihat, memodifikasi, dan berkontribusi pada kode sumber di GitHub:",
+    "faqQ0A2": "Ini dirilis di bawah Lisensi MIT, yang berarti Anda bebas menggunakan, menyalin, memodifikasi, menggabungkan, menerbitkan, mendistribusikan, mensublisensikan, dan/atau menjual salinan perangkat lunak.",
+
     "faqQ1": "Bisakah saya menyembunyikan manajer file lokal di panel SFTP?",
     "faqQ1A1": "Ya, tambahkan CSS berikut di Pengaturan → Tampilan → CSS Kustom:",
     "faqQ1A2": "Setelah disimpan, bagian lokal akan disembunyikan dan bagian remote akan melebar ke lebar penuh.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "Papan klip — menyisipkan konten papan klip saat ini",
 
     "faqQ12": "Bisakah saya menetapkan profil default untuk bookmark baru?",
-    "faqQ12A": "Ya. Aktifkan kotak centang 'Default' pada profil di pengaturan electerm. Profil tersebut akan otomatis dipilih saat membuat bookmark baru."
+    "faqQ12A": "Ya. Aktifkan kotak centang 'Default' pada profil di pengaturan electerm. Profil tersebut akan otomatis dipilih saat membuat bookmark baru.",
+
+    "homeFaqTitle": "Pertanyaan yang Sering Diajukan",
+    "homeFaqSubtitle": "Jawaban cepat untuk pertanyaan umum tentang electerm",
+    "homeFaqViewAll": "Lihat semua FAQ →",
+    "homeFaq0Q": "Apakah electerm gratis dan sumber terbuka?",
+    "homeFaq0A": "Ya! electerm sepenuhnya gratis dan sumber terbuka (lisensi MIT). Lihat kode sumber di GitHub.",
+
+    "homeFaq1Q": "Bagaimana cara mencegah sesi SSH saya timeout?",
+    "homeFaq1A": "Atur Interval Keep Alive di Pengaturan, atau klik ikon keep-alive di toolbar terminal selama sesi aktif.",
+    "homeFaq2Q": "Bisakah saya menggunakan terowongan SSH di electerm?",
+    "homeFaq2A": "Ya, konfigurasikan penerusan port lokal → remote atau remote → lokal saat membuat atau mengedit bookmark SSH.",
+    "homeFaq3Q": "Bagaimana cara mengkonfigurasi asisten AI?",
+    "homeFaq3A": "Buka pengaturan AI, masukkan URL API, nama model, dan kunci API. Bekerja dengan API apa pun yang kompatibel dengan OpenAI.",
+
+    "homeAuthorTitle": "Tentang Penulis",
+    "homeAuthorDesc1": "electerm dibuat dan dipelihara oleh ZHAO Xudong.",
+    "homeAuthorGithub": "Lihat Profil GitHub →"
   }
 }

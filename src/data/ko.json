@@ -108,6 +108,10 @@
     "faqDisclaimer": "이 답변들은 다음을 기반으로 합니다",
     "faqWikiLink": "electerm Wiki에서 더 읽기",
 
+    "faqQ0": "electerm은 무료 오픈소스인가요?",
+    "faqQ0A1": "네! electerm은 완전히 무료인 오픈소스 소프트웨어입니다. GitHub에서 소스 코드를 확인, 수정 및 기여할 수 있습니다:",
+    "faqQ0A2": "MIT 라이선스로 배포되므로 소프트웨어를 자유롭게 사용, 복사, 수정, 병합, 게시, 배포, 서브라이선스 및/또는 판매할 수 있습니다.",
+
     "faqQ1": "SFTP 패널에서 로컬 파일 관리자를 숨길 수 있나요?",
     "faqQ1A1": "네. 다음 CSS를 설정의 사용자 CSS에 추가하세요(설정 → 외관 → 사용자 CSS)：",
     "faqQ1A2": "저장 후 로컬 섹션이 숨겨지고 원격 섹션이 전체 너비로 확장됩니다.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "클립보드 — 현재 클립보드 내용 삽입",
 
     "faqQ12": "새 북마크에 기본 프로필을 설정할 수 있나요?",
-    "faqQ12A": "네. electerm 설정에서 프로필의 '기본' 체크박스를 활성화하세요. 새 북마크 생성 시 해당 프로필이 자동으로 선택됩니다."
+    "faqQ12A": "네. electerm 설정에서 프로필의 '기본' 체크박스를 활성화하세요. 새 북마크 생성 시 해당 프로필이 자동으로 선택됩니다.",
+
+    "homeFaqTitle": "자주 묻는 질문",
+    "homeFaqSubtitle": "electerm에 대한 자주 묻는 질문과 빠른 답변",
+    "homeFaqViewAll": "모든 FAQ 보기 →",
+    "homeFaq0Q": "electerm은 무료 오픈소스인가요?",
+    "homeFaq0A": "네! electerm은 완전 무료 오픈소스 소프트웨어입니다(MIT 라이선스). GitHub에서 소스 코드를 확인하세요.",
+
+    "homeFaq1Q": "SSH 세션 시간 초과를 방지하려면 어떻게 해야 하나요?",
+    "homeFaq1A": "설정에서 Keep Alive 간격을 설정하거나, 활성 세션 중 터미널 도구 모음에서 keep-alive 아이콘을 클릭하세요.",
+    "homeFaq2Q": "electerm에서 SSH 터널을 사용할 수 있나요?",
+    "homeFaq2A": "네. SSH 북마크 생성 또는 편집 시 로컬→원격 또는 원격→로컬 포트 전달을 구성할 수 있습니다.",
+    "homeFaq3Q": "AI 어시스턴트를 어떻게 구성하나요?",
+    "homeFaq3A": "AI 설정을 열고 API URL, 모델 이름, API 키를 입력하세요. OpenAI 호환 API에서 작동합니다.",
+
+    "homeAuthorTitle": "저자 소개",
+    "homeAuthorDesc1": "electerm은 ZHAO Xudong이 만들고 유지관리합니다.",
+    "homeAuthorGithub": "GitHub 프로필 보기 →"
   }
 }

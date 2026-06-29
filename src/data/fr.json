@@ -108,6 +108,10 @@
     "faqDisclaimer": "Ces réponses sont basées sur le",
     "faqWikiLink": "En savoir plus sur le Wiki electerm",
 
+    "faqQ0": "Electerm est-il gratuit et open-source ?",
+    "faqQ0A1": "Oui ! electerm est un logiciel entièrement gratuit et open-source. Vous pouvez consulter, modifier et contribuer au code source sur GitHub :",
+    "faqQ0A2": "Il est publié sous la licence MIT, ce qui signifie que vous êtes libre d'utiliser, copier, modifier, fusionner, publier, distribuer, sous-licencier et/ou vendre des copies du logiciel.",
+
     "faqQ1": "Puis-je masquer le gestionnaire de fichiers local dans le panneau SFTP ?",
     "faqQ1A1": "Oui, ajoutez le CSS suivant dans Paramètres → Apparence → CSS personnalisé :",
     "faqQ1A2": "Après enregistrement, la section locale sera masquée et la section distante s'étendra sur toute la largeur.",
@@ -181,6 +185,23 @@
     "faqQ11A2Clipboard": "Presse-papiers — insère le contenu actuel du presse-papiers",
 
     "faqQ12": "Puis-je définir un profil par défaut pour les nouveaux signets ?",
-    "faqQ12A": "Oui. Activez la case à cocher 'Défaut' sur un profil dans les paramètres d'electerm. Ce profil sera automatiquement sélectionné lors de la création de nouveaux signets."
+    "faqQ12A": "Oui. Activez la case à cocher 'Défaut' sur un profil dans les paramètres d'electerm. Ce profil sera automatiquement sélectionné lors de la création de nouveaux signets.",
+
+    "homeFaqTitle": "Foire aux questions",
+    "homeFaqSubtitle": "Réponses rapides aux questions courantes sur electerm",
+    "homeFaqViewAll": "Voir toutes les FAQ →",
+    "homeFaq0Q": "Electerm est-il gratuit et open-source ?",
+    "homeFaq0A": "Oui ! electerm est entièrement gratuit et open-source (licence MIT). Voir le code sur GitHub.",
+
+    "homeFaq1Q": "Comment empêcher ma session SSH d'expirer ?",
+    "homeFaq1A": "Définissez l'intervalle Keep Alive dans les paramètres, ou cliquez sur l'icône keep-alive dans la barre d'outils du terminal pendant une session active.",
+    "homeFaq2Q": "Puis-je utiliser des tunnels SSH dans electerm ?",
+    "homeFaq2A": "Oui, configurez le transfert de port local → distant ou distant → local lors de la création ou de la modification d'un signet SSH.",
+    "homeFaq3Q": "Comment configurer l'assistant IA ?",
+    "homeFaq3A": "Ouvrez les paramètres IA, saisissez l'URL de l'API, le nom du modèle et la clé API. Fonctionne avec toute API compatible OpenAI.",
+
+    "homeAuthorTitle": "À propos de l'auteur",
+    "homeAuthorDesc1": "electerm a été créé et est maintenu par ZHAO Xudong.",
+    "homeAuthorGithub": "Voir le profil GitHub →"
   }
 }

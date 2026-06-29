@@ -143,7 +143,19 @@ html(lang=langCode)
 
         .faq-list(itemscope itemtype='https://schema.org/FAQPage')
 
-          // Q1: Hide local SFTP panel
+          // Q0: Free and open-source
+          .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
+            button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
+              span(itemprop='name') #{lang.lang.faqQ0}
+              span.faq-toggle ▾
+            .faq-answer(itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer')
+              div(itemprop='text')
+                p #{lang.lang.faqQ0A1}
+                p
+                  a(href='https://github.com/electerm/electerm', target='_blank', rel='noreferrer') https://github.com/electerm/electerm
+                p #{lang.lang.faqQ0A2}
+                p
+                  a(href='https://github.com/electerm/electerm/blob/master/LICENSE', target='_blank', rel='noreferrer') https://github.com/electerm/electerm/blob/master/LICENSE
           .faq-item(itemscope itemprop='mainEntity' itemtype='https://schema.org/Question')
             button.faq-question(type='button', onclick='this.parentElement.classList.toggle("open")')
               span(itemprop='name') #{lang.lang.faqQ1}
