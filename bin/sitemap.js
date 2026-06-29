@@ -58,7 +58,7 @@ async function buildSiteMap () {
 
   // Other static pages (sponsor-electerm, privacy-policy, etc)
   for (const page of data.pages) {
-    if (page !== 'deb' && page !== 'faq') {
+    if (page !== 'faq') {
       urls.push({
         loc: host + '/' + page + '/',
         lastmod: dayjs(state.mtime).format(fmt),

@@ -101,83 +101,68 @@ async function main () {
   for (const item of pages) {
     const f = resolve(cwd, 'src/views/' + item + '.pug')
 
-    if (item === 'deb') {
-      const debDir = resolve(cwd, 'public/deb')
-      await fs.mkdir(debDir, { recursive: true })
-      await buildPug(f, resolve(debDir, 'index.html'), {
-        ...data,
-        langCode,
-        lang,
-        desc: lang.lang.debSubtitle,
-        url: `${h}/deb/`,
-        cssUrl: '/index.bundle.css'
-      })
-    } else {
-      // Build at /{item}/index.html
-      const dir = resolve(cwd, `public/${item}`)
-      await fs.mkdir(dir, { recursive: true })
+    if (item === 'faq') {
+      // Build FAQ for all languages
+      for (const langItem of langs) {
+        const { id: lid, slug: lslug, langCode: lc, lang: l } = langItem
+        const faqLangs = langs.map(lm => ({
+          ...lm,
+          url: lm.slug === '' ? `${h}/faq/` : `${h}/faq/${lm.slug}/`
+        }))
+        const descKey = 'faqTitle'
 
-      if (item === 'faq') {
-        // Build FAQ for all languages
-        for (const langItem of langs) {
-          const { id: lid, slug: lslug, langCode: lc, lang: l } = langItem
-          const faqLangs = langs.map(lm => ({
-            ...lm,
-            url: lm.slug === '' ? `${h}/faq/` : `${h}/faq/${lm.slug}/`
-          }))
-          const descKey = 'faqTitle'
-
-          if (lid === 'en_us') {
-            // English → public/faq/index.html
-            const dir = resolve(cwd, 'public/faq')
-            await fs.mkdir(dir, { recursive: true })
-            await buildPug(f, resolve(dir, 'index.html'), {
-              ...data,
-              langs: faqLangs,
-              langCode: lc,
-              lang: l,
-              desc: l.lang[descKey] || l.lang.desc,
-              url: `${h}/faq/`,
-              cssUrl: '/index.bundle.css'
-            })
-            // Redirect from old /faq.html
-            const redirectFrom = resolve(cwd, 'public/faq.html')
-            const target = `${h}/faq/`
-            await fs.writeFile(redirectFrom, REDIRECT_TEMPLATE(target))
-          } else {
-            // Other locales → public/faq/{slug}/index.html
-            const dir = resolve(cwd, `public/faq/${lslug}`)
-            await fs.mkdir(dir, { recursive: true })
-            await buildPug(f, resolve(dir, 'index.html'), {
-              ...data,
-              langs: faqLangs,
-              langCode: lc,
-              lang: l,
-              desc: l.lang[descKey] || l.lang.desc,
-              url: `${h}/faq/${lslug}/`,
-              cssUrl: '/index.bundle.css'
-            })
-          }
+        if (lid === 'en_us') {
+          // English → public/faq/index.html
+          const dir = resolve(cwd, 'public/faq')
+          await fs.mkdir(dir, { recursive: true })
+          await buildPug(f, resolve(dir, 'index.html'), {
+            ...data,
+            langs: faqLangs,
+            langCode: lc,
+            lang: l,
+            desc: l.lang[descKey] || l.lang.desc,
+            url: `${h}/faq/`,
+            cssUrl: '/index.bundle.css'
+          })
+          // Redirect from old /faq.html
+          const redirectFrom = resolve(cwd, 'public/faq.html')
+          const target = `${h}/faq/`
+          await fs.writeFile(redirectFrom, REDIRECT_TEMPLATE(target))
+        } else {
+          // Other locales → public/faq/{slug}/index.html
+          const dir = resolve(cwd, `public/faq/${lslug}`)
+          await fs.mkdir(dir, { recursive: true })
+          await buildPug(f, resolve(dir, 'index.html'), {
+            ...data,
+            langs: faqLangs,
+            langCode: lc,
+            lang: l,
+            desc: l.lang[descKey] || l.lang.desc,
+            url: `${h}/faq/${lslug}/`,
+            cssUrl: '/index.bundle.css'
+          })
         }
-        console.log('✅ Built FAQ pages for ' + langs.length + ' languages')
-        continue
       }
-
-      const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : 'privacyPolicy'
-      await buildPug(f, resolve(dir, 'index.html'), {
-        ...data,
-        langCode,
-        lang,
-        desc: lang.lang[descKey] || lang.lang.desc,
-        url: `${h}/${item}/`,
-        cssUrl: '/index.bundle.css'
-      })
-
-      // Redirect from old /{item}.html
-      const redirectFrom = resolve(cwd, `public/${item}.html`)
-      const target = `${h}/${item}/`
-      await fs.writeFile(redirectFrom, REDIRECT_TEMPLATE(target))
+      console.log('✅ Built FAQ pages for ' + langs.length + ' languages')
+      continue
     }
+
+    const dir = resolve(cwd, `public/${item}`)
+    await fs.mkdir(dir, { recursive: true })
+    const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : 'privacyPolicy'
+    await buildPug(f, resolve(dir, 'index.html'), {
+      ...data,
+      langCode,
+      lang,
+      desc: lang.lang[descKey] || lang.lang.desc,
+      url: `${h}/${item}/`,
+      cssUrl: '/index.bundle.css'
+    })
+
+    // Redirect from old /{item}.html
+    const redirectFrom = resolve(cwd, `public/${item}.html`)
+    const target = `${h}/${item}/`
+    await fs.writeFile(redirectFrom, REDIRECT_TEMPLATE(target))
   }
 
   console.log('✅ Built static pages (English)')

@@ -202,7 +202,7 @@ function createServer () {
       return handleLocale(req, res)
     }
     // Check if it's a known page
-    if (data.pages.includes(param) || param === 'deb') {
+    if (data.pages.includes(param)) {
       return handlePage(req, res)
     }
     res.status(404).send('Not found')

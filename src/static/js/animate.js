@@ -2,6 +2,7 @@
  * Canvas animation for hero background
  * Tech-style: grid + particle network + feature phrase rain + hex nodes
  */
+/* global requestAnimationFrame, cancelAnimationFrame */
 export default class HeroAnimate {
   constructor (el) {
     this.el = el

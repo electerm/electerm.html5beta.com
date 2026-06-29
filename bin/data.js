@@ -300,7 +300,6 @@ export default {
   videos: videos.videos,
   pages: [
     'sponsor-electerm',
-    'deb',
     'privacy-policy',
     'faq'
   ],
@@ -338,10 +337,6 @@ export default {
     {
       url: 'https://snapcraft.io/electerm',
       title: 'Snap Store'
-    },
-    {
-      url: 'https://electerm-repos.html5beta.com/deb',
-      title: 'Debian Repository'
     },
     {
       url: 'electerm@atomgit',
@@ -404,8 +399,7 @@ export default {
         { title: 'electerm-web', url: 'https://github.com/electerm/electerm-web', external: true },
         { title: 'electerm-web-docker', url: 'https://github.com/electerm/electerm-web-docker', external: true },
         { title: 'electerm-locales', url: 'https://github.com/electerm/electerm-locales', external: true },
-        { title: 'electerm cloud', url: 'https://sync.electerm.org/', external: true },
-        { title: 'Debian Repository', url: 'https://electerm-repos.html5beta.com/deb', external: true }
+        { title: 'electerm cloud', url: 'https://sync.electerm.org/', external: true }
       ]
     },
     {

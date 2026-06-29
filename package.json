@@ -13,7 +13,6 @@
     "build-html": "node bin/build-all.js",
     "build-css": "node bin/build-css.js",
     "down": "node bin/fetch-release-info.js",
-    "deb": "node bin/build-deb.js",
     "sitemap": "node bin/sitemap.js",
     "fix": "standard --fix",
     "lint": "standard",
