@@ -4,9 +4,10 @@
   "flag": "🇺🇸",
   "match": "en",
   "lang": {
-    "desc": "Terminal/ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice client(linux, mac, win)",
+    "desc": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
 
     "headerHome": "Home",
+    "headerAbout": "About",
     "headerFaq": "FAQ",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm Online",
@@ -20,8 +21,8 @@
 
     "featuresTitle": "Features",
     "featuresSubtitle": "Everything you need in a terminal client",
-    "featureAllInOneTitle": "All-in-One Client",
-    "featureAllInOneDesc": "Works as a terminal, file manager, and SSH/SFTP/FTP/Telnet/Serial port/RDP/VNC/Spice client in one app.",
+    "featureAllInOneTitle": "Open-Sourced All-in-One Client",
+    "featureAllInOneDesc": "Free and open-sourced terminal, file manager, and SSH/SFTP/FTP/Telnet/Serial port/RDP/VNC/Spice client in one app.",
     "featureAiAssistantTitle": "AI Assistant",
     "featureAiAssistantDesc": "Works with any OpenAI-compatible LLM API. Generate commands, explain commands, generate scripts, create bookmarks from natural language, and run tasks directly in Agent mode.",
     "featureSecureAuthTitle": "Secure Auth",
@@ -46,7 +47,7 @@
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64), macOS 10.15+ (x64/arm64), Linux (x64/arm64/Loong64) including glibc 2.17+.",
 
     "downloadTitle": "Download",
-    "downloadSubtitle": "Free and open source — choose your platform",
+    "downloadSubtitle": "Free and open-source — choose your platform (Windows, macOS, Linux)",
     "downloadViewAll": "View all releases on GitHub →",
 
     "changelogTitle": "Release Notes",
@@ -55,7 +56,7 @@
     "communityTitle": "Join the Community",
     "communityWechatDesc": "Join our WeChat community for support and updates",
 
-    "footerBrandDesc": "Terminal/SSH/SFTP/Telnet/Serial port/RDP/VNC/Spice client for Linux, macOS, and Windows.",
+    "footerBrandDesc": "Free and open-source terminal/SSH/SFTP/Telnet/Serial port/RDP/VNC/Spice client for Linux, macOS, and Windows.",
     "footerProduct": "Product",
     "footerCommunity": "Community",
     "footerRelated": "Related",
@@ -102,6 +103,9 @@
     "starHistoryTitle": "Star History",
 
     "footerFaq": "FAQ",
+    "footerAbout": "About",
+    "footerTerms": "Terms & Conditions",
+    "footerContact": "Contact",
 
     "faqTitle": "Frequently Asked Questions",
     "faqSubtitle": "Common questions and answers about electem terminal client",
@@ -181,6 +185,24 @@
     "faqQ11A2Clipboard": "Clipboard — inserts the current clipboard content",
 
     "faqQ12": "Can I set a default profile for new bookmarks?",
-    "faqQ12A": "Yes. Enable the 'Default' checkbox on a profile in electerm settings. That profile will be automatically selected when creating new bookmarks."
+    "faqQ12A": "Yes. Enable the 'Default' checkbox on a profile in electerm settings. That profile will be automatically selected when creating new bookmarks.",
+
+    "homeFaqTitle": "Frequently Asked Questions",
+    "homeFaqSubtitle": "Quick answers to common questions about electerm",
+    "homeFaqViewAll": "View all FAQs →",
+    "homeFaq1Q": "How do I keep my SSH session from timing out?",
+    "homeFaq1A": "Set SSH Keep Alive Interval in Settings, or click the keep-alive icon in the terminal toolbar during an active session.",
+    "homeFaq2Q": "Can I use SSH tunnels in electerm?",
+    "homeFaq2A": "Yes, configure local → remote or remote → local port forwarding when creating or editing an SSH bookmark.",
+    "homeFaq3Q": "How do I configure AI assistant?",
+    "homeFaq3A": "Open AI settings, enter your API URL, model name, and API key. Works with any OpenAI-compatible API.",
+
+    "homeAuthorTitle": "About the Author",
+    "homeAuthorDesc1": "electerm is created and maintained by ZHAO Xudong, an independent developer passionate about building useful open-source tools for the developer community.",
+    "homeAuthorDesc2": "With years of experience in full-stack development, ZHAO built electerm to solve real-world problems faced by developers who need a reliable, cross-platform terminal client.",
+    "homeAuthorGithub": "View GitHub Profile →",
+
+    "contactTitle": "Contact Us",
+    "termsTitle": "Terms & Conditions"
   }
 }

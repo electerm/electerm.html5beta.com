@@ -8,6 +8,7 @@ footer.site-footer
       .footer-col
         h4 #{lang.lang.footerProduct}
         ul
+          li: a(href='/about/') #{lang.lang.footerAbout}
           li: a(href='#downloads') #{lang.lang.footerDownload}
           li: a(href='https://cloud.electerm.org', target='_blank', rel='noreferrer') #{lang.lang.footerElectermOnline}
           li: a(href='/videos') #{lang.lang.footerVideoGuides}
@@ -29,7 +30,10 @@ footer.site-footer
     .footer-bottom
       p © 2024 ZHAO Xudong. MIT License.
       .footer-bottom-links
+        a(href='/about/') #{lang.lang.footerAbout}
+        a(href='/contact/') #{lang.lang.footerContact}
         a(href='/faq/') #{lang.lang.footerFaq}
+        a(href='/terms/') #{lang.lang.footerTerms}
         a(href='/privacy-policy/') #{lang.lang.footerPrivacyPolicy}
         a(href='https://html5beta.com', target='_blank', rel='noreferrer') #{lang.lang.footerAuthor}
         a(href='http://github.com/zxdong262', target='_blank', rel='noreferrer') GitHub

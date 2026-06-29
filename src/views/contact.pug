@@ -1,0 +1,46 @@
+doctype html
+html(lang=langCode)
+  head
+    title #{siteName} - Contact
+    meta(name='description', content='Contact the electerm team.')
+    meta(name='keywords', content=keywords)
+    meta(property='og:title' content='electerm - Contact')
+    meta(property='og:description' content='Contact the electerm team.')
+    meta(name='twitter:title' content='electerm - Contact')
+    meta(name='twitter:description' content='Contact the electerm team.')
+    include ./parts/react-header
+  body
+    include ./parts/header
+    main.privacy-page
+      .container
+        .privacy-content
+          h1 Contact Us
+
+          p.last-updated We'd love to hear from you. Choose the option that works best.
+
+          .contact-grid
+            .contact-card
+              .contact-icon ✉️
+              h3 Email
+              p Send an email directly to the author.
+              a.contact-link(href='mailto:zxdong@gmail.com') zxdong@gmail.com
+
+            .contact-card
+              .contact-icon 💬
+              h3 GitHub Discussions
+              p Start a discussion, ask questions, or share ideas with the community.
+              a.contact-link(href='https://github.com/electerm/electerm/discussions', target='_blank', rel='noreferrer') Join Discussions ↗
+
+            .contact-card
+              .contact-icon 🐛
+              h3 Report Issues
+              p Found a bug or have a feature request? Open an issue on GitHub.
+              a.contact-link(href='https://github.com/electerm/electerm/issues', target='_blank', rel='noreferrer') Submit Issue ↗
+
+          .contact-wechat-section
+            h2 WeChat Community
+            p Join our WeChat community for support and updates.
+            img.contact-qr(src='https://electerm.org/electerm-wechat-group-qr.jpg', alt='WeChat Group QR Code')
+
+    include ./parts/footer
+    include ./parts/react-footer

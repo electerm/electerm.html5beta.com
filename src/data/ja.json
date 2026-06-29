@@ -20,7 +20,7 @@
 
     "featuresTitle": "機能",
     "featuresSubtitle": "ターミナルクライアントに必要なすべて",
-    "featureAllInOneTitle": "オールインワンクライアント",
+    "featureAllInOneTitle": "オープンソース オールインワンクライアント",
     "featureAllInOneDesc": "ターミナル、ファイルマネージャー、SSH/SFTP/FTP/Telnet/シリアルポート/RDP/VNC/Spiceクライアントを一つのアプリに。",
     "featureAiAssistantTitle": "AIアシスタント",
     "featureAiAssistantDesc": "OpenAI互換のLLM APIで動作します。自然言語からコマンドの生成、コマンドの説明、スクリプト生成、ブックマーク作成、そしてAgentモードでのタスク実行が可能です。",

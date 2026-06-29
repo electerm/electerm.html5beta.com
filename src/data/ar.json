@@ -20,7 +20,7 @@
 
     "featuresTitle": "الميزات",
     "featuresSubtitle": "كل ما تحتاجه في عميل طرفية",
-    "featureAllInOneTitle": "عميل شامل",
+    "featureAllInOneTitle": "عميل شامل مفتوح المصدر",
     "featureAllInOneDesc": "يعمل كطرفية وמנהל ملفات وعميل SSH/SFTP/FTP/Telnet/منفذ تسلسلي/RDP/VNC/Spice في تطبيق واحد.",
     "featureAiAssistantTitle": "مساعد الذكاء الاصطناعي",
     "featureAiAssistantDesc": "يعمل مع أي واجهة برمجة تطبيقات LLM متوافقة مع OpenAI. قم بإنشاء الأوامر وشرح الأوامر وإنشاء البرامج النصية وإنشاء الإشارات المرجعية من اللغة الطبيعية وتشغيل المهام مباشرة في وضع Agent.",

@@ -20,7 +20,7 @@
 
     "featuresTitle": "功能特色",
     "featuresSubtitle": "終端客戶端所需的一切",
-    "featureAllInOneTitle": "多合一客戶端",
+    "featureAllInOneTitle": "開源多合一客戶端",
     "featureAllInOneDesc": "集終端、檔案管理器、SSH/SFTP/FTP/Telnet/序列埠/RDP/VNC/Spice 客戶端於一體。",
     "featureAiAssistantTitle": "AI 助手",
     "featureAiAssistantDesc": "相容於任意 OpenAI 相容的 LLM API。可透過自然語言生成命令、解釋命令、產生腳本、建立書籤，並直接在 Agent 模式下執行任務。",

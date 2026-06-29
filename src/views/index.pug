@@ -1,12 +1,12 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client
+    title #{siteName} - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
-    meta(property='og:title' content='electerm - Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(property='og:title' content='electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
     meta(property='og:description' content=desc)
-    meta(name='twitter:title' content='electerm - Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(name='twitter:title' content='electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
     meta(name='twitter:description' content=desc)
     include ./parts/react-header
     script(type='application/ld+json').
@@ -14,7 +14,7 @@ html(lang=langCode)
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "electerm",
-        "description": "Terminal/ssh/telnet/serialport/sftp client in Linux, Mac, Win",
+        "description": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
         "url": "https://electerm.org",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, macOS, Linux",
@@ -52,6 +52,8 @@ html(lang=langCode)
     include ./parts/community
     include ./parts/sponsors
     include ./parts/star-history
+    include ./parts/faq-home
+    include ./parts/author
     #container
     include ./parts/footer
     include ./parts/react-footer

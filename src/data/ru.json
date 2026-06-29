@@ -20,7 +20,7 @@
 
     "featuresTitle": "Возможности",
     "featuresSubtitle": "Всё, что вам нужно в терминальном клиенте",
-    "featureAllInOneTitle": "Универсальный клиент",
+    "featureAllInOneTitle": "Открытый универсальный клиент",
     "featureAllInOneDesc": "Работает как терминал, файловый менеджер и клиент SSH/SFTP/FTP/Telnet/последовательного порта/RDP/VNC/Spice в одном приложении.",
     "featureAiAssistantTitle": "ИИ-ассистент",
     "featureAiAssistantDesc": "Работает с любым LLM API, совместимым с OpenAI. Создавайте команды, объясняйте команды, генерируйте скрипты, создавайте закладки из естественного языка и выполняйте задачи напрямую в режиме Agent.",

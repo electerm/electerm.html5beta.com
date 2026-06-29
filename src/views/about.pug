@@ -1,0 +1,136 @@
+doctype html
+html(lang=langCode)
+  head
+    title #{siteName} - About
+    meta(name='description', content='Learn more about electerm, the free and open-source terminal/SSH/SFTP client.')
+    meta(name='keywords', content=keywords)
+    meta(property='og:title' content='electerm - About')
+    meta(property='og:description' content='Learn more about electerm, the free and open-source terminal/SSH/SFTP client.')
+    meta(name='twitter:title' content='electerm - About')
+    meta(name='twitter:description' content='Learn more about electerm, the free and open-source terminal/SSH/SFTP client.')
+    include ./parts/react-header
+  body
+    include ./parts/header
+    main.about-page
+      .container
+        .about-content
+          h1 About electerm
+
+          p.about-lead electerm is a <strong>free and open-source</strong> terminal/SSH/SFTP/telnet/serialport/RDP/VNC/Spice/ftp client for Linux, macOS, and Windows.
+
+          p Built with web technologies (Electron, React, CSS), electerm combines a full-featured terminal emulator with a graphical SFTP file manager and multiple remote connection protocols in one app. The source code is available on <a href="https://github.com/electerm/electerm" target="_blank" rel="noreferrer">GitHub</a> under the MIT License.
+
+          h2 Features
+
+          ul
+            li Works as a terminal/file manager or SSH/SFTP/FTP/telnet/serialport/RDP/VNC/Spice client
+            li Supports Windows 7+ (x64/ARM64), macOS 10.15+ (x64/arm64), Linux (x64/arm64/Loong64), including older Linux with glibc 2.17+ (UOS, Kylin, Ubuntu 18.04, etc.)
+            li Global hotkey to toggle window visibility (similar to Guake, default <code>Ctrl+2</code>)
+            li Multi-platform (Linux, macOS, Windows)
+            li <strong>14+ languages</strong> via community translations — contributions welcome at <a href="https://github.com/electerm/electerm-locales" target="_blank" rel="noreferrer">electerm-locales</a>
+            li Double-click to directly edit remote files
+            li Authentication with publicKey + password
+            li Zmodem (rz/sz) file transfer
+            li SSH tunnel support
+            li <a href="https://github.com/trzsz/trzsz" target="_blank" rel="noreferrer">Trzsz</a> (trz/tsz) support, similar to rz/sz and compatible with tmux
+            li Transparent window (macOS, Windows)
+            li Terminal background image
+            li Global/session proxy
+            li Quick commands
+            li UI/terminal theme customization
+            li Sync bookmarks/themes/quick commands to GitHub/Gitee secret gist, WebDAV, custom server, or electerm cloud
+            li Quick input to one or all terminals
+            li AI assistant integration (supporting <a href="https://www.deepseek.com" target="_blank" rel="noreferrer">DeepSeek</a>, OpenAI, and any OpenAI-compatible API) for command suggestions, script writing, and explaining selected terminal content
+            li MCP (Model Context Protocol) widget for AI assistants and external tools integration — see <a href="https://github.com/electerm/electerm/wiki/MCP-Widget-Usage-Guide" target="_blank" rel="noreferrer">MCP Widget Usage Guide</a>
+            li Deep link support: open connections via URLs like <code>telnet://192.168.2.31:34554</code> or <code>ssh://user@host:22</code>
+            li Command line usage — see <a href="https://github.com/electerm/electerm/wiki/Command-line-usage" target="_blank" rel="noreferrer">wiki</a>
+
+          h2 Quick Links
+
+          .about-links-grid
+            .about-link-card
+              h3 📖 Documentation
+              p Full documentation on the official wiki.
+              a.about-link(href='https://github.com/electerm/electerm/wiki', target='_blank', rel='noreferrer') Visit Wiki ↗
+            .about-link-card
+              h3 🎥 Video Guides
+              p Watch tutorials and demos.
+              a.about-link(href='/videos') Watch Videos ↗
+            .about-link-card
+              h3 🐛 Report Issues
+              p Found a bug? Let us know.
+              a.about-link(href='https://github.com/electerm/electerm/issues', target='_blank', rel='noreferrer') Submit Issue ↗
+            .about-link-card
+              h3 💬 Discussions
+              p Join the community conversation.
+              a.about-link(href='https://github.com/electerm/electerm/discussions', target='_blank', rel='noreferrer') Join Discussion ↗
+
+          h2 Install
+
+          p electerm can be installed in several ways:
+
+          h3 macOS
+          pre
+            code brew install --cask electerm
+
+          h3 Windows
+          p Via winget:
+          pre
+            code winget install electerm.electerm
+          p Or via Scoop:
+          pre
+            code.
+              scoop bucket add dorado https://github.com/chawyehsu/dorado
+              scoop install dorado/electerm
+
+          h3 Linux
+          p Via Snap:
+          pre
+            code sudo snap install electerm --classic
+          p From Debian repository (Debian/Ubuntu-based systems):
+          p
+            a(href='https://electerm-repos.html5beta.com/deb', target='_blank', rel='noreferrer') https://electerm-repos.html5beta.com/deb
+          p From npm:
+          pre
+            code npm i -g electerm
+
+          h2 Development
+
+          p electerm is built with Node.js and Electron. Requirements: Node.js 24.x.
+
+          pre
+            code git clone git@github.com:electerm/electerm.git
+            br
+            code cd electerm
+            br
+            code npm config set legacy-peer-deps true
+            br
+            code npm i
+            br
+            br
+            code # start vite dev server (requires port 5570)
+            br
+            code npm start
+            br
+            br
+            code # in a separate terminal session run app
+            br
+            code npm run app
+
+          h2 Support the Project
+
+          p electerm is open-source and maintained by <a href="http://html5beta.com" target="_blank" rel="noreferrer">ZHAO Xudong</a>. You can support the project through:
+
+          ul
+            li
+              a(href='https://github.com/sponsors/electerm', target='_blank', rel='noreferrer') GitHub Sponsors
+            li
+              a(href='https://ko-fi.com/zhaoxudong', target='_blank', rel='noreferrer') Ko-fi
+            li WeChat donation (scan QR code on the home page)
+
+          h2 License
+
+          p electerm is released under the <a href='https://github.com/electerm/electerm/blob/master/LICENSE' target='_blank', rel='noreferrer'>MIT License</a>.
+
+    include ./parts/footer
+    include ./parts/react-footer

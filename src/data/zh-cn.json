@@ -20,7 +20,7 @@
 
     "featuresTitle": "功能特性",
     "featuresSubtitle": "终端客户端所需的一切",
-    "featureAllInOneTitle": "多合一客户端",
+    "featureAllInOneTitle": "开源多合一客户端",
     "featureAllInOneDesc": "集终端、文件管理器、SSH/SFTP/FTP/Telnet/串口/RDP/VNC/Spice 客户端于一体。",
     "featureAiAssistantTitle": "AI 助手",
     "featureAiAssistantDesc": "兼容任意 OpenAI 兼容的 LLM API。可以通过自然语言生成命令、解释命令、生成脚本、创建书签，并直接在 Agent 模式下执行任务。",

@@ -20,7 +20,7 @@
 
     "featuresTitle": "Özellikler",
     "featuresSubtitle": "Bir terminal istemcisinde ihtiyacınız olan her şey",
-    "featureAllInOneTitle": "Hepsi bir arada istemci",
+    "featureAllInOneTitle": "Açık kaynaklı hepsi bir arada istemci",
     "featureAllInOneDesc": "Tek bir uygulamada terminal, dosya yöneticisi ve SSH/SFTP/FTP/Telnet/seri port/RDP/VNC/Spice istemcisi olarak çalışır.",
     "featureAiAssistantTitle": "Yapay zeka asistanı",
     "featureAiAssistantDesc": "OpenAI uyumlu herhangi bir LLM API'si ile çalışır. Doğal dil ile komut oluşturun, komutları açıklayın, betikler oluşturun, yer imleri oluşturun ve görevleri doğrudan Agent modunda çalıştırın.",

@@ -20,7 +20,7 @@
 
     "featuresTitle": "기능",
     "featuresSubtitle": "터미널 클라이언트에 필요한 모든 것",
-    "featureAllInOneTitle": "올인원 클라이언트",
+    "featureAllInOneTitle": "오픈소스 올인원 클라이언트",
     "featureAllInOneDesc": "터미널, 파일 관리자, SSH/SFTP/FTP/Telnet/시리얼 포트/RDP/VNC/Spice 클라이언트를 하나의 앱에 통합.",
     "featureAiAssistantTitle": "AI 어시스턴트",
     "featureAiAssistantDesc": "OpenAI 호환 LLM API와 함께 작동합니다. 자연어로 명령 생성, 명령 설명, 스크립트 생성, 북마크 생성 및 Agent 모드에서 작업을 직접 실행할 수 있습니다.",

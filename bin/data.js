@@ -293,7 +293,7 @@ function createReleaseData () {
 }
 
 export default {
-  desc: 'Terminal/ssh/telnet/serialport/sftp client in Linux, Mac, Win',
+  desc: 'Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)',
   keywords: 'ssh,open-source,terminal,telnet,sftp,file-manager,linux-app,serialport,windows-app,macos-app,electerm',
   siteName: 'electerm',
   host: process.env.HOST,
@@ -301,7 +301,10 @@ export default {
   pages: [
     'sponsor-electerm',
     'privacy-policy',
-    'faq'
+    'faq',
+    'about',
+    'terms',
+    'contact'
   ],
   langs: createLocaleData(),
   ...createReleaseData(),

@@ -20,7 +20,7 @@
 
     "featuresTitle": "Funkcje",
     "featuresSubtitle": "Wszystko, czego potrzebujesz w kliencie terminala",
-    "featureAllInOneTitle": "Klient all-in-one",
+    "featureAllInOneTitle": "Otwartoźródłowy klient all-in-one",
     "featureAllInOneDesc": "Działa jako terminal, menedżer plików i klient SSH/SFTP/FTP/Telnet/portu szeregowego/RDP/VNC/Spice w jednej aplikacji.",
     "featureAiAssistantTitle": "Asystent AI",
     "featureAiAssistantDesc": "Działa z dowolnym API LLM kompatybilnym z OpenAI. Generuj polecenia, wyjaśniaj polecenia, twórz skrypty, twórz zakładki z języka naturalnego i uruchamiaj zadania bezpośrednio w trybie Agent.",

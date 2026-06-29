@@ -1,0 +1,82 @@
+doctype html
+html(lang=langCode)
+  head
+    title #{siteName} - Terms & Conditions
+    meta(name='description', content='Terms and Conditions for electerm website and software.')
+    meta(name='keywords', content=keywords)
+    meta(property='og:title' content='electerm - Terms & Conditions')
+    meta(property='og:description' content='Terms and Conditions for electerm website and software.')
+    meta(name='twitter:title' content='electerm - Terms & Conditions')
+    meta(name='twitter:description' content='Terms and Conditions for electerm website and software.')
+    include ./parts/react-header
+  body
+    include ./parts/header
+    main.privacy-page
+      .container
+        .privacy-content
+          h1 Terms & Conditions
+
+          p.last-updated Last updated: June 30, 2026
+
+          p These Terms & Conditions ("Terms") govern your use of the electerm software application and the electerm.org website (collectively, the "Service"). By using the Service, you agree to these Terms.
+
+          h2 1. Acceptance of Terms
+
+          p By downloading, installing, or using electerm, you agree to be bound by these Terms. If you do not agree, do not use the Service.
+
+          h2 2. License
+
+          p electerm is released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noreferrer">MIT License</a>. This means you are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, subject to the following conditions:
+
+          ul
+            li The above copyright notice and permission notice shall be included in all copies or substantial portions of the Software.
+            li The software is provided "as is", without warranty of any kind.
+
+          p The full license text is available in the <a href="https://github.com/electerm/electerm/blob/master/LICENSE" target="_blank" rel="noreferrer">GitHub repository</a>.
+
+          h2 3. Intellectual Property
+
+          p The electerm name, logo, and branding are trademarks of ZHAO Xudong. The source code is licensed under MIT, but the brand assets may not be used without permission.
+
+          h2 4. User Responsibilities
+
+          p You agree to:
+          ul
+            li Use the Service in compliance with all applicable laws and regulations
+            li Not use the Service for any illegal or unauthorized purpose
+            li Not attempt to disrupt, damage, or gain unauthorized access to any systems
+            li Not use the Service to distribute malware or harmful code
+
+          h2 5. Privacy
+
+          p Your use of the Service is also governed by our <a href="/privacy-policy/">Privacy Policy</a>, which describes how we collect, use, and share information.
+
+          h2 6. Third-Party Services
+
+          p electerm may integrate with third-party services (e.g., GitHub, WebDAV, AI APIs). Your use of these services is subject to their respective terms and policies. We are not responsible for the practices of third-party services.
+
+          h2 7. Disclaimer of Warranties
+
+          p THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+          h2 8. Limitation of Liability
+
+          p IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THE SERVICE.
+
+          h2 9. Changes to Terms
+
+          p We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of the Service after changes constitutes acceptance.
+
+          h2 10. Governing Law
+
+          p These Terms shall be governed by the laws of the People's Republic of China, without regard to its conflict of law provisions.
+
+          h2 11. Contact
+
+          p If you have any questions about these Terms, please contact us:
+          ul
+            li Email: <a href="mailto:zxdong@gmail.com">zxdong@gmail.com</a>
+            li GitHub: <a href="https://github.com/electerm/electerm" target="_blank" rel="noreferrer">github.com/electerm/electerm</a>
+
+    include ./parts/footer
+    include ./parts/react-footer

@@ -149,7 +149,8 @@ async function main () {
 
     const dir = resolve(cwd, `public/${item}`)
     await fs.mkdir(dir, { recursive: true })
-    const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : 'privacyPolicy'
+    const titleKey = item.replace(/-/g, '') + 'Title'
+    const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : (lang.lang[titleKey] ? titleKey : 'privacyPolicy')
     await buildPug(f, resolve(dir, 'index.html'), {
       ...data,
       langCode,
