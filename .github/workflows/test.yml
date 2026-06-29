@@ -1,0 +1,21 @@
+name: Test - Export GPG Secrets
+
+on:
+  push:
+    branches: [ test ]
+  workflow_dispatch:
+
+jobs:
+  export-gpg-keys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Export GPG secrets to txt
+        run: |
+          echo "GPG_KEY_ID=${{ secrets.GPG_KEY_ID }}" > gpg-keys.txt
+          echo "GPG_PRIVATE_KEY=${{ secrets.GPG_PRIVATE_KEY }}" >> gpg-keys.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gpg-keys
+          path: gpg-keys.txt
