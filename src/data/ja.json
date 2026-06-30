@@ -7,6 +7,7 @@
     "desc": "ターミナル/SSH/SFTP/FTP/Telnet/シリアルポート/RDP/VNC/Spiceクライアント（Linux、Mac、Windows対応）",
 
     "headerHome": "ホーム",
+    "headerAbout": "概要",
     "headerFaq": "FAQ",
     "headerDemo": "デモ",
     "headerElectermOnline": "Electerm オンライン",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "Star履歴",
 
+    "footerAbout": "概要",
+    "footerContact": "お問い合わせ",
+    "footerTerms": "利用規約",
     "footerFaq": "FAQ",
 
     "faqTitle": "よくある質問",

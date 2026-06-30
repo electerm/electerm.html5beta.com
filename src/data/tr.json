@@ -7,6 +7,7 @@
     "desc": "Terminal/SSH/SFTP/FTP/Telnet/seri port/RDP/VNC/Spice istemcisi (Linux, Mac, Windows)",
 
     "headerHome": "Ana Sayfa",
+    "headerAbout": "Hakkında",
     "headerFaq": "SSS",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm çevrimiçi",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "Star geçmişi",
 
+    "footerAbout": "Hakkında",
+    "footerContact": "İletişim",
+    "footerTerms": "Şartlar",
     "footerFaq": "SSS",
 
     "faqTitle": "Sıkça Sorulan Sorular",

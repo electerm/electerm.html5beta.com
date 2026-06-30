@@ -7,6 +7,7 @@
     "desc": "عميل طرفية/SSH/SFTP/FTP/Telnet/منفذ تسلسلي/RDP/VNC/Spice (يدعم Linux، Mac، Windows)",
 
     "headerHome": "الرئيسية",
+    "headerAbout": "حول",
     "headerFaq": "الأسئلة الشائعة",
     "headerDemo": "عرض توضيحي",
     "headerElectermOnline": "Electerm عبر الإنترنت",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "سجل Star",
 
+    "footerAbout": "حول",
+    "footerContact": "اتصل بنا",
+    "footerTerms": "الشروط والأحكام",
     "footerFaq": "الأسئلة الشائعة",
 
     "faqTitle": "الأسئلة الشائعة",

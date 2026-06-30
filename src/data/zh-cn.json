@@ -7,6 +7,7 @@
     "desc": "终端/SSH/SFTP/FTP/Telnet/串口/RDP/VNC/Spice客户端(支持Linux、Mac、Win)",
 
     "headerHome": "首页",
+    "headerAbout": "关于",
     "headerFaq": "常见问题",
     "headerDemo": "演示",
     "headerElectermOnline": "Electerm 在线版",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "Star 历史",
 
+    "footerAbout": "关于",
+    "footerContact": "联系我们",
+    "footerTerms": "条款",
     "footerFaq": "常见问题",
 
     "faqTitle": "常见问题",

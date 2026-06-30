@@ -7,6 +7,7 @@
     "desc": "Klien terminal/SSH/SFTP/FTP/Telnet/port serial/RDP/VNC/Spice (Linux, Mac, Windows)",
 
     "headerHome": "Beranda",
+    "headerAbout": "Tentang",
     "headerFaq": "FAQ",
     "headerDemo": "Demo",
     "headerElectermOnline": "Electerm online",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "Riwayat Star",
 
+    "footerAbout": "Tentang",
+    "footerContact": "Kontak",
+    "footerTerms": "Ketentuan",
     "footerFaq": "FAQ",
 
     "faqTitle": "Pertanyaan yang Sering Diajukan",

@@ -7,6 +7,7 @@
     "desc": "Client Terminal/SSH/SFTP/FTP/Telnet/port série/RDP/VNC/Spice (Linux, Mac, Windows)",
 
     "headerHome": "Accueil",
+    "headerAbout": "À propos",
     "headerFaq": "FAQ",
     "headerDemo": "Démo",
     "headerElectermOnline": "Electerm en ligne",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "Historique Star",
 
+    "footerAbout": "À propos",
+    "footerContact": "Contact",
+    "footerTerms": "Conditions",
     "footerFaq": "FAQ",
 
     "faqTitle": "Foire aux questions",

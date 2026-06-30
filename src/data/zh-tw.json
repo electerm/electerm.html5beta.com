@@ -7,6 +7,7 @@
     "desc": "終端/SSH/SFTP/FTP/Telnet/串列埠/RDP/VNC/Spice客戶端(支援Linux、Mac、Windows)",
 
     "headerHome": "首頁",
+    "headerAbout": "關於",
     "headerFaq": "常見問題",
     "headerDemo": "演示",
     "headerElectermOnline": "Electerm 線上版",
@@ -101,6 +102,9 @@
 
     "starHistoryTitle": "Star 歷史",
 
+    "footerAbout": "關於",
+    "footerContact": "聯絡我們",
+    "footerTerms": "條款",
     "footerFaq": "常見問題",
 
     "faqTitle": "常見問題",
