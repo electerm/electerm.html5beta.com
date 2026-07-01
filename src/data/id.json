@@ -178,7 +178,11 @@
     "homeFaq3A": "Buka pengaturan AI, masukkan URL API, nama model, dan kunci API. Bekerja dengan API apa pun yang kompatibel dengan OpenAI.",
     "homeAuthorTitle": "Tentang Penulis",
     "homeAuthorDesc1": "electerm dibuat dan dipelihara oleh ZHAO Xudong.",
+    "homeAuthorDesc2": "Full-stack developer dengan keahlian dalam Node.js, Electron, dan teknologi web. Kontributor open-source aktif dan pencipta berbagai alat pengembang yang digunakan oleh ribuan pengembang di seluruh dunia.",
     "homeAuthorGithub": "Lihat Profil GitHub →",
+    "homeAuthorResume": "Lihat Resume →",
+    "homeAuthorContact": "Hubungi Penulis →",
+    "heroH1": "electerm — Klien Terminal & SSH Gratis dan Open Source",
     "siteTitleShort": "Klien Terminal/SSH/SFTP"
   }
 }

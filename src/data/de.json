@@ -178,7 +178,11 @@
     "homeFaq3A": "Öffnen Sie die KI-Einstellungen und geben Sie Ihre API-URL, das Modell und den API-Schlüssel ein. Funktioniert mit jeder OpenAI-kompatiblen API.",
     "homeAuthorTitle": "Über den Autor",
     "homeAuthorDesc1": "electerm wurde von ZHAO Xudong entwickelt und wird von ihm gewartet.",
+    "homeAuthorDesc2": "Full-Stack-Entwickler mit Expertise in Node.js, Electron und Web-Technologien. Aktiver Open-Source-Beitragender und Ersteller mehrerer Entwickler-Tools, die von Tausenden weltweit genutzt werden.",
     "homeAuthorGithub": "GitHub-Profil anzeigen →",
+    "homeAuthorResume": "Lebenslauf ansehen →",
+    "homeAuthorContact": "Autor kontaktieren →",
+    "heroH1": "electerm — Kostenloser Open-Source Terminal- & SSH-Client",
     "siteTitleShort": "Terminal/SSH/SFTP (Open Source)"
   }
 }

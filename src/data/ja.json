@@ -178,7 +178,11 @@
     "homeFaq3A": "AI設定を開き、API URL、モデル名、APIキーを入力してください。OpenAI互換のAPIで動作します。",
     "homeAuthorTitle": "作者について",
     "homeAuthorDesc1": "electermはZHAO Xudongによって作成・維持されています。",
+    "homeAuthorDesc2": "Node.js、Electron、Web技術に精通したフルスタック開発者。世界中の数千の開発者に使用される複数の開発ツールの作成者であり、アクティブなオープンソース貢献者です。",
     "homeAuthorGithub": "GitHubプロフィールを見る →",
+    "homeAuthorResume": "履歴書を見る →",
+    "homeAuthorContact": "作者に連絡 →",
+    "heroH1": "electerm — 無料オープンソースターミナル＆SSHクライアント",
     "siteTitleShort": "無料ターミナル/SSH/SFTP"
   }
 }

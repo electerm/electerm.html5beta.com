@@ -178,7 +178,11 @@
     "homeFaq3A": "Abra as configurações de IA, insira a URL da API, o nome do modelo e a chave da API. Funciona com qualquer API compatível com OpenAI.",
     "homeAuthorTitle": "Sobre o autor",
     "homeAuthorDesc1": "electerm foi criado e é mantido por ZHAO Xudong.",
+    "homeAuthorDesc2": "Desenvolvedor full-stack com expertise em Node.js, Electron e tecnologias web. Contribuidor ativo de código aberto e criador de múltiplas ferramentas de desenvolvimento usadas por milhares de desenvolvedores em todo o mundo.",
     "homeAuthorGithub": "Ver perfil no GitHub →",
+    "homeAuthorResume": "Ver currículo →",
+    "homeAuthorContact": "Contatar o autor →",
+    "heroH1": "electerm — Cliente de terminal e SSH gratuito e open-source",
     "siteTitleShort": "Terminal/SSH/SFTP grátis"
   }
 }

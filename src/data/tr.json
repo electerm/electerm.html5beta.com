@@ -178,7 +178,11 @@
     "homeFaq3A": "YZ ayarlarını açın, API URL'sini, model adını ve API anahtarını girin. OpenAI uyumlu herhangi bir API ile çalışır.",
     "homeAuthorTitle": "Yazar Hakkında",
     "homeAuthorDesc1": "electerm, ZHAO Xudong tarafından oluşturulmuş ve bakımı yapılmaktadır.",
+    "homeAuthorDesc2": "Node.js, Electron ve web teknolojileri konusunda uzmanlığa sahip full-stack geliştirici. Dünya çapında binlerce geliştirici tarafından kullanılan birden fazla geliştirme aracının yaratıcısı ve aktif açık kaynak katkı sağlayıcısı.",
     "homeAuthorGithub": "GitHub Profilini Görüntüle →",
+    "homeAuthorResume": "Özgeçmişi Görüntüle →",
+    "homeAuthorContact": "Yazarla İletişime Geç →",
+    "heroH1": "electerm — Ücretsiz Açık Kaynak Terminal ve SSH İstemcisi",
     "siteTitleShort": "Terminal/SSH/SFTP İstemcisi"
   }
 }

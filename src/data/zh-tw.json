@@ -178,7 +178,11 @@
     "homeFaq3A": "開啟 AI 設定，輸入 API URL、模型名稱和 API 金鑰。相容任何 OpenAI 相容的 API。",
     "homeAuthorTitle": "關於作者",
     "homeAuthorDesc1": "electerm 由 ZHAO Xudong 建立並維護。",
+    "homeAuthorDesc2": "全端開發者，精通 Node.js、Electron 及 Web 技術。活躍的開源貢獻者，建立了多款被全球數千開發者使用的開發工具。",
     "homeAuthorGithub": "查看 GitHub 個人主頁 →",
+    "homeAuthorResume": "查看履歷 →",
+    "homeAuthorContact": "聯絡作者 →",
+    "heroH1": "electerm — 免費開源終端/SSH客戶端",
     "siteTitleShort": "免費終端/SSH/SFTP客戶端"
   }
 }

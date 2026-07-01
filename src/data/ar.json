@@ -178,7 +178,11 @@
     "homeFaq3A": "افتح إعدادات الذكاء الاصطناعي، وأدخل عنوان API واسم النموذج ومفتاح API. يعمل مع أي واجهة برمجة تطبيقات متوافقة مع OpenAI.",
     "homeAuthorTitle": "عن المؤلف",
     "homeAuthorDesc1": "تم إنشاء electerm وصيانته بواسطة ZHAO Xudong.",
+    "homeAuthorDesc2": "مطور Full-stack بخبرة في Node.js و Electron وتقنيات الويب. مساهم نشط في المصادر المفتوحة ومبتكر العديد من أدوات التطوير التي يستخدمها الآلاف من المطورين حول العالم.",
     "homeAuthorGithub": "عرض الملف الشخصي على GitHub ←",
+    "homeAuthorResume": "عرض السيرة الذاتية ←",
+    "homeAuthorContact": "التواصل مع المؤلف ←",
+    "heroH1": "electerm — عميل طرفية و SSH مجاني ومفتوح المصدر",
     "siteTitleShort": "عميل طرفية/SSH/SFTP مجاني"
   }
 }

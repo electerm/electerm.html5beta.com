@@ -2,7 +2,7 @@ section.hero
   #hero-anim
   .container
     img.hero-logo(src=host + '/electerm.png', alt='electerm', fetchpriority='high')
-    h1.hero-title electerm
+    h1.hero-title= lang.lang.heroH1 || 'electerm'
     p.hero-tagline #{desc}
     .hero-version
       span.dot

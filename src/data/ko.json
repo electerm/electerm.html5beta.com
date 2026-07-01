@@ -178,7 +178,11 @@
     "homeFaq3A": "AI 설정을 열고 API URL, 모델 이름, API 키를 입력하세요. OpenAI 호환 API에서 작동합니다.",
     "homeAuthorTitle": "저자 소개",
     "homeAuthorDesc1": "electerm은 ZHAO Xudong이 만들고 유지관리합니다.",
+    "homeAuthorDesc2": "Node.js, Electron 및 웹 기술에 정통한 풀스택 개발자. 전 세계 수천 명의 개발자가 사용하는 여러 개발 도구의 제작자이자 활발한 오픈소스 기여자입니다.",
     "homeAuthorGithub": "GitHub 프로필 보기 →",
+    "homeAuthorResume": "이력서 보기 →",
+    "homeAuthorContact": "저자에게 연락 →",
+    "heroH1": "electerm — 무료 오픈소스 터미널 & SSH 클라이언트",
     "siteTitleShort": "무료 터미널/SSH/SFTP"
   }
 }

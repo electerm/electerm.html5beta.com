@@ -276,7 +276,31 @@ async function main () {
 
   console.log('✅ Built static pages (English)')
 
+  // Build 404 page
+  await build404Page()
+
   await buildVideoPages()
+}
+
+async function build404Page () {
+  const enLang = data.langs.find(l => l.id === 'en_us')
+  const { langCode, lang } = enLang
+  const h = process.env.HOST
+  const from = resolve(cwd, 'src/views/404.pug')
+  const to = resolve(cwd, 'public/404.html')
+  await buildPug(from, to, {
+    ...data,
+    langCode,
+    lang,
+    lp: '',
+    faqUrl: '/faq/',
+    keywords: lang.lang.keywords,
+    desc: 'Page not found on electerm website',
+    url: `${h}/404.html`,
+    cssUrl: '/index.bundle.css',
+    robotsContent: 'noindex, follow'
+  })
+  console.log('✅ Built 404 page')
 }
 
 main()
