@@ -294,7 +294,6 @@ function createReleaseData () {
 
 export default {
   desc: 'Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)',
-  keywords: 'ssh,open-source,terminal,telnet,sftp,file-manager,linux-app,serialport,windows-app,macos-app,electerm',
   siteName: 'electerm',
   host: process.env.HOST,
   videos: videos.videos,

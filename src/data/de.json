@@ -5,6 +5,7 @@
   "match": "de",
   "lang": {
     "desc": "Terminal-/SSH-/SFTP-/FTP-/Telnet-/Seriellport-/RDP-/VNC-/Spice-Client (Linux, Mac, Windows)",
+    "keywords": "electerm,Terminal,SSH,SFTP,FTP,Telnet,Seriellport,RDP,VNC,Spice,Dateimanager,Open Source,kostenloser Terminal-Client,SSH-Client,SFTP-Client,Remote-Desktop,Linux,Mac,Windows,plattformübergreifend",
 
     "headerHome": "Startseite",
     "headerAbout": "Über",

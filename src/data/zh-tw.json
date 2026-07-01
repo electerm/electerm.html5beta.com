@@ -5,6 +5,7 @@
   "match": "zh",
   "lang": {
     "desc": "終端/SSH/SFTP/FTP/Telnet/串列埠/RDP/VNC/Spice客戶端(支援Linux、Mac、Windows)",
+    "keywords": "electerm,終端,SSH,SFTP,FTP,Telnet,串列埠,序列埠,RDP,VNC,Spice,檔案管理器,開源,免費終端客戶端,SSH客戶端,SFTP客戶端,遠端桌面,Linux,Mac,Windows,跨平台",
 
     "headerHome": "首頁",
     "headerAbout": "關於",

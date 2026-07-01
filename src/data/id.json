@@ -5,6 +5,7 @@
   "match": "id",
   "lang": {
     "desc": "Klien terminal/SSH/SFTP/FTP/Telnet/port serial/RDP/VNC/Spice (Linux, Mac, Windows)",
+    "keywords": "electerm,terminal,SSH,SFTP,FTP,Telnet,port serial,RDP,VNC,Spice,manajer file,sumber terbuka,klien terminal gratis,klien SSH,klien SFTP,remote desktop,Linux,Mac,Windows,lintas platform",
 
     "headerHome": "Beranda",
     "headerAbout": "Tentang",

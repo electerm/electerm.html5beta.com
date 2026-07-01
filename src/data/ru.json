@@ -5,6 +5,7 @@
   "match": "ru",
   "lang": {
     "desc": "Клиент для терминала/SSH/SFTP/Telnet/последовательного порта/RDP/VNC/Spice (Linux, Mac, Windows)",
+    "keywords": "electerm,терминал,SSH,SFTP,FTP,Telnet,последовательный порт,RDP,VNC,Spice,файловый менеджер,открытый исходный код,бесплатный терминал,SSH клиент,SFTP клиент,удалённый рабочий стол,Linux,Mac,Windows,кроссплатформенный",
 
     "headerHome": "Главная",
     "headerAbout": "О проекте",

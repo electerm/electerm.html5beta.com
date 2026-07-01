@@ -5,6 +5,7 @@
   "match": "en",
   "lang": {
     "desc": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
+    "keywords": "electerm,terminal,ssh,sftp,ftp,telnet,serial port,rdp,vnc,spice,file manager,open source,free terminal client,ssh client,sftp client,remote desktop,linux,mac,windows,cross-platform",
 
     "headerHome": "Home",
     "headerAbout": "About",

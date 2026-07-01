@@ -5,6 +5,7 @@
   "match": "ar",
   "lang": {
     "desc": "عميل طرفية/SSH/SFTP/FTP/Telnet/منفذ تسلسلي/RDP/VNC/Spice (يدعم Linux، Mac، Windows)",
+    "keywords": "electerm,طرفية,SSH,SFTP,FTP,Telnet,منفذ تسلسلي,RDP,VNC,Spice,مدير ملفات,مفتوح المصدر,عميل طرفية مجاني,عميل SSH,عميل SFTP,سطح مكتب بعيد,Linux,Mac,Windows,متعدد المنصات",
 
     "headerHome": "الرئيسية",
     "headerAbout": "حول",
