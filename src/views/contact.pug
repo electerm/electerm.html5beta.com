@@ -2,12 +2,12 @@ doctype html
 html(lang=langCode)
   head
     title #{siteName} - Contact
-    meta(name='description', content='Contact the electerm team.')
+    meta(name='description', content='Contact the electerm team via email, GitHub Discussions, or issue tracker. Join our WeChat community for support and updates.')
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - Contact')
-    meta(property='og:description' content='Contact the electerm team.')
+    meta(property='og:description' content='Contact the electerm team via email, GitHub Discussions, or issue tracker. Join our WeChat community for support and updates.')
     meta(name='twitter:title' content='electerm - Contact')
-    meta(name='twitter:description' content='Contact the electerm team.')
+    meta(name='twitter:description' content='Contact the electerm team via email, GitHub Discussions, or issue tracker. Join our WeChat community for support and updates.')
     include ./parts/react-header
   body
     include ./parts/header
@@ -40,7 +40,7 @@ html(lang=langCode)
           .contact-wechat-section
             h2 WeChat Community
             p Join our WeChat community for support and updates.
-            img.contact-qr(src='https://electerm.org/electerm-wechat-group-qr.jpg', alt='WeChat Group QR Code')
+            img.contact-qr(src='https://electerm.org/electerm-wechat-group-qr.jpg', alt='WeChat Group QR Code', loading='lazy')
 
     include ./parts/footer
     include ./parts/react-footer

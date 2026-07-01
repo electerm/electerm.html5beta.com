@@ -4,6 +4,10 @@ meta(name='author' content='ZHAO Xudong')
 meta(name='robots' content='index, follow')
 link(rel='canonical' href=url)
 
+if typeof hreflangLinks !== 'undefined'
+  each link in hreflangLinks
+    link(rel='alternate' hreflang=link.hreflang href=link.url)
+
 link(rel='icon' type='image/x-icon' href=host + '/favicon.ico')
 link(rel='icon' type='image/png' sizes='32x32' href=host + '/favicon-32x32.png')
 link(rel='icon' type='image/png' sizes='16x16' href=host + '/favicon-16x16.png')

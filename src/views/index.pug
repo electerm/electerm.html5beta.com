@@ -12,6 +12,15 @@ html(lang=langCode)
     script(type='application/ld+json').
       {
         "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "electerm",
+        "url": "https://electerm.org",
+        "description": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
+        "inLanguage": "en"
+      }
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "electerm",
         "description": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
@@ -43,17 +52,18 @@ html(lang=langCode)
       }
   body
     include ./parts/header
-    include ./parts/hero
-    include ./parts/features
-    include ./parts/demo
-    include ./parts/download
-    include ./parts/links
-    include ./parts/changelog
-    include ./parts/community
-    include ./parts/sponsors
-    include ./parts/star-history
-    include ./parts/faq-home
-    include ./parts/author
-    #container
+    main
+      include ./parts/hero
+      include ./parts/features
+      include ./parts/demo
+      include ./parts/download
+      include ./parts/links
+      include ./parts/changelog
+      include ./parts/community
+      include ./parts/sponsors
+      include ./parts/star-history
+      include ./parts/faq-home
+      include ./parts/author
+      #container
     include ./parts/footer
     include ./parts/react-footer

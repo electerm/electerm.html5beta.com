@@ -9,6 +9,8 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - ' + video.titleEn)
     meta(name='twitter:description' content='Video tutorial: ' + video.titleEn)
     include ./parts/react-header
+    if video.structuredData
+      script(type='application/ld+json')!= video.structuredData
     style.
       .video-hero {
         background: var(--color-bg-alt);

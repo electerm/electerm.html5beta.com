@@ -34,6 +34,17 @@ async function buildVideoPages () {
     const videoFrom = resolve(cwd, 'src/views/video.pug')
     const videoTo = resolve(videoDir, 'index.html')
 
+    const structuredData = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: video.titleEn,
+      description: `Video tutorial: ${video.titleEn}`,
+      thumbnailUrl: `${h}/video-thumb/${videoSlug}.jpg`,
+      duration: `PT${Math.floor(video.duration / 60)}M${video.duration % 60}S`,
+      contentUrl: `https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1`,
+      embedUrl: `https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1`
+    })
+
     await buildPug(videoFrom, videoTo, {
       ...data,
       langCode,
@@ -41,11 +52,18 @@ async function buildVideoPages () {
       desc: video.titleEn || video.title,
       url: `${h}/videos/${videoSlug}/`,
       cssUrl: '/index.bundle.css',
-      video
+      video: { ...video, structuredData }
     })
   }
 
   console.log(`✅ Built ${videos.length} video pages`)
+}
+
+function buildHreflangLinks (langs, host) {
+  return langs.map(item => ({
+    hreflang: item.langCode === 'en-US' ? 'x-default' : item.langCode,
+    url: item.url
+  }))
 }
 
 async function main () {
@@ -60,12 +78,14 @@ async function main () {
     if (id === 'en_us') {
       // English → public/index.html
       const to = resolve(cwd, 'public/index.html')
+      const hreflangLinks = buildHreflangLinks(langs, h)
       await buildPug(from, to, {
         ...data,
         langCode,
         lang,
         desc: lang.lang.desc,
         url: h,
+        hreflangLinks,
         cssUrl: '/index.bundle.css'
       })
     } else {
@@ -74,12 +94,14 @@ async function main () {
       await fs.mkdir(dir, { recursive: true })
 
       const to = resolve(dir, 'index.html')
+      const hreflangLinks = buildHreflangLinks(langs, h)
       await buildPug(from, to, {
         ...data,
         langCode,
         lang,
         desc: lang.lang.desc,
         url: h + '/' + slug + '/',
+        hreflangLinks,
         cssUrl: '/index.bundle.css'
       })
 
@@ -115,6 +137,7 @@ async function main () {
           // English → public/faq/index.html
           const dir = resolve(cwd, 'public/faq')
           await fs.mkdir(dir, { recursive: true })
+          const hreflangLinks = buildHreflangLinks(faqLangs, h)
           await buildPug(f, resolve(dir, 'index.html'), {
             ...data,
             langs: faqLangs,
@@ -122,6 +145,7 @@ async function main () {
             lang: l,
             desc: l.lang[descKey] || l.lang.desc,
             url: `${h}/faq/`,
+            hreflangLinks,
             cssUrl: '/index.bundle.css'
           })
           // Redirect from old /faq.html
@@ -132,6 +156,7 @@ async function main () {
           // Other locales → public/faq/{slug}/index.html
           const dir = resolve(cwd, `public/faq/${lslug}`)
           await fs.mkdir(dir, { recursive: true })
+          const hreflangLinks = buildHreflangLinks(faqLangs, h)
           await buildPug(f, resolve(dir, 'index.html'), {
             ...data,
             langs: faqLangs,
@@ -139,6 +164,7 @@ async function main () {
             lang: l,
             desc: l.lang[descKey] || l.lang.desc,
             url: `${h}/faq/${lslug}/`,
+            hreflangLinks,
             cssUrl: '/index.bundle.css'
           })
         }
