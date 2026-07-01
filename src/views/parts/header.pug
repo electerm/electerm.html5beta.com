@@ -1,13 +1,13 @@
 header.site-header
   .container.header-inner
-    a.header-logo(href='/')
+    a.header-logo(href=lp + '/')
       img(src=host + '/electerm.png', alt='electerm')
 
     nav.header-nav
       a(href='/about/') #{lang.lang.headerAbout}
       a(href='https://cloud.electerm.org', target='_blank', rel='noreferrer') #{lang.lang.headerElectermOnline}
-      a(href='/faq/') #{lang.lang.headerFaq}
-      a(href='/videos') #{lang.lang.headerVideos}
+      a(href=faqUrl) #{lang.lang.headerFaq}
+      a(href='/videos/') #{lang.lang.headerVideos}
       a(href='/sponsor-electerm/') #{lang.lang.headerSponsor}
       a(href='https://github.com/electerm/electerm', target='_blank', rel='noreferrer') #{lang.lang.headerGithub}
 
@@ -32,8 +32,8 @@ nav.mobile-nav
   a(href='#demo') #{lang.lang.headerDemo}
   a(href='/about/') #{lang.lang.headerAbout}
   a(href='https://cloud.electerm.org', target='_blank', rel='noreferrer') #{lang.lang.headerElectermOnline}
-  a(href='/faq/') #{lang.lang.headerFaq}
-  a(href='/videos') #{lang.lang.headerVideos}
+  a(href=faqUrl) #{lang.lang.headerFaq}
+  a(href='/videos/') #{lang.lang.headerVideos}
   a(href='/sponsor-electerm/') #{lang.lang.headerSponsor}
   a(href='https://github.com/electerm/electerm', target='_blank', rel='noreferrer') #{lang.lang.headerGithub}
   h4(style='padding:16px 0 8px;font-size:0.85rem;color:var(--color-text-secondary)') #{lang.lang.headerLanguages}

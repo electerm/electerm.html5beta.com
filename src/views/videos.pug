@@ -1,7 +1,7 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - #{lang.lang.videosTitle}
+    title #{lang.lang.videosTitle} - electerm
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - Video Guides and Tutorials')
@@ -14,8 +14,8 @@ html(lang=langCode)
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://electerm.org" },
-          { "@type": "ListItem", "position": 2, "name": "Videos", "item": "https://electerm.org/videos/" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "#{host}" },
+          { "@type": "ListItem", "position": 2, "name": "Videos", "item": "#{host}/videos/" }
         ]
       }
     style.

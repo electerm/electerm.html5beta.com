@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import { cwd } from './common.js'
 import fs from 'fs/promises'
 
-const REDIRECT_TEMPLATE = (target) => `<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="${target}"></head><body></body></html>`
+const REDIRECT_TEMPLATE = (target) => `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="${target}"><script>location.replace("${target}")</script></head><body></body></html>`
 
 async function buildVideoPages () {
   const { videos } = data
@@ -20,8 +20,10 @@ async function buildVideoPages () {
     ...data,
     langCode,
     lang,
-    keywords: lang.lang.keywords,
-    desc: lang.lang.videosTitle,
+    lp: '',
+    faqUrl: '/faq/',
+    keywords: lang.lang.videosTitle + ', electerm video, terminal tutorial, ssh tutorial, sftp tutorial',
+    desc: lang.lang.videosTitle + ' - Watch tutorial videos and demos for electerm terminal client',
     url: `${h}/videos/`,
     cssUrl: '/index.bundle.css',
     videos
@@ -39,11 +41,12 @@ async function buildVideoPages () {
       '@context': 'https://schema.org',
       '@type': 'VideoObject',
       name: video.titleEn,
-      description: `Video tutorial: ${video.titleEn}`,
+      description: `Video tutorial: ${video.titleEn}. Learn how to use this feature in electerm, the free and open-source terminal client.`,
       thumbnailUrl: `${h}/video-thumb/${videoSlug}.jpg`,
       duration: `PT${Math.floor(video.duration / 60)}M${video.duration % 60}S`,
-      contentUrl: `https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1`,
-      embedUrl: `https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1`
+      contentUrl: `${h}/videos/${videoSlug}/`,
+      embedUrl: `https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1`,
+      uploadDate: video.uploadDate || data.releaseDate
     })
 
     // Generate unique keywords per video based on title and slug
@@ -53,8 +56,10 @@ async function buildVideoPages () {
       ...data,
       langCode,
       lang,
+      lp: '',
+      faqUrl: '/faq/',
       keywords: videoKeywords,
-      desc: video.titleEn || video.title,
+      desc: `${video.titleEn} - electerm video tutorial. Learn how to use ${video.titleEn.toLowerCase()} in electerm terminal client.`,
       url: `${h}/videos/${videoSlug}/`,
       cssUrl: '/index.bundle.css',
       video: { ...video, structuredData }
@@ -140,6 +145,8 @@ async function main () {
         ...data,
         langCode,
         lang,
+        lp: '',
+        faqUrl: '/faq/',
         keywords: lang.lang.keywords,
         desc: lang.lang.desc,
         url: h,
@@ -153,10 +160,14 @@ async function main () {
 
       const to = resolve(dir, 'index.html')
       const hreflangLinks = buildHreflangLinks(langs, h)
+      const lp = '/' + slug
+      const faqUrl = '/faq/' + slug + '/'
       await buildPug(from, to, {
         ...data,
         langCode,
         lang,
+        lp,
+        faqUrl,
         keywords: lang.lang.keywords,
         desc: lang.lang.desc,
         url: h + '/' + slug + '/',
@@ -202,6 +213,8 @@ async function main () {
             langs: faqLangs,
             langCode: lc,
             lang: l,
+            lp: '',
+            faqUrl: '/faq/',
             keywords: l.lang.keywords,
             desc: l.lang[descKey] || l.lang.desc,
             url: `${h}/faq/`,
@@ -217,11 +230,14 @@ async function main () {
           const dir = resolve(cwd, `public/faq/${lslug}`)
           await fs.mkdir(dir, { recursive: true })
           const hreflangLinks = buildHreflangLinks(faqLangs, h)
+          const faqUrl = '/faq/' + lslug + '/'
           await buildPug(f, resolve(dir, 'index.html'), {
             ...data,
             langs: faqLangs,
             langCode: lc,
             lang: l,
+            lp: '/' + lslug,
+            faqUrl,
             keywords: l.lang.keywords,
             desc: l.lang[descKey] || l.lang.desc,
             url: `${h}/faq/${lslug}/`,
@@ -243,6 +259,8 @@ async function main () {
       ...data,
       langCode,
       lang,
+      lp: '',
+      faqUrl: '/faq/',
       keywords: lang.lang.keywords,
       desc: lang.lang[descKey] || lang.lang.desc,
       url: `${h}/${item}/`,

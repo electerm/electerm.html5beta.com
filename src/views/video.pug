@@ -1,7 +1,7 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - #{video.titleEn}
+    title #{video.titleEn} - electerm Video Tutorial
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
     meta(property='og:title' content='electerm - ' + video.titleEn)
@@ -85,6 +85,33 @@ html(lang=langCode)
         background: var(--color-primary);
         color: white;
       }
+      .video-description {
+        color: var(--color-text-secondary);
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-top: 12px;
+      }
+      .video-info {
+        max-width: 700px;
+        margin: 32px auto 0;
+        padding: 24px;
+        background: var(--color-bg-alt);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-border);
+      }
+      .video-info h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+      .video-info p {
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+      .video-info p:last-child {
+        margin-bottom: 0;
+      }
   body
     include ./parts/header
     section.video-hero
@@ -92,6 +119,7 @@ html(lang=langCode)
         a.back-link(href='/videos/') ← #{lang.lang.videosTitle}
         include ./parts/video-lang
         h1.video-title(data-title-en=video.titleEn data-title-zh=video.title)= video.titleEn
+        p.video-description Watch this step-by-step video tutorial on #{video.titleEn.toLowerCase()}. electerm is a free and open-source terminal client that supports SSH, SFTP, Telnet, RDP, VNC, Serial port, and more.
     section.video-section
       .container
         .video-player-wrapper
@@ -102,7 +130,12 @@ html(lang=langCode)
             frameborder='no'
             framespacing='0'
             allowfullscreen='true'
+            title=video.titleEn
           )
+        .video-info
+          h2 About this tutorial
+          p This video demonstrates the #{video.titleEn.toLowerCase()} feature in electerm. Whether you are a beginner or an experienced user, this guide will help you make the most of your terminal experience.
+          p If you find this tutorial helpful, check out our other #{lang.lang.videosTitle.toLowerCase()} or download electerm to get started.
     include ./parts/footer
     include ./parts/video-script
     include ./parts/react-footer

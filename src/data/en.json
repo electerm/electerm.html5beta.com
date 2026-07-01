@@ -7,7 +7,6 @@
     "desc": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
     "keywords": "electerm,terminal,ssh,sftp,ftp,telnet,serial port,rdp,vnc,spice,file manager,open source,free terminal client,ssh client,sftp client,remote desktop,linux,mac,windows,cross-platform",
     "siteTitle": "electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client",
-
     "headerHome": "Home",
     "headerAbout": "About",
     "headerFaq": "FAQ",
@@ -17,10 +16,8 @@
     "headerSponsor": "Sponsor",
     "headerGithub": "GitHub",
     "headerLanguages": "Languages",
-
     "heroTryDemo": "Try Demo",
     "heroViewOnGithub": "View on GitHub",
-
     "featuresTitle": "Features",
     "featuresSubtitle": "Everything you need in a terminal client",
     "featureAllInOneTitle": "Open-Sourced All-in-One Client",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "Supports Zmodem (rz/sz) and Trzsz (trz/tsz) file transfer, compatible with tmux.",
     "featureCrossPlatformTitle": "Cross-platform",
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64), macOS 10.15+ (x64/arm64), Linux (x64/arm64/Loong64) including glibc 2.17+.",
-
     "downloadTitle": "Download",
     "downloadSubtitle": "Free and open-source — choose your platform (Windows, macOS, Linux)",
     "downloadViewAll": "View all releases on GitHub →",
-
     "changelogTitle": "Release Notes",
     "changelogSubtitle": "What's new in the latest version",
-
     "communityTitle": "Join the Community",
     "communityWechatDesc": "Join our WeChat community for support and updates",
-
     "footerBrandDesc": "Free and open-source terminal/SSH/SFTP/Telnet/Serial port/RDP/VNC/Spice client for Linux, macOS, and Windows.",
     "footerProduct": "Product",
     "footerCommunity": "Community",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "Privacy Policy",
     "footerAuthor": "Author",
     "footerResume": "Resume",
-
     "sponsorTitle": "Sponsor Electerm",
     "sponsorSubtitle": "Help support continued development of this open source project",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "Transparent funding",
     "videosTitle": "Electerm Video Guides",
     "videosSubtitle": "Learn how to use electerm with video tutorials",
-
     "demoTitle": "Live Demo",
     "demoSubtitle": "Try electerm directly in your browser — no installation needed",
     "demoOpenFull": "Open full screen ↗",
-
     "resourcesTitle": "Resources",
     "resourcesSubtitle": "Everything you need to get started",
     "resourcesOfficial": "Official",
     "resourcesEcosystem": "Ecosystem",
     "resourcesCommunity": "Community",
-
     "sponsorsTitle": "Sponsors",
     "sponsorsInterested": "Interested in sponsoring electerm? Your support helps keep the project active and growing.",
     "sponsorsContact": "Contact us to become a sponsor",
-
     "starHistoryTitle": "Star History",
-
     "footerFaq": "FAQ",
     "footerAbout": "About",
     "footerTerms": "Terms & Conditions",
     "footerContact": "Contact",
-
     "faqTitle": "Frequently Asked Questions",
     "faqSubtitle": "Common questions and answers about electerm terminal client",
     "faqDisclaimer": "These answers are based on the",
     "faqWikiLink": "Read more on electerm Wiki",
-
     "faqQ0": "Is electerm free and open-source?",
     "faqQ0A1": "Yes! electerm is completely free and open-source software. You can view, modify, and contribute to the source code on GitHub:",
     "faqQ0A2": "It is released under the MIT License, which means you are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software.",
-
     "faqQ1": "Can I hide the local file manager in the SFTP panel?",
     "faqQ1A1": "Yes, add the following CSS to Custom CSS in Settings (Settings → Appearance → Custom CSS):",
     "faqQ1A2": "After saving, the local section will be hidden and the remote section will expand to full width.",
     "faqQ1A3": "More CSS examples →",
-
     "faqQ2": "Can I swap the local and remote sections in the SFTP panel?",
     "faqQ2A": "Yes, use the following Custom CSS to place the remote section on the left and the local section on the right:",
-
     "faqQ3": "How do I keep my SSH session from timing out?",
     "faqQ3A1": "There are two methods to prevent idle SSH connections from being dropped:",
     "faqQ3A2": "Method 1 — Configure Keep Alive Interval in Settings:",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "Enter a value in seconds (e.g. 60)",
     "faqQ3A2Li4": "Save",
     "faqQ3A3": "Method 2 — Click the keep-alive icon in the terminal toolbar during an active session. This sends an Enter key every 3 seconds (more aggressive, may interfere with interactive commands like vim).",
-
     "faqQ4": "How do I use SSH tunnels in electerm?",
     "faqQ4A1": "SSH tunnels are configured when creating or editing an SSH bookmark. You can set up:",
     "faqQ4A2": "Local → Remote (ssh -L): ",
     "faqQ4A2Desc": "Forward requests from a local port to a remote server port.",
     "faqQ4A3": "Remote → Local (ssh -R): ",
     "faqQ4A3Desc": "Forward requests from a remote port to a local server port.",
-
     "faqQ5": "What is the Workspace feature and how do I use it?",
     "faqQ5A1": "Workspace lets you save your current layout and open tabs as a preset. Only tabs opened from bookmarks are saved.",
     "faqQ5A2": "To save and load workspaces:",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "Open the bookmarked connections you want included",
     "faqQ5A2Li3": "Go to Layout → Workspace tab → Save Workspace",
     "faqQ5A2Li4": "Name it and confirm",
-
     "faqQ6": "How do I connect to a server without saving a bookmark?",
     "faqQ6A1": "Use Quick Connect from the sidebar. Enter a connection string like:",
     "faqQ6A2": "Quick Connect supports SSH, Telnet, VNC, RDP, Spice, Serial, and FTP protocols. You can skip the protocol prefix for SSH connections.",
-
     "faqQ7": "What is Batch Operation and how do I use it?",
     "faqQ7A1": "Batch Operation lets you define and run multi-step SSH/SFTP workflows using JSON. Access it via the Batch Operation button on the left sidebar.",
     "faqQ7A2": "Available action types:",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— Runs a terminal command",
     "faqQ7A2Upload": "— Uploads files/folders to remote server",
     "faqQ7A2Download": "— Downloads files/folders from remote server",
-
     "faqQ8": "Can I open SSH connections from a browser or external links?",
     "faqQ8A1": "Yes, electerm supports deep links using protocols like ssh://, telnet://, rdp://, vnc://, serial://, spice://, and the custom electerm:// protocol. Register protocol handlers in electerm settings first.",
     "faqQ8A2": "You can also create desktop shortcuts, HTML links, or use command-line tools (open, xdg-open, start) to launch connections.",
-
     "faqQ9": "How do I make electerm start automatically when I log in?",
     "faqQ9A1": "Use the --autohide flag to start electerm minimized to the system tray:",
     "faqQ9A2Ubuntu": "Ubuntu: ",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "Create a shortcut to electerm.exe and place it in %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
     "faqQ9A4Mac": "macOS: ",
     "faqQ9A4MacDesc": "Create a script with /Applications/electerm.app/Contents/MacOS/electerm --autohide, make it executable, then add it in System Settings → Login Items",
-
     "faqQ10": "How do I configure AI assistant in electerm?",
     "faqQ10A1": "Electerm works with any OpenAI-compatible API. To configure:",
     "faqQ10A2Li1": "Open AI settings in Electerm",
@@ -182,35 +157,30 @@
     "faqQ10A2Li3": "Select or type the model name (e.g. gpt-4, deepseek-chat)",
     "faqQ10A2Li4": "Input your API key",
     "faqQ10A2Li5": "Optionally define a system role prompt and save",
-
     "faqQ11": "Can I use dynamic values in quick commands?",
     "faqQ11A1": "Yes, quick command templates support the following dynamic placeholders that resolve at execution time:",
     "faqQ11A2": "Supported template variables:",
     "faqQ11A2Time": "Time — inserts the current time",
     "faqQ11A2Date": "Date — inserts the current date",
     "faqQ11A2Clipboard": "Clipboard — inserts the current clipboard content",
-
     "faqQ12": "Can I set a default profile for new bookmarks?",
     "faqQ12A": "Yes. Enable the 'Default' checkbox on a profile in electerm settings. That profile will be automatically selected when creating new bookmarks.",
-
     "homeFaqTitle": "Frequently Asked Questions",
     "homeFaqSubtitle": "Quick answers to common questions about electerm",
     "homeFaqViewAll": "View all FAQs →",
     "homeFaq0Q": "Is electerm free and open-source?",
     "homeFaq0A": "Yes! electerm is completely free and open-source (MIT license). View the source on GitHub.",
-
     "homeFaq1Q": "How do I keep my SSH session from timing out?",
     "homeFaq1A": "Set SSH Keep Alive Interval in Settings, or click the keep-alive icon in the terminal toolbar during an active session.",
     "homeFaq2Q": "Can I use SSH tunnels in electerm?",
     "homeFaq2A": "Yes, configure local → remote or remote → local port forwarding when creating or editing an SSH bookmark.",
     "homeFaq3Q": "How do I configure AI assistant?",
     "homeFaq3A": "Open AI settings, enter your API URL, model name, and API key. Works with any OpenAI-compatible API.",
-
     "homeAuthorTitle": "About the Author",
     "homeAuthorDesc1": "electerm is created and maintained by ZHAO Xudong.",
     "homeAuthorGithub": "View GitHub Profile →",
-
     "contactTitle": "Contact Us",
-    "termsTitle": "Terms & Conditions"
+    "termsTitle": "Terms & Conditions",
+    "siteTitleShort": "Terminal/SSH/SFTP Client"
   }
 }

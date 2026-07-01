@@ -7,7 +7,6 @@
     "desc": "終端/SSH/SFTP/FTP/Telnet/串列埠/RDP/VNC/Spice客戶端(支援Linux、Mac、Windows)",
     "keywords": "electerm,終端,SSH,SFTP,FTP,Telnet,串列埠,序列埠,RDP,VNC,Spice,檔案管理器,開源,免費終端客戶端,SSH客戶端,SFTP客戶端,遠端桌面,Linux,Mac,Windows,跨平台",
     "siteTitle": "electerm - 免費開源終端/SSH/SFTP/Telnet/序列埠/VNC/RDP/Spice客戶端",
-
     "headerHome": "首頁",
     "headerAbout": "關於",
     "headerFaq": "常見問題",
@@ -17,10 +16,8 @@
     "headerSponsor": "贊助",
     "headerGithub": "GitHub",
     "headerLanguages": "語言",
-
     "heroTryDemo": "線上演示",
     "heroViewOnGithub": "在 GitHub 上查看",
-
     "featuresTitle": "功能特色",
     "featuresSubtitle": "終端客戶端所需的一切",
     "featureAllInOneTitle": "開源多合一客戶端",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "支援 Zmodem (rz/sz) 和 Trzsz (trz/tsz) 檔案傳輸，相容 tmux。",
     "featureCrossPlatformTitle": "跨平台",
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64)、macOS 10.15+ (x64/arm64)、Linux (x64/arm64/Loong64)，支援 glibc 2.17+。",
-
     "downloadTitle": "下載",
     "downloadSubtitle": "免費開源 — 選擇您的平台",
     "downloadViewAll": "在 GitHub 上查看所有版本 →",
-
     "changelogTitle": "更新日誌",
     "changelogSubtitle": "最新版本的新內容",
-
     "communityTitle": "加入社群",
     "communityWechatDesc": "加入我們的微信社群獲取支援和更新",
-
     "footerBrandDesc": "適用於 Linux、macOS 和 Windows 的終端/SSH/SFTP/Telnet/序列埠/RDP/VNC/Spice 客戶端。",
     "footerProduct": "產品",
     "footerCommunity": "社群",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "隱私政策",
     "footerAuthor": "作者",
     "footerResume": "履歷",
-
     "sponsorTitle": "贊助 Electerm",
     "sponsorSubtitle": "幫助支援這個開源專案的持續開發",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "透明資助",
     "videosTitle": "Electerm 影片教學",
     "videosSubtitle": "透過影片教學學習如何使用 Electerm",
-
     "demoTitle": "線上演示",
     "demoSubtitle": "直接在瀏覽器中體驗 Electerm — 無需安裝",
     "demoOpenFull": "全螢幕開啟 ↗",
-
     "resourcesTitle": "資源",
     "resourcesSubtitle": "開始使用所需的一切",
     "resourcesOfficial": "官方",
     "resourcesEcosystem": "生態系統",
     "resourcesCommunity": "社群",
-
     "sponsorsTitle": "贊助商",
     "sponsorsInterested": "有興趣贊助 Electerm？您的支援有助於保持專案的活躍和發展。",
     "sponsorsContact": "聯繫我們成為贊助商",
-
     "starHistoryTitle": "Star 歷史",
-
     "footerAbout": "關於",
     "footerContact": "聯絡我們",
     "footerTerms": "條款",
     "footerFaq": "常見問題",
-
     "faqTitle": "常見問題",
     "faqSubtitle": "關於 electerm 終端客戶端的常見問題和解答",
     "faqDisclaimer": "以下答案基於",
     "faqWikiLink": "在 electerm Wiki 上閱讀更多",
-
     "faqQ0": "electerm 是免費開源的嗎？",
     "faqQ0A1": "是的！electerm 是完全免費的開源軟體。您可以在 GitHub 上檢視、修改和貢獻原始碼：",
     "faqQ0A2": "它基於 MIT 授權條款發布，這意味著您可以自由使用、複製、修改、合併、發布、分發、再授權和/或銷售該軟體的副本。",
-
     "faqQ1": "如何隱藏 SFTP 面板中的本地檔案管理器？",
     "faqQ1A1": "可以，將以下 CSS 新增到設定頁的自訂 CSS 中（設定 → 外觀 → 自訂 CSS）：",
     "faqQ1A2": "儲存後，本機區域將被隱藏，遠端區域將擴充到全寬。",
     "faqQ1A3": "更多 CSS 範例 →",
-
     "faqQ2": "如何交換 SFTP 面板中本機和遠端區域的位置？",
     "faqQ2A": "可以，使用以下自訂 CSS 將遠端區域放在左側，本機區域放在右側：",
-
     "faqQ3": "如何保持 SSH 會話不逾時？",
     "faqQ3A1": "有兩種方法可以防止空閒 SSH 連線被斷開：",
     "faqQ3A2": "方法一 — 在設定中配置保活間隔：",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "輸入一個秒數值（例如 60）",
     "faqQ3A2Li4": "儲存",
     "faqQ3A3": "方法二 — 在活動會話期間點選終端工具列中的保活圖示。這會每 3 秒傳送一個 Enter 鍵（更激進，可能會干擾 vim 等互動式命令）。",
-
     "faqQ4": "如何在 electerm 中使用 SSH 隧道？",
     "faqQ4A1": "SSH 隧道在建立或編輯 SSH 書籤時配置。可以設定：",
     "faqQ4A2": "本機 → 遠端 (ssh -L)：",
     "faqQ4A2Desc": "將本機埠的請求轉送到遠端伺服器埠。",
     "faqQ4A3": "遠端 → 本機 (ssh -R)：",
     "faqQ4A3Desc": "將遠端埠的請求轉送到本機伺服器埠。",
-
     "faqQ5": "什麼是工作區功能以及如何使用它？",
     "faqQ5A1": "工作區允許您將目前配置和開啟的標籤頁儲存為預設。只有從書籤開啟的標籤頁才會被儲存。",
     "faqQ5A2": "儲存和載入工作區的方法：",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "開啟要包含的書籤連線",
     "faqQ5A2Li3": "轉到配置 → 工作區標籤 → 儲存工作區",
     "faqQ5A2Li4": "命名並確認",
-
     "faqQ6": "如何在不儲存書籤的情況下連線到伺服器？",
     "faqQ6A1": "使用側邊欄的快速連線功能。輸入連線字串，例如：",
     "faqQ6A2": "快速連線支援 SSH、Telnet、VNC、RDP、Spice、序列埠和 FTP 協定。SSH 連線可以省略協定首碼。",
-
     "faqQ7": "什麼是批次處理操作以及如何使用？",
     "faqQ7A1": "批次處理操作允許您使用 JSON 定義和執行多步驟 SSH/SFTP 工作流程。透過左側邊欄的批次處理操作按鈕存取。",
     "faqQ7A2": "可用的操作類型：",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— 執行終端命令",
     "faqQ7A2Upload": "— 上傳檔案/資料夾到遠端伺服器",
     "faqQ7A2Download": "— 從遠端伺服器下載檔案/資料夾",
-
     "faqQ8": "可以透過瀏覽器或外部連結開啟 SSH 連線嗎？",
     "faqQ8A1": "可以，electerm 支援使用 ssh://、telnet://、rdp://、vnc://、serial://、spice:// 以及自訂 electerm:// 協定的深度連結。先在 electerm 設定中註冊協定處理程式。",
     "faqQ8A2": "您還可以建立桌面捷徑、HTML 連結或使用命令列工具（open、xdg-open、start）啟動連線。",
-
     "faqQ9": "如何讓 electerm 在登入時自動啟動？",
     "faqQ9A1": "使用 --autohide 參數讓 electerm 啟動時最小化到系統匣：",
     "faqQ9A2Ubuntu": "Ubuntu：",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "建立 electerm.exe 的捷徑，放在 %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup 中",
     "faqQ9A4Mac": "macOS：",
     "faqQ9A4MacDesc": "建立包含 /Applications/electerm.app/Contents/MacOS/electerm --autohide 的指令碼，賦予執行許可權，然後在系統設定 → 登入項中新增",
-
     "faqQ10": "如何在 electerm 中配置 AI 助手？",
     "faqQ10A1": "Electerm 相容任何 OpenAI 相容的 API。配置方法：",
     "faqQ10A2Li1": "開啟 Electerm 的 AI 設定",
@@ -182,32 +157,28 @@
     "faqQ10A2Li3": "選擇或輸入模型名稱（例如 gpt-4、deepseek-chat）",
     "faqQ10A2Li4": "輸入您的 API 金鑰",
     "faqQ10A2Li5": "可選：定義系統角色提示詞，然後儲存",
-
     "faqQ11": "快捷命令中可以使用動態值嗎？",
     "faqQ11A1": "可以，快捷命令範本支援在執行時解析的動態佔位符：",
     "faqQ11A2": "支援的範本變數：",
     "faqQ11A2Time": "時間 — 插入目前時間",
     "faqQ11A2Date": "日期 — 插入目前日期",
     "faqQ11A2Clipboard": "剪貼簿 — 插入目前剪貼簿內容",
-
     "faqQ12": "可以為新書籤設定預設設定檔嗎？",
     "faqQ12A": "可以。在 electerm 設定中，在一個設定檔上啟用「預設」核取方塊。該設定檔將在建立新書籤時自動選用。",
-
     "homeFaqTitle": "常見問題",
     "homeFaqSubtitle": "關於 electerm 的常見問題快速解答",
     "homeFaqViewAll": "查看全部常見問題 →",
     "homeFaq0Q": "electerm 是免費開源的嗎？",
     "homeFaq0A": "是的！electerm 是完全免費的開源軟體（MIT 授權條款）。在 GitHub 上查看原始碼。",
-
     "homeFaq1Q": "如何防止 SSH 連線逾時？",
     "homeFaq1A": "在設定中配置 Keep Alive 間隔，或在活動連線期間點擊終端工具列中的 keep-alive 圖示。",
     "homeFaq2Q": "可以在 electerm 中使用 SSH 隧道嗎？",
     "homeFaq2A": "可以。在建立或編輯 SSH 書籤時，可以設定本地到遠端或遠端到本地的連接埠轉發。",
     "homeFaq3Q": "如何配置 AI 助手？",
     "homeFaq3A": "開啟 AI 設定，輸入 API URL、模型名稱和 API 金鑰。相容任何 OpenAI 相容的 API。",
-
     "homeAuthorTitle": "關於作者",
     "homeAuthorDesc1": "electerm 由 ZHAO Xudong 建立並維護。",
-    "homeAuthorGithub": "查看 GitHub 個人主頁 →"
+    "homeAuthorGithub": "查看 GitHub 個人主頁 →",
+    "siteTitleShort": "免費終端/SSH/SFTP客戶端"
   }
 }

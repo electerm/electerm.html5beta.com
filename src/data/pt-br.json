@@ -7,7 +7,6 @@
     "desc": "Cliente de terminal/SSH/SFTP/FTP/Telnet/porta serial/RDP/VNC/Spice (Linux, Mac, Windows)",
     "keywords": "electerm,terminal,SSH,SFTP,FTP,Telnet,porta serial,RDP,VNC,Spice,gerenciador de arquivos,código aberto,cliente de terminal grátis,cliente SSH,cliente SFTP,área de trabalho remota,Linux,Mac,Windows,multiplataforma",
     "siteTitle": "electerm - Cliente de terminal/SSH/SFTP/Telnet/VNC/RDP/Spice grátis e open source",
-
     "headerHome": "Início",
     "headerAbout": "Sobre",
     "headerFaq": "FAQ",
@@ -17,10 +16,8 @@
     "headerSponsor": "Patrocinar",
     "headerGithub": "GitHub",
     "headerLanguages": "Idiomas",
-
     "heroTryDemo": "Experimentar demo",
     "heroViewOnGithub": "Ver no GitHub",
-
     "featuresTitle": "Recursos",
     "featuresSubtitle": "Tudo o que você precisa em um cliente de terminal",
     "featureAllInOneTitle": "Cliente tudo-em-um de código aberto",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "Suporta transferência de arquivos Zmodem (rz/sz) e Trzsz (trz/tsz), compatível com tmux.",
     "featureCrossPlatformTitle": "Multiplataforma",
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64), macOS 10.15+ (x64/arm64), Linux (x64/arm64/Loong64) incluindo glibc 2.17+.",
-
     "downloadTitle": "Download",
     "downloadSubtitle": "Gratuito e de código aberto — escolha sua plataforma",
     "downloadViewAll": "Ver todas as versões no GitHub →",
-
     "changelogTitle": "Notas de versão",
     "changelogSubtitle": "O que há de novo na versão mais recente",
-
     "communityTitle": "Junte-se à comunidade",
     "communityWechatDesc": "Junte-se à nossa comunidade WeChat para suporte e atualizações",
-
     "footerBrandDesc": "Cliente Terminal/SSH/SFTP/Telnet/porta serial/RDP/VNC/Spice para Linux, macOS e Windows.",
     "footerProduct": "Produto",
     "footerCommunity": "Comunidade",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "Política de privacidade",
     "footerAuthor": "Autor",
     "footerResume": "Currículo",
-
     "sponsorTitle": "Patrocinar Electerm",
     "sponsorSubtitle": "Ajude a apoiar o desenvolvimento contínuo deste projeto de código aberto",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "Financiamento transparente",
     "videosTitle": "Guias em vídeo do Electerm",
     "videosSubtitle": "Aprenda a usar o Electerm com tutoriais em vídeo",
-
     "demoTitle": "Demo ao vivo",
     "demoSubtitle": "Experimente o Electerm diretamente no seu navegador — sem instalação necessária",
     "demoOpenFull": "Abrir em tela cheia ↗",
-
     "resourcesTitle": "Recursos",
     "resourcesSubtitle": "Tudo o que você precisa para começar",
     "resourcesOfficial": "Oficial",
     "resourcesEcosystem": "Ecossistema",
     "resourcesCommunity": "Comunidade",
-
     "sponsorsTitle": "Patrocinadores",
     "sponsorsInterested": "Interessado em patrocinar o Electerm? Seu apoio ajuda a manter o projeto ativo e em crescimento.",
     "sponsorsContact": "Entre em contato para se tornar um patrocinador",
-
     "starHistoryTitle": "Histórico de Star",
-
     "footerAbout": "Sobre",
     "footerContact": "Contato",
     "footerTerms": "Termos",
     "footerFaq": "FAQ",
-
     "faqTitle": "Perguntas frequentes",
     "faqSubtitle": "Perguntas e respostas comuns sobre o cliente terminal electerm",
     "faqDisclaimer": "Estas respostas são baseadas no",
     "faqWikiLink": "Leia mais no Wiki do electerm",
-
     "faqQ0": "O electerm é gratuito e de código aberto?",
     "faqQ0A1": "Sim! O electerm é um software completamente gratuito e de código aberto. Você pode visualizar, modificar e contribuir com o código-fonte no GitHub:",
     "faqQ0A2": "Ele é lançado sob a licença MIT, o que significa que você é livre para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do software.",
-
     "faqQ1": "Posso ocultar o gerenciador de arquivos local no painel SFTP?",
     "faqQ1A1": "Sim, adicione o seguinte CSS em Configurações → Aparência → CSS personalizado:",
     "faqQ1A2": "Após salvar, a seção local será ocultada e a seção remota será expandida para largura total.",
     "faqQ1A3": "Mais exemplos CSS →",
-
     "faqQ2": "Posso trocar as seções local e remota no painel SFTP?",
     "faqQ2A": "Sim, use o seguinte CSS personalizado para colocar a seção remota à esquerda e a local à direita:",
-
     "faqQ3": "Como evitar que minha sessão SSH expire?",
     "faqQ3A1": "Existem dois métodos para evitar que conexões SSH inativas sejam desconectadas:",
     "faqQ3A2": "Método 1 — Configurar o intervalo de keep-alive nas Configurações:",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "Inserir um valor em segundos (ex. 60)",
     "faqQ3A2Li4": "Salvar",
     "faqQ3A3": "Método 2 — Clique no ícone de keep-alive na barra de ferramentas do terminal durante uma sessão ativa. Isso envia uma tecla Enter a cada 3 segundos (mais agressivo, pode interferir com comandos interativos como vim).",
-
     "faqQ4": "Como usar túneis SSH no electerm?",
     "faqQ4A1": "Os túneis SSH são configurados ao criar ou editar um marcador SSH. Você pode configurar:",
     "faqQ4A2": "Local → Remoto (ssh -L): ",
     "faqQ4A2Desc": "Encaminhar solicitações de uma porta local para uma porta do servidor remoto.",
     "faqQ4A3": "Remoto → Local (ssh -R): ",
     "faqQ4A3Desc": "Encaminhar solicitações de uma porta remota para uma porta do servidor local.",
-
     "faqQ5": "O que é o recurso de Espaço de trabalho e como usá-lo?",
     "faqQ5A1": "O espaço de trabalho permite salvar seu layout atual e abas abertas como uma predefinição. Apenas abas abertas a partir de marcadores são salvas.",
     "faqQ5A2": "Para salvar e carregar espaços de trabalho:",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "Abra as conexões de marcadores que deseja incluir",
     "faqQ5A2Li3": "Vá em Layout → aba Espaço de trabalho → Salvar espaço de trabalho",
     "faqQ5A2Li4": "Nomeie e confirme",
-
     "faqQ6": "Como conectar a um servidor sem salvar um marcador?",
     "faqQ6A1": "Use a Conexão rápida na barra lateral. Insira uma string de conexão como:",
     "faqQ6A2": "A Conexão rápida suporta SSH, Telnet, VNC, RDP, Spice, Serial e FTP. Você pode omitir o prefixo do protocolo para conexões SSH.",
-
     "faqQ7": "O que é a Operação em lote e como usá-la?",
     "faqQ7A1": "A operação em lote permite definir e executar fluxos de trabalho SSH/SFTP de várias etapas usando JSON. Acesse através do botão Operação em lote na barra lateral esquerda.",
     "faqQ7A2": "Tipos de ação disponíveis:",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— Executa um comando de terminal",
     "faqQ7A2Upload": "— Envia arquivos/pastas para o servidor remoto",
     "faqQ7A2Download": "— Baixa arquivos/pastas do servidor remoto",
-
     "faqQ8": "Posso abrir conexões SSH a partir de um navegador ou links externos?",
     "faqQ8A1": "Sim. O electerm suporta links profundos usando protocolos como ssh://, telnet://, rdp://, vnc://, serial://, spice:// e o protocolo personalizado electerm://. Registre primeiro os manipuladores de protocolo nas configurações do electerm.",
     "faqQ8A2": "Você também pode criar atalhos de desktop, links HTML ou usar ferramentas de linha de comando (open, xdg-open, start) para iniciar conexões.",
-
     "faqQ9": "Como fazer o electerm iniciar automaticamente ao fazer login?",
     "faqQ9A1": "Use o parâmetro --autohide para iniciar o electerm minimizado na bandeja do sistema:",
     "faqQ9A2Ubuntu": "Ubuntu: ",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "Crie um atalho para electerm.exe e coloque-o em %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
     "faqQ9A4Mac": "macOS: ",
     "faqQ9A4MacDesc": "Crie um script com /Applications/electerm.app/Contents/MacOS/electerm --autohide, torne-o executável e adicione-o em Configurações do sistema → Itens de login",
-
     "faqQ10": "Como configurar o assistente de IA no electerm?",
     "faqQ10A1": "O Electerm funciona com qualquer API compatível com OpenAI. Para configurar:",
     "faqQ10A2Li1": "Abra as configurações de IA no Electerm",
@@ -182,32 +157,28 @@
     "faqQ10A2Li3": "Selecione ou digite o nome do modelo (ex. gpt-4, deepseek-chat)",
     "faqQ10A2Li4": "Insira sua chave de API",
     "faqQ10A2Li5": "Opcional: defina um prompt de função do sistema e salve",
-
     "faqQ11": "Posso usar valores dinâmicos em comandos rápidos?",
     "faqQ11A1": "Sim. Os modelos de comandos rápidos suportam placeholders dinâmicos que são resolvidos no momento da execução:",
     "faqQ11A2": "Variáveis de modelo suportadas:",
     "faqQ11A2Time": "Hora — insere a hora atual",
     "faqQ11A2Date": "Data — insere a data atual",
     "faqQ11A2Clipboard": "Área de transferência — insere o conteúdo atual da área de transferência",
-
     "faqQ12": "Posso definir um perfil padrão para novos marcadores?",
     "faqQ12A": "Sim. Ative a caixa de seleção 'Padrão' em um perfil nas configurações do electerm. Esse perfil será automaticamente selecionado ao criar novos marcadores.",
-
     "homeFaqTitle": "Perguntas Frequentes",
     "homeFaqSubtitle": "Respostas rápidas para perguntas comuns sobre o electerm",
     "homeFaqViewAll": "Ver todas as perguntas frequentes →",
     "homeFaq0Q": "O electerm é gratuito e de código aberto?",
     "homeFaq0A": "Sim! O electerm é completamente gratuito e de código aberto (licença MIT). Veja o código no GitHub.",
-
     "homeFaq1Q": "Como evitar que minha sessão SSH expire?",
     "homeFaq1A": "Defina o intervalo de Keep Alive nas Configurações ou clique no ícone keep-alive na barra de ferramentas do terminal durante uma sessão ativa.",
     "homeFaq2Q": "Posso usar túneis SSH no electerm?",
     "homeFaq2A": "Sim, configure o encaminhamento de porta local → remoto ou remoto → local ao criar ou editar um marcador SSH.",
     "homeFaq3Q": "Como configuro o assistente de IA?",
     "homeFaq3A": "Abra as configurações de IA, insira a URL da API, o nome do modelo e a chave da API. Funciona com qualquer API compatível com OpenAI.",
-
     "homeAuthorTitle": "Sobre o autor",
     "homeAuthorDesc1": "electerm foi criado e é mantido por ZHAO Xudong.",
-    "homeAuthorGithub": "Ver perfil no GitHub →"
+    "homeAuthorGithub": "Ver perfil no GitHub →",
+    "siteTitleShort": "Terminal/SSH/SFTP grátis"
   }
 }

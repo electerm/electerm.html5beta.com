@@ -7,7 +7,6 @@
     "desc": "ターミナル/SSH/SFTP/FTP/Telnet/シリアルポート/RDP/VNC/Spiceクライアント（Linux、Mac、Windows対応）",
     "keywords": "electerm,ターミナル,SSH,SFTP,FTP,Telnet,シリアルポート,RDP,VNC,Spice,ファイルマネージャー,オープンソース,無料ターミナル,SSHクライアント,SFTPクライアント,リモートデスクトップ,Linux,Mac,Windows,クロスプラットフォーム",
     "siteTitle": "electerm - 無料オープンソースターミナル/SSH/SFTP/Telnet/シリアルポート/VNC/RDP/Spiceクライアント",
-
     "headerHome": "ホーム",
     "headerAbout": "概要",
     "headerFaq": "FAQ",
@@ -17,10 +16,8 @@
     "headerSponsor": "スポンサー",
     "headerGithub": "GitHub",
     "headerLanguages": "言語",
-
     "heroTryDemo": "デモを試す",
     "heroViewOnGithub": "GitHub で見る",
-
     "featuresTitle": "機能",
     "featuresSubtitle": "ターミナルクライアントに必要なすべて",
     "featureAllInOneTitle": "オープンソース オールインワンクライアント",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "Zmodem（rz/sz）とTrzsz（trz/tsz）ファイル転送をサポート、tmux互換。",
     "featureCrossPlatformTitle": "クロスプラットフォーム",
     "featureCrossPlatformDesc": "Windows 7+（x64/ARM64）、macOS 10.15+（x64/arm64）、Linux（x64/arm64/Loong64）glibc 2.17+対応。",
-
     "downloadTitle": "ダウンロード",
     "downloadSubtitle": "無料でオープンソース — お使いのプラットフォームを選択",
     "downloadViewAll": "GitHubですべてのリリースを表示 →",
-
     "changelogTitle": "リリースノート",
     "changelogSubtitle": "最新バージョンの新機能",
-
     "communityTitle": "コミュニティに参加",
     "communityWechatDesc": "サポートと更新情報のためにWeChatコミュニティに参加",
-
     "footerBrandDesc": "Linux、macOS、Windows向けターミナル/SSH/SFTP/Telnet/シリアルポート/RDP/VNC/Spiceクライアント。",
     "footerProduct": "製品",
     "footerCommunity": "コミュニティ",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "プライバシーポリシー",
     "footerAuthor": "著者",
     "footerResume": "履歴書",
-
     "sponsorTitle": "Electerm をスポンサー",
     "sponsorSubtitle": "このオープンソースプロジェクトの継続的な開発を支援",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "透明な資金提供",
     "videosTitle": "Electerm 動画ガイド",
     "videosSubtitle": "動画チュートリアルでElectermの使い方を学ぶ",
-
     "demoTitle": "ライブデモ",
     "demoSubtitle": "ブラウザで直接Electermを試す — インストール不要",
     "demoOpenFull": "全画面で開く ↗",
-
     "resourcesTitle": "リソース",
     "resourcesSubtitle": "開始に必要なすべて",
     "resourcesOfficial": "公式",
     "resourcesEcosystem": "エコシステム",
     "resourcesCommunity": "コミュニティ",
-
     "sponsorsTitle": "スポンサー",
     "sponsorsInterested": "Electermのスポンサーに興味がありますか？あなたのサポートはプロジェクトの活性化と成長に役立ちます。",
     "sponsorsContact": "スポンサーになるにはお問い合わせください",
-
     "starHistoryTitle": "Star履歴",
-
     "footerAbout": "概要",
     "footerContact": "お問い合わせ",
     "footerTerms": "利用規約",
     "footerFaq": "FAQ",
-
     "faqTitle": "よくある質問",
     "faqSubtitle": "electerm ターミナルクライアントに関するよくある質問と回答",
     "faqDisclaimer": "これらの回答は以下に基づいています",
     "faqWikiLink": "electerm Wiki で詳細を見る",
-
     "faqQ0": "electermは無料でオープンソースですか？",
     "faqQ0A1": "はい！electermは完全に無料のオープンソースソフトウェアです。ソースコードはGitHubで表示、修正、コントリビュートできます：",
     "faqQ0A2": "MITライセンスのもとで公開されており、ソフトウェアの使用、コピー、修正、マージ、公開、配布、サブライセンス、販売を自由に行うことができます。",
-
     "faqQ1": "SFTP パネルでローカルファイルマネージャーを非表示にできますか？",
     "faqQ1A1": "はい。以下の CSS を設定のカスタム CSS に追加してください（設定 → 外観 → カスタム CSS）：",
     "faqQ1A2": "保存後、ローカルセクションが非表示になり、リモートセクションが全幅に拡張されます。",
     "faqQ1A3": "その他の CSS 例 →",
-
     "faqQ2": "SFTP パネルのローカルとリモートのセクションを入れ替えられますか？",
     "faqQ2A": "はい。以下のカスタム CSS でリモートセクションを左に、ローカルセクションを右に配置できます：",
-
     "faqQ3": "SSH セッションがタイムアウトしないようにするには？",
     "faqQ3A1": "アイドル状態の SSH 接続が切断されるのを防ぐ方法は 2 つあります：",
     "faqQ3A2": "方法1 — 設定でキープアライブ間隔を設定：",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "秒単位で値を入力（例：60）",
     "faqQ3A2Li4": "保存",
     "faqQ3A3": "方法2 — アクティブセッション中にターミナルツールバーのキープアライブアイコンをクリック。3秒ごとに Enter キーを送信します（より積極的で、vim などの対話型コマンドに干渉する可能性があります）。",
-
     "faqQ4": "electerm で SSH トンネルを使うには？",
     "faqQ4A1": "SSH ブックマークの作成・編集時に設定します。以下の設定が可能です：",
     "faqQ4A2": "ローカル → リモート (ssh -L)：",
     "faqQ4A2Desc": "ローカルポートのリクエストをリモートサーバーポートに転送します。",
     "faqQ4A3": "リモート → ローカル (ssh -R)：",
     "faqQ4A3Desc": "リモートポートのリクエストをローカルサーバーポートに転送します。",
-
     "faqQ5": "ワークスペース機能とは？使い方は？",
     "faqQ5A1": "ワークスペースを使用すると、現在のレイアウトと開いているタブをプリセットとして保存できます。ブックマークから開いたタブのみが保存されます。",
     "faqQ5A2": "ワークスペースの保存と読み込み：",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "含めたいブックマーク接続を開く",
     "faqQ5A2Li3": "レイアウト → ワークスペースタブ → ワークスペースを保存",
     "faqQ5A2Li4": "名前を付けて確認",
-
     "faqQ6": "ブックマークを保存せずにサーバーに接続するには？",
     "faqQ6A1": "サイドバーのクイック接続を使用します。以下のような接続文字列を入力：",
     "faqQ6A2": "クイック接続は SSH、Telnet、VNC、RDP、Spice、シリアル、FTP プロトコルをサポートしています。SSH 接続ではプロトコルプレフィックスを省略できます。",
-
     "faqQ7": "バッチ操作とは？使い方は？",
     "faqQ7A1": "バッチ操作を使用すると、JSON を使用してマルチステップの SSH/SFTP ワークフローを定義・実行できます。左サイドバーのバッチ操作ボタンからアクセスします。",
     "faqQ7A2": "利用可能なアクションタイプ：",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— ターミナルコマンドを実行",
     "faqQ7A2Upload": "— ファイル/フォルダーをリモートサーバーにアップロード",
     "faqQ7A2Download": "— リモートサーバーからファイル/フォルダーをダウンロード",
-
     "faqQ8": "ブラウザや外部リンクから SSH 接続を開けますか？",
     "faqQ8A1": "はい。electerm は ssh://、telnet://、rdp://、vnc://、serial://、spice:// およびカスタム electerm:// プロトコルを使用したディープリンクをサポートしています。まず electerm 設定でプロトコルハンドラーを登録してください。",
     "faqQ8A2": "デスクトップショートカット、HTML リンク、またはコマンドラインツール（open、xdg-open、start）を使用して接続を起動することもできます。",
-
     "faqQ9": "ログイン時に electerm を自動起動するには？",
     "faqQ9A1": "--autohide フラグを使用して electerm をシステムトレイに最小化して起動します：",
     "faqQ9A2Ubuntu": "Ubuntu：",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "electerm.exe のショートカットを作成し、%appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup に配置",
     "faqQ9A4Mac": "macOS：",
     "faqQ9A4MacDesc": "/Applications/electerm.app/Contents/MacOS/electerm --autohide を含むスクリプトを作成し、実行可能にしてからシステム設定 → ログイン項目に追加",
-
     "faqQ10": "electerm で AI アシスタントを設定するには？",
     "faqQ10A1": "Electerm は OpenAI 互換の API と連携します。設定方法：",
     "faqQ10A2Li1": "Electerm の AI 設定を開く",
@@ -182,32 +157,28 @@
     "faqQ10A2Li3": "モデル名を選択または入力（例：gpt-4、deepseek-chat）",
     "faqQ10A2Li4": "API キーを入力",
     "faqQ10A2Li5": "オプション：システムロールプロンプトを定義して保存",
-
     "faqQ11": "クイックコマンドで動的な値を使えますか？",
     "faqQ11A1": "はい。クイックコマンドテンプレートは実行時に解決される動的プレースホルダーをサポートしています：",
     "faqQ11A2": "サポートされているテンプレート変数：",
     "faqQ11A2Time": "時間 — 現在の時刻を挿入",
     "faqQ11A2Date": "日付 — 現在の日付を挿入",
     "faqQ11A2Clipboard": "クリップボード — 現在のクリップボード内容を挿入",
-
     "faqQ12": "新しいブックマークにデフォルトのプロファイルを設定できますか？",
     "faqQ12A": "はい。electerm 設定でプロファイルの「デフォルト」チェックボックスを有効にしてください。新しいブックマーク作成時にそのプロファイルが自動的に選択されます。",
-
     "homeFaqTitle": "よくある質問",
     "homeFaqSubtitle": "electermに関するよくある質問へのクイックアンサー",
     "homeFaqViewAll": "すべてのFAQを見る →",
     "homeFaq0Q": "electermは無料でオープンソースですか？",
     "homeFaq0A": "はい！electermは完全に無料のオープンソースソフトウェアです（MITライセンス）。GitHubでソースを確認できます。",
-
     "homeFaq1Q": "SSHセッションのタイムアウトを防ぐには？",
     "homeFaq1A": "設定でKeep Alive間隔を設定するか、アクティブなセッション中にターミナルツールバーのkeep-aliveアイコンをクリックしてください。",
     "homeFaq2Q": "electermでSSHトンネルを使用できますか？",
     "homeFaq2A": "はい。SSHブックマークの作成・編集時に、ローカル→リモートまたはリモート→ローカルのポート転送を設定できます。",
     "homeFaq3Q": "AIアシスタントの設定方法は？",
     "homeFaq3A": "AI設定を開き、API URL、モデル名、APIキーを入力してください。OpenAI互換のAPIで動作します。",
-
     "homeAuthorTitle": "作者について",
     "homeAuthorDesc1": "electermはZHAO Xudongによって作成・維持されています。",
-    "homeAuthorGithub": "GitHubプロフィールを見る →"
+    "homeAuthorGithub": "GitHubプロフィールを見る →",
+    "siteTitleShort": "無料ターミナル/SSH/SFTP"
   }
 }

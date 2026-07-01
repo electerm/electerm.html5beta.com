@@ -14,7 +14,7 @@ html(lang=langCode)
         "@context": "https://schema.org",
         "@type": "AboutPage",
         "name": "About electerm",
-        "url": "https://electerm.org/about/",
+        "url": "#{host}/about/",
         "mainEntity": { "@type": "SoftwareApplication", "name": "electerm" }
       }
     script(type='application/ld+json').
@@ -22,8 +22,8 @@ html(lang=langCode)
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://electerm.org" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://electerm.org/about/" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "#{host}" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "#{host}/about/" }
         ]
       }
   body
@@ -72,7 +72,7 @@ html(lang=langCode)
             .about-link-card
               h3 🎥 Video Guides
               p Watch tutorials and demos.
-              a.about-link(href='/videos') Watch Videos ↗
+              a.about-link(href='/videos/') Watch Videos ↗
             .about-link-card
               h3 🐛 Report Issues
               p Found a bug? Let us know.

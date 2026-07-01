@@ -24,9 +24,13 @@
     { "source": "/ar", "destination": "/ar/", "statusCode": 301 },
     { "source": "/tr", "destination": "/tr/", "statusCode": 301 },
     { "source": "/pl", "destination": "/pl/", "statusCode": 301 },
-    { "source": "/id", "destination": "/id/", "statusCode": 301 }
+    { "source": "/id", "destination": "/id/", "statusCode": 301 },
+    { "source": "/about", "destination": "/about/", "statusCode": 301 },
+    { "source": "/faq", "destination": "/faq/", "statusCode": 301 },
+    { "source": "/videos", "destination": "/videos/", "statusCode": 301 },
+    { "source": "/contact", "destination": "/contact/", "statusCode": 301 },
+    { "source": "/terms", "destination": "/terms/", "statusCode": 301 },
+    { "source": "/privacy-policy", "destination": "/privacy-policy/", "statusCode": 301 },
+    { "source": "/sponsor-electerm", "destination": "/sponsor-electerm/", "statusCode": 301 }
   ]
-}
-{
-  "outputDirectory": "./public"
 }

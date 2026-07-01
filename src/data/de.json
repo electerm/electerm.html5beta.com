@@ -7,7 +7,6 @@
     "desc": "Terminal-/SSH-/SFTP-/FTP-/Telnet-/Seriellport-/RDP-/VNC-/Spice-Client (Linux, Mac, Windows)",
     "keywords": "electerm,Terminal,SSH,SFTP,FTP,Telnet,Seriellport,RDP,VNC,Spice,Dateimanager,Open Source,kostenloser Terminal-Client,SSH-Client,SFTP-Client,Remote-Desktop,Linux,Mac,Windows,plattformübergreifend",
     "siteTitle": "electerm - Kostenloser Open-Source Terminal/SSH/SFTP/Telnet/VNC/RDP/Spice-Client",
-
     "headerHome": "Startseite",
     "headerAbout": "Über",
     "headerFaq": "FAQ",
@@ -17,10 +16,8 @@
     "headerSponsor": "Sponsor",
     "headerGithub": "GitHub",
     "headerLanguages": "Sprachen",
-
     "heroTryDemo": "Demo ausprobieren",
     "heroViewOnGithub": "Auf GitHub ansehen",
-
     "featuresTitle": "Funktionen",
     "featuresSubtitle": "Alles was Sie in einem Terminal-Client benötigen",
     "featureAllInOneTitle": "Open-Source Alles-in-einem-Client",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "Unterstützt Zmodem (rz/sz) und Trzsz (trz/tsz) Dateiübertragung, kompatibel mit tmux.",
     "featureCrossPlatformTitle": "Plattformübergreifend",
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64), macOS 10.15+ (x64/arm64), Linux (x64/arm64/Loong64) einschließlich glibc 2.17+.",
-
     "downloadTitle": "Download",
     "downloadSubtitle": "Frei und Open Source — wählen Sie Ihre Plattform",
     "downloadViewAll": "Alle Releases auf GitHub ansehen →",
-
     "changelogTitle": "Versionshinweise",
     "changelogSubtitle": "Was ist neu in der neuesten Version",
-
     "communityTitle": "Der Community beitreten",
     "communityWechatDesc": "Treten Sie unserer WeChat-Community für Support und Updates bei",
-
     "footerBrandDesc": "Terminal/SSH/SFTP/Telnet/Seriellport/RDP/VNC/Spice-Client für Linux, macOS und Windows.",
     "footerProduct": "Produkt",
     "footerCommunity": "Community",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "Datenschutzrichtlinie",
     "footerAuthor": "Autor",
     "footerResume": "Lebenslauf",
-
     "sponsorTitle": "Electerm sponsern",
     "sponsorSubtitle": "Unterstützen Sie die weitere Entwicklung dieses Open-Source-Projekts",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "Transparente Finanzierung",
     "videosTitle": "Electerm Video-Anleitungen",
     "videosSubtitle": "Lernen Sie Electerm mit Video-Tutorials kennen",
-
     "demoTitle": "Live-Demo",
     "demoSubtitle": "Probieren Sie Electerm direkt in Ihrem Browser aus — keine Installation erforderlich",
     "demoOpenFull": "Vollbild öffnen ↗",
-
     "resourcesTitle": "Ressourcen",
     "resourcesSubtitle": "Alles was Sie zum Einstieg benötigen",
     "resourcesOfficial": "Offiziell",
     "resourcesEcosystem": "Ökosystem",
     "resourcesCommunity": "Community",
-
     "sponsorsTitle": "Sponsoren",
     "sponsorsInterested": "Interesse an der Sponsoring von Electerm? Ihre Unterstützung hilft, das Projekt aktiv und wachsend zu halten.",
     "sponsorsContact": "Kontaktieren Sie uns, um Sponsor zu werden",
-
     "starHistoryTitle": "Star-Verlauf",
-
     "footerAbout": "Über",
     "footerContact": "Kontakt",
     "footerTerms": "AGB",
     "footerFaq": "FAQ",
-
     "faqTitle": "Häufig gestellte Fragen",
     "faqSubtitle": "Häufige Fragen und Antworten zum electerm-Terminal-Client",
     "faqDisclaimer": "Diese Antworten basieren auf dem",
     "faqWikiLink": "Mehr lesen im electerm Wiki",
-
     "faqQ0": "Ist electerm kostenlos und Open-Source?",
     "faqQ0A1": "Ja! electerm ist vollständig kostenlos und Open-Source. Sie können den Quellcode auf GitHub einsehen, modifizieren und dazu beitragen:",
     "faqQ0A2": "Es ist unter der MIT-Lizenz veröffentlicht, was bedeutet, dass Sie die Software frei verwenden, kopieren, modifizieren, zusammenführen, veröffentlichen, verteilen, unterlizenzieren und/oder verkaufen können.",
-
     "faqQ1": "Kann ich den lokalen Dateimanager im SFTP-Bedienfeld ausblenden?",
     "faqQ1A1": "Ja, fügen Sie das folgende CSS unter Einstellungen → Darstellung → Benutzerdefiniertes CSS hinzu:",
     "faqQ1A2": "Nach dem Speichern wird der lokale Bereich ausgeblendet und der entfernte Bereich auf volle Breite erweitert.",
     "faqQ1A3": "Weitere CSS-Beispiele →",
-
     "faqQ2": "Kann ich die lokalen und entfernten Bereiche im SFTP-Bedienfeld tauschen?",
     "faqQ2A": "Ja, verwenden Sie das folgende benutzerdefinierte CSS, um den entfernten Bereich links und den lokalen Bereich rechts zu platzieren:",
-
     "faqQ3": "Wie verhindere ich, dass meine SSH-Sitzung eine Zeitüberschreitung erleidet?",
     "faqQ3A1": "Es gibt zwei Methoden, um zu verhindern, dass untätige SSH-Verbindungen getrennt werden:",
     "faqQ3A2": "Methode 1 — Keep-Alive-Intervall in den Einstellungen konfigurieren:",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "Einen Wert in Sekunden eingeben (z.B. 60)",
     "faqQ3A2Li4": "Speichern",
     "faqQ3A3": "Methode 2 — Klicken Sie während einer aktiven Sitzung auf das Keep-Alive-Symbol in der Terminal-Symbolleiste. Dies sendet alle 3 Sekunden eine Eingabetaste (aggressiver, kann interaktive Befehle wie vim stören).",
-
     "faqQ4": "Wie verwende ich SSH-Tunnel in electerm?",
     "faqQ4A1": "SSH-Tunnel werden beim Erstellen oder Bearbeiten eines SSH-Lesezeichens konfiguriert. Sie können einrichten:",
     "faqQ4A2": "Lokal → Remote (ssh -L): ",
     "faqQ4A2Desc": "Anfragen von einem lokalen Port an einen entfernten Server-Port weiterleiten.",
     "faqQ4A3": "Remote → Lokal (ssh -R): ",
     "faqQ4A3Desc": "Anfragen von einem entfernten Port an einen lokalen Server-Port weiterleiten.",
-
     "faqQ5": "Was ist der Arbeitsbereich und wie verwende ich ihn?",
     "faqQ5A1": "Mit dem Arbeitsbereich können Sie Ihr aktuelles Layout und geöffnete Tabs als Voreinstellung speichern. Nur über Lesezeichen geöffnete Tabs werden gespeichert.",
     "faqQ5A2": "So speichern und laden Sie Arbeitsbereiche:",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "Öffnen Sie die gewünschten Lesezeichen-Verbindungen",
     "faqQ5A2Li3": "Gehen Sie zu Layout → Arbeitsbereich → Arbeitsbereich speichern",
     "faqQ5A2Li4": "Benennen und bestätigen",
-
     "faqQ6": "Wie verbinde ich mich mit einem Server, ohne ein Lesezeichen zu speichern?",
     "faqQ6A1": "Verwenden Sie die Schnellverbindung in der Seitenleiste. Geben Sie eine Verbindungszeichenfolge ein wie:",
     "faqQ6A2": "Schnellverbindung unterstützt SSH, Telnet, VNC, RDP, Spice, Seriell- und FTP-Protokolle. Bei SSH-Verbindungen können Sie das Protokollpräfix weglassen.",
-
     "faqQ7": "Was sind Batch-Operationen und wie verwende ich sie?",
     "faqQ7A1": "Batch-Operationen ermöglichen die Definition und Ausführung mehrstufiger SSH/SFTP-Workflows mit JSON. Zugriff über die Schaltfläche 'Batch-Operation' in der linken Seitenleiste.",
     "faqQ7A2": "Verfügbare Aktionstypen:",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— Führt einen Terminalbefehl aus",
     "faqQ7A2Upload": "— Lädt Dateien/Ordner auf den entfernten Server hoch",
     "faqQ7A2Download": "— Lädt Dateien/Ordner vom entfernten Server herunter",
-
     "faqQ8": "Kann ich SSH-Verbindungen aus einem Browser oder von externen Links öffnen?",
     "faqQ8A1": "Ja. electerm unterstützt Deep Links mit Protokollen wie ssh://, telnet://, rdp://, vnc://, serial://, spice:// und dem benutzerdefinierten electerm://-Protokoll. Registrieren Sie zuerst die Protokoll-Handler in den electerm-Einstellungen.",
     "faqQ8A2": "Sie können auch Desktop-Verknüpfungen, HTML-Links oder Befehlszeilenwerkzeuge (open, xdg-open, start) zum Starten von Verbindungen verwenden.",
-
     "faqQ9": "Wie starte ich electerm automatisch beim Anmelden?",
     "faqQ9A1": "Verwenden Sie den --autohide-Parameter, um electerm minimiert in der Taskleiste zu starten:",
     "faqQ9A2Ubuntu": "Ubuntu: ",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "Erstellen Sie eine Verknüpfung zu electerm.exe und platzieren Sie sie in %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
     "faqQ9A4Mac": "macOS: ",
     "faqQ9A4MacDesc": "Erstellen Sie ein Skript mit /Applications/electerm.app/Contents/MacOS/electerm --autohide, machen Sie es ausführbar und fügen Sie es in Systemeinstellungen → Anmeldeobjekte hinzu",
-
     "faqQ10": "Wie konfiguriere ich den KI-Assistenten in electerm?",
     "faqQ10A1": "Electerm funktioniert mit jeder OpenAI-kompatiblen API. So konfigurieren Sie:",
     "faqQ10A2Li1": "KI-Einstellungen in Electerm öffnen",
@@ -182,32 +157,28 @@
     "faqQ10A2Li3": "Modellnamen auswählen oder eingeben (z.B. gpt-4, deepseek-chat)",
     "faqQ10A2Li4": "API-Schlüssel eingeben",
     "faqQ10A2Li5": "Optional: Systemrollen-Prompt definieren und speichern",
-
     "faqQ11": "Kann ich dynamische Werte in Schnellbefehlen verwenden?",
     "faqQ11A1": "Ja. Schnellbefehl-Vorlagen unterstützen dynamische Platzhalter, die zur Ausführungszeit aufgelöst werden:",
     "faqQ11A2": "Unterstützte Vorlagenvariablen:",
     "faqQ11A2Time": "Zeit — fügt die aktuelle Uhrzeit ein",
     "faqQ11A2Date": "Datum — fügt das aktuelle Datum ein",
     "faqQ11A2Clipboard": "Zwischenablage — fügt den aktuellen Zwischenablage-Inhalt ein",
-
     "faqQ12": "Kann ich ein Standardprofil für neue Lesezeichen festlegen?",
     "faqQ12A": "Ja. Aktivieren Sie das Kontrollkästchen 'Standard' für ein Profil in den electerm-Einstellungen. Dieses Profil wird beim Erstellen neuer Lesezeichen automatisch ausgewählt.",
-
     "homeFaqTitle": "Häufig gestellte Fragen",
     "homeFaqSubtitle": "Schnelle Antworten auf häufige Fragen zu electerm",
     "homeFaqViewAll": "Alle FAQs anzeigen →",
     "homeFaq0Q": "Ist electerm kostenlos und Open-Source?",
     "homeFaq0A": "Ja! electerm ist komplett kostenlos und Open-Source (MIT-Lizenz). Den Quellcode gibt es auf GitHub.",
-
     "homeFaq1Q": "Wie verhindere ich, dass meine SSH-Sitzung zeitlich ausläuft?",
     "homeFaq1A": "Stellen Sie das SSH-Keep-Alive-Intervall in den Einstellungen ein oder klicken Sie während einer aktiven Sitzung auf das Keep-Alive-Symbol in der Terminal-Symbolleiste.",
     "homeFaq2Q": "Kann ich SSH-Tunnel in electerm verwenden?",
     "homeFaq2A": "Ja, konfigurieren Sie die Portweiterleitung von lokal nach remote oder remote nach lokal beim Erstellen oder Bearbeiten eines SSH-Lesezeichens.",
     "homeFaq3Q": "Wie konfiguriere ich den KI-Assistenten?",
     "homeFaq3A": "Öffnen Sie die KI-Einstellungen und geben Sie Ihre API-URL, das Modell und den API-Schlüssel ein. Funktioniert mit jeder OpenAI-kompatiblen API.",
-
     "homeAuthorTitle": "Über den Autor",
     "homeAuthorDesc1": "electerm wurde von ZHAO Xudong entwickelt und wird von ihm gewartet.",
-    "homeAuthorGithub": "GitHub-Profil anzeigen →"
+    "homeAuthorGithub": "GitHub-Profil anzeigen →",
+    "siteTitleShort": "Terminal/SSH/SFTP (Open Source)"
   }
 }

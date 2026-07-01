@@ -7,7 +7,6 @@
     "desc": "终端/SSH/SFTP/FTP/Telnet/串口/RDP/VNC/Spice客户端(支持Linux、Mac、Win)",
     "keywords": "electerm,终端,SSH,SFTP,FTP,Telnet,串口,串行端口,RDP,VNC,Spice,文件管理器,开源,免费终端客户端,SSH客户端,SFTP客户端,远程桌面,Linux,Mac,Windows,跨平台",
     "siteTitle": "electerm - 免费开源终端/SSH/SFTP/Telnet/串口/VNC/RDP/Spice客户端",
-
     "headerHome": "首页",
     "headerAbout": "关于",
     "headerFaq": "常见问题",
@@ -17,10 +16,8 @@
     "headerSponsor": "赞助",
     "headerGithub": "GitHub",
     "headerLanguages": "语言",
-
     "heroTryDemo": "在线演示",
     "heroViewOnGithub": "在 GitHub 上查看",
-
     "featuresTitle": "功能特性",
     "featuresSubtitle": "终端客户端所需的一切",
     "featureAllInOneTitle": "开源多合一客户端",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "支持 Zmodem (rz/sz) 和 Trzsz (trz/tsz) 文件传输，兼容 tmux。",
     "featureCrossPlatformTitle": "跨平台",
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64)、macOS 10.15+ (x64/arm64)、Linux (x64/arm64/Loong64)，支持 glibc 2.17+。",
-
     "downloadTitle": "下载",
     "downloadSubtitle": "免费开源 — 选择您的平台",
     "downloadViewAll": "在 GitHub 上查看所有版本 →",
-
     "changelogTitle": "更新日志",
     "changelogSubtitle": "最新版本的新内容",
-
     "communityTitle": "加入社区",
     "communityWechatDesc": "加入我们的微信社区获取支持和更新",
-
     "footerBrandDesc": "适用于 Linux、macOS 和 Windows 的终端/SSH/SFTP/Telnet/串口/RDP/VNC/Spice 客户端。",
     "footerProduct": "产品",
     "footerCommunity": "社区",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "隐私政策",
     "footerAuthor": "作者",
     "footerResume": "简历",
-
     "sponsorTitle": "赞助 Electerm",
     "sponsorSubtitle": "帮助支持这个开源项目的持续开发",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "透明资助",
     "videosTitle": "Electerm 视频教程",
     "videosSubtitle": "通过视频教程学习如何使用 Electerm",
-
     "demoTitle": "在线演示",
     "demoSubtitle": "直接在浏览器中体验 Electerm — 无需安装",
     "demoOpenFull": "全屏打开 ↗",
-
     "resourcesTitle": "资源",
     "resourcesSubtitle": "开始使用所需的一切",
     "resourcesOfficial": "官方",
     "resourcesEcosystem": "生态系统",
     "resourcesCommunity": "社区",
-
     "sponsorsTitle": "赞助商",
     "sponsorsInterested": "有兴趣赞助 Electerm？您的支持有助于保持项目的活跃和发展。",
     "sponsorsContact": "联系我们成为赞助商",
-
     "starHistoryTitle": "Star 历史",
-
     "footerAbout": "关于",
     "footerContact": "联系我们",
     "footerTerms": "条款",
     "footerFaq": "常见问题",
-
     "faqTitle": "常见问题",
     "faqSubtitle": "关于 electerm 终端客户端的常见问题和解答",
     "faqDisclaimer": "以下答案基于",
     "faqWikiLink": "在 electerm Wiki 上阅读更多",
-
     "faqQ0": "electerm 是免费开源的吗？",
     "faqQ0A1": "是的！electerm 是完全免费的开源软件。您可以在 GitHub 上查看、修改和贡献源代码：",
     "faqQ0A2": "它基于 MIT 许可证发布，这意味着您可以自由使用、复制、修改、合并、发布、分发、再许可和/或销售该软件的副本。",
-
     "faqQ1": "如何隐藏 SFTP 面板中的本地文件管理器？",
     "faqQ1A1": "可以，将以下 CSS 添加到设置页的自定义 CSS 中（设置 → 外观 → 自定义 CSS）：",
     "faqQ1A2": "保存后，本地区域将被隐藏，远程区域将扩展到全宽。",
     "faqQ1A3": "更多 CSS 示例 →",
-
     "faqQ2": "如何交换 SFTP 面板中本地和远程区域的位置？",
     "faqQ2A": "可以，使用以下自定义 CSS 将远程区域放在左侧，本地区域放在右侧：",
-
     "faqQ3": "如何保持 SSH 会话不超时？",
     "faqQ3A1": "有两种方法可以防止空闲 SSH 连接被断开：",
     "faqQ3A2": "方法一 — 在设置中配置保活间隔：",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "输入一个秒数值（例如 60）",
     "faqQ3A2Li4": "保存",
     "faqQ3A3": "方法二 — 在活动会话期间点击终端工具栏中的保活图标。这会每 3 秒发送一个回车键（更激进，可能会干扰 vim 等交互式命令）。",
-
     "faqQ4": "如何在 electerm 中使用 SSH 隧道？",
     "faqQ4A1": "SSH 隧道在创建或编辑 SSH 书签时配置。可以设置：",
     "faqQ4A2": "本地 → 远程 (ssh -L)：",
     "faqQ4A2Desc": "将本地端口的请求转发到远程服务器端口。",
     "faqQ4A3": "远程 → 本地 (ssh -R)：",
     "faqQ4A3Desc": "将远程端口的请求转发到本地服务器端口。",
-
     "faqQ5": "什么是工作区功能以及如何使用它？",
     "faqQ5A1": "工作区允许您将当前布局和打开的标签页保存为预设。只有从书签打开的标签页才会被保存。",
     "faqQ5A2": "保存和加载工作区的方法：",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "打开要包含的书签连接",
     "faqQ5A2Li3": "转到布局 → 工作区标签 → 保存工作区",
     "faqQ5A2Li4": "命名并确认",
-
     "faqQ6": "如何在不保存书签的情况下连接到服务器？",
     "faqQ6A1": "使用侧边栏的快速连接功能。输入连接字符串，例如：",
     "faqQ6A2": "快速连接支持 SSH、Telnet、VNC、RDP、Spice、串口和 FTP 协议。SSH 连接可以省略协议前缀。",
-
     "faqQ7": "什么是批处理操作以及如何使用？",
     "faqQ7A1": "批处理操作允许您使用 JSON 定义和运行多步骤 SSH/SFTP 工作流。通过左侧边栏的批处理操作按钮访问。",
     "faqQ7A2": "可用的操作类型：",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— 运行终端命令",
     "faqQ7A2Upload": "— 上传文件/文件夹到远程服务器",
     "faqQ7A2Download": "— 从远程服务器下载文件/文件夹",
-
     "faqQ8": "可以通过浏览器或外部链接打开 SSH 连接吗？",
     "faqQ8A1": "可以，electerm 支持使用 ssh://、telnet://、rdp://、vnc://、serial://、spice:// 以及自定义 electerm:// 协议的深度链接。先在 electerm 设置中注册协议处理程序。",
     "faqQ8A2": "您还可以创建桌面快捷方式、HTML 链接或使用命令行工具（open、xdg-open、start）启动连接。",
-
     "faqQ9": "如何让 electerm 在登录时自动启动？",
     "faqQ9A1": "使用 --autohide 参数让 electerm 启动时最小化到系统托盘：",
     "faqQ9A2Ubuntu": "Ubuntu：",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "创建 electerm.exe 的快捷方式，放在 %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup 中",
     "faqQ9A4Mac": "macOS：",
     "faqQ9A4MacDesc": "创建包含 /Applications/electerm.app/Contents/MacOS/electerm --autohide 的脚本，赋予执行权限，然后在系统设置 → 登录项中添加",
-
     "faqQ10": "如何在 electerm 中配置 AI 助手？",
     "faqQ10A1": "Electerm 兼容任何 OpenAI 兼容的 API。配置方法：",
     "faqQ10A2Li1": "打开 Electerm 的 AI 设置",
@@ -182,32 +157,28 @@
     "faqQ10A2Li3": "选择或输入模型名称（例如 gpt-4、deepseek-chat）",
     "faqQ10A2Li4": "输入您的 API 密钥",
     "faqQ10A2Li5": "可选：定义系统角色提示词，然后保存",
-
     "faqQ11": "快捷命令中可以使用动态值吗？",
     "faqQ11A1": "可以，快捷命令模板支持在执行时解析的动态占位符：",
     "faqQ11A2": "支持的模板变量：",
     "faqQ11A2Time": "时间 — 插入当前时间",
     "faqQ11A2Date": "日期 — 插入当前日期",
     "faqQ11A2Clipboard": "剪贴板 — 插入当前剪贴板内容",
-
     "faqQ12": "可以为新书签设置默认配置吗？",
     "faqQ12A": "可以。在 electerm 设置中，在某个配置上启用「默认」复选框。该配置将在创建新书签时自动选用。",
-
     "homeFaqTitle": "常见问题",
     "homeFaqSubtitle": "关于 electerm 的常见问题快速解答",
     "homeFaqViewAll": "查看全部常见问题 →",
     "homeFaq0Q": "electerm 是免费开源的吗？",
     "homeFaq0A": "是的！electerm 是完全免费的开源软件（MIT 许可证）。在 GitHub 上查看源代码。",
-
     "homeFaq1Q": "如何防止 SSH 会话超时？",
     "homeFaq1A": "在设置中配置 Keep Alive 间隔，或在活动会话期间点击终端工具栏中的 keep-alive 图标。",
     "homeFaq2Q": "可以在 electerm 中使用 SSH 隧道吗？",
     "homeFaq2A": "可以。在创建或编辑 SSH 书签时，可以配置本地到远程或远程到本地的端口转发。",
     "homeFaq3Q": "如何配置 AI 助手？",
     "homeFaq3A": "打开 AI 设置，输入 API URL、模型名称和 API 密钥。兼容任何 OpenAI 兼容的 API。",
-
     "homeAuthorTitle": "关于作者",
     "homeAuthorDesc1": "electerm 由 ZHAO Xudong 创建并维护。",
-    "homeAuthorGithub": "查看 GitHub 个人主页 →"
+    "homeAuthorGithub": "查看 GitHub 个人主页 →",
+    "siteTitleShort": "免费终端/SSH/SFTP客户端"
   }
 }

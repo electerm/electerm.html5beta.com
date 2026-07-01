@@ -7,7 +7,6 @@
     "desc": "Klien terminal/SSH/SFTP/FTP/Telnet/port serial/RDP/VNC/Spice (Linux, Mac, Windows)",
     "keywords": "electerm,terminal,SSH,SFTP,FTP,Telnet,port serial,RDP,VNC,Spice,manajer file,sumber terbuka,klien terminal gratis,klien SSH,klien SFTP,remote desktop,Linux,Mac,Windows,lintas platform",
     "siteTitle": "electerm - Klien Terminal/SSH/SFTP/Telnet/VNC/RDP/Spice Gratis dan Open Source",
-
     "headerHome": "Beranda",
     "headerAbout": "Tentang",
     "headerFaq": "FAQ",
@@ -17,10 +16,8 @@
     "headerSponsor": "Sponsor",
     "headerGithub": "GitHub",
     "headerLanguages": "Bahasa",
-
     "heroTryDemo": "Coba demo",
     "heroViewOnGithub": "Lihat di GitHub",
-
     "featuresTitle": "Fitur",
     "featuresSubtitle": "Semua yang Anda butuhkan dalam klien terminal",
     "featureAllInOneTitle": "Klien all-in-one sumber terbuka",
@@ -47,17 +44,13 @@
     "featureZmodemTrzszDesc": "Mendukung transfer file Zmodem (rz/sz) dan Trzsz (trz/tsz), kompatibel dengan tmux.",
     "featureCrossPlatformTitle": "Lintas platform",
     "featureCrossPlatformDesc": "Windows 7+ (x64/ARM64), macOS 10.15+ (x64/arm64), Linux (x64/arm64/Loong64) termasuk glibc 2.17+.",
-
     "downloadTitle": "Unduh",
     "downloadSubtitle": "Gratis dan open source — pilih platform Anda",
     "downloadViewAll": "Lihat semua rilis di GitHub →",
-
     "changelogTitle": "Catatan rilis",
     "changelogSubtitle": "Apa yang baru di versi terbaru",
-
     "communityTitle": "Bergabung dengan komunitas",
     "communityWechatDesc": "Bergabunglah dengan komunitas WeChat kami untuk dukungan dan pembaruan",
-
     "footerBrandDesc": "Klien Terminal/SSH/SFTP/Telnet/port serial/RDP/VNC/Spice untuk Linux, macOS, dan Windows.",
     "footerProduct": "Produk",
     "footerCommunity": "Komunitas",
@@ -74,7 +67,6 @@
     "footerPrivacyPolicy": "Kebijakan privasi",
     "footerAuthor": "Penulis",
     "footerResume": "Resume",
-
     "sponsorTitle": "Sponsori Electerm",
     "sponsorSubtitle": "Bantu mendukung pengembangan berkelanjutan dari proyek open source ini",
     "sponsorWechatDonate": "微信赞赏",
@@ -87,45 +79,35 @@
     "sponsorOpenCollectiveDesc": "Pendanaan transparan",
     "videosTitle": "Panduan Video Electerm",
     "videosSubtitle": "Pelajari cara menggunakan Electerm dengan tutorial video",
-
     "demoTitle": "Demo langsung",
     "demoSubtitle": "Coba Electerm langsung di browser Anda — tidak perlu instalasi",
     "demoOpenFull": "Buka layar penuh ↗",
-
     "resourcesTitle": "Sumber daya",
     "resourcesSubtitle": "Semua yang Anda butuhkan untuk memulai",
     "resourcesOfficial": "Resmi",
     "resourcesEcosystem": "Ekosistem",
     "resourcesCommunity": "Komunitas",
-
     "sponsorsTitle": "Sponsor",
     "sponsorsInterested": "Tertarik untuk mensponsori Electerm? Dukungan Anda membantu menjaga proyek tetap aktif dan berkembang.",
     "sponsorsContact": "Hubungi kami untuk menjadi sponsor",
-
     "starHistoryTitle": "Riwayat Star",
-
     "footerAbout": "Tentang",
     "footerContact": "Kontak",
     "footerTerms": "Ketentuan",
     "footerFaq": "FAQ",
-
     "faqTitle": "Pertanyaan yang Sering Diajukan",
     "faqSubtitle": "Pertanyaan dan jawaban umum tentang klien terminal electerm",
     "faqDisclaimer": "Jawaban ini didasarkan pada",
     "faqWikiLink": "Baca selengkapnya di Wiki electerm",
-
     "faqQ0": "Apakah electerm gratis dan sumber terbuka?",
     "faqQ0A1": "Ya! electerm adalah perangkat lunak gratis dan sumber terbuka sepenuhnya. Anda dapat melihat, memodifikasi, dan berkontribusi pada kode sumber di GitHub:",
     "faqQ0A2": "Ini dirilis di bawah Lisensi MIT, yang berarti Anda bebas menggunakan, menyalin, memodifikasi, menggabungkan, menerbitkan, mendistribusikan, mensublisensikan, dan/atau menjual salinan perangkat lunak.",
-
     "faqQ1": "Bisakah saya menyembunyikan manajer file lokal di panel SFTP?",
     "faqQ1A1": "Ya, tambahkan CSS berikut di Pengaturan → Tampilan → CSS Kustom:",
     "faqQ1A2": "Setelah disimpan, bagian lokal akan disembunyikan dan bagian remote akan melebar ke lebar penuh.",
     "faqQ1A3": "Lebih banyak contoh CSS →",
-
     "faqQ2": "Bisakah saya menukar posisi bagian lokal dan remote di panel SFTP?",
     "faqQ2A": "Ya, gunakan CSS kustom berikut untuk menempatkan bagian remote di kiri dan bagian lokal di kanan:",
-
     "faqQ3": "Bagaimana cara menjaga sesi SSH agar tidak timeout?",
     "faqQ3A1": "Ada dua metode untuk mencegah koneksi SSH yang idle terputus:",
     "faqQ3A2": "Metode 1 — Konfigurasi Interval Keep Alive di Pengaturan:",
@@ -134,14 +116,12 @@
     "faqQ3A2Li3": "Masukkan nilai dalam detik (mis. 60)",
     "faqQ3A2Li4": "Simpan",
     "faqQ3A3": "Metode 2 — Klik ikon keep-alive di toolbar terminal selama sesi aktif. Ini mengirimkan tombol Enter setiap 3 detik (lebih agresif, dapat mengganggu perintah interaktif seperti vim).",
-
     "faqQ4": "Bagaimana cara menggunakan terowongan SSH di electerm?",
     "faqQ4A1": "Terowongan SSH dikonfigurasi saat membuat atau mengedit bookmark SSH. Anda dapat mengatur:",
     "faqQ4A2": "Lokal → Remote (ssh -L): ",
     "faqQ4A2Desc": "Meneruskan permintaan dari port lokal ke port server remote.",
     "faqQ4A3": "Remote → Lokal (ssh -R): ",
     "faqQ4A3Desc": "Meneruskan permintaan dari port remote ke port server lokal.",
-
     "faqQ5": "Apa itu fitur Ruang Kerja dan bagaimana cara menggunakannya?",
     "faqQ5A1": "Ruang kerja memungkinkan Anda menyimpan tata letak saat ini dan tab yang terbuka sebagai preset. Hanya tab yang dibuka dari bookmark yang akan disimpan.",
     "faqQ5A2": "Untuk menyimpan dan memuat ruang kerja:",
@@ -149,11 +129,9 @@
     "faqQ5A2Li2": "Buka koneksi bookmark yang ingin disertakan",
     "faqQ5A2Li3": "Pergi ke Tata Letak → tab Ruang Kerja → Simpan Ruang Kerja",
     "faqQ5A2Li4": "Beri nama dan konfirmasi",
-
     "faqQ6": "Bagaimana cara terhubung ke server tanpa menyimpan bookmark?",
     "faqQ6A1": "Gunakan Koneksi Cepat dari sidebar. Masukkan string koneksi seperti:",
     "faqQ6A2": "Koneksi Cepat mendukung protokol SSH, Telnet, VNC, RDP, Spice, Serial, dan FTP. Anda dapat menghilangkan prefiks protokol untuk koneksi SSH.",
-
     "faqQ7": "Apa itu Operasi Batch dan bagaimana cara menggunakannya?",
     "faqQ7A1": "Operasi Batch memungkinkan Anda mendefinisikan dan menjalankan alur kerja SSH/SFTP multi-langkah menggunakan JSON. Akses melalui tombol Operasi Batch di sidebar kiri.",
     "faqQ7A2": "Jenis tindakan yang tersedia:",
@@ -161,11 +139,9 @@
     "faqQ7A2Command": "— Menjalankan perintah terminal",
     "faqQ7A2Upload": "— Mengunggah file/folder ke server remote",
     "faqQ7A2Download": "— Mengunduh file/folder dari server remote",
-
     "faqQ8": "Bisakah saya membuka koneksi SSH dari browser atau tautan eksternal?",
     "faqQ8A1": "Ya. electerm mendukung tautan dalam menggunakan protokol seperti ssh://, telnet://, rdp://, vnc://, serial://, spice://, dan protokol kustom electerm://. Daftarkan penangan protokol terlebih dahulu di pengaturan electerm.",
     "faqQ8A2": "Anda juga dapat membuat pintasan desktop, tautan HTML, atau menggunakan alat baris perintah (open, xdg-open, start) untuk meluncurkan koneksi.",
-
     "faqQ9": "Bagaimana cara membuat electerm mulai otomatis saat login?",
     "faqQ9A1": "Gunakan bendera --autohide untuk memulai electerm yang diminimalkan ke baki sistem:",
     "faqQ9A2Ubuntu": "Ubuntu: ",
@@ -174,7 +150,6 @@
     "faqQ9A3WinDesc": "Buat pintasan ke electerm.exe dan letakkan di %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
     "faqQ9A4Mac": "macOS: ",
     "faqQ9A4MacDesc": "Buat skrip dengan /Applications/electerm.app/Contents/MacOS/electerm --autohide, buat dapat dieksekusi, lalu tambahkan di Pengaturan Sistem → Item Login",
-
     "faqQ10": "Bagaimana cara mengonfigurasi asisten AI di electerm?",
     "faqQ10A1": "Electerm bekerja dengan API apa pun yang kompatibel dengan OpenAI. Untuk mengonfigurasi:",
     "faqQ10A2Li1": "Buka pengaturan AI di Electerm",
@@ -182,32 +157,28 @@
     "faqQ10A2Li3": "Pilih atau ketik nama model (mis. gpt-4, deepseek-chat)",
     "faqQ10A2Li4": "Masukkan kunci API Anda",
     "faqQ10A2Li5": "Opsional: tentukan prompt peran sistem dan simpan",
-
     "faqQ11": "Bisakah saya menggunakan nilai dinamis dalam perintah cepat?",
     "faqQ11A1": "Ya. Template perintah cepat mendukung placeholder dinamis yang diselesaikan saat eksekusi:",
     "faqQ11A2": "Variabel template yang didukung:",
     "faqQ11A2Time": "Waktu — menyisipkan waktu saat ini",
     "faqQ11A2Date": "Tanggal — menyisipkan tanggal saat ini",
     "faqQ11A2Clipboard": "Papan klip — menyisipkan konten papan klip saat ini",
-
     "faqQ12": "Bisakah saya menetapkan profil default untuk bookmark baru?",
     "faqQ12A": "Ya. Aktifkan kotak centang 'Default' pada profil di pengaturan electerm. Profil tersebut akan otomatis dipilih saat membuat bookmark baru.",
-
     "homeFaqTitle": "Pertanyaan yang Sering Diajukan",
     "homeFaqSubtitle": "Jawaban cepat untuk pertanyaan umum tentang electerm",
     "homeFaqViewAll": "Lihat semua FAQ →",
     "homeFaq0Q": "Apakah electerm gratis dan sumber terbuka?",
     "homeFaq0A": "Ya! electerm sepenuhnya gratis dan sumber terbuka (lisensi MIT). Lihat kode sumber di GitHub.",
-
     "homeFaq1Q": "Bagaimana cara mencegah sesi SSH saya timeout?",
     "homeFaq1A": "Atur Interval Keep Alive di Pengaturan, atau klik ikon keep-alive di toolbar terminal selama sesi aktif.",
     "homeFaq2Q": "Bisakah saya menggunakan terowongan SSH di electerm?",
     "homeFaq2A": "Ya, konfigurasikan penerusan port lokal → remote atau remote → lokal saat membuat atau mengedit bookmark SSH.",
     "homeFaq3Q": "Bagaimana cara mengkonfigurasi asisten AI?",
     "homeFaq3A": "Buka pengaturan AI, masukkan URL API, nama model, dan kunci API. Bekerja dengan API apa pun yang kompatibel dengan OpenAI.",
-
     "homeAuthorTitle": "Tentang Penulis",
     "homeAuthorDesc1": "electerm dibuat dan dipelihara oleh ZHAO Xudong.",
-    "homeAuthorGithub": "Lihat Profil GitHub →"
+    "homeAuthorGithub": "Lihat Profil GitHub →",
+    "siteTitleShort": "Klien Terminal/SSH/SFTP"
   }
 }

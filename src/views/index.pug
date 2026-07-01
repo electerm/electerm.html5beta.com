@@ -1,12 +1,12 @@
 doctype html
 html(lang=langCode)
   head
-    title= lang.lang.siteTitle || 'electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client'
+    title= 'electerm - ' + (lang.lang.siteTitleShort || 'Terminal/SSH/SFTP Client')
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
-    meta(property='og:title' content=lang.lang.siteTitle || 'electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(property='og:title' content='electerm - ' + (lang.lang.siteTitleShort || 'Terminal/SSH/SFTP Client'))
     meta(property='og:description' content=desc)
-    meta(name='twitter:title' content=lang.lang.siteTitle || 'electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(name='twitter:title' content='electerm - ' + (lang.lang.siteTitleShort || 'Terminal/SSH/SFTP Client'))
     meta(name='twitter:description' content=desc)
     include ./parts/react-header
     script(type='application/ld+json').
@@ -14,9 +14,9 @@ html(lang=langCode)
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "electerm",
-        "url": "https://electerm.org",
+        "url": "#{host}",
         "description": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
-        "inLanguage": "en"
+        "inLanguage": "#{langCode}"
       }
     script(type='application/ld+json').
       {
@@ -24,12 +24,12 @@ html(lang=langCode)
         "@type": "SoftwareApplication",
         "name": "electerm",
         "description": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
-        "url": "https://electerm.org",
+        "url": "#{host}",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, macOS, Linux",
         "softwareVersion": "#{version}",
         "datePublished": "#{releaseDate}",
-        "image": "https://electerm.org/android-chrome-512x512.png",
+        "image": "#{host}/android-chrome-512x512.png",
         "downloadUrl": "https://github.com/electerm/electerm/releases",
         "offers": {
           "@type": "Offer",
@@ -59,8 +59,8 @@ html(lang=langCode)
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "electerm",
-        "url": "https://electerm.org",
-        "logo": "https://electerm.org/electerm.png",
+        "url": "#{host}",
+        "logo": "#{host}/electerm.png",
         "sameAs": [
           "https://github.com/electerm/electerm",
           "https://snapcraft.io/electerm",
