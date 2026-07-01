@@ -288,7 +288,8 @@ function createReleaseData () {
   })
   return {
     assets: arr,
-    version
+    version,
+    releaseDate: dt
   }
 }
 

@@ -1,12 +1,12 @@
 doctype html
 html(lang=langCode)
   head
-    title #{siteName} - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client
+    title= lang.lang.siteTitle || 'electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client'
     meta(name='description', content=desc)
     meta(name='keywords', content=keywords)
-    meta(property='og:title' content='electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(property='og:title' content=lang.lang.siteTitle || 'electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
     meta(property='og:description' content=desc)
-    meta(name='twitter:title' content='electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
+    meta(name='twitter:title' content=lang.lang.siteTitle || 'electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client')
     meta(name='twitter:description' content=desc)
     include ./parts/react-header
     script(type='application/ld+json').
@@ -27,6 +27,10 @@ html(lang=langCode)
         "url": "https://electerm.org",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, macOS, Linux",
+        "softwareVersion": "#{version}",
+        "datePublished": "#{releaseDate}",
+        "image": "https://electerm.org/android-chrome-512x512.png",
+        "downloadUrl": "https://github.com/electerm/electerm/releases",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -35,7 +39,7 @@ html(lang=langCode)
         "author": {
           "@type": "Person",
           "name": "ZHAO Xudong",
-          "url": "http://html5beta.com"
+          "url": "https://html5beta.com"
         },
         "softwareHelp": {
           "@type": "CreativeWork",
@@ -48,6 +52,19 @@ html(lang=langCode)
           "SFTP file transfer",
           "Multi-tab terminal",
           "Theme customization"
+        ]
+      }
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "electerm",
+        "url": "https://electerm.org",
+        "logo": "https://electerm.org/electerm.png",
+        "sameAs": [
+          "https://github.com/electerm/electerm",
+          "https://snapcraft.io/electerm",
+          "https://html5beta.com"
         ]
       }
   body

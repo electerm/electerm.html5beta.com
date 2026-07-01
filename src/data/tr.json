@@ -6,6 +6,7 @@
   "lang": {
     "desc": "Terminal/SSH/SFTP/FTP/Telnet/seri port/RDP/VNC/Spice istemcisi (Linux, Mac, Windows)",
     "keywords": "electerm,terminal,SSH,SFTP,FTP,Telnet,seri port,RDP,VNC,Spice,dosya yöneticisi,açık kaynak,ücretsiz terminal,SSH istemcisi,SFTP istemcisi,uzak masaüstü,Linux,Mac,Windows,çapraz platform",
+    "siteTitle": "electerm - Ücretsiz Açık Kaynak Terminal/SSH/SFTP/Telnet/VNC/RDP/Spice İstemcisi",
 
     "headerHome": "Ana Sayfa",
     "headerAbout": "Hakkında",

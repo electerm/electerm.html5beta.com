@@ -6,6 +6,7 @@
   "lang": {
     "desc": "Cliente de terminal/SSH/SFTP/FTP/Telnet/puerto serie/RDP/VNC/Spice (Linux, Mac, Windows)",
     "keywords": "electerm,terminal,SSH,SFTP,FTP,Telnet,puerto serie,RDP,VNC,Spice,administrador de archivos,código abierto,cliente de terminal gratis,cliente SSH,cliente SFTP,escritorio remoto,Linux,Mac,Windows,multiplataforma",
+    "siteTitle": "electerm - Cliente gratuito de terminal/SSH/SFTP/Telnet/VNC/RDP/Spice de código abierto",
 
     "headerHome": "Inicio",
     "headerAbout": "Acerca de",

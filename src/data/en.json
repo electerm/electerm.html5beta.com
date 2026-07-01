@@ -6,6 +6,7 @@
   "lang": {
     "desc": "Free and open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client (linux, mac, win)",
     "keywords": "electerm,terminal,ssh,sftp,ftp,telnet,serial port,rdp,vnc,spice,file manager,open source,free terminal client,ssh client,sftp client,remote desktop,linux,mac,windows,cross-platform",
+    "siteTitle": "electerm - Free and Open-Sourced Terminal/SSH/SFTP/Telnet/Serialport/VNC/RDP/Spice Client",
 
     "headerHome": "Home",
     "headerAbout": "About",
@@ -109,7 +110,7 @@
     "footerContact": "Contact",
 
     "faqTitle": "Frequently Asked Questions",
-    "faqSubtitle": "Common questions and answers about electem terminal client",
+    "faqSubtitle": "Common questions and answers about electerm terminal client",
     "faqDisclaimer": "These answers are based on the",
     "faqWikiLink": "Read more on electerm Wiki",
 

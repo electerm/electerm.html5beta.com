@@ -9,6 +9,15 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - ' + lang.lang.faqTitle)
     meta(name='twitter:description' content=lang.lang.faqSubtitle)
     include ./parts/react-header
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://electerm.org" },
+          { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://electerm.org/faq/" }
+        ]
+      }
     style.
       .faq-page {
         padding: 48px 0 80px;

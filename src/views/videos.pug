@@ -9,6 +9,15 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - Video Guides and Tutorials')
     meta(name='twitter:description' content='Watch tutorial videos and demos for electerm terminal client')
     include ./parts/react-header
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://electerm.org" },
+          { "@type": "ListItem", "position": 2, "name": "Videos", "item": "https://electerm.org/videos/" }
+        ]
+      }
     style.
       .videos-hero {
         background: var(--color-bg-alt);

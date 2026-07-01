@@ -6,6 +6,7 @@
   "lang": {
     "desc": "终端/SSH/SFTP/FTP/Telnet/串口/RDP/VNC/Spice客户端(支持Linux、Mac、Win)",
     "keywords": "electerm,终端,SSH,SFTP,FTP,Telnet,串口,串行端口,RDP,VNC,Spice,文件管理器,开源,免费终端客户端,SSH客户端,SFTP客户端,远程桌面,Linux,Mac,Windows,跨平台",
+    "siteTitle": "electerm - 免费开源终端/SSH/SFTP/Telnet/串口/VNC/RDP/Spice客户端",
 
     "headerHome": "首页",
     "headerAbout": "关于",

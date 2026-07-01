@@ -6,6 +6,7 @@
   "lang": {
     "desc": "ターミナル/SSH/SFTP/FTP/Telnet/シリアルポート/RDP/VNC/Spiceクライアント（Linux、Mac、Windows対応）",
     "keywords": "electerm,ターミナル,SSH,SFTP,FTP,Telnet,シリアルポート,RDP,VNC,Spice,ファイルマネージャー,オープンソース,無料ターミナル,SSHクライアント,SFTPクライアント,リモートデスクトップ,Linux,Mac,Windows,クロスプラットフォーム",
+    "siteTitle": "electerm - 無料オープンソースターミナル/SSH/SFTP/Telnet/シリアルポート/VNC/RDP/Spiceクライアント",
 
     "headerHome": "ホーム",
     "headerAbout": "概要",

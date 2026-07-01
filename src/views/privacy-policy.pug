@@ -9,6 +9,15 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - Privacy Policy')
     meta(name='twitter:description' content='Privacy Policy for electerm website and services')
     include ./parts/react-header
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://electerm.org" },
+          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://electerm.org/privacy-policy/" }
+        ]
+      }
   body
     include ./parts/header
     main.privacy-page

@@ -9,6 +9,15 @@ html(lang=langCode)
     meta(name='twitter:title' content='electerm - Support Open Source Development')
     meta(name='twitter:description' content='Sponsor electerm terminal client development')
     include ./parts/react-header
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://electerm.org" },
+          { "@type": "ListItem", "position": 2, "name": "Sponsor", "item": "https://electerm.org/sponsor-electerm/" }
+        ]
+      }
     style.
       .sponsor-hero {
         background: var(--color-bg-alt);

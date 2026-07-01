@@ -22,7 +22,7 @@ async function buildVideoPages () {
     lang,
     keywords: lang.lang.keywords,
     desc: lang.lang.videosTitle,
-    url: `${h}/videos`,
+    url: `${h}/videos/`,
     cssUrl: '/index.bundle.css',
     videos
   })
@@ -46,11 +46,14 @@ async function buildVideoPages () {
       embedUrl: `https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1`
     })
 
+    // Generate unique keywords per video based on title and slug
+    const videoKeywords = generateVideoKeywords(video)
+
     await buildPug(videoFrom, videoTo, {
       ...data,
       langCode,
       lang,
-      keywords: lang.lang.keywords,
+      keywords: videoKeywords,
       desc: video.titleEn || video.title,
       url: `${h}/videos/${videoSlug}/`,
       cssUrl: '/index.bundle.css',
@@ -66,6 +69,58 @@ function buildHreflangLinks (langs, host) {
     hreflang: item.langCode === 'en-US' ? 'x-default' : item.langCode,
     url: item.url
   }))
+}
+
+function buildPageHreflangLinks (langs, host, pagePath) {
+  return langs.map(item => {
+    const slug = item.slug
+    const url = slug === ''
+      ? `${host}/${pagePath}/`
+      : `${host}/${pagePath}/${slug}/`
+    return {
+      hreflang: item.langCode === 'en-US' ? 'x-default' : item.langCode,
+      url
+    }
+  })
+}
+
+function generateVideoKeywords (video) {
+  const base = 'electerm'
+  const slug = video.videoSlug || ''
+  const titleEn = video.titleEn || ''
+  // Extract feature-specific keywords from the slug
+  const slugParts = slug.replace('electerm-', '').split('-').filter(w => w.length > 2)
+  const featureKeywords = slugParts.join(', ')
+  // Protocol/type mapping
+  const protocolMap = {
+    ssh: 'ssh client, ssh tunnel',
+    sftp: 'sftp client, file transfer',
+    ftp: 'ftp client',
+    telnet: 'telnet client',
+    vnc: 'vnc client, remote desktop',
+    rdp: 'rdp client, remote desktop',
+    serial: 'serial port',
+    spice: 'spice protocol',
+    terminal: 'terminal emulator',
+    theme: 'terminal theme, customization',
+    bookmark: 'ssh bookmark, connection manager',
+    batch: 'batch operations, automation',
+    workspace: 'workspace, session layout',
+    'quick-commands': 'quick commands, terminal shortcuts',
+    'ai-command': 'ai terminal, ai command generation',
+    'cloud-sync': 'cloud sync, data sync',
+    'keyboard-shortcuts': 'keyboard shortcuts, hotkeys',
+    proxy: 'socks proxy, ssh proxy',
+    tunnel: 'ssh tunnel, port forwarding'
+  }
+  let extraKeywords = featureKeywords
+  for (const [key, value] of Object.entries(protocolMap)) {
+    if (slug.includes(key)) {
+      extraKeywords = value
+      break
+    }
+  }
+  return `${base}, ${titleEn.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim().replace(/\s+/g, ', ')}, ${extraKeywords}, terminal client, open source`
 }
 
 async function main () {
@@ -183,6 +238,7 @@ async function main () {
     await fs.mkdir(dir, { recursive: true })
     const titleKey = item.replace(/-/g, '') + 'Title'
     const descKey = item === 'sponsor-electerm' ? 'sponsorTitle' : (lang.lang[titleKey] ? titleKey : 'privacyPolicy')
+    const pageHreflangLinks = buildPageHreflangLinks(langs, h, item)
     await buildPug(f, resolve(dir, 'index.html'), {
       ...data,
       langCode,
@@ -190,7 +246,8 @@ async function main () {
       keywords: lang.lang.keywords,
       desc: lang.lang[descKey] || lang.lang.desc,
       url: `${h}/${item}/`,
-      cssUrl: '/index.bundle.css'
+      cssUrl: '/index.bundle.css',
+      hreflangLinks: pageHreflangLinks
     })
 
     // Redirect from old /{item}.html
